@@ -1,0 +1,5 @@
+https://github.com/bumbummen99
+composer require blablabla
+blablabla: package name from github
+alt+click -> ext for jumping into the controller
+ctrl+click -> ext for jumping into the component

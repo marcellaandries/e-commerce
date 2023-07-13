@@ -22,4 +22,4 @@ php artisan jetstream:install livewire
 
 php artisan migrate
 
-
+php artisan vendor:publish --tag=jetstream-views

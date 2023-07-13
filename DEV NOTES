@@ -3,3 +3,8 @@ composer require blablabla
 blablabla: package name from github
 alt+click -> ext for jumping into the controller
 ctrl+click -> ext for jumping into the component
+
+ctrl+D
+
+composer require livewire/livewire
+php artisan make:livewire HomeComponent

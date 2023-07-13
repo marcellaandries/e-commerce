@@ -29,12 +29,33 @@ Route::get('/cart', CartComponent::class);
 
 Route::get('/checkout', CheckoutComponent::class);
 
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
+
+
+// user
 Route::middleware([
     'auth:sanctum',
-    config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 });
+
+// admin
+// Route::middleware([
+//     'auth:sanctum',
+//     'verified'
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });

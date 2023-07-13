@@ -32,7 +32,7 @@
                 >
                     {{ __('Edit Profile') }}</a>
 
-                <form method="POST" action="{{ route('logout') }}" class="inline">
+                <form method="POST" action="{{ route('logout') }}" class="inline" onclick="event.preventDefault(); this.closest('form').submit();">
                     @csrf
 
                     <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900 ml-2">

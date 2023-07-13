@@ -9,6 +9,6 @@ class HomeComponent extends Component
     public function render()
     {
         // cella
-        return view('livewire.home-component')->layout('layout.base');
+        return view('livewire.home-component')->layout('layouts.base');
     }
 }

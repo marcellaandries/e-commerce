@@ -16,3 +16,10 @@ php artisan make:livewire HomeComponent
 ') }}" alt="
 
 php artisan cache:clear
+
+composer require laravel/Jetstream
+php artisan jetstream:install livewire
+
+php artisan migrate
+
+

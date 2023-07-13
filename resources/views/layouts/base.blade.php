@@ -189,7 +189,7 @@
 		</div>
 	</header>
 
-	<main id="main">
+	{{-- <main id="main">
 		<div class="container">
 
 			<!--MAIN SLIDE-->
@@ -1227,7 +1227,7 @@
 
 		</div>
 
-	</main>
+	</main> --}}
 
     {{-- cella --}}
     {{$slot}}

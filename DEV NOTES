@@ -23,3 +23,23 @@ php artisan jetstream:install livewire
 php artisan migrate
 
 php artisan vendor:publish --tag=jetstream-views
+https://jetstream.laravel.com/2.x/installation.html
+https://tailwindcss.com/docs/installation
+
+
+php artisan make:livewire admin/AdminDashboardComponent
+php artisan make:livewire user/UserDashboardComponent
+
+///
+
+
+CLASS: app/Http/Livewire//Admin/AdminDashboardComponent.php
+VIEW:  C:\MARCELLA\1. Marcella Project\Marcella e-comm\e-commerce\e-commerce\resources\views/livewire/admin\admin-dashboard-component.blade.php
+
+
+CLASS: app/Http/Livewire//User/UserDashboardComponent.php
+VIEW:  C:\MARCELLA\1. Marcella Project\Marcella e-comm\e-commerce\e-commerce\resources\views/livewire/user\user-dashboard-component.blade.php
+///
+
+php
+ artisan route:list

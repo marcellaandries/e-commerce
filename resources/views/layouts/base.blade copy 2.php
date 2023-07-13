@@ -74,14 +74,7 @@
                                     @auth
                                         @if(Auth::user()->utype === 'ADM')
                                             {{-- Admin --}}
-                                            <li class="menu-item menu-item-has-children parent" >
-                                                <a title="My Account" href="#">My Account ({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                                <ul class="submenu curency" >
-                                                    <li class="menu-item" >
-                                                        <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
+
                                         @else
                                             <li class="menu-item menu-item-has-children parent" >
                                                 <a title="My Account" href="#">My Account ({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -117,7 +110,14 @@
 
 						<div class="wrap-search center-section">
 							<div class="wrap-search-form">
-								<form action="#" id="form-search-top" name="form-search-top">
+<li class="menu-item menu-item-has-children parent" >
+                                                <a title="My Account" href="#">My Account ({{Auth::user()->name}})<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                                <ul class="submenu curency" >
+                                                    <li class="menu-item" >
+                                                        <a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                                    </li>
+                                                </ul>
+                                            </li>								<form action="#" id="form-search-top" name="form-search-top">
 									<input type="text" name="search" value="" placeholder="Search here...">
 									<button form="form-search-top" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
 									<div class="wrap-list-cate">

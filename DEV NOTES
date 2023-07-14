@@ -54,5 +54,4 @@ php artisan make:model Category -m
 
  php artisan make:factory ProductFactory --model=Product
 
-
-
+ php artisan db:seed

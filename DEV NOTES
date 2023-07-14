@@ -41,5 +41,18 @@ CLASS: app/Http/Livewire//User/UserDashboardComponent.php
 VIEW:  C:\MARCELLA\1. Marcella Project\Marcella e-comm\e-commerce\e-commerce\resources\views/livewire/user\user-dashboard-component.blade.php
 ///
 
-php
- artisan route:list
+php artisan route:list
+
+php artisan make:model Category -m
+ -m for creating migration
+
+ php artisan make:model Product -m
+
+ php artisan migrate
+
+ php artisan make:factory CategoryFactory --model=Category
+
+ php artisan make:factory ProductFactory --model=Product
+
+
+

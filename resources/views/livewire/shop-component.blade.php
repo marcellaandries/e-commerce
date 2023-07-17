@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="product-info">
                                     <a href="{{route('product.details',['slug'=>$product->slug])}}" title="{{$product->name}}">
-                                    {{-- <a href="/" cl ass="product-name"><span>{{$product->name}}</span></a> --}}
+                                    <a href="/" cl ass="product-name"><span>{{$product->name}}</span></a>
                                     <div class="wrap-price"><span class="product-price">${{$product->regular_price}}</span></div>
                                     <a href="#" class="btn add-to-cart">Add To Cart</a>
                                 </div>

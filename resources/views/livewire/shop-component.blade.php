@@ -1,4 +1,5 @@
-<!--main area-->
+<div>
+    <!--main area-->
 <main id="main" class="main-site left-sidebar">
 
     <div class="container">
@@ -81,8 +82,8 @@
                     </ul>
 
                 </div>
-
                 <div class="wrap-pagination-info">
+
                     {{$products->links()}}
                     {{-- {!! $products->render() !!} --}}
                     {{-- <ul class="page-numbers">
@@ -272,3 +273,4 @@
 
 </main>
 <!--main area-->
+</div>

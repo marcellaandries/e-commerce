@@ -12,9 +12,17 @@ php artisan make:livewire HomeComponent
 "assets/
 "{{ asset('assets/
 
+.jpg"
+.jpg') }}"
+
+.png"
+.png') }}"
+
 " alt="
 ') }}" alt="
 
+" width="
+') }}" width="
 php artisan cache:clear
 
 composer require laravel/Jetstream
@@ -55,3 +63,5 @@ php artisan make:model Category -m
  php artisan make:factory ProductFactory --model=Product
 
  php artisan db:seed
+
+ Marcella Project\Marcella e-comm\e-commerce\e-commerce> php artisan make:livewire DetailsComponent

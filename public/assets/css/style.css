@@ -2394,7 +2394,6 @@ li.menu-item .nav-label.sale-label::before{
 .wrap-pagination-info{
     margin-top: 46px;
     border-top: 1px solid #e6e6e6;
-    padding-top: 10px
 }
 .wrap-pagination-info .page-numbers{
     padding: 0;
@@ -7168,15 +7167,15 @@ background-color: #888888;
 }
 
 .pl-4, .px-4 {
-    padding-left: 1.5 rem !important;
+    padding-left: 1.5rem !important;
 }
 
 .pb-2, .py-2 {
-    padding-bottom: 0.5 rem !important;
+    padding-bottom: .5rem !important;
 }
 
 .pt-2, .py-2 {
-    padding-top: 0.5 rem !important;
+    padding-top: .5rem !important;
 }
 
 .bg-white {
@@ -7194,6 +7193,12 @@ nav svg {
 svg {
     overflow: hidden;
     vertical-align: middle;
+}
+
+.wrap-pagination-info{
+    margin-top: 46px;
+    border-top: 1px solid #e6e6e6;
+    padding-top: 10px;
 }
 
 .wrap-pagination-info .hidden {

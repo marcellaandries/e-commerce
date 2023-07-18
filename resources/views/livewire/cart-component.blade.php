@@ -12,6 +12,11 @@
 			<div class=" main-content-area">
 
 				<div class="wrap-iten-in-cart">
+                    @if(Session::has('success_message'))
+                        <div class="alert alert-success">
+                            <strong>Success</strong> {{Session::get('success_message')}}
+                        </div>
+                    @endif
                     @if(Cart::count() > 0)
 
 					<h3 class="box-title">Products Name</h3>

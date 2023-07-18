@@ -15,6 +15,7 @@ class ShopComponent extends Component
         session()->flash('success message', 'Item added in Cart');
         return redirect()->route('product.cart');
     }
+    
     use WithPagination;
     public function render()
     {

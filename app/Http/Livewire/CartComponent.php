@@ -30,8 +30,11 @@ class CartComponent extends Component
     {
         $product = Cart::get($rowId);
         $qty = $product->qty - 1;
-        Cart::update($rowId,$qty);
-        // return redirect()->route('product.cart');
-        // dd($product);
+        if($qty > 0)
+        {
+            Cart::update($rowId,$qty);
+            // return redirect()->route('product.cart');
+            // dd($product);
+        }
     }
 }

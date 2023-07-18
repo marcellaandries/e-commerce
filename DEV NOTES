@@ -90,3 +90,6 @@ php artisan vendor:publish --provider="Gloudemans\ShoppingcartServiceProvider" -
 {{ $this->rupiah($product['regular_price']) }}
 
 vendor\hardevine\shoppingcart\config\cart.php
+
+#00006c navy
+#9beeff aqua

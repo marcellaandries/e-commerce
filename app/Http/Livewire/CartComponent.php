@@ -7,9 +7,13 @@ use Cart;
 
 class CartComponent extends Component
 {
+    public $cart_count;
+
     public function render()
     {
         return view('livewire.cart-component')->layout('layouts.base');
+        // $cart_count = Cart::content()->count();
+        // return view('livewire.cart-component',['cart_count'=> $cart_count])->layout('layouts.base');
     }
 
     public function rupiah($var_number){
@@ -36,5 +40,14 @@ class CartComponent extends Component
             // return redirect()->route('product.cart');
             // dd($product);
         }
+    }
+    public function destroy($rowId)
+    {
+        Cart::remove($rowId);
+        $cart_count = Cart::content()->count();
+        // dd($cart_count);
+
+        session()->flash('success_message','Item has been removed');
+        // return view('livewire.cart-component',['cart_count'=> $cart_count]);
     }
 }

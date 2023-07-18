@@ -1,10 +1,15 @@
 https://github.com/bumbummen99
 composer require blablabla
 blablabla: package name from github
+
+composer remove blablabla
+to uninstalls
+
 alt+click -> ext for jumping into the controller
 ctrl+click -> ext for jumping into the component
 
 ctrl+D
+ctrl+P to search the file
 
 composer require livewire/livewire
 php artisan make:livewire HomeComponent

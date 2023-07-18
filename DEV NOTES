@@ -79,3 +79,5 @@ composer require hardevine/shoppingcart
 https://github.com/hardevine/LaravelShoppingcart
 https://packagist.org/packages/gloudemans/shoppingcart
 
+
+php artisan vendor:publish --provider="Gloudemans\ShoppingcartServiceProvider" --tag="config"

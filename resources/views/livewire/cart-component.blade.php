@@ -53,7 +53,7 @@
 						<h4 class="title-box">Order Summary</h4>
 						<p class="summary-info"><span class="title">Subtotal</span><b class="index">Rp{{Cart::subtotal()}}</b></p>
 						<p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p>
-						<p class="summary-info total-info "><span class="title">Total</span><b class="index">$512.00</b></p>
+						<p class="summary-info total-info "><span class="title">Total</span><b class="index">Rp 5.120.000</b></p>
 					</div>
 					<div class="checkout-info">
 						<label class="checkbox-field">
@@ -76,7 +76,7 @@
 							<div class="product product-style-2 equal-elem ">
 								<div class="product-thumnail">
 									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-										<figure><img src="{{ asset('assets/images/products/digital_04.jpg') }}" width="214" height="214') }}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+										<figure><img src="{{ asset('assets/images/products/digital_4.jpg') }}" width="214" height="214') }}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 									</a>
 									<div class="group-flash">
 										<span class="flash-item new-label">new</span>
@@ -105,7 +105,7 @@
 								</div>
 								<div class="product-info">
 									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+									<div class="wrap-price"><ins><p class="product-price">Rp 168.000</p></ins> <del><p class="product-price">$250.00</p></del></div>
 								</div>
 							</div>
 
@@ -124,14 +124,14 @@
 								</div>
 								<div class="product-info">
 									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+									<div class="wrap-price"><ins><p class="product-price">Rp 168.000</p></ins> <del><p class="product-price">$250.00</p></del></div>
 								</div>
 							</div>
 
 							<div class="product product-style-2 equal-elem ">
 								<div class="product-thumnail">
 									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-										<figure><img src="{{ asset('assets/images/products/digital_01.jpg') }}" width="214" height="214') }}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+										<figure><img src="{{ asset('assets/images/products/digital_1.jpg') }}" width="214" height="214') }}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 									</a>
 									<div class="group-flash">
 										<span class="flash-item bestseller-label">Bestseller</span>
@@ -142,7 +142,7 @@
 								</div>
 								<div class="product-info">
 									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><span class="product-price">$250.00</span></div>
+									<div class="wrap-price"><span class="product-price">Rp 2.500.00</span></div>
 								</div>
 							</div>
 
@@ -157,14 +157,14 @@
 								</div>
 								<div class="product-info">
 									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><span class="product-price">$250.00</span></div>
+									<div class="wrap-price"><span class="product-price">Rp 2.500.00</span></div>
 								</div>
 							</div>
 
 							<div class="product product-style-2 equal-elem ">
 								<div class="product-thumnail">
 									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-										<figure><img src="{{ asset('assets/images/products/digital_03.jpg') }}" width="214" height="214') }}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+										<figure><img src="{{ asset('assets/images/products/digital_3.jpg') }}" width="214" height="214') }}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 									</a>
 									<div class="group-flash">
 										<span class="flash-item sale-label">sale</span>
@@ -175,14 +175,14 @@
 								</div>
 								<div class="product-info">
 									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+									<div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">$250.00</p></del></div>
 								</div>
 							</div>
 
 							<div class="product product-style-2 equal-elem ">
 								<div class="product-thumnail">
 									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-										<figure><img src="{{ asset('assets/images/products/digital_04.jpg') }}" width="214" height="214') }}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+										<figure><img src="{{ asset('assets/images/products/digital_4.jpg') }}" width="214" height="214') }}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 									</a>
 									<div class="group-flash">
 										<span class="flash-item new-label">new</span>
@@ -193,14 +193,14 @@
 								</div>
 								<div class="product-info">
 									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><span class="product-price">$250.00</span></div>
+									<div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
 								</div>
 							</div>
 
 							<div class="product product-style-2 equal-elem ">
 								<div class="product-thumnail">
 									<a href="#" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-										<figure><img src="{{ asset('assets/images/products/digital_05.jpg') }}" width="214" height="214') }}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
+										<figure><img src="{{ asset('assets/images/products/digital_5.jpg') }}" width="214" height="214') }}" alt="T-Shirt Raw Hem Organic Boro Constrast Denim"></figure>
 									</a>
 									<div class="group-flash">
 										<span class="flash-item bestseller-label">Bestseller</span>
@@ -211,7 +211,7 @@
 								</div>
 								<div class="product-info">
 									<a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-									<div class="wrap-price"><span class="product-price">$250.00</span></div>
+									<div class="wrap-price"><span class="product-price">Rp 2.5000.000</span></div>
 								</div>
 							</div>
 						</div>

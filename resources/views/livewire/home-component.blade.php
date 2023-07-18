@@ -28,7 +28,7 @@
                     <div class="slide-info slide-3">
                         <h2 class="f-title">Great Range of <b>Exclusive Furniture Packages</b></h2>
                         <span class="f-subtitle">Exclusive Furniture Packages to Suit every need.</span>
-                        <p class="sale-info">Stating at: <b class="price">Rp 2250.000</b></p>
+                        <p class="sale-info">Stating at: <b class="price">Rp 2.250.000</b></p>
                         <a href="#" class="btn-link">Shop Now</a>
                     </div>
                 </div>

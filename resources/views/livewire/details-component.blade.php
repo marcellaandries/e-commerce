@@ -176,8 +176,8 @@
                                 <a class="link-to-service" href="#">
                                     <i class="fa fa-truck" aria-hidden="true"></i>
                                     <div class="right-content">
-                                        <b class="title">Free Shipping</b>
-                                        <span class="subtitle">On Oder Over $99</span>
+                                        <b class="title">National Shipping</b>
+                                        <span class="subtitle">Fast Delivery</span>
                                         <p class="desc">Lorem Ipsum is simply dummy text of the printing...</p>
                                     </div>
                                 </a>

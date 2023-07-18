@@ -28,6 +28,11 @@ php artisan make:livewire HomeComponent
 
 " width="
 ') }}" width="
+
+
+.ico"
+.ico') }}"
+
 php artisan cache:clear
 
 composer require laravel/Jetstream

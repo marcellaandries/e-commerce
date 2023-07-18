@@ -40,7 +40,7 @@
                         <div class="wrap-social">
                             <a class="link-socail" href="#"><img src="{{ asset('assets/images/social-list.png') }}" alt=""></a>
                         </div>
-                        <div class="wrap-price"><span class="product-price">{{$product->regular_price}}</span></div>
+                        <div class="wrap-price"><span class="product-price">{{ $this->rupiah($product['regular_price']) }}</span></div>
                         <div class="stock-info in-stock">
                             <p class="availability">Availability: <b>{{$product->stock_status}}</b></p>
                         </div>
@@ -224,7 +224,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="{{route('product.details',['slug'=>$p_product->slug])}}" title="{{$p_product->name}}" class="product-name"><span>{{$p_product->name}}</span></a>
-                                        <div class="wrap-price"><span class="product-price">Rp{{$p_product->regular_price}}</span></div>
+                                        <div class="wrap-price"><span class="product-price">{{ $this->rupiah($p_product['regular_price']) }}</span></div>
                                     </div>
                                 </div>
                             </li>
@@ -259,7 +259,7 @@
                                 </div>
                                 <div class="product-info">
                                     <a href="{{route('product.details',['slug'=>$r_product->slug])}}" class="product-name"><span>{{$r_product->name}}</span></a>
-                                    <div class="wrap-price"><span class="product-price">{{$r_product->regular_price}}</span></div>
+                                    <div class="wrap-price"><span class="product-price">{{ $this->rupiah($r_product['regular_price']) }}</span></div>
                                 </div>
                             </div>
                             @endforeach

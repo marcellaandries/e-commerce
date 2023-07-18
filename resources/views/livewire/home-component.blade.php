@@ -9,7 +9,7 @@
                     <div class="slide-info slide-1">
                         <h2 class="f-title">Kid Smart <b>Watches</b></h2>
                         <span c lass="subtitle">Compra todos tus productos Smart por internet.</span>
-                        <p class="sale-info">Only price: <span class="price">$59.99</span></p>
+                        <p class="sale-info">Only price: <span class="price">Rp. 590.000</span></p>
                         <a href="#" class="btn-link">Shop Now</a>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     <div class="slide-info slide-3">
                         <h2 class="f-title">Great Range of <b>Exclusive Furniture Packages</b></h2>
                         <span class="f-subtitle">Exclusive Furniture Packages to Suit every need.</span>
-                        <p class="sale-info">Stating at: <b class="price">$225.00</b></p>
+                        <p class="sale-info">Stating at: <b class="price">Rp 2250.000</b></p>
                         <a href="#" class="btn-link">Shop Now</a>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                     </div>
                     <div class="product-info">
                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                     </div>
                 </div>
 
@@ -87,7 +87,7 @@
                     </div>
                     <div class="product-info">
                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                     </div>
                 </div>
 
@@ -105,7 +105,7 @@
                     </div>
                     <div class="product-info">
                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                     </div>
                 </div>
 
@@ -123,7 +123,7 @@
                     </div>
                     <div class="product-info">
                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                     </div>
                 </div>
 
@@ -141,7 +141,7 @@
                     </div>
                     <div class="product-info">
                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                     </div>
                 </div>
 
@@ -159,7 +159,7 @@
                     </div>
                     <div class="product-info">
                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                     </div>
                 </div>
 
@@ -177,7 +177,7 @@
                     </div>
                     <div class="product-info">
                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                     </div>
                 </div>
 
@@ -195,7 +195,7 @@
                     </div>
                     <div class="product-info">
                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                     </div>
                 </div>
 
@@ -230,7 +230,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -248,7 +248,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -267,7 +267,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -285,7 +285,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -300,7 +300,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -318,7 +318,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -336,7 +336,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -354,7 +354,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -400,7 +400,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Lois Caron LCS-4027 Analog Watch - For Men</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -418,7 +418,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Business Men Leather Laptop Tote Bags Man Crossbody </span></a>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -433,7 +433,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Alberto Torresi Borgo Yellow Shoes - Alberto Torresi</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -452,7 +452,7 @@
                                 </div>
                                 <div class="product-info">
                                     <a href="#" class="product-name"><span>Alberto Torresi Borgo Yellow Shoes - Alberto Torresi</span></a>
-                                    <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                    <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                 </div>
                             </div>
 
@@ -470,7 +470,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -488,7 +488,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -506,7 +506,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -524,7 +524,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -548,7 +548,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -566,7 +566,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -584,7 +584,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -602,7 +602,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -620,7 +620,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -638,7 +638,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -656,7 +656,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -674,7 +674,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -698,7 +698,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -717,7 +717,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -735,7 +735,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -754,7 +754,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -772,7 +772,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -791,7 +791,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -809,7 +809,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -828,7 +828,7 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker [White]</span></a>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -856,7 +856,7 @@
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                         </div>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -880,7 +880,7 @@
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                         </div>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -904,7 +904,7 @@
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                         </div>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -928,7 +928,7 @@
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                         </div>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -950,7 +950,7 @@
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                         </div>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -974,7 +974,7 @@
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                         </div>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 
@@ -998,7 +998,7 @@
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                         </div>
-                                        <div class="wrap-price"><span class="product-price">$250.00</span></div>
+                                        <div class="wrap-price"><span class="product-price">Rp 2.500.000</span></div>
                                     </div>
                                 </div>
 
@@ -1023,7 +1023,7 @@
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                             <i class="fa fa-star" aria-hidden="true"></i>
                                         </div>
-                                        <div class="wrap-price"><ins><p class="product-price">$168.00</p></ins> <del><p class="product-price">$250.00</p></del></div>
+                                        <div class="wrap-price"><ins><p class="product-price">Rp 1.680.000</p></ins> <del><p class="product-price">Rp 250.00</p></del></div>
                                     </div>
                                 </div>
 

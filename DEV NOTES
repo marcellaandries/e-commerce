@@ -88,3 +88,5 @@ https://packagist.org/packages/gloudemans/shoppingcart
 php artisan vendor:publish --provider="Gloudemans\ShoppingcartServiceProvider" --tag="config"
 
 {{ $this->rupiah($product['regular_price']) }}
+
+vendor\hardevine\shoppingcart\config\cart.php

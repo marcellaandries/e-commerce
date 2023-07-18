@@ -1337,15 +1337,25 @@
 										<ul>
 											<li>
 												<i class="fa fa-map-marker" aria-hidden="true"></i>
-												<p class="contact-txt">45 Grand Central Terminal New York,NY 1017 United State USA</p>
+												<p class="contact-txt">Office Tower 88
+                                                    Kota Kasablanka Lt.20 Unit D - E<br/>
+                                                    Jl. Casablanca Kv. 88 Jakarta Selatan</p>
 											</li>
 											<li>
 												<i class="fa fa-phone" aria-hidden="true"></i>
-												<p class="contact-txt">(+123) 456 789 - (+123) 666 888</p>
+												<p class="contact-txt">(021) 8064 0799</p>
+											</li>
+                                            <li>
+												<i class="fa fa-mobile" aria-hidden="true"></i>
+												<p class="contact-txt">08128129077</p>
 											</li>
 											<li>
 												<i class="fa fa-envelope" aria-hidden="true"></i>
-												<p class="contact-txt">Contact@yourcompany.com</p>
+												<p class="contact-txt">support@erakomp.com</p>
+											</li>
+                                            <li>
+												<i class="fa fa-business-time"></i>
+												<p class="contact-txt">Monday - Friday (08.00 - 17.00 WIB)</p>
 											</li>
 										</ul>
 									</div>
@@ -1356,16 +1366,48 @@
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 
 							<div class="wrap-footer-item">
-								<h3 class="item-header">Hot Line</h3>
+								<h3 class="item-header">Customer Care</h3>
 								<div class="item-content">
 									<div class="wrap-hotline-footer">
-										<span class="desc">Call Us toll Free</span>
-										<b class="phone-number">(+123) 456 789 - (+123) 666 888</b>
+                                        <b class="phone-number"><i class="fa fa-mobile" aria-hidden="true" style="margin-right: 15px;"></i>  08128129077</b>
+									</div>
+                                    {{-- <div class="wrap-hotline-footer" style="margin-top: 15px;">
+                                        <b class="phone-number"><i class="fa fa-phone" aria-hidden="true" style="margin-right: 8px;"></i> (021) 6349318</b>
+                                    </div> --}}
+								</div>
+							</div>
+
+                            <div class="wrap-footer-item footer-item-second">
+								<h3 class="item-header">Support Office</h3>
+								<div class="item-content">
+									<div class="wrap-contact-detail">
+										<ul>
+											<li>
+												<i class="fa fa-map-marker" aria-hidden="true"></i>
+												<p class="contact-txt">Jl. Alaydrus No. 37 Jakarta, Indonesia</p>
+											</li>
+											<li>
+												<i class="fa fa-phone" aria-hidden="true"></i>
+												<p class="contact-txt">(021) 634 9318</p>
+											</li>
+                                            <li>
+												<i class="fa fa-fax" aria-hidden="true"></i>
+												<p class="contact-txt">(021) 634 8828</p>
+											</li>
+											<li>
+												<i class="fa fa-envelope" aria-hidden="true"></i>
+												<p class="contact-txt">service@erakomp.com</p>
+											</li>
+                                            {{-- <li>
+												<i class="fa fa-business-time"></i>
+												<p class="contact-txt">Monday - Friday (08.00 - 17.00 WIB)</p>
+											</li> --}}
+										</ul>
 									</div>
 								</div>
 							</div>
 
-							<div class="wrap-footer-item footer-item-second">
+							{{-- <div class="wrap-footer-item footer-item-second">
 								<h3 class="item-header">Sign up for newsletter</h3>
 								<div class="item-content">
 									<div class="wrap-newletter-footer">
@@ -1375,7 +1417,7 @@
 										</form>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 
 						</div>
 

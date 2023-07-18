@@ -69,3 +69,8 @@ php artisan make:model Category -m
  C:\MARCELLA\1. Marcella Project\Marcella e-comm\e-commerce\e-commerce\resources\views\livewire\details-component.blade.php
 
 C:\MARCELLA\1. Marcella Project\Marcella e-comm\e-commerce\e-commerce\app\Http\Livewire\DetailsComponent.php
+
+composer require hardevine/shoppingcart
+https://github.com/hardevine/LaravelShoppingcart
+https://packagist.org/packages/gloudemans/shoppingcart
+

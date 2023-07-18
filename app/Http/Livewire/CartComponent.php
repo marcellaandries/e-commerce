@@ -22,6 +22,8 @@ class CartComponent extends Component
         $product = Cart::get($rowId);
         $qty = $product->qty + 1;
         Cart::update($rowId,$qty);
+        return redirect()->route('product.cart');
+        // dd($product);
     }
 
     public function decreaseQuantity($rowId)
@@ -29,5 +31,7 @@ class CartComponent extends Component
         $product = Cart::get($rowId);
         $qty = $product->qty - 1;
         Cart::update($rowId,$qty);
+        return redirect()->route('product.cart');
+        // dd($product);
     }
 }

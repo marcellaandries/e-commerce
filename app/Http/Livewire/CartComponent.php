@@ -48,11 +48,13 @@ class CartComponent extends Component
         // dd($cart_count);
 
         session()->flash('success_message','Item has been removed');
+        return redirect()->to('/cart');
         // return view('livewire.cart-component',['cart_count'=> $cart_count]);
     }
     public function destroyAll()
     {
         Cart::destroy();
         session()->flash('success_message','Cart has been cleared');
+        return redirect()->to('/cart');
     }
 }

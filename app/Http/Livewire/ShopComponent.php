@@ -28,8 +28,7 @@ class ShopComponent extends Component
     use WithPagination;
     public function render()
     {
-        if($this->sorting=='date')
-        {
+        if($this->sorting=='date'){
             $products = Product::orderBy('created_at','DESC')->paginate($this->pagesize);
         }
         else if($this->sorting=='price'){

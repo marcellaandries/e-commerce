@@ -98,4 +98,6 @@ php artisan make:livewire CategoryComponent
 php artisan make:livewire HeaderSearchComponent
 
 put component into base -> inside () is the blade name
-@livewire(header-search-component)
+@livewire('header-search-component')
+
+php artisan make:livewire SearchComponent

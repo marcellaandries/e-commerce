@@ -103,3 +103,9 @@ put component into base -> inside () is the blade name
 php artisan make:livewire SearchComponent
 
 php artisan make:livewire admin/AdminCategoryComponen
+
+admin
+12345678
+
+user
+12345678

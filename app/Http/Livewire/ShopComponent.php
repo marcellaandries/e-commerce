@@ -6,6 +6,7 @@ use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Cart;
+use App\Models\Category;
 
 class ShopComponent extends Component
 {
@@ -42,7 +43,10 @@ class ShopComponent extends Component
         }
         // $products = Product::paginate(12);
         // dd($products);
-        return view('livewire.shop-component',['products'=> $products])->layout("layouts.base");
+
+        $categories = Category::all();
+
+        return view('livewire.shop-component',['products'=> $products, 'categories'=> $categories])->layout("layouts.base");
     }
     public function rupiah($var_number){
 

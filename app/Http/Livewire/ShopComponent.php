@@ -29,6 +29,8 @@ class ShopComponent extends Component
     use WithPagination;
     public function render()
     {
+        $popular_products = Product::inRandomOrder()->limit(4)->get();
+
         if($this->sorting=='date'){
             $products = Product::orderBy('created_at','DESC')->paginate($this->pagesize);
         }
@@ -46,7 +48,7 @@ class ShopComponent extends Component
 
         $categories = Category::all();
 
-        return view('livewire.shop-component',['products'=> $products, 'categories'=> $categories])->layout("layouts.base");
+        return view('livewire.shop-component',['products'=> $products, 'categories'=> $categories, 'popular_products'=> $popular_products])->layout("layouts.base");
     }
     public function rupiah($var_number){
 

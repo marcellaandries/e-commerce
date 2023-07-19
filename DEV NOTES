@@ -93,3 +93,5 @@ vendor\hardevine\shoppingcart\config\cart.php
 
 #00006c navy
 #9beeff aqua
+
+php artisan make:livewire CategoryComponent

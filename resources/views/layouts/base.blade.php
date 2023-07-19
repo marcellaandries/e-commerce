@@ -178,9 +178,7 @@
 								<a href="/cart" class="link-direction">
 									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
 									<div class="left-info">
-                                        @if(Cart::content()->count() > 0)
 										<span class="index">{{Cart::content()->count()}} items</span>
-                                        @endif
 
                                         {{-- @if(Cart::content()->count() > 0)
 										<span class="index">{{$cart_count}} items</span>

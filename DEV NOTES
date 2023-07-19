@@ -95,3 +95,7 @@ vendor\hardevine\shoppingcart\config\cart.php
 #9beeff aqua
 
 php artisan make:livewire CategoryComponent
+php artisan make:livewire HeaderSearchComponent
+
+put component into base -> inside () is the blade name
+@livewire(header-search-component)

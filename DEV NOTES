@@ -101,3 +101,5 @@ put component into base -> inside () is the blade name
 @livewire('header-search-component')
 
 php artisan make:livewire SearchComponent
+
+php artisan make:livewire admin/AdminCategoryComponen

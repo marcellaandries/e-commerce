@@ -50,4 +50,9 @@ class CartComponent extends Component
         session()->flash('success_message','Item has been removed');
         // return view('livewire.cart-component',['cart_count'=> $cart_count]);
     }
+    public function destroyAll()
+    {
+        Cart::destroy();
+        session()->flash('success_message','Cart has been cleared');
+    }
 }

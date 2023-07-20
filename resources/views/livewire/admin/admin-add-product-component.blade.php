@@ -72,7 +72,7 @@
                                 <div class="col-md-4">
                                     <select class="form-control">
                                         <option value="instock">InStock</option>
-                                        <option value="instock">Out of Stock</option>
+                                        <option value="outofstock">Out of Stock</option>
                                     </select>
                                 </div>
                             </div>
@@ -81,8 +81,8 @@
                                 <label class="col-md-4 control-label">Featured</label>
                                 <div class="col-md-4">
                                     <select class="form-control">
-                                        <option value="instock">No</option>
-                                        <option value="instock">Yes</option>
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
                                     </select>
                                 </div>
                             </div>
@@ -91,6 +91,24 @@
                                 <label class="col-md-4 control-label">Quantity</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="Quantity" class="form-control input-md" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Product Image</label>
+                                <div class="col-md-4">
+                                    <input type="file" class="input-file" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Category</label>
+                                <div class="col-md-4">
+                                    <select class="form-control">
+                                        <option value="">Select Category</option>
+                                        <option value="1">Cat 1</option>
+                                        <option value="2">Cat 2</option>
+                                    </select>
                                 </div>
                             </div>
 

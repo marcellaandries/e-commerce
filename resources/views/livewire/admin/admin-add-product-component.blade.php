@@ -22,6 +22,7 @@
                                 <label class="col-md-4 control-label">Product Name</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="Product Name" class="form-control input-md" wire:model="name" wire:keyup="generateslug" />
+                                    @error('name') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
 
@@ -29,6 +30,7 @@
                                 <label class="col-md-4 control-label">Product Slug</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="Product Slug" class="form-control input-md" wire:model="slug" />
+                                    @error('slug') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
 
@@ -43,6 +45,7 @@
                                 <label class="col-md-4 control-label">Description</label>
                                 <div class="col-md-4">
                                     <textarea class="form-control" placeholder="Description" wire:model="description" ></textarea>
+                                    @error('description') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
 
@@ -50,6 +53,7 @@
                                 <label class="col-md-4 control-label">Regular Price</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="Regular Price" class="form-control input-md" wire:model="regular_price" />
+                                    @error('regular_price') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
 
@@ -64,6 +68,7 @@
                                 <label class="col-md-4 control-label">SKU</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="SKU" class="form-control input-md" wire:model="SKU" />
+                                    @error('SKU') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
 
@@ -91,6 +96,7 @@
                                 <label class="col-md-4 control-label">Quantity</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="Quantity" class="form-control input-md" wire:model="quantity" />
+                                    @error('quantity') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
 
@@ -98,6 +104,7 @@
                                 <label class="col-md-4 control-label">Product Image</label>
                                 <div class="col-md-4">
                                     <input type="file" class="input-file" wire:model="image" />
+                                    @error('image') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                     @if($image)
                                         <img src="{{$image->temporaryUrl()}}" width="120" />
                                     @endif
@@ -114,6 +121,7 @@
                                         @endforeach
 
                                     </select>
+                                    @error('category_id') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
 

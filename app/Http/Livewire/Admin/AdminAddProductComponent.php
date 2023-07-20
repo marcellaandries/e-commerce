@@ -25,6 +25,18 @@ class AdminAddProductComponent extends Component
     public $image;
     public $category_id;
 
+    protected $rules = [
+        'name' => 'required',
+        'slug' => 'required',
+        'description' => 'required',
+        'regular_price' => 'required|numeric|min:3',
+        'SKU' => 'required',
+        'quantity' => 'required|numeric|min:3',
+        'image' => 'required',
+        'category_id' => 'required',
+
+    ];
+
     public function generateslug()
     {
         $this->slug = Str::slug($this->name);
@@ -38,6 +50,8 @@ class AdminAddProductComponent extends Component
 
     public function addProduct()
     {
+        $this->validate();
+
         $product = new Product();
         $product->name = $this->name;
         $product->slug = $this->slug;

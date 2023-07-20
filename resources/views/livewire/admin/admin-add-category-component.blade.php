@@ -9,7 +9,7 @@
                                 Add New Category
                             </div>
                             <div class="col-md-6">
-                                <a href="{{route('admin.categories')}}" class="btn btn-success pull-right">All Category</a>
+                                <a href="{{route('admin.categories')}}" class="btn btn-primary pull-right">All Category</a>
                             </div>
                         </div>
                     </div>

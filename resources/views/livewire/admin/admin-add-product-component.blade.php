@@ -106,8 +106,10 @@
                                 <div class="col-md-4">
                                     <select class="form-control">
                                         <option value="">Select Category</option>
-                                        <option value="1">Cat 1</option>
-                                        <option value="2">Cat 2</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                        @endforeach
+
                                     </select>
                                 </div>
                             </div>

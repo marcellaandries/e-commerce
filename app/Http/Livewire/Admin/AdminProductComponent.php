@@ -14,4 +14,10 @@ class AdminProductComponent extends Component
         $products = Product::paginate(10);
         return view('livewire.admin.admin-product-component',['products'=>$products])->layout('layouts.base');
     }
+    public function rupiah($var_number){
+        if($var_number<>0){
+            $rupiah_result = "Rp " . number_format($var_number,2,',','.');
+            return $rupiah_result;
+        }
+    }
 }

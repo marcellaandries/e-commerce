@@ -47,8 +47,8 @@
                                         <td><img src="{{asset('assets/images/products')}}/{{$product->image}}" width="60" /></td>
                                         <td>{{$product->name}}</td>
                                         <td>{{$product->stock_status}}</td>
-                                        <td>{{$product->regular_price}}</td>
-                                        <td>{{$product->sale_price}}</td>
+                                        <td>{{ $this->rupiah($product['regular_price']) }}</td>
+                                        <td>{{ $this->rupiah($product['sale_price']) }}</td>
                                         <td>{{$product->category->name}}</td>
                                         <td>{{$product->created_at}}</td>
                                         <td>

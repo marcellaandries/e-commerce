@@ -22,7 +22,7 @@ class AdminAddCategoryComponent extends Component
         $category->name = $this->name;
         $category->slug = $this->slug;
         $category->save();
-        session()->flash('message','Category has been created successfully');
+        session()->flash('message','Category has been created successfully!');
     }
 
     public function render()

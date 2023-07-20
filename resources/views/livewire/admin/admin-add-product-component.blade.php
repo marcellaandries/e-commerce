@@ -17,11 +17,11 @@
                         @if(Session::has('message'))
                             <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                         @endif
-                        <form class="form-horizontal" wire:submit.prevent="xxx">
+                        <form class="form-horizontal" enctype="multipart/form-data" wire:submit.prevent="addProduct">
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Product Name</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Product Name" class="form-control input-md" wire:model="name" />
+                                    <input type="text" placeholder="Product Name" class="form-control input-md" wire:model="name" wire:keyup="generateslug" />
                                 </div>
                             </div>
 
@@ -98,13 +98,16 @@
                                 <label class="col-md-4 control-label">Product Image</label>
                                 <div class="col-md-4">
                                     <input type="file" class="input-file" wire:model="image" />
+                                    @if($image)
+                                        <img src="{{$image->temporaryUrl()}}" width="120" />
+                                    @endif
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Category</label>
                                 <div class="col-md-4">
-                                    <select class="form-control" wire:model="category_id;">
+                                    <select class="form-control" wire:model="category_id">
                                         <option value="">Select Category</option>
                                         @foreach ($categories as $category)
                                             <option value="{{$category->id}}">{{$category->name}}</option>

@@ -28,11 +28,13 @@ return [
     |
     */
 
+    // cella
     'disks' => [
 
         'local' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
+            // 'root' => storage_path('app'),
+            'root' => public_path('assets/images'),
         ],
 
         'public' => [

@@ -21,56 +21,56 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Product Name</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Product Name" class="form-control input-md" />
+                                    <input type="text" placeholder="Product Name" class="form-control input-md" wire:model="name" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Product Slug</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Product Slug" class="form-control input-md" />
+                                    <input type="text" placeholder="Product Slug" class="form-control input-md" wire:model="slug" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Short Description</label>
                                 <div class="col-md-4">
-                                    <textarea class="form-control" placeholder="Short Description"></textarea>
+                                    <textarea class="form-control" placeholder="Short Description" wire:model="short_description" ></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Description</label>
                                 <div class="col-md-4">
-                                    <textarea class="form-control" placeholder="Description"></textarea>
+                                    <textarea class="form-control" placeholder="Description" wire:model="description" ></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Regular Price</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Regular Price" class="form-control input-md" />
+                                    <input type="text" placeholder="Regular Price" class="form-control input-md" wire:model="regular_price" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Sale Price</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Sale Price" class="form-control input-md" />
+                                    <input type="text" placeholder="Sale Price" class="form-control input-md" wire:model="sale_price" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">SKU</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="SKU" class="form-control input-md" />
+                                    <input type="text" placeholder="SKU" class="form-control input-md" wire:model="SKU" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Stock</label>
                                 <div class="col-md-4">
-                                    <select class="form-control">
+                                    <select class="form-control" wire:model="stock_status">
                                         <option value="instock">InStock</option>
                                         <option value="outofstock">Out of Stock</option>
                                     </select>
@@ -80,7 +80,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Featured</label>
                                 <div class="col-md-4">
-                                    <select class="form-control">
+                                    <select class="form-control" wire:model="featured">
                                         <option value="0">No</option>
                                         <option value="1">Yes</option>
                                     </select>
@@ -90,21 +90,21 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Quantity</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Quantity" class="form-control input-md" />
+                                    <input type="text" placeholder="Quantity" class="form-control input-md" wire:model="quantity" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Product Image</label>
                                 <div class="col-md-4">
-                                    <input type="file" class="input-file" />
+                                    <input type="file" class="input-file" wire:model="image" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Category</label>
                                 <div class="col-md-4">
-                                    <select class="form-control">
+                                    <select class="form-control" wire:model="category_id;">
                                         <option value="">Select Category</option>
                                         @foreach ($categories as $category)
                                             <option value="{{$category->id}}">{{$category->name}}</option>

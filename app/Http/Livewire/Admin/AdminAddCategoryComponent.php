@@ -11,6 +11,11 @@ class AdminAddCategoryComponent extends Component
     public $name;
     public $slug;
 
+    protected $rules = [
+        'name' => 'required',
+        'slug' => 'required',
+    ];
+
     public function generateslug()
     {
         $this->slug = Str::slug($this->name);
@@ -18,6 +23,8 @@ class AdminAddCategoryComponent extends Component
 
     public function storeCategory()
     {
+        $this->validate();
+
         $category = new Category();
         $category->name = $this->name;
         $category->slug = $this->slug;

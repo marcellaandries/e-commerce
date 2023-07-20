@@ -17,7 +17,7 @@
                         @if(Session::has('message'))
                             <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                         @endif
-                        <form class="form-horizontal" wire:submit.prevent="storeCategory">
+                        <form class="form-horizontal" wire:submit.prevent="xxx">
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Product Name</label>
                                 <div class="col-md-4">
@@ -111,6 +111,13 @@
                                         @endforeach
 
                                     </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label"></label>
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
                             </div>
 

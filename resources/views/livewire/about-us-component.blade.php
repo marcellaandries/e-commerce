@@ -113,12 +113,12 @@
 
                         <div class="team-member equal-elem">
                             <div class="media">
-                                <a href="#" title="LEONA">
-                                    <figure><img src="assets/images/member-leona.jpg" alt="LEONA"></figure>
+                                <a href="#" title="MARCELLA">
+                                    <figure><img src="assets/images/member-leona.jpg" alt="MARCELLA"></figure>
                                 </a>
                             </div>
                             <div class="info">
-                                <b class="name">leona</b>
+                                <b class="name">MARCELLA</b>
                                 <span class="title">Director</span>
                                 <p class="desc">Contrary to popular belief, Lorem Ipsum is not simply random text...</p>
                             </div>

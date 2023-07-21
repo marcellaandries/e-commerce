@@ -62,7 +62,7 @@
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
                                     <div class="right-info">
                                         <b>Email</b>
-                                        <p>Support1@Mercado.com</p>
+                                        <p>support@erakomp.com</p>
                                     </div>
                                 </div>
 
@@ -70,7 +70,7 @@
                                     <i class="fa fa-phone" aria-hidden="true"></i>
                                     <div class="right-info">
                                         <b>Phone</b>
-                                        <p>0123-465-789-111</p>
+                                        <p>08128129077</p>
                                     </div>
                                 </div>
 
@@ -78,7 +78,7 @@
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                                     <div class="right-info">
                                         <b>Mail Office</b>
-                                        <p>Sed ut perspiciatis unde omnis<br />Street Name, Los Angeles</p>
+                                        <p>Jl. Alaydrus No. 37 Jakarta, Indonesia</p>
                                     </div>
                                 </div>
 

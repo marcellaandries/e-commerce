@@ -59,8 +59,17 @@ class AdminAddProductComponent extends Component
         $product->description = $this->description;
         $this->regular_price = preg_replace('/[^0-9]/', '', $this->regular_price);
         $product->regular_price = $this->regular_price;
-        $this->sale_price = preg_replace('/[^0-9]/', '', $this->sale_price);
-        $product->sale_price = $this->sale_price;
+
+        if ($this->sale_price <> null)
+        {
+            $this->sale_price = preg_replace('/[^0-9]/', '', $this->sale_price);
+            $product->sale_price = $this->sale_price;
+        }
+        else
+        {
+            $product->sale_price = null;
+        }
+
         $product->SKU = $this->SKU;
         $product->stock_status = $this->stock_status;
         $product->featured = $this->featured;
@@ -71,6 +80,7 @@ class AdminAddProductComponent extends Component
         $product->category_id = $this->category_id;
         $product->save();
         session()->flash('message','Product has been created successfully!');
+        return redirect()->route('admin.products');
     }
 
     public function render()

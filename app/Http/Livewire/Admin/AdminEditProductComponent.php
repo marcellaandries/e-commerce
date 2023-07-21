@@ -72,29 +72,16 @@ class AdminEditProductComponent extends Component
         $product->slug = $this->slug;
         $product->short_description = $this->short_description;
         $product->description = $this->description;
-
-        // dd($this->regular_price . '-' . $product->regular_price);
-        if ($this->regular_price <> "")
-        {
-            $product->regular_price = preg_replace('/[^0-9]/', '', $this->regular_price);
-        }
-        else
-        {
-            // dd($this->regular_price . '-' . $product->regular_price);
-            $product->regular_price = $this->regular_price;
-        }
         $product->regular_price = preg_replace('/[^0-9]/', '', $this->regular_price);
-
-        // dd($this->sale_price . '-' . $product->sale_price);
-        if ($this->sale_price <> "")
+        if ($this->sale_price <> null)
         {
             $product->sale_price = preg_replace('/[^0-9]/', '', $this->sale_price);
         }
         else
         {
-            // dd($this->sale_price . '-' . $product->sale_price);
-            $product->sale_price = $this->sale_price;
+            $product->sale_price = null;
         }
+        // dd($this->sale_price . '-' . $product->sale_price);
         $product->SKU = $this->SKU;
         $product->stock_status = $this->stock_status;
         $product->featured = $this->featured;
@@ -108,6 +95,7 @@ class AdminEditProductComponent extends Component
         $product->category_id = $this->category_id;
         $product->save();
         session()->flash('message','Product has been updated successfully!');
+        return redirect()->route('admin.products');
     }
 
     public function render()

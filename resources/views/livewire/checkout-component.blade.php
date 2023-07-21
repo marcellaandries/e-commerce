@@ -34,8 +34,8 @@
                         <input id="add" type="text" name="add" value="" placeholder="Street at apartment number">
                     </p>
                     <p class="row-in-form">
-                        <label for="country">Province<span>*</span></label>
-                        <input id="country" type="text" name="country" value="" placeholder="Province">
+                        <label for="province">Province<span>*</span></label>
+                        <input id="province" type="text" name="province" value="" placeholder="Province">
                     </p>
                     <p class="row-in-form">
                         <label for="zip-code">Postcode / ZIP:</label>

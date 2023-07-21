@@ -7,7 +7,7 @@ use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 
 use App\Http\Livewire\Admin\AdminProductComponent;
 use App\Http\Livewire\Admin\AdminAddProductComponent;
-// use App\Http\Livewire\Admin\AdminEditProductComponent;
+use App\Http\Livewire\Admin\AdminEditProductComponent;
 
 // use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 // use App\Http\Livewire\Admin\AdminAddHomeSliderComponent;
@@ -87,7 +87,7 @@ Route::middleware([
 
     Route::get('/admin/products',AdminProductComponent::class)->name('admin.products');
     Route::get('/admin/product/add',AdminAddProductComponent::class)->name('admin.addproduct');
-    // Route::get('/admin/product/edit/{product_slug}',AdminEditProductComponent::class)->name('admin.editproduct');
+    Route::get('/admin/product/edit/{product_slug}',AdminEditProductComponent::class)->name('admin.editproduct');
 
     // Route::get('/admin/slider',AdminHomeSliderComponent::class)->name('admin.homeslider');
     // Route::get('/admin/slider/add',AdminAddHomeSliderComponent::class)->name('admin.addhomeslider');

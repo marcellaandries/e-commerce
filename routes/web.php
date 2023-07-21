@@ -27,6 +27,9 @@ use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Livewire\ContactUsComponent;
+use App\Http\Livewire\AboutUsComponent;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,6 +58,10 @@ Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
 
 Route::get('/search', SearchComponent::class)->name('product.search');
+
+Route::get('/about-us', AboutUsComponent::class);
+Route::get('/contact-us', ContactUsComponent::class);
+
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),

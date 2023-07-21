@@ -30,7 +30,7 @@ class AdminEditProductComponent extends Component
         'name' => 'required',
         'slug' => 'required',
         'description' => 'required',
-        // 'regular_price' => 'required|numeric|min:3',
+        'regular_price' => 'required',
         'SKU' => 'required',
         'quantity' => 'required|numeric',
         'image' => 'required',

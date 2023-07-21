@@ -104,7 +104,7 @@
                                 <label class="col-md-4 control-label">Product Image</label>
                                 <div class="col-md-4">
                                     <input type="file" class="input-file" wire:model="newimage" />
-                                    @error('image') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
+                                    @error('newimage') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                     @if($newimage)
                                         <img src="{{$newimage->temporaryUrl()}}" width="120" />
                                     @else

@@ -65,7 +65,7 @@ class AdminEditProductComponent extends Component
         $product->quantity = $this->quantity;
         if($this->newimage)
         {
-            $imageName = Carbon::now()->timestamp. '.' . $this->image->extension();
+            $imageName = Carbon::now()->timestamp. '.' . $this->newimage->extension();
             $this->newimage->storeAs('products',$imageName);
             $product->image = $imageName;
         }

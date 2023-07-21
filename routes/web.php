@@ -32,7 +32,7 @@ use App\Http\Livewire\AboutUsComponent;
 
 use App\Http\Livewire\ShippingCostComponent;
 
-use App\Http\Controllers\ShippingCostController;
+// use App\Http\Controllers\ShippingCostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,7 +68,8 @@ Route::get('/contact-us', ContactUsComponent::class);
 
 Route::get('/shipping-cost', ShippingCostComponent::class);
 
-Route::get('province', [ShippingCostController::class, 'get_province'])->name('province');
+// Route::get('province', [ShippingCostController::class, 'get_province'])->name('province');
+Route::get('province', [ShippingCostComponent::class, 'get_province'])->name('province');
 
 
 // Route::get('province','CheckoutController@get_province')->name('province');

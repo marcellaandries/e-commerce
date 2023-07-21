@@ -26,8 +26,8 @@ class AdminAddProductComponent extends Component
     public $category_id;
 
     protected $rules = [
-        'name' => 'required|unique:categories,name',
-        'slug' => 'required|unique:categories,slug',
+        'name' => 'required|unique:products,name',
+        'slug' => 'required|unique:products,slug',
         'description' => 'required',
         'regular_price' => 'required',
         'SKU' => 'required',

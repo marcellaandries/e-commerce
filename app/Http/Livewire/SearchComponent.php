@@ -43,7 +43,7 @@ class SearchComponent extends Component
             $products = Product::where('name','like','%'.$this->search .'%')->where('category_id','like','%'.$this->product_cat_id .'%')->orderBy('regular_price','ASC')->paginate($this->pagesize);
         }
         else if($this->sorting=='price-desc'){
-            $products = Product::where('name','like','%'.$this->search .'%')->where('category_i','like','%'.$this->product_cat_id .'%')->orderBy('regular_price','DESC')->paginate($this->pagesize);
+            $products = Product::where('name','like','%'.$this->search .'%')->where('category_id','like','%'.$this->product_cat_id .'%')->orderBy('regular_price','DESC')->paginate($this->pagesize);
         }
         else{
             $products = Product::where('name','like','%'.$this->search .'%')->where('category_id','like','%'.$this->product_cat_id .'%')->paginate($this->pagesize);

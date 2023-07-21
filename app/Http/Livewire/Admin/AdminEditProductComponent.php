@@ -44,10 +44,10 @@ class AdminEditProductComponent extends Component
         $this->slug = $product->slug;
         $this->short_description = $product->short_description;
         $this->description = $product->description;
-        $this->regular_price = "Rp " . number_format($product->regular_price,2,',','.');
+        $this->regular_price = "Rp " . number_format($product->regular_price,0,',','.');
         if ($product->sale_price <> null)
         {
-            $this->sale_price = "Rp " . number_format($product->sale_price,2,',','.');
+            $this->sale_price = "Rp " . number_format($product->sale_price,0,',','.');
         }
         $this->SKU = $product->SKU;
         $this->stock_status = $product->stock_status;
@@ -72,11 +72,29 @@ class AdminEditProductComponent extends Component
         $product->slug = $this->slug;
         $product->short_description = $this->short_description;
         $product->description = $this->description;
-        // $this->regular_price = Str::replaceArray('.', [''], $this->regular_price);
-        $this->regular_price = preg_replace('/[^0-9]/', '', $this->regular_price);
-        $product->regular_price = $this->regular_price;
-        $this->sale_price = preg_replace('/[^0-9]/', '', $this->sale_price);
-        $product->sale_price = $this->sale_price;
+
+        // dd($this->regular_price . '-' . $product->regular_price);
+        if ($this->regular_price <> "")
+        {
+            $product->regular_price = preg_replace('/[^0-9]/', '', $this->regular_price);
+        }
+        else
+        {
+            // dd($this->regular_price . '-' . $product->regular_price);
+            $product->regular_price = $this->regular_price;
+        }
+        $product->regular_price = preg_replace('/[^0-9]/', '', $this->regular_price);
+
+        // dd($this->sale_price . '-' . $product->sale_price);
+        if ($this->sale_price <> "")
+        {
+            $product->sale_price = preg_replace('/[^0-9]/', '', $this->sale_price);
+        }
+        else
+        {
+            // dd($this->sale_price . '-' . $product->sale_price);
+            $product->sale_price = $this->sale_price;
+        }
         $product->SKU = $this->SKU;
         $product->stock_status = $this->stock_status;
         $product->featured = $this->featured;

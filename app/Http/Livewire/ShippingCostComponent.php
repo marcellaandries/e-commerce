@@ -8,7 +8,12 @@ class ShippingCostComponent extends Component
 {
     public function render()
     {
-        return view('livewire.shipping-cost-component')->layout("layouts.base");
+
+        //memanggil function get_province
+        $provinsi = $this->get_province();
+        //mengarah kepada file checkout.blade.php yang ada di view
+        return view('livewire.shipping-cost-component',['provinsi' => $provinsi])->layout("layouts.base");
+        // return view('livewire.shipping-cost-component')->layout("layouts.base");
     }
 
     public function get_province(){
@@ -49,4 +54,11 @@ class ShippingCostComponent extends Component
             return $data_pengirim;
         }
     }
+
+    // public function checkout(){
+    //     //memanggil function get_province
+    //     $provinsi = $this->get_province();
+    //     //mengarah kepada file checkout.blade.php yang ada di view
+    //     return view('livewire.shipping-cost-component',['provinsi' => $provinsi])->layout("layouts.base");
+    // }
 }

@@ -30,6 +30,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\ContactUsComponent;
 use App\Http\Livewire\AboutUsComponent;
 
+use App\Http\Livewire\ShippingCostComponent;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,6 +63,9 @@ Route::get('/search', SearchComponent::class)->name('product.search');
 
 Route::get('/about-us', AboutUsComponent::class);
 Route::get('/contact-us', ContactUsComponent::class);
+
+Route::get('/shipping-cost', ShippingCostComponent::class);
+// Route::get('province','CheckoutController@get_province')->name('province');
 
 // Route::middleware([
 //     'auth:sanctum',

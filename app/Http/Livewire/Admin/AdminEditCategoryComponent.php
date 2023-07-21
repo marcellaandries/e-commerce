@@ -13,10 +13,10 @@ class AdminEditCategoryComponent extends Component
     public $name;
     public $slug;
 
-    // protected $rules = [
-    //     'name' => 'required|unique:categories,name',
-    //     'slug' => 'required|unique:categories,slug',
-    // ];
+    protected $rules = [
+        'name' => 'required',
+        'slug' => 'required',
+    ];
 
     public function mount($category_slug)
     {
@@ -34,11 +34,11 @@ class AdminEditCategoryComponent extends Component
 
     public function updateCategory()
     {
-        // $this->validate(
-        //     // [
-        //     // 'classroom_id' => ['required',Rule::unique('courses','classroom_id')->ignore('id',$this->course->id)]
-        //     // ]
-        // );
+        $this->validate(
+            // [
+            // 'classroom_id' => ['required',Rule::unique('courses','classroom_id')->ignore('id',$this->course->id)]
+            // ]
+        );
 
         $category = Category::find($this->category_id);
         $category->name = $this->name;

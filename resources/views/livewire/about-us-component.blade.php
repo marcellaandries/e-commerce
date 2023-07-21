@@ -114,7 +114,7 @@
                         <div class="team-member equal-elem">
                             <div class="media">
                                 <a href="#" title="MARCELLA">
-                                    <figure><img src="assets/images/member-leona.jpg" alt="MARCELLA"></figure>
+                                    <figure><img src="assets/images/member-marcella.jpg" alt="MARCELLA"></figure>
                                 </a>
                             </div>
                             <div class="info">

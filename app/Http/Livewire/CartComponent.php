@@ -45,16 +45,15 @@ class CartComponent extends Component
     {
         Cart::remove($rowId);
         $cart_count = Cart::content()->count();
-        // dd($cart_count);
-
+        $this->emitTo('cart-count-component', 'refreshComponent');
         session()->flash('success_message','Item has been removed');
-        return redirect()->to('/cart');
-        // return view('livewire.cart-component',['cart_count'=> $cart_count]);
+        // return redirect()->to('/cart');
     }
     public function destroyAll()
     {
         Cart::destroy();
         session()->flash('success_message','Cart has been cleared');
-        return redirect()->to('/cart');
+        $this->emitTo('cart-count-component', 'refreshComponent');
+        // return redirect()->to('/cart');
     }
 }

@@ -153,20 +153,10 @@
 									</div>
 								</a>
 							</div>
-							<div class="wrap-icon-section minicart">
-								<a href="/cart" class="link-direction">
-									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-									<div class="left-info">
-										<span class="index">{{Cart::content()->count()}} items</span>
 
-                                        {{-- @if(Cart::content()->count() > 0)
-										<span class="index">{{$cart_count}} items</span>
-                                        @endif --}}
+							{{-- cart count --}}
+                            @livewire('cart-count-component')
 
-										<span class="title">CART</span>
-									</div>
-								</a>
-							</div>
 							<div class="wrap-icon-section show-up-after-1024">
 								<a href="#" class="mobile-navigation">
 									<span></span>

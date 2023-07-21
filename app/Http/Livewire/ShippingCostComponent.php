@@ -10,4 +10,6 @@ class ShippingCostComponent extends Component
     {
         return view('livewire.shipping-cost-component')->layout("layouts.base");
     }
+
+
 }

@@ -32,6 +32,8 @@ use App\Http\Livewire\AboutUsComponent;
 
 use App\Http\Livewire\ShippingCostComponent;
 
+use App\Http\Controllers\ShippingCostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,6 +67,10 @@ Route::get('/about-us', AboutUsComponent::class);
 Route::get('/contact-us', ContactUsComponent::class);
 
 Route::get('/shipping-cost', ShippingCostComponent::class);
+
+Route::get('province', [ShippingCostController::class, 'get_province'])->name('province');
+
+
 // Route::get('province','CheckoutController@get_province')->name('province');
 
 // Route::middleware([

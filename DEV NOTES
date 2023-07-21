@@ -122,3 +122,5 @@ php artisan make:model Order -m
 OrderDetail
 Shipping
 Transaction
+
+http://127.0.0.1:8000/province

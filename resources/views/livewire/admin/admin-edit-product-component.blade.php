@@ -52,7 +52,8 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Regular Price</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Regular Price" class="form-control input-md" wire:model="regular_price" />
+                                    <input type="text" placeholder="Regular Price" class="form-control input-md" wire:model="regular_price" type-currency="IDR" />
+                                    {{-- <input class="input-currency" type="text" type-currency="IDR" placeholder="Rp" wire:model="regular_price"/> --}}
                                     @error('regular_price') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -60,7 +61,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Sale Price</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Sale Price" class="form-control input-md" wire:model="sale_price" />
+                                    <input type="text" placeholder="Sale Price" class="form-control input-md" wire:model="sale_price" type-currency="IDR" />
                                 </div>
                             </div>
 

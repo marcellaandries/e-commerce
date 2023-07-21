@@ -29,7 +29,7 @@ class AdminAddProductComponent extends Component
         'name' => 'required|unique:categories,name',
         'slug' => 'required|unique:categories,slug',
         'description' => 'required',
-        'regular_price' => 'required|numeric|min:3',
+        'regular_price' => 'required',
         'SKU' => 'required',
         'quantity' => 'required|numeric',
         'image' => 'required',
@@ -57,7 +57,9 @@ class AdminAddProductComponent extends Component
         $product->slug = $this->slug;
         $product->short_description = $this->short_description;
         $product->description = $this->description;
+        $this->regular_price = preg_replace('/[^0-9]/', '', $this->regular_price);
         $product->regular_price = $this->regular_price;
+        $this->sale_price = preg_replace('/[^0-9]/', '', $this->sale_price);
         $product->sale_price = $this->sale_price;
         $product->SKU = $this->SKU;
         $product->stock_status = $this->stock_status;
@@ -75,5 +77,10 @@ class AdminAddProductComponent extends Component
     {
         $categories = Category::all();
         return view('livewire.admin.admin-add-product-component',['categories'=>$categories])->layout('layouts.base');
+    }
+
+    public function rupiah($var_number){
+        $rupiah_result = "Rp " . number_format($var_number,2,',','.');
+        return $rupiah_result;
     }
 }

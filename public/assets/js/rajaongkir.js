@@ -92,6 +92,31 @@ $(document).ready(function(){
             $('select[name="layanan"]').empty();
         }
 
+    });
+
+    // total bayar
+
+    $('select[name="layanan"]').on('change', function(){
+
+        let totalbelanja = $("input[name=totalbelanja]").val();
+
+        // membuat variable totalbelanja untyk mendapatkan atribut totalbelanja kita, ini bisa kalian buat input manual dengan name totalbelanja kemudian value nya isi manual dulu
+
+        var harga_ongkir = $("#layanan option:selected").attr("harga_ongkir");
+
+        // menampilkan hasil nama harga ongkir dari select layanan yg kita pilih
+
+        $("#ongkoskirim").append(harga_ongkir);
+        // kita akan menampilkan harga ongkirnya di id ongkos kirim, jadi kalian bisa buat inputan dengan id ongkos kirim
+
+        let total = parseInt(totalbelanja) + parseInt(harga_ongkir);
+        // ini untuk jumlah total nya y,, jd jumlah belanja di tambah jumlah ongkos kirim
+
+        $("#total").append(total);
+        //kita menampilkan totalnya di id total
+
         });
+
+
 
         // http://localhost:8000/origin=152&destination=151&weight=100&courier=jne

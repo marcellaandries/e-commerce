@@ -125,7 +125,7 @@ $(document).ready(function(){
         let total = parseInt(totalbelanja) + parseInt(harga_ongkir);
         // ini untuk jumlah total nya y,, jd jumlah belanja di tambah jumlah ongkos kirim
 
-        $("#total").append(total);
+        $("#total_keseluruhan").val(total);
         //kita menampilkan totalnya di id total
 
     });

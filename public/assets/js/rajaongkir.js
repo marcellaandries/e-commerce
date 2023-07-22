@@ -2,6 +2,10 @@ $(document).ready(function(){
     //ini ketika provinsi tujuan di klik maka akan eksekusi perintah yg kita mau
     //name select nama nya "provinve_id" kalian bisa sesuaikan dengan form select kalian
     $('select[name="province_id"]').on('change', function(){
+        // membuat variable namaprovinsiku untyk mendapatkan atribut nama provinsi
+        var namaprovinsiku = $("#province_id option:selected").attr("namaprovinsi");
+        // menampilkan hasil nama provinsi ke input id nama_provinsi
+        $("#nama_provinsi").val(namaprovinsiku);
     // kita buat variable provincedid untk menampung data id select province
     let provinceid = $(this).val();
     //kita cek jika id di dpatkan maka apa yg akan kita eksekusi

@@ -49,7 +49,7 @@
                     </div>
                     {{-- cella --}}
                     <div class="form-group">
-                        <input type="text" class="form-control" nama="nama_provinsi" placeholder="ini untuk menangkap nama provinsi ">
+                        <input type="hidden" class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="ini untuk menangkap nama provinsi ">
                     </div>
 
 

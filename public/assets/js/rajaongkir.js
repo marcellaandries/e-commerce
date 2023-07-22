@@ -117,8 +117,8 @@ $(document).ready(function(){
         var harga_ongkir = ongkir_selected;
 
         // menampilkan hasil nama harga ongkir dari select layanan yg kita pilih
-        // $("#ongkoskirim").val(harga_ongkir);
-        $("#ongkoskirim").append(harga_ongkir);
+        $("#ongkoskirim").val(harga_ongkir);
+        // $("#ongkoskirim").append(harga_ongkir);
         console.log("ini ongkir: ", harga_ongkir);
         // kita akan menampilkan harga ongkirnya di id ongkos kirim, jadi kalian bisa buat inputan dengan id ongkos kirim
 

@@ -12,6 +12,7 @@ class CartComponent extends Component
 
     public function render()
     {
+        $this->setAmountforCheckout();
         return view('livewire.cart-component')->layout('layouts.base');
         // $cart_count = Cart::content()->count();
         // return view('livewire.cart-component',['cart_count'=> $cart_count])->layout('layouts.base');
@@ -68,5 +69,16 @@ class CartComponent extends Component
         {
             return redirect()->route('login');
         }
+    }
+
+    public function setAmountforCheckout()
+    {
+        session()->put('checkout',[
+            // 'discount' => 0,
+            'subotal' => Cart::subtotal(),
+            // 'tax' => 0,
+            'total' => Cart::total(),
+        ]);
+        // dd(Cart::subtotal());
     }
 }

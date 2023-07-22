@@ -30,3 +30,54 @@ $(document).ready(function(){
     }
     });
     });
+
+    // cost
+    $('select[name="kurir"]').on('change', function(){
+        // kita buat variable untuk menampung data data dari  inputan
+        // name city_origin di dapat dari input text name city_origin
+        let origin = $("input[name=city_origin]").val();
+        // name kota_id di dapat dari select text name kota_id
+        let destination = $("select[name=kota_id]").val();
+        // name kurir di dapat dari select text name kurir
+        let courier = $("select[name=kurir]").val();
+        // name weight di dapat dari select text name weight
+        let weight = $("input[name=weight]").val();
+        // alert(courier);
+
+        // if(courier){
+        // jQuery.ajax({
+        // url:"/origin="+origin+"&destination="+destination+"&weight="+weight+"&courier="+courier,
+        // type:'GET',
+        // dataType:'json',
+        // success:function(data){
+        // console.log(data);
+        // },
+        // });
+        // }
+        if(courier){
+            jQuery.ajax({
+            url:"/origin="+origin+"&destination="+destination+"&weight="+weight+"&courier="+courier,
+            type:'GET',
+            dataType:'json',
+            success:function(data){
+            $('select[name="layanan"]').empty();
+            // ini untuk looping data result nya
+            $.each(data, function(key, value){
+            // ini looping data layanan misal jne reg, jne oke, jne yes
+            $.each(value.costs, function(key1, value1){
+            // ini untuk looping cost nya masing masing
+            // silahkan pelajari cara menampilkan data json agar lebi paham
+            $.each(value1.cost, function(key2, value2){
+            $('select[name="layanan"]').append('<option value="'+ key +'">' + value1.service + '-' + value1.description + '-' +value2.value+ '</option>');
+            });
+            });
+            });
+            }
+            });
+            } else {
+            $('select[name="layanan"]').empty();
+        }
+
+        });
+
+        // http://localhost:8000/origin=152&destination=151&weight=100&courier=jne

@@ -117,7 +117,16 @@ $(document).ready(function(){
         var harga_ongkir = ongkir_selected;
 
         // menampilkan hasil nama harga ongkir dari select layanan yg kita pilih
-        $("#ongkoskirim").val(harga_ongkir);
+
+        var harga_ongkir_format = parseInt(harga_ongkir).toLocaleString('id-ID', {
+            currency: 'IDR',
+            style: 'currency',
+            minimumFractionDigits: 0
+          });
+
+        console.log("ini: ", harga_ongkir_format);
+        $("#ongkos_kirim").val(harga_ongkir_format);
+
         // $("#ongkoskirim").append(harga_ongkir);
         console.log("ini ongkir: ", harga_ongkir);
         // kita akan menampilkan harga ongkirnya di id ongkos kirim, jadi kalian bisa buat inputan dengan id ongkos kirim
@@ -125,6 +134,11 @@ $(document).ready(function(){
         let total = parseInt(totalbelanja) + parseInt(harga_ongkir);
         // ini untuk jumlah total nya y,, jd jumlah belanja di tambah jumlah ongkos kirim
 
+        total = total.toLocaleString('id-ID', {
+            currency: 'IDR',
+            style: 'currency',
+            minimumFractionDigits: 0
+          });
         $("#total_keseluruhan").val(total);
         //kita menampilkan totalnya di id total
 

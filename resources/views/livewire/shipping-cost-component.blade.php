@@ -83,11 +83,6 @@
                             </select>
                         </div>
 
-                        {{-- cella --}}
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="ongkoskirim" nama="ongkoskirim" placeholder="ini untuk menangkap ongkir ">
-                        </div>
-
                         <label>Postcode / ZIP<span>*</span>
                         </label>
                         <input type="text" name="kode_pos" class="form-control" >

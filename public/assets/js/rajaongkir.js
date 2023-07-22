@@ -16,9 +16,17 @@ $(document).ready(function(){
     dataType:'json',
     // jika data berhasil di dapat maka kita mau apain nih
     success:function(data){
-    console.log(data);
+    // jika tidak ada select dr provinsi maka select kota kososng / empty
+    $('select[name="kota_id"]').empty();
+    // jika ada kita looping dengan each
+    $.each(data, function(key, value){
+    // perhtikan dimana kita akan menampilkan data select nya, di sini saya memberi name select kota adalah kota_id
+    $('select[name="kota_id"]').append('<option value="'+ value.city_id +'" namakota="'+ value.type +' ' +value.city_name+ '">' + value.type + ' ' + value.city_name + '</option>');
+    });
     }
     });
+    }else {
+    $('select[name="kota_id"]').empty();
     }
     });
     });

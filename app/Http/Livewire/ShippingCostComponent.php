@@ -3,14 +3,16 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use Session;
 
 class ShippingCostComponent extends Component
 {
     public function render()
     {
-        // $val = Session::get('subtotal');
-        // dd($val);
+        $cart_summary = session('checkout');
+
+        // $cart_summary = session()->get('checkout')['subtotal'];
+        dd($cart_summary);
+
         //memanggil function get_province
         $provinsi = $this->get_province();
         //mengarah kepada file checkout.blade.php yang ada di view

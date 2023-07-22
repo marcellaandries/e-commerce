@@ -97,7 +97,7 @@
                     <div class="form-group ">
                     <label>Weight Total (gram) </label>
                     {{-- <input class="form-control" type="text" value="" id="weight" name="weight"> --}}
-                    <input class="form-control" type="text" value="2000" id="weight" name="weight">
+                    <input class="form-control" type="text" value="2.000" id="weight" name="weight">
                     </div>
                     <div class="form-group ">
                     <label>Shipping Cost Total</label>

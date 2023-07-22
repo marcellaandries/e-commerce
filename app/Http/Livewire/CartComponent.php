@@ -63,7 +63,7 @@ class CartComponent extends Component
     {
         if(Auth::check())
         {
-            return redirect()->route('shipping-cost');
+            return redirect()->route('shipping');
         }
         else
         {

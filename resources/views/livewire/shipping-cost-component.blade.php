@@ -83,16 +83,21 @@
                             </select>
                         </div>
 
-                    <label>Postcode / ZIP<span>*</span>
-                    </label>
-                    <input type="text" name="kode_pos" class="form-control" >
+                        {{-- cella --}}
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="ongkoskirim" nama="ongkoskirim" placeholder="ini untuk menangkap ongkir ">
+                        </div>
+
+                        <label>Postcode / ZIP<span>*</span>
+                        </label>
+                        <input type="text" name="kode_pos" class="form-control" >
                     </div>
                     </div>
                     <div class="col-md-4">
                     <div class="form-group ">
                     <label>Cart Total<span>*</span>
                     </label>
-                    <input type="text" id="totalbelanja" name="totalbelanja" class="form-control" >
+                    <input type="text" id="totalbelanja" name="totalbelanja" value="100000" class="form-control" >
                     </div>
                     <div class="form-group ">
                     <label>Weight Total (gram) </label>

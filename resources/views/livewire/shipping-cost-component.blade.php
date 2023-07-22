@@ -20,6 +20,16 @@
                     <div class="row">
                     <div class="col-md-8">
 
+                    {{-- cella hide --}}
+                    <div class="form-group " hidden>
+                    <label>Provinsi asal</label>
+                    <input type="text" value="6" class="form-control" name="province_origin">
+                    </div>
+                    <div class="form-group ">
+                    <label>Kota Asal</label>
+                    <input type="text" value="40" class="form-control" id="city_origin" name="city_origin">
+                    </div>
+
 
                     <div class="form-group ">
                     <label>Alamat<span>*</span>

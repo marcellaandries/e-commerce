@@ -70,7 +70,7 @@ Route::get('/shipping-cost', ShippingCostComponent::class);
 
 // Route::get('province', [ShippingCostController::class, 'get_province'])->name('province');
 Route::get('province', [ShippingCostComponent::class, 'get_province'])->name('province');
-
+Route::get('city/{id}', [ShippingCostComponent::class, 'get_city'])->name('city');
 
 // Route::get('province','CheckoutController@get_province')->name('province');
 

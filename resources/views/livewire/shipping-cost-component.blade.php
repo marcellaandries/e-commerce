@@ -61,7 +61,7 @@
                     </select>
                     </div>
                     <div class="form-group">
-                    <input type="text" class="form-control" nama="nama_kota" placeholder="ini untuk menangkap nama kota">
+                    <input type="hidden" class="form-control" id="nama_kota" nama="nama_kota" placeholder="ini untuk menangkap nama kota">
                     </div>
                     <div class="form-group ">
 

@@ -7,6 +7,16 @@ $(document).ready(function(){
         // menampilkan hasil nama provinsi ke input id nama_provinsi
         $("#nama_provinsi").val(namaprovinsiku);
     // kita buat variable provincedid untk menampung data id select province
+
+    //memberikan action ketika select name kota_id di select
+    //memberikan action ketika select name kota_id di select
+    $('select[name="kota_id"]').on('change', function(){
+        // membuat variable namakotaku untyk mendapatkan atribut nama kota
+        var namakotaku = $("#kota_id option:selected").attr("namakota");
+        // menampilkan hasil nama provinsi ke input id nama_provinsi
+        $("#nama_kota").val(namakotaku);
+        });
+
     let provinceid = $(this).val();
     //kita cek jika id di dpatkan maka apa yg akan kita eksekusi
     if(provinceid){

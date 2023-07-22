@@ -22,7 +22,8 @@ class ShippingCostComponent extends Component
 
         curl_setopt_array($curl, array(
         // CURLOPT_URL => "https://api.rajaongkir.com/starter/province?id=12",
-        CURLOPT_URL => "http://api.rajaongkir.com/starter/province",
+        // CURLOPT_URL => "http://api.rajaongkir.com/starter/province",
+        CURLOPT_URL => "http://pro.rajaongkir.com/api/province",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -30,7 +31,8 @@ class ShippingCostComponent extends Component
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "GET",
         CURLOPT_HTTPHEADER => array(
-            "key: ed3f0b1acbd5b27080d18806885f2071"
+            // "key: ed3f0b1acbd5b27080d18806885f2071"
+            "key: bb16551ede7aac939a5fdd4b985067e2",
         ),
         ));
 
@@ -60,7 +62,8 @@ class ShippingCostComponent extends Component
 
         curl_setopt_array($curl, array(
         // CURLOPT_URL => "https://api.rajaongkir.com/starter/city?id=39&province=5",
-        CURLOPT_URL => "http://api.rajaongkir.com/starter/city?&province=$id",
+        // CURLOPT_URL => "http://api.rajaongkir.com/starter/city?&province=$id",
+        CURLOPT_URL => "http://pro.rajaongkir.com/api/city?province=" . $id . "",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -68,7 +71,8 @@ class ShippingCostComponent extends Component
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "GET",
         CURLOPT_HTTPHEADER => array(
-            "key: ed3f0b1acbd5b27080d18806885f2071"
+            // "key: ed3f0b1acbd5b27080d18806885f2071"
+            "key: bb16551ede7aac939a5fdd4b985067e2",
         ),
         ));
 

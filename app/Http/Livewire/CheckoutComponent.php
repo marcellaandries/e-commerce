@@ -19,6 +19,7 @@ class CheckoutComponent extends Component
     }
 
     public function get_province(){
+        // 6, 152 -> erakomp alaydrus origin
         $curl = curl_init();
         // dd($curl);
 

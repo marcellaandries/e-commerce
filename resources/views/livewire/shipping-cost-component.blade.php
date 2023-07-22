@@ -25,9 +25,9 @@
                     <label>Provinsi asal</label>
                     <input type="text" value="6" class="form-control" name="province_origin">
                     </div>
-                    <div class="form-group ">
+                    <div class="form-group " hidden>
                     <label>Kota Asal</label>
-                    <input type="text" value="40" class="form-control" id="city_origin" name="city_origin">
+                    <input type="text" value="152" class="form-control" id="city_origin" name="city_origin">
                     </div>
 
 

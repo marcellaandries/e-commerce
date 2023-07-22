@@ -68,11 +68,14 @@ Route::get('/contact-us', ContactUsComponent::class);
 
 Route::get('/shipping-cost', ShippingCostComponent::class);
 
+// Route::get('province','CheckoutController@get_province')->name('province');
 // Route::get('province', [ShippingCostController::class, 'get_province'])->name('province');
 Route::get('province', [ShippingCostComponent::class, 'get_province'])->name('province');
 Route::get('city/{id}', [ShippingCostComponent::class, 'get_city'])->name('city');
+// Route::get('/origin={city_origin}&destination={city_destination}&weight={weight}&courier={courier}','CheckoutController@get_ongkir');
+Route::get('origin={city_origin}&destination={city_destination}&weight={weight}&courier={courier}', [ShippingCostComponent::class, 'get_ongkir'])->name('shipping.cost');
 
-// Route::get('province','CheckoutController@get_province')->name('province');
+
 
 // Route::middleware([
 //     'auth:sanctum',

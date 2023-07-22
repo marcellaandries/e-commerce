@@ -35,20 +35,20 @@
                     </p>
                     <p class="row-in-form">
                         <label for="province">Province<span>*</span></label>
-                        {{-- <input id="province" type="text" name="province" value="" placeholder="Province"> --}}
-                        <select name="province_id" id="province_id" class="form-control">
+                        <input id="province" type="text" name="province" value="" placeholder="Province">
+                        {{-- <select name="province_id" id="province_id" class="form-control">
                             <option value="">Select Province</option>
                             @foreach ($provinsi as $row)
                             <option value="{{$row['province_id']}}" namaprovinsi="{{$row['province']}}">{{$row['province']}}</option>
                             @endforeach
-                            </select>
+                        </select> --}}
                     </p>
                     <p class="row-in-form">
                         <label for="zip-code">Postcode / ZIP:</label>
                         <input id="zip-code" type="number" name="zip-code" value="" placeholder="Your postal code">
                     </p>
                     <p class="row-in-form">
-                        <label for="city">Town / City<span>*</span></label>
+                        <label for="kota_id">Town / City<span>*</span></label>
                         <input id="city" type="text" name="city" value="" placeholder="City name">
                     </p>
                     <p class="row-in-form fill-wife">

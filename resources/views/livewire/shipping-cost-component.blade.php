@@ -32,14 +32,14 @@
 
 
                     <div class="form-group ">
-                    <label>Alamat<span>*</span>
+                    <label>Address<span>*</span>
                     </label>
                     <textarea name="address" class="form-control" rows="5" placeholder="Alamat Lengkap pengiriman" ></textarea>
                     </div>
 
                     {{-- cella --}}
                     <div class="form-group form-group--inline">
-                        <label for="provinsi">Provinsi Tujuan</label>
+                        <label for="provinsi">Province</label>
                         <select name="province_id" id="province_id" class="form-control">
                         <option value="">Select Province</option>
                         @foreach ($provinsi as $row)
@@ -51,41 +51,42 @@
 
 
                     <div class="form-group ">
-                    <label>Kota Tujuan<span>*</span>
+                    <label>Town / City<span>*</span>
                     </label>
                     <select name="kota_id" id="kota_id" class="form-control">
-                    <option value="">Pilih Kota</option>
+                    <option value="">Choose City</option>
                     </select>
                     </div>
                     <div class="form-group">
                     <input type="text" class="form-control" nama="nama_kota" placeholder="ini untuk menangkap nama kota">
                     </div>
                     <div class="form-group ">
-                    <label>Kode Pos<span>*</span>
+                    <label>Postcode / ZIP<span>*</span>
                     </label>
                     <input type="text" name="kode_pos" class="form-control" >
                     </div>
                     </div>
                     <div class="col-md-4">
                     <div class="form-group ">
-                    <label>Total Belanja<span>*</span>
+                    <label>Cart Total<span>*</span>
                     </label>
                     <input type="text" name="totalbelanja" class="form-control" >
                     </div>
                     <div class="form-group ">
-                    <label>Total Berat (gram) </label>
+                    <label>Weight Total (gram) </label>
                     <input class="form-control" type="text" value="" id="weight" name="weight">
                     </div>
                     <div class="form-group ">
-                    <label>Total Ongkos Kirim </label>
+                    <label>Shipping Cost Total</label>
                     <input class="form-control" type="text" id="ongkos_kirim" name="ongkos_kirim">
                     </div>
                     <div class="form-group ">
-                    <label>Total Keseluruhan </label>
-                    <input class="form-control" type="text" id="ongkos_kirim" name="ongkos_kirim">
+                    <label>Grandtotal</label>
+                    <input class="form-control" type="text" id="total_keseluruhan" name="total_keseluruhan">
                     </div>
-                    <div class="form-group">
-                    <button class="btn btn-primary" type="submit">Proses Order</button>
+                    <div class="form-group summary-item payment-method">
+                        {{-- <button class="btn btn-primary" type="submit">Proses Order</button> --}}
+                        <a class="btn btn-primary" href="/checkout">Check out</a>
                     </div>
 
                     </div>

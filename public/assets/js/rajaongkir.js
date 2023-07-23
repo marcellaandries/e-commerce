@@ -2,6 +2,7 @@ $(document).ready(function(){
     //ini ketika provinsi tujuan di klik maka akan eksekusi perintah yg kita mau
     //name select nama nya "provinve_id" kalian bisa sesuaikan dengan form select kalian
     $('select[name="province_id"]').on('change', function(){
+
         // membuat variable namaprovinsiku untyk mendapatkan atribut nama provinsi
         var namaprovinsiku = $("#province_id option:selected").attr("namaprovinsi");
         // menampilkan hasil nama provinsi ke input id nama_provinsi
@@ -104,14 +105,23 @@ $(document).ready(function(){
 
         var strarray = $("#layanan option:selected").text().split('-');
         // for (var i = 0; i < strarray.length; i++) {
-        console.log("ini layanan2: ", strarray[strarray.length-1]);
+        // console.log("ini layanan2: ", strarray[strarray.length-1]);
         var ongkir_selected = strarray[strarray.length-1];
         // }
         // console.log("ini layanan2: ", parseInt($("#layanan option:selected").text()));
 
-        let totalbelanja = $("input[name=totalbelanja]").val();
+        // let totalbelanja = $("input[name=totalbelanja]").val();
 
         // membuat variable totalbelanja untyk mendapatkan atribut totalbelanja kita, ini bisa kalian buat input manual dengan name totalbelanja kemudian value nya isi manual dulu
+        // let totalbelanja = $("input[name=totalbelanja]").val();
+        // var totbelanjaf = $('#totalbelanja').text($('[name=totalbelanja]').val());
+        // var totbelanjaf1 = totbelanjaf.text().split(',');
+        // console.log("ini totbelanjaf", totbelanjaf1);
+
+        // var totbelanjaf1 = totbelanjaf.text()..split('=').join(',').split(':').join(',').split(',')
+        let totalbelanjaf = $('#totalbelanja').text($('[name=totalbelanja]').val());
+        let totalbelanjaf1 = totalbelanjaf.text().replace("Rp ", "").replace(",00", "").replace(".","")*1000;
+        console.log("ini totalbelanjaf1", totalbelanjaf1);
 
         // var harga_ongkir = $("#layanan option:selected").attr("harga_ongkir");
         var harga_ongkir = ongkir_selected;
@@ -128,10 +138,10 @@ $(document).ready(function(){
         $("#ongkos_kirim").val(harga_ongkir_format);
 
         // $("#ongkoskirim").append(harga_ongkir);
-        console.log("ini ongkir: ", harga_ongkir);
+        console.log("ini ongkir: ", totalbelanjaf1, "+" , harga_ongkir);
         // kita akan menampilkan harga ongkirnya di id ongkos kirim, jadi kalian bisa buat inputan dengan id ongkos kirim
 
-        let total = parseInt(totalbelanja) + parseInt(harga_ongkir);
+        let total = parseInt(totalbelanjaf1) + parseInt(harga_ongkir);
         // ini untuk jumlah total nya y,, jd jumlah belanja di tambah jumlah ongkos kirim
 
         total = total.toLocaleString('id-ID', {

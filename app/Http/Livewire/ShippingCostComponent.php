@@ -8,10 +8,10 @@ class ShippingCostComponent extends Component
 {
     public function render()
     {
+        // $cart_summary = new CartSummary();
         $cart_summary = session('checkout');
-
-        // $cart_summary = session()->get('checkout')['subtotal'];
-        dd($cart_summary);
+        // $cart_subtotal = session()->get('checkout')['subtotal'];
+        // dd($cart_summary);
 
         //memanggil function get_province
         $provinsi = $this->get_province();

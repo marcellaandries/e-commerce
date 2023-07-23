@@ -92,7 +92,7 @@
                     <div class="form-group ">
                     <label>Cart Total<span>*</span>
                     </label>
-                    <input type="text" id="totalbelanja" name="totalbelanja" value="100000" class="form-control" >
+                    <input type="text" id="totalbelanja" name="totalbelanja" value="Rp {{Cart::subtotal()}}" class="form-control" >
                     </div>
                     <div class="form-group ">
                     <label>Weight Total (gram) </label>

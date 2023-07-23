@@ -131,7 +131,7 @@ $(document).ready(function(){
         var harga_ongkir_format = parseInt(harga_ongkir).toLocaleString('id-ID', {
             currency: 'IDR',
             style: 'currency',
-            minimumFractionDigits: 0
+            minimumFractionDigits: 2
           });
 
         console.log("ini: ", harga_ongkir_format);
@@ -147,7 +147,7 @@ $(document).ready(function(){
         total = total.toLocaleString('id-ID', {
             currency: 'IDR',
             style: 'currency',
-            minimumFractionDigits: 0
+            minimumFractionDigits: 2
           });
         $("#total_keseluruhan").val(total);
         //kita menampilkan totalnya di id total

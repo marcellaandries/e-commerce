@@ -75,7 +75,8 @@ $(document).ready(function(){
             type:'GET',
             dataType:'json',
             success:function(data){
-            $('select[name="layanan"]').empty();
+            // $('select[name="layanan"]').empty();
+            // $("#layanan option:selected").text()="Choose Service";
             // ini untuk looping data result nya
             $.each(data, function(key, value){
             // ini looping data layanan misal jne reg, jne oke, jne yes
@@ -135,6 +136,11 @@ $(document).ready(function(){
           });
 
         console.log("ini: ", harga_ongkir_format);
+
+        if (isNaN(ongkir_selected)) {
+            harga_ongkir_format="";
+        }
+
         $("#ongkos_kirim").val(harga_ongkir_format);
 
         // $("#ongkoskirim").append(harga_ongkir);
@@ -144,13 +150,19 @@ $(document).ready(function(){
         let total = parseInt(totalbelanjaf1) + parseInt(harga_ongkir);
         // ini untuk jumlah total nya y,, jd jumlah belanja di tambah jumlah ongkos kirim
 
+        if (isNaN(total)) {
+            total="";
+        }
+
         total = total.toLocaleString('id-ID', {
             currency: 'IDR',
             style: 'currency',
             minimumFractionDigits: 2
           });
+
         $("#total_keseluruhan").val(total);
         //kita menampilkan totalnya di id total
+
 
     });
 

@@ -12,7 +12,7 @@
 
         <div class=" main-content-area">
             {{-- <div class="wrap-address-billing"> --}}
-                <h3 class="box-title" style="font-size: 14px;"><b>SHIPPING ADDRESS</b></h3>
+                <h3 class="box-title" style="font-size: 14px;"><b>SHIPPING METHOD</b></h3>
 
                 {{-- cella --}}
                 <form class="ps-checkout__form" action="" method="post">
@@ -31,11 +31,11 @@
                     </div>
 
 
-                    <div class="form-group ">
+                    {{-- <div class="form-group ">
                     <label>Address<span>*</span>
                     </label>
-                    <textarea name="address" class="form-control" rows="5" placeholder="Alamat Lengkap pengiriman" ></textarea>
-                    </div>
+                    <textarea name="address" class="form-control" rows="5" placeholder="Shipping full address" ></textarea>
+                    </div> --}}
 
                     {{-- cella --}}
                     <div class="form-group form-group--inline">
@@ -83,29 +83,29 @@
                             </select>
                         </div>
 
-                        <label>Postcode / ZIP<span>*</span>
+                        {{-- <label>Postcode / ZIP<span>*</span>
                         </label>
-                        <input type="text" name="kode_pos" class="form-control" >
+                        <input type="text" name="kode_pos" class="form-control" > --}}
                     </div>
                     </div>
                     <div class="col-md-4">
                     <div class="form-group ">
                     <label>Cart Total<span>*</span>
                     </label>
-                    <input type="text" id="totalbelanja" name="totalbelanja" value="Rp {{Cart::subtotal()}}" class="form-control" >
+                    <input type="text" disabled id="totalbelanja" name="totalbelanja" value="Rp {{Cart::subtotal()}}" class="form-control" >
                     </div>
                     <div class="form-group ">
                     <label>Weight Total (gram) </label>
                     {{-- <input class="form-control" type="text" value="" id="weight" name="weight"> --}}
-                    <input class="form-control" type="text" value="2.000" id="weight" name="weight">
+                    <input class="form-control" type="text" disabled value="2.000" id="weight" name="weight">
                     </div>
                     <div class="form-group ">
                     <label>Shipping Cost Total</label>
-                    <input class="form-control" type="text" id="ongkos_kirim" name="ongkos_kirim">
+                    <input class="form-control" type="text" disabled id="ongkos_kirim" name="ongkos_kirim">
                     </div>
                     <div class="form-group ">
                     <label>Grandtotal</label>
-                    <input class="form-control" type="text" id="total_keseluruhan" name="total_keseluruhan">
+                    <input class="form-control" type="text" disabled id="total_keseluruhan" name="total_keseluruhan">
                     </div>
                     <div class="form-group summary-item payment-method">
                         {{-- <button class="btn btn-primary" type="submit">Proses Order</button> --}}

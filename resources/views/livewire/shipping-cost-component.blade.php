@@ -83,9 +83,9 @@
                             </select>
                         </div>
 
-                        {{-- <label>Postcode / ZIP<span>*</span>
-                        </label>
-                        <input type="text" name="kode_pos" class="form-control" > --}}
+                            {{-- <label>Postcode / ZIP<span>*</span>
+                            </label>
+                            <input type="text" name="kode_pos" class="form-control" > --}}
                     </div>
                     </div>
                     <div class="col-md-4">

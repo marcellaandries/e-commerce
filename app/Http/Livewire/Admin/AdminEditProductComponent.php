@@ -24,6 +24,7 @@ class AdminEditProductComponent extends Component
     public $image;
     public $category_id;
     public $newimage;
+    public $weight;
     public $product_id;
 
     protected $rules = [
@@ -34,6 +35,7 @@ class AdminEditProductComponent extends Component
         'SKU' => 'required',
         'quantity' => 'required|numeric',
         'image' => 'required',
+        'weight' => 'required|numeric',
         'category_id' => 'required',
     ];
 
@@ -56,6 +58,7 @@ class AdminEditProductComponent extends Component
         $this->image = $product->image;
         $this->category_id = $product->category_id;
         $this->newimage = $product->newimage;
+        $this->weight = $product->weight;
         $this->product_id = $product->id;
     }
 
@@ -92,6 +95,7 @@ class AdminEditProductComponent extends Component
             $this->newimage->storeAs('products',$imageName);
             $product->image = $imageName;
         }
+        $product->weight = $this->weight;
         $product->category_id = $this->category_id;
         $product->save();
         session()->flash('message','Product has been updated successfully!');

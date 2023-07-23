@@ -26,7 +26,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div hidden class="form-group">
                                 <label class="col-md-4 control-label">Product Slug</label>
                                 <div class="col-md-4">
                                     <input type="text" placeholder="Product Slug" class="form-control input-md" wire:model="slug" />
@@ -108,6 +108,14 @@
                                     @if($image)
                                         <img src="{{$image->temporaryUrl()}}" width="120" />
                                     @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Weight (in Gram)</label>
+                                <div class="col-md-4">
+                                    <input type="text" placeholder="Weight" class="form-control input-md" wire:model="weight" />
+                                    @error('weight') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
 

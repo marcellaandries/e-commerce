@@ -23,6 +23,7 @@ class AdminAddProductComponent extends Component
     public $featured;
     public $quantity;
     public $image;
+    public $weight;
     public $category_id;
 
     protected $rules = [
@@ -33,6 +34,7 @@ class AdminAddProductComponent extends Component
         'SKU' => 'required',
         'quantity' => 'required|numeric',
         'image' => 'required',
+        'weight' => 'required|numeric',
         'category_id' => 'required',
 
     ];
@@ -77,6 +79,7 @@ class AdminAddProductComponent extends Component
         $imageName = Carbon::now()->timestamp. '.' . $this->image->extension();
         $this->image->storeAs('products',$imageName);
         $product->image = $imageName;
+        $product->weight = $this->weight;
         $product->category_id = $this->category_id;
         $product->save();
         session()->flash('message','Product has been created successfully!');

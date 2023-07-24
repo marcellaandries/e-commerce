@@ -32,9 +32,9 @@ class CheckoutComponent extends Component
 
     public function placeOrder()
     {
-        $this->validate([
+        // $this->validate([
 
-        ])
+        // ])
     }
     public function render()
     {

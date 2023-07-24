@@ -76,7 +76,7 @@
                                     <a href="/" cl ass="product-name"><span>{{$product->name}}</span></a>
                                     {{-- cella mix class with blade --}}
                                     <div class="wrap-price"><span class="product-price">{{ $this->rupiah($product['regular_price']) }}</span></div>
-                                    <div class="wrap-price"><span class="product-price">{{$product->weight}}</span></div>
+                                    <div hidden class="wrap-price"><span class="product-price">{{$product->weight}}</span></div>
                                     <a href="#" class="btn add-to-cart" wire:click.prevent="store({{$product->id}},'{{$product->name}}',{{$product->regular_price}}, {{$product->weight}})">Add To Cart</a>
                                 </div>
                             </div>

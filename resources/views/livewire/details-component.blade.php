@@ -44,6 +44,11 @@
                         <div class="stock-info in-stock">
                             <p class="availability">Availability: <b>{{$product->stock_status}}</b></p>
                         </div>
+
+                        <div class="stock-info in-stock">
+                            <p class="availability">Weight: <b>{{$product->weight}}</b> gram</p>
+                        </div>
+
                         <div class="quantity">
                             <span>Quantity:</span>
                             <div class="quantity-input">
@@ -54,7 +59,7 @@
                             </div>
                         </div>
                         <div class="wrap-butons">
-                            <a href="#" class="btn add-to-cart" wire:click.prevent="store({{$product->id}}, '{{$product->name}}', {{$product->regular_price}})">Add to Cart</a>
+                            <a href="#" class="btn add-to-cart" wire:click.prevent="store({{$product->id}}, '{{$product->name}}', {{$product->regular_price}}, {{$product->weight}})">Add to Cart</a>
                             <div class="wrap-btn">
                                 <a href="#" class="btn btn-compare">Add Compare</a>
                                 <a href="#" class="btn btn-wishlist">Add Wishlist</a>

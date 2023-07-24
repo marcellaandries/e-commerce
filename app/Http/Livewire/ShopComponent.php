@@ -19,9 +19,9 @@ class ShopComponent extends Component
         $this->pagesize = 12;
     }
 
-    public function store($product_id,$product_name,$product_price, $product_weight)
+    public function store($product_id,$product_name,$product_price,$product_weight)
     {
-        Cart::add($product_id,$product_name,1,$product_price, ['weight' => $product_weight])->associate('App\Models\Product');
+        Cart::add($product_id,$product_name,1,$product_price,['weight' => $product_weight])->associate('App\Models\Product');
         // dd(Cart::content());
         session()->flash('success_message', 'Item added in Cart!');
         return redirect()->route('product.cart');

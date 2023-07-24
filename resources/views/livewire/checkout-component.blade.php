@@ -6,7 +6,7 @@
         <div class="wrap-breadcrumb">
             <ul>
                 <li class="item-link"><a href="#" class="link">home</a></li>
-                <li class="item-link"><span>login</span></li>
+                <li class="item-link"><span>checkout</span></li>
             </ul>
         </div>
         <div class=" main-content-area">
@@ -93,12 +93,7 @@
                     <h4 class="title-box f-title">Shipping method</h4>
                     <p class="summary-info"><span class="title">Flat Rate</span></p>
                     <p class="summary-info"><span class="title">Fixed Rp 500.000,00</span></p>
-                    <h4 class="title-box">Discount Codes</h4>
-                    <p class="row-in-form">
-                        <label for="coupon-code">Enter Your Coupon code:</label>
-                        <input id="coupon-code" type="text" name="coupon-code" value="" placeholder="">
-                    </p>
-                    <a href="#" class="btn btn-small">Apply</a>
+
                 </div>
             </div>
 

@@ -1,3 +1,4 @@
+<div>
 <!--main area-->
 <main id="main" class="main-site">
 
@@ -10,59 +11,118 @@
             </ul>
         </div>
         <div class=" main-content-area">
-            <div class="wrap-address-billing">
-                <h3 class="box-title">Billing Address</h3>
-                <form action="#" method="get" name="frm-billing">
-                    <p class="row-in-form">
-                        <label for="fname">first name<span>*</span></label>
-                        <input id="fname" type="text" name="fname" value="" placeholder="Your name">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="lname">last name<span>*</span></label>
-                        <input id="lname" type="text" name="lname" value="" placeholder="Your last name">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="email">Email Address:</label>
-                        <input id="email" type="email" name="email" value="" placeholder="Type your email">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="phone">Phone number<span>*</span></label>
-                        <input id="phone" type="number" name="phone" value="" placeholder="number format">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="add">Address:</label>
-                        <input id="add" type="text" name="add" value="" placeholder="Street at apartment number">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="province">Province<span>*</span></label>
-                        <input id="province" type="text" name="province" value="" placeholder="Province">
-                        {{-- <select name="province_id" id="province_id" class="form-control">
-                            <option value="">Select Province</option>
-                            @foreach ($provinsi as $row)
-                            <option value="{{$row['province_id']}}" namaprovinsi="{{$row['province']}}">{{$row['province']}}</option>
-                            @endforeach
-                        </select> --}}
-                    </p>
-                    <p class="row-in-form">
-                        <label for="zip-code">Postcode / ZIP:</label>
-                        <input id="zip-code" type="number" name="zip-code" value="" placeholder="Your postal code">
-                    </p>
-                    <p class="row-in-form">
-                        <label for="kota_id">Town / City<span>*</span></label>
-                        <input id="city" type="text" name="city" value="" placeholder="City name">
-                    </p>
-                    <p class="row-in-form fill-wife">
-                        <label class="checkbox-field">
-                            <input name="create-account" id="create-account" value="forever" type="checkbox">
-                            <span>Create an account?</span>
-                        </label>
-                        <label class="checkbox-field">
-                            <input name="different-add" id="different-add" value="forever" type="checkbox">
-                            <span>Ship to a different address?</span>
-                        </label>
-                    </p>
-                </form>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="wrap-address-billing">
+                        <h3 class="box-title">Billing Address</h3>
+                        {{-- <form action="#" method="get" name="frm-billing"> --}}
+                        <div class="billing-address">
+                            <p class="row-in-form">
+                                <label for="fname">first name<span>*</span></label>
+                                <input type="text" name="fname" value="" placeholder="Your name">
+                            </p>
+                            <p class="row-in-form">
+                                <label for="lname">last name<span>*</span></label>
+                                <input type="text" name="lname" value="" placeholder="Your last name">
+                            </p>
+                            <p class="row-in-form">
+                                <label for="email">Email Address:</label>
+                                <input type="email" name="email" value="" placeholder="Type your email">
+                            </p>
+                            <p class="row-in-form">
+                                <label for="phone">Phone number<span>*</span></label>
+                                <input type="number" name="phone" value="" placeholder="number format">
+                            </p>
+                            <p class="row-in-form">
+                                <label for="add">Address:</label>
+                                <input type="text" name="add" value="" placeholder="Street at apartment number">
+                            </p>
+                            <p class="row-in-form">
+                                <label for="province">Province<span>*</span></label>
+                                <input type="text" name="province" value="" placeholder="Province">
+                                {{-- <select name="province_id" id="province_id" class="form-control">
+                                    <option value="">Select Province</option>
+                                    @foreach ($provinsi as $row)
+                                    <option value="{{$row['province_id']}}" namaprovinsi="{{$row['province']}}">{{$row['province']}}</option>
+                                    @endforeach
+                                </select> --}}
+                            </p>
+                            <p class="row-in-form">
+                                <label for="zip-code">Postcode / ZIP:</label>
+                                <input type="number" name="zip-code" value="" placeholder="Your postal code">
+                            </p>
+                            <p class="row-in-form">
+                                <label for="kota_id">Town / City<span>*</span></label>
+                                <input type="text" name="city" value="" placeholder="City name">
+                            </p>
+                            <p class="row-in-form fill-wife">
+                                {{-- <label class="checkbox-field">
+                                    <input name="create-account" id="create-account" value="forever" type="checkbox">
+                                    <span>Create an account?</span>
+                                </label> --}}
+                                <label class="checkbox-field">
+                                    <input name="different-add" id="different-add" value="1" type="checkbox" wire:model="ship_to_different">
+                                    <span>Ship to a different address?</span>
+                                </label>
+                            </p>
+                        </div>
+                        {{-- </form> --}}
+                    </div>
+                </div>
+
+                @if($ship_to_different)
+                    <div class="col-md-12">
+                        <div class="wrap-address-billing">
+                            <h3 class="box-title">Shipping Address</h3>
+                            {{-- <form action="#" method="get" name="frm-billing"> --}}
+                            <div class="billing-address">
+                                <p class="row-in-form">
+                                    <label for="fname">first name<span>*</span></label>
+                                    <input type="text" name="fname" value="" placeholder="Your name">
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="lname">last name<span>*</span></label>
+                                    <input type="text" name="lname" value="" placeholder="Your last name">
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="email">Email Address:</label>
+                                    <input type="email" name="email" value="" placeholder="Type your email">
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="phone">Phone number<span>*</span></label>
+                                    <input type="number" name="phone" value="" placeholder="number format">
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="add">Address:</label>
+                                    <input type="text" name="add" value="" placeholder="Street at apartment number">
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="province">Province<span>*</span></label>
+                                    <input type="text" name="province" value="" placeholder="Province">
+                                    {{-- <select name="province_id" id="province_id" class="form-control">
+                                        <option value="">Select Province</option>
+                                        @foreach ($provinsi as $row)
+                                        <option value="{{$row['province_id']}}" namaprovinsi="{{$row['province']}}">{{$row['province']}}</option>
+                                        @endforeach
+                                    </select> --}}
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="zip-code">Postcode / ZIP:</label>
+                                    <input type="number" name="zip-code" value="" placeholder="Your postal code">
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="kota_id">Town / City<span>*</span></label>
+                                    <input type="text" name="city" value="" placeholder="City name">
+                                </p>
+                            </div>
+                            {{-- </form> --}}
+                        </div>
+                    </div>
+                @endif
             </div>
+
+
             <div class="summary summary-checkout">
                 <div class="summary-item payment-method">
                     <h4 class="title-box">Payment Method</h4>
@@ -102,3 +162,5 @@
 
 </main>
 <!--main area-->
+
+</div>

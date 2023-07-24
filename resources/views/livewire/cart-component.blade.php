@@ -32,6 +32,7 @@
                                 </div>
                                 <div class="product-name">
                                     <a class="link-to-product" href="{{route('product.details',['slug'=>$item->model->slug])}}">{{$item->model->name}}</a>
+                                    <p class="summary-info"><span class="title"></span class="index">{{$item->model->weight}} gr</b></p>
                                 </div>
                                 <div class="price-field product-price"><p class="price">{{ $this->rupiah($item->model['regular_price']) }}</p></div>
                                 <div class="quantity">

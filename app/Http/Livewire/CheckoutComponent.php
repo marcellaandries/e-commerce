@@ -30,6 +30,12 @@ class CheckoutComponent extends Component
     public $s_country;
     public $s_zipcode;
 
+    public function placeOrder()
+    {
+        $this->validate([
+
+        ])
+    }
     public function render()
     {
         return view('livewire.checkout-component')->layout("layouts.base");

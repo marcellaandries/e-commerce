@@ -32,7 +32,8 @@
                                 </div>
                                 <div class="product-name">
                                     <a class="link-to-product" href="{{route('product.details',['slug'=>$item->model->slug])}}">{{$item->model->name}}</a>
-                                    <p class="summary-info"><span class="title"></span class="index">{{$item->model->weight}} gr</b></p>
+                                    <p class="summary-info"><span class="title"></span class="index">{{$item->model->weight}} Gr</b></p>
+                                        <p class="summary-info"><span class="title"></span class="index">{{number_format($item->model->weight * $item->qty, 0, "", ".")}} Gr</b></p>
                                 </div>
                                 <div class="price-field product-price"><p class="price">{{ $this->rupiah($item->model['regular_price']) }}</p></div>
                                 <div class="quantity">
@@ -60,6 +61,7 @@
                     <div class="summary">
                         <div class="order-summary">
                             <h4 class="title-box">Order Summary</h4>
+                            <p class="summary-info"><span class="title">Weight</span><b class="index"> gr</b></p>
                             <p class="summary-info"><span class="title">Subtotal</span><b class="index">Rp {{Cart::subtotal()}}</b></p>
                             {{-- <p class="summary-info"><span class="title">Tax</span><b class="index">Rp{{Cart::tax()}}</b></p> --}}
                             {{-- <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p> --}}

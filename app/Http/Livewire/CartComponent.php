@@ -61,6 +61,7 @@ class CartComponent extends Component
 
     public function shippingCost()
     {
+        // $this->setWeightforCheckout();
         if(Auth::check())
         {
             return redirect()->route('shipping');
@@ -81,4 +82,13 @@ class CartComponent extends Component
         ]);
         // dd(Cart::subtotal());
     }
+
+    // public function setWeightforCheckout(){
+    //     // $cart = Cart::content();
+    //     // dd($cart);
+    //     foreach (Cart::content() as $item) {
+    //         dd($item->options);
+    //     }
+    // }
+
 }

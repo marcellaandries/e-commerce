@@ -66,9 +66,9 @@
                             <p class="summary-info total-info "><span class="title">Total</span><b class="index">Rp {{Cart::total()}}</b></p>
                         </div>
                         <div class="checkout-info">
-                            <label class="checkbox-field">
+                            {{-- <label class="checkbox-field">
                                 <input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>I have promo code</span>
-                            </label>
+                            </label> --}}
                             {{-- <a class="btn btn-checkout" href="/checkout">Check out</a> --}}
                             <a class="btn btn-checkout" href="{{route('shipping')}}" wire:click.prevent="shippingCost()">Shipping</a>
                             <a class="link-to-shop" href="/shop">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>

@@ -66,7 +66,8 @@ Route::get('/search', SearchComponent::class)->name('product.search');
 Route::get('/about-us', AboutUsComponent::class);
 Route::get('/contact-us', ContactUsComponent::class);
 
-Route::get('/shipping', ShippingCostComponent::class)->name('shipping');
+// Route::get('/shipping', ShippingCostComponent::class)->name('shipping');
+Route::get('/shipping/{weight_total}',ShippingCostComponent::class)->name('shipping');
 
 // Route::get('province','CheckoutController@get_province')->name('province');
 // Route::get('province', [ShippingCostController::class, 'get_province'])->name('province');

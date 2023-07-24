@@ -6,6 +6,14 @@ use Livewire\Component;
 
 class ShippingCostComponent extends Component
 {
+    public $weight_total;
+
+    public function mount($weight_total)
+    {
+        $this->weight_total = $weight_total;
+        // dd($weight_total);
+    }
+
     public function render()
     {
         // $cart_summary = new CartSummary();

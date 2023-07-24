@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class ShippingCostComponent extends Component
 {
@@ -136,10 +137,8 @@ class ShippingCostComponent extends Component
         // http://localhost:8000/origin=40&destination=40&weight=100&courier=jne
     }
 
-    // public function checkout(){
-    //     //memanggil function get_province
-    //     $provinsi = $this->get_province();
-    //     //mengarah kepada file checkout.blade.php yang ada di view
-    //     return view('livewire.shipping-cost-component',['provinsi' => $provinsi])->layout("layouts.base");
-    // }
+    public function check_out(){
+        // dd("cella");
+        return view('livewire.checkout-component')->layout('layouts.base');
+    }
 }

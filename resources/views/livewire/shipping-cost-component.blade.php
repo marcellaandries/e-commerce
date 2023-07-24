@@ -1,4 +1,5 @@
-<!--main area-->
+<div>
+    <!--main area-->
 <main id="main" class="main-site">
 
     <div class="container">
@@ -109,7 +110,7 @@
                     </div>
                     <div class="form-group summary-item payment-method">
                         {{-- <button class="btn btn-primary" type="submit">Proses Order</button> --}}
-                        <a class="btn btn-primary" href="/checkout">Check out</a>
+                        <a class="btn btn-primary" href="{{route('checkout')}}">Check out</a>
                     </div>
 
                     </div>
@@ -124,3 +125,5 @@
 
 </main>
 <!--main area-->
+
+</div>

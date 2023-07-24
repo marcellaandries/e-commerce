@@ -32,7 +32,6 @@ use App\Http\Livewire\AboutUsComponent;
 
 use App\Http\Livewire\ShippingCostComponent;
 
-// use App\Http\Controllers\ShippingCostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,9 +52,9 @@ Route::get('/', HomeComponent::class);
 
 Route::get('/shop', ShopComponent::class);
 
-Route::get('/cart', CartComponent::class)->name('product.cart');;
+Route::get('/cart', CartComponent::class)->name('product.cart');
 
-Route::get('/checkout', CheckoutComponent::class);
+Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 
@@ -66,16 +65,11 @@ Route::get('/search', SearchComponent::class)->name('product.search');
 Route::get('/about-us', AboutUsComponent::class);
 Route::get('/contact-us', ContactUsComponent::class);
 
-// Route::get('/shipping', ShippingCostComponent::class)->name('shipping');
 Route::get('/shipping/{weight_total}',ShippingCostComponent::class)->name('shipping');
 
-// Route::get('province','CheckoutController@get_province')->name('province');
-// Route::get('province', [ShippingCostController::class, 'get_province'])->name('province');
 Route::get('province', [ShippingCostComponent::class, 'get_province'])->name('province');
 Route::get('city/{id}', [ShippingCostComponent::class, 'get_city'])->name('city');
-// Route::get('/origin={city_origin}&destination={city_destination}&weight={weight}&courier={courier}','CheckoutController@get_ongkir');
 Route::get('origin={city_origin}&destination={city_destination}&weight={weight}&courier={courier}', [ShippingCostComponent::class, 'get_ongkir'])->name('shipping.cost');
-
 
 
 // Route::middleware([

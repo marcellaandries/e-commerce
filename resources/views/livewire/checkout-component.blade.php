@@ -20,27 +20,35 @@
                         <div class="billing-address">
                             <p class="row-in-form">
                                 <label for="fname">first name<span>*</span></label>
-                                <input type="text" name="fname" value="" placeholder="Your name">
+                                <input type="text" name="fname" value="" placeholder="Your name" wire:mode="firstname">
                             </p>
                             <p class="row-in-form">
                                 <label for="lname">last name<span>*</span></label>
-                                <input type="text" name="lname" value="" placeholder="Your last name">
+                                <input type="text" name="lname" value="" placeholder="Your last name" wire:mode="lastname">
                             </p>
                             <p class="row-in-form">
                                 <label for="email">Email Address:</label>
-                                <input type="email" name="email" value="" placeholder="Type your email">
+                                <input type="email" name="email" value="" placeholder="Type your email" wire:mode="email">
                             </p>
                             <p class="row-in-form">
                                 <label for="phone">Phone number<span>*</span></label>
-                                <input type="number" name="phone" value="" placeholder="number format">
+                                <input type="number" name="phone" value="" placeholder="number format" wire:mode="mobile">
                             </p>
                             <p class="row-in-form">
-                                <label for="add">Address:</label>
-                                <input type="text" name="add" value="" placeholder="Street at apartment number">
+                                <label for="add">Address (line 1):</label>
+                                <input type="text" name="add" value="" placeholder="Street at apartment number" wire:mode="line1">
+                            </p>
+                            <p class="row-in-form">
+                                <label for="add">Address (line 2):</label>
+                                <input type="text" name="add" value="" placeholder="Street at apartment number" wire:mode="line2">
+                            </p>
+                            <p class="row-in-form">
+                                <label for="country">Country</label>
+                                <input disabled type="text" name="country" value="Indonesia" placeholder="Country" wire:mode="country">
                             </p>
                             <p class="row-in-form">
                                 <label for="province">Province<span>*</span></label>
-                                <input type="text" name="province" value="" placeholder="Province">
+                                <input type="text" name="province" value="" placeholder="Province" wire:mode="province">
                                 {{-- <select name="province_id" id="province_id" class="form-control">
                                     <option value="">Select Province</option>
                                     @foreach ($provinsi as $row)
@@ -49,12 +57,12 @@
                                 </select> --}}
                             </p>
                             <p class="row-in-form">
-                                <label for="zip-code">Postcode / ZIP:</label>
-                                <input type="number" name="zip-code" value="" placeholder="Your postal code">
+                                <label for="kota_id">Town / City<span>*</span></label>
+                                <input type="text" name="city" value="" placeholder="City name" wire:mode="city">
                             </p>
                             <p class="row-in-form">
-                                <label for="kota_id">Town / City<span>*</span></label>
-                                <input type="text" name="city" value="" placeholder="City name">
+                                <label for="zip-code">Postcode / ZIP:</label>
+                                <input type="number" name="zip-code" value="" placeholder="Your postal code" wire:mode="zipcode">
                             </p>
                             <p class="row-in-form fill-wife">
                                 {{-- <label class="checkbox-field">
@@ -79,27 +87,35 @@
                             <div class="billing-address">
                                 <p class="row-in-form">
                                     <label for="fname">first name<span>*</span></label>
-                                    <input type="text" name="fname" value="" placeholder="Your name">
+                                    <input type="text" name="fname" value="" placeholder="Your name" wire:mode="s_firstname">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="lname">last name<span>*</span></label>
-                                    <input type="text" name="lname" value="" placeholder="Your last name">
+                                    <input type="text" name="lname" value="" placeholder="Your last name" wire:mode="s_lastname">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="email">Email Address:</label>
-                                    <input type="email" name="email" value="" placeholder="Type your email">
+                                    <input type="email" name="email" value="" placeholder="Type your email" wire:mode="s_email">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="phone">Phone number<span>*</span></label>
-                                    <input type="number" name="phone" value="" placeholder="number format">
+                                    <input type="number" name="phone" value="" placeholder="number format" wire:mode="s_mobile">
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="add">Address:</label>
-                                    <input type="text" name="add" value="" placeholder="Street at apartment number">
+                                    <label for="add">Address (line 1):</label>
+                                    <input type="text" name="add" value="" placeholder="Street at apartment number" wire:mode="s_line1">
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="add">Address (line 2):</label>
+                                    <input type="text" name="add" value="" placeholder="Street at apartment number" wire:mode="s_line2">
+                                </p>
+                                <p class="row-in-form">
+                                    <label for="country">Country</label>
+                                    <input disabled type="text" name="country" value="Indonesia" placeholder="Country" wire:mode="s_country">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="province">Province<span>*</span></label>
-                                    <input type="text" name="province" value="" placeholder="Province">
+                                    <input type="text" name="province" value="" placeholder="Province" wire:mode="s_province">
                                     {{-- <select name="province_id" id="province_id" class="form-control">
                                         <option value="">Select Province</option>
                                         @foreach ($provinsi as $row)
@@ -108,12 +124,12 @@
                                     </select> --}}
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="zip-code">Postcode / ZIP:</label>
-                                    <input type="number" name="zip-code" value="" placeholder="Your postal code">
+                                    <label for="kota_id">Town / City<span>*</span></label>
+                                    <input type="text" name="city" value="" placeholder="City name" wire:mode="s_city">
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="kota_id">Town / City<span>*</span></label>
-                                    <input type="text" name="city" value="" placeholder="City name">
+                                    <label for="zip-code">Postcode / ZIP:</label>
+                                    <input type="number" name="zip-code" value="" placeholder="Your postal code" wire:mode="s_zipcode">
                                 </p>
                             </div>
                             {{-- </form> --}}

@@ -57,6 +57,8 @@ $(document).ready(function(){
         let courier = $("select[name=kurir]").val();
         // name weight di dapat dari select text name weight
         let weight = $("input[name=weight]").val();
+        weight = weight.replace('.','');
+        console.log("ini :", weight);
         // alert(courier);
 
         // if(courier){

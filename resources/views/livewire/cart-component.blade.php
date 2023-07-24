@@ -64,13 +64,13 @@
 
                             {{-- cella --}}
                             @php
-                            $weightTotal = 0;
+                            $weight_total = 0;
                             foreach(Cart::content() as $item) {
-                                $weightTotal += ($item->model->weight * $item->qty);
+                                $weight_total += ($item->model->weight * $item->qty);
                             }
                             @endphp
 
-                            <p class="summary-info"><span class="title">Weight Total</span><b class="index">{{number_format($weightTotal, 0, "", ".")}} gr</b></p>
+                            <p class="summary-info"><span class="title">Weight Total</span><b class="index">{{number_format($weight_total, 0, "", ".")}} gr</b></p>
                             <p class="summary-info"><span class="title">Subtotal</span><b class="index">Rp {{Cart::subtotal()}}</b></p>
                             {{-- <p class="summary-info"><span class="title">Tax</span><b class="index">Rp{{Cart::tax()}}</b></p> --}}
                             {{-- <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p> --}}
@@ -81,7 +81,7 @@
                                 <input class="frm-input " name="have-code" id="have-code" value="" type="checkbox"><span>I have promo code</span>
                             </label> --}}
                             {{-- <a class="btn btn-checkout" href="/checkout">Check out</a> --}}
-                            <a class="btn btn-checkout" href="{{route('shipping')}}" wire:click.prevent="shippingCost({{$weightTotal}})">Shipping</a>
+                            <a class="btn btn-checkout" href="{{route('shipping')}}" wire:click.prevent="shippingCost({{$weight_total}})">Shipping</a>
                             <a class="link-to-shop" href="/shop">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                         </div>
                         <div class="update-clear">

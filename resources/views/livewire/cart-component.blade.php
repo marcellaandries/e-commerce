@@ -70,7 +70,7 @@
                             }
                             @endphp
 
-                            <p class="summary-info"><span class="title">Weight</span><b class="index">{{ $weightTotal }} gr</b></p>
+                            <p class="summary-info"><span class="title">Weight Total</span><b class="index">{{number_format($weightTotal, 0, "", ".")}} gr</b></p>
                             <p class="summary-info"><span class="title">Subtotal</span><b class="index">Rp {{Cart::subtotal()}}</b></p>
                             {{-- <p class="summary-info"><span class="title">Tax</span><b class="index">Rp{{Cart::tax()}}</b></p> --}}
                             {{-- <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p> --}}

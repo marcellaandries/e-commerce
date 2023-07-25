@@ -9,6 +9,9 @@ $(document).ready(function(){
         $("#nama_provinsi").val(namaprovinsiku);
         // kita buat variable provincedid untk menampung data id select province
 
+        $.session.set('ss_province', namaprovinsiku);
+        console.log("ini ses province", $.session.get('ss_province'))
+
         //memberikan action ketika select name kota_id di select
         //memberikan action ketika select name kota_id di select
         $('select[name="kota_id"]').on('change', function(){
@@ -17,6 +20,8 @@ $(document).ready(function(){
             var namakotaku = $("#kota_id option:selected").attr("namakota");
             // menampilkan hasil nama provinsi ke input id nama_provinsi
             $("#nama_kota").val(namakotaku);
+            $.session.set('ss_city', namakotaku);
+            console.log("ini ses city", $.session.get('ss_city'))
         });
 
         let provinceid = $(this).val();
@@ -55,9 +60,17 @@ $(document).ready(function(){
         let destination = $("select[name=kota_id]").val();
         // name kurir di dapat dari select text name kurir
         let courier = $("select[name=kurir]").val();
+
+        $.session.set('ss_courier', courier);
+        console.log("ini ses courier", $.session.get('ss_courier'))
+
         // name weight di dapat dari select text name weight
         let weight = $("input[name=weight]").val();
         weight = weight.replace('.','');
+
+        $.session.set('ss_weight', weight);
+        console.log("ini ses weight", $.session.get('ss_weight'))
+
         // console.log("ini :", weight);
         // alert(courier);
 
@@ -110,6 +123,9 @@ $(document).ready(function(){
         // for (var i = 0; i < strarray.length; i++) {
         // console.log("ini layanan2: ", strarray[strarray.length-1]);
         var ongkir_selected = strarray[strarray.length-1];
+
+        $.session.set('ss_service', strarray[0]);
+        console.log("ini ses service", $.session.get('ss_service'))
         // }
         // console.log("ini layanan2: ", parseInt($("#layanan option:selected").text()));
 
@@ -125,6 +141,9 @@ $(document).ready(function(){
         let totalbelanjaf = $('#totalbelanja').text($('[name=totalbelanja]').val());
         let totalbelanjaf1 = totalbelanjaf.text().replace("Rp ", "").replace(",00", "").replace(".","")*1000;
         // console.log("ini totalbelanjaf1", totalbelanjaf1);
+
+        $.session.set('ss_subtotal', totalbelanjaf1);
+        console.log("ini ses subtotal", $.session.get('ss_subtotal'))
 
         // var harga_ongkir = $("#layanan option:selected").attr("harga_ongkir");
         var harga_ongkir = ongkir_selected;
@@ -157,8 +176,8 @@ $(document).ready(function(){
             total="";
         }
 
-        $.session.set('ss_ongkir', harga_ongkir);
-        console.log("ini ses ongkir", $.session.get('ss_ongkir'))
+        $.session.set('ss_shipping_cost', harga_ongkir);
+        console.log("ini ses ongkir", $.session.get('ss_shipping_cost'))
 
         $.session.set('ss_grandtotal', total);
         console.log("ini ses grandtotal", $.session.get('ss_grandtotal'))

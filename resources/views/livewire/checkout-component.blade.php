@@ -141,7 +141,7 @@
                 <div class="summary summary-checkout">
                     <div class="summary-item payment-method">
                         <h4 class="title-box">Payment Method</h4>
-                        <p class="summary-info"><span class="title">Check / Money order</span></p>
+                        {{-- <p class="summary-info"><span class="title">Check / Money order</span></p> --}}
                         <p class="summary-info"><span class="title">Credit Cart (saved)</span></p>
                         <div class="choose-payment-methods">
                             <label class="payment-method">
@@ -170,8 +170,8 @@
                         <p class="summary-info"><span class="title">Fixed Rp 50.000,00</span></p> --}}
 
                         <p class="summary-info"><label for="courier">Courier: </label><span class="title"><input class="uppercase" disabled type="text" id="courier" name="courier" value="" placeholder="Courier" wire:mode="courier"></span></p>
-                        <p class="summary-info"><label for="service">Service / ZIP: </label><span class="title"><input class ="textlabel" disabled type="text" id="service" name="service" value="" placeholder="Service" wire:mode="service"></span></p>
-                        <p class="summary-info"><label for="shipping_cost">Shipping Cost:</label><span class="title"><input class ="textlabel" hidden disabled type="text" id="shipping_cost" name="shipping_cost" value="" placeholder="Shipping Cost" wire:mode="shipping_cost"></span></p>
+                        <p class="summary-info"><label for="service">Service: </label><span class="title"><input class ="textlabel" disabled type="text" id="service" name="service" value="" placeholder="Service" wire:mode="service"></span></p>
+                        <p hidden class="summary-info"><label for="shipping_cost">Shipping Cost:</label><span class="title"><input class ="textlabel" disabled type="text" id="shipping_cost" name="shipping_cost" value="" placeholder="Shipping Cost" wire:mode="shipping_cost"></span></p>
                     </div>
                 </div>
 

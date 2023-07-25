@@ -215,6 +215,11 @@ $(document).ready(function(){
     obj_province= sessionStorage.getItem('ss_province');
     console.log("ini obj province: ", obj_province);
     $("#hss_province").val(obj_province);
+    $("#province").val(obj_province);
+
+    var obj_city = {};
+    obj_city= sessionStorage.getItem('ss_city');
+    $("#city").val(obj_city);
 
 
 

@@ -253,6 +253,8 @@ $(document).ready(function(){
 
     var obj_grandtotal = {};
     obj_grandtotal= sessionStorage.getItem('ss_grandtotal');
+    // obj_grandtotal = num.toLocaleString("id-ID", {style:"currency", currency:"IDR"});
+    obj_grandtotal= Number(obj_grandtotal).toLocaleString("id-ID", {style:"currency", currency:"IDR"});
     $("#grandtotal").val(obj_grandtotal);
 
 

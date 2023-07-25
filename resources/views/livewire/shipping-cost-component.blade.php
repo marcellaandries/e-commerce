@@ -109,8 +109,8 @@
                     <input class="form-control" type="text" disabled id="total_keseluruhan" name="total_keseluruhan">
                     </div>
                     <div class="form-group summary-item payment-method">
-                        {{-- <button class="btn btn-primary" type="submit">Proses Order</button> --}}
-                        <a class="btn btn-primary" href="{{route('checkout')}}">Check out</a>
+                        {{-- <button class="btn btn-primary" type="submit" wire:click.prevent="check_out()">Checkout</button> --}}
+                        <a class="btn btn-primary" href="{{route('checkout')}}" wire:click.prevent="check_out()">Checkout</a>
                     </div>
 
                     </div>

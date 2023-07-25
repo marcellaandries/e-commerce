@@ -3,6 +3,8 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Order;
 
 class CheckoutComponent extends Component
 {
@@ -32,12 +34,34 @@ class CheckoutComponent extends Component
 
     public function placeOrder()
     {
-        // $this->validate([
+        $this->validate([
+            'firstname' =>  'required',
+            'lastname' =>  'required',
+            'email' =>  'required|email',
+            'mobile' =>  'required|numeric',
+            'line1' =>  'required',
+            'line2' =>  'required',
+            'city' =>  'required',
+            'province' =>  'required',
+            'country' =>  'required',
+            'zipcode' =>  'required',
+        ]);
 
-        // ])
+        $order = new Order();
+        $order->user_id = Auth::user()->id;
+        $order->subtotal = session()->get('checkout')[' '];
+        // $order
+        // $order
+        $order->total == session()->get('checkout')['total'];
+        // $order
+        // $order
+        // $order
+        dd(session()->get('checkout')['subtotal']);
     }
+
     public function render()
     {
+        // dd(session()->get('checkout')['subtotal']);
         return view('livewire.checkout-component')->layout("layouts.base");
     }
 

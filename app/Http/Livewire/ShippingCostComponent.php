@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use Cart;
 
 class ShippingCostComponent extends Component
 {
@@ -138,7 +139,23 @@ class ShippingCostComponent extends Component
     }
 
     public function check_out(){
-        // dd("cella");
-        return view('livewire.checkout-component')->layout('layouts.base');
+        $this->setAmountforCheckout();
+        return redirect()->route('checkout');
+    }
+
+    public function setAmountforCheckout()
+    {
+        // $this->shipping_cost = $shipping_cost;
+        session()->put('checkout',[
+            // 'discount' => 0,
+            'subtotal' => Cart::subtotal(),
+            // 'tax' => 0,
+            // 'total' => Cart::total(),
+            // 'shipping_cost' => $shipping_cost,
+            // 'grandtotal' => $grandtotal,
+
+        ]);
+        // dd(session()->get('checkout')['subtotal']);
+        // dd(session()->get('checkout'));
     }
 }

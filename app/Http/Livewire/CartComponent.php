@@ -77,10 +77,11 @@ class CartComponent extends Component
     {
         session()->put('checkout',[
             // 'discount' => 0,
-            'subotal' => Cart::subtotal(),
+            'subtotal' => Cart::subtotal(),
             // 'tax' => 0,
             'total' => Cart::total(),
         ]);
+        // dd(session()->get('checkout')['subtotal']);
         // dd(Cart::subtotal());
     }
 

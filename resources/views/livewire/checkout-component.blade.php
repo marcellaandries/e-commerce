@@ -115,7 +115,7 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="province">Province<span>*</span></label>
-                                        <input type="text" name="province" value="" placeholder="Province" wire:mode="s_province">
+                                        <input disabled id ="province" type="text" name="province" value="" placeholder="Province" wire:mode="s_province">
                                         {{-- <select name="province_id" id="province_id" class="form-control">
                                             <option value="">Select Province</option>
                                             @foreach ($provinsi as $row)

@@ -12,6 +12,12 @@ $(document).ready(function(){
         $.session.set('ss_province', namaprovinsiku);
         console.log("ini ses province", $.session.get('ss_province'))
 
+        sessionStorage.setItem('id','dfd');
+        var obj = {};
+        obj= sessionStorage.getItem('id');
+        console.log("ini obj: ", obj);
+        $("#hss_province").val(obj);
+
         //memberikan action ketika select name kota_id di select
         //memberikan action ketika select name kota_id di select
         $('select[name="kota_id"]').on('change', function(){
@@ -191,11 +197,17 @@ $(document).ready(function(){
         $("#total_keseluruhan").val(total);
         //kita menampilkan totalnya di id total
 
+        //object
+
+
 
         // $.session.set('ss_province', province);
         // console.log("ini ses ongkir", $.session.get('ses_ongkir'))
 
     });
+
+    var value = '@Request.RequestContext.HttpContext.Session["ss_province"]';
+    console.log ("ini value: ", value)
 
 });
 

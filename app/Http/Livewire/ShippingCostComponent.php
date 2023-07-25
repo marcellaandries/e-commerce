@@ -9,6 +9,7 @@ use Cart;
 class ShippingCostComponent extends Component
 {
     public $weight_total;
+    public $province_name;
 
     public function mount($weight_total)
     {
@@ -145,8 +146,8 @@ class ShippingCostComponent extends Component
 
     public function setAmountforCheckout()
     {
-        // $this->shipping_cost = $shipping_cost;
         session()->put('checkout',[
+            'province ' => $this->nama_provinsi,
             // 'discount' => 0,
             'subtotal' => Cart::subtotal(),
             // 'tax' => 0,
@@ -155,8 +156,17 @@ class ShippingCostComponent extends Component
             // 'grandtotal' => $grandtotal,
 
         ]);
-
+        // dd(session()->get('checkout'));
         // dd(session()->get('checkout')['subtotal']);
-        dd(session()->get('website'));
+
+        // $this->province_name = session()->get('ss_province');
+
+        // $data = [
+        //     "session" => session()->get('checkout'),
+        //     "province" => session()->get('ss_province'),
+        // ];
+
+        // dd($data);
+
     }
 }

@@ -50,7 +50,7 @@
                     </div>
                     {{-- cella --}}
                     <div class="form-group">
-                        <input type="hidden" class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="ini untuk menangkap nama provinsi ">
+                        <input type="hidden" class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="ini untuk menangkap nama provinsi " wire:model="province_name">
                     </div>
 
 
@@ -116,6 +116,10 @@
                     </div>
                     </div>
 
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="hss_province" nama="hss_province" placeholder="ini untuk menangkap nama provinsi ">
+                    </div>
+
                 </form>
                 {{-- cella --}}
             {{-- </div> --}}
@@ -123,7 +127,10 @@
 
     </div><!--end container-->
 
+
 </main>
 <!--main area-->
 
 </div>
+
+

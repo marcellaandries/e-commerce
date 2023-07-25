@@ -211,6 +211,13 @@ $(document).ready(function(){
     console.log("ini obj: ", obj);
     $("#hss_id").val(obj);
 
+    var obj_province = {};
+    obj_province= sessionStorage.getItem('ss_province');
+    console.log("ini obj province: ", obj_province);
+    $("#hss_province").val(obj_province);
+
+
+
 });
 
 

@@ -117,7 +117,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" id="hss_province" nama="hss_province" placeholder="ini untuk menangkap nama provinsi ">
+                        <input type="text" class="form-control" id="hss_id" nama="hss_id" placeholder="ini untuk menangkap id ">
                     </div>
 
                 </form>

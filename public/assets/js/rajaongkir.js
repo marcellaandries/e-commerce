@@ -13,10 +13,10 @@ $(document).ready(function(){
         console.log("ini ses province", $.session.get('ss_province'))
 
         sessionStorage.setItem('id','dfd');
-        var obj = {};
-        obj= sessionStorage.getItem('id');
-        console.log("ini obj: ", obj);
-        $("#hss_province").val(obj);
+        // var obj = {};
+        // obj= sessionStorage.getItem('id');
+        // console.log("ini obj: ", obj);
+        // $("#hss_province").val(obj);
 
         //memberikan action ketika select name kota_id di select
         //memberikan action ketika select name kota_id di select
@@ -206,8 +206,10 @@ $(document).ready(function(){
 
     });
 
-    var value = '@Request.RequestContext.HttpContext.Session["ss_province"]';
-    console.log ("ini value: ", value)
+    var obj = {};
+    obj= sessionStorage.getItem('id');
+    console.log("ini obj: ", obj);
+    $("#hss_id").val(obj);
 
 });
 

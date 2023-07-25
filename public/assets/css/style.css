@@ -7213,3 +7213,12 @@ svg {
     margin-left: 5px;
 }
 
+.uppercase {
+    text-transform: uppercase;
+    border-color: transparent;
+}
+
+.textlabel {
+    border-color: transparent;
+}
+

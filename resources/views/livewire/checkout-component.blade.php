@@ -166,9 +166,12 @@
                     </div>
                     <div class="summary-item shipping-method">
                         <h4 class="title-box f-title">Shipping method</h4>
-                        <p class="summary-info"><span class="title">Flat Rate</span></p>
-                        <p class="summary-info"><span class="title">Fixed Rp 50.000,00</span></p>
+                        {{-- <p class="summary-info"><span class="title">Flat Rate</span></p>
+                        <p class="summary-info"><span class="title">Fixed Rp 50.000,00</span></p> --}}
 
+                        <p class="summary-info"><label for="courier">Courier: </label><span class="title"><input class="uppercase" disabled type="text" id="courier" name="courier" value="" placeholder="Courier" wire:mode="courier"></span></p>
+                        <p class="summary-info"><label for="service">Service / ZIP: </label><span class="title"><input class ="textlabel" disabled type="text" id="service" name="service" value="" placeholder="Service" wire:mode="service"></span></p>
+                        <p class="summary-info"><label for="shipping_cost">Shipping Cost:</label><span class="title"><input class ="textlabel" disabled type="text" id="shipping_cost" name="shipping_cost" value="" placeholder="Shipping Cost" wire:mode="shipping_cost"></span></p>
                     </div>
                 </div>
 

@@ -11,8 +11,10 @@
             </ul>
         </div>
         <div class=" main-content-area">
-            <form>
-                <div class="row">
+            {{-- <form> --}}
+            {{-- enctype="multipart/form-data"  --}}
+            <form class="form-horizontal" wire:submit.prevent="placeOrder">
+                {{-- <div class="row"> --}}
                     <div class="col-md-12">
                         <div class="wrap-address-billing">
                             <h3 class="box-title">Billing Address</h3>
@@ -20,7 +22,7 @@
                             <div class="billing-address">
                                 <p class="row-in-form">
                                     <label for="fname">first name<span>*</span></label>
-                                    <input type="text" name="fname" value="" placeholder="Your name" wire:mode="firstname">
+                                    <input type="text" id ="firstname" name="fname" value="" placeholder="Your name" wire:mode="firstname">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="lname">last name<span>*</span></label>
@@ -162,6 +164,7 @@
                             </label> --}}
                         </div>
                         <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price"><input class="textlabel" disabled type="text" id="grandtotal" name="grandtotal" value="" placeholder="Grandtotal" wire:mode="grandtotal"></span></p>
+                        {{-- <button type="submit" class="btn btn-medium" wire:click.prevent="placeOrder()">Place order now</button> --}}
                         <button type="submit" class="btn btn-medium">Place order now</button>
                     </div>
                     <div class="summary-item shipping-method">

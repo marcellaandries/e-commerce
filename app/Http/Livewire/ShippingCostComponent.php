@@ -147,7 +147,7 @@ class ShippingCostComponent extends Component
     public function setAmountforCheckout()
     {
         session()->put('checkout',[
-            'province ' => $this->nama_provinsi,
+            // 'province ' => $this->province_name,
             // 'discount' => 0,
             'subtotal' => Cart::subtotal(),
             // 'tax' => 0,

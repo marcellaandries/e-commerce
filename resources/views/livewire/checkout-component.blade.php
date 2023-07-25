@@ -22,35 +22,35 @@
                             <div class="billing-address">
                                 <p class="row-in-form">
                                     <label for="fname">first name<span>*</span></label>
-                                    <input type="text" id ="firstname" name="fname" value="" placeholder="Your name" wire:mode="firstname">
+                                    <input type="text" id ="firstname" name="fname" value="" placeholder="Your name" wire:model="firstname">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="lname">last name<span>*</span></label>
-                                    <input type="text" name="lname" value="" placeholder="Your last name" wire:mode="lastname">
+                                    <input type="text" name="lname" value="" placeholder="Your last name" wire:model="lastname">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="email">Email Address:</label>
-                                    <input type="email" name="email" value="" placeholder="Type your email" wire:mode="email">
+                                    <input type="email" name="email" value="" placeholder="Type your email" wire:model="email">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="phone">Phone number<span>*</span></label>
-                                    <input type="number" name="phone" value="" placeholder="number format" wire:mode="mobile">
+                                    <input type="number" name="phone" value="" placeholder="number format" wire:model="mobile">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="add">Address (line 1):</label>
-                                    <input type="text" name="add" value="" placeholder="Street at apartment number" wire:mode="line1">
+                                    <input type="text" name="add" value="" placeholder="Street at apartment number" wire:model="line1">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="add">Address (line 2):</label>
-                                    <input type="text" name="add" value="" placeholder="Street at apartment number" wire:mode="line2">
+                                    <input type="text" name="add" value="" placeholder="Street at apartment number" wire:model="line2">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="country">Country</label>
-                                    <input disabled type="text" name="country" value="Indonesia" placeholder="Country" wire:mode="country">
+                                    <input disabled type="text" name="country" value="Indonesia" placeholder="Country" wire:model="country">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="province">Province<span>*</span></label>
-                                    <input disabled type="text" id="province" name="province" value="" placeholder="Province" wire:mode="province">
+                                    <input disabled type="text" id="province" name="province" value="" placeholder="Province" wire:model="province">
                                     {{-- <select name="province_id" id="province_id" class="form-control">
                                         <option value="">Select Province</option>
                                         @foreach ($provinsi as $row)
@@ -60,11 +60,11 @@
                                 </p>
                                 <p class="row-in-form">
                                     <label for="kota_id">Town / City<span>*</span></label>
-                                    <input disabled id ="city" type="text" name="city" value="" placeholder="City name" wire:mode="city">
+                                    <input disabled id ="city" type="text" name="city" value="" placeholder="City name" wire:model="city">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="zip-code">Postcode / ZIP:</label>
-                                    <input type="number" name="zip-code" value="" placeholder="Your postal code" wire:mode="zipcode">
+                                    <input type="number" name="zip-code" value="" placeholder="Your postal code" wire:model="zipcode">
                                 </p>
                                 <p class="row-in-form fill-wife">
                                     {{-- <label class="checkbox-field">
@@ -89,35 +89,35 @@
                                 <div class="billing-address">
                                     <p class="row-in-form">
                                         <label for="fname">first name<span>*</span></label>
-                                        <input type="text" name="fname" value="" placeholder="Your name" wire:mode="s_firstname">
+                                        <input type="text" name="fname" value="" placeholder="Your name" wire:model="s_firstname">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="lname">last name<span>*</span></label>
-                                        <input type="text" name="lname" value="" placeholder="Your last name" wire:mode="s_lastname">
+                                        <input type="text" name="lname" value="" placeholder="Your last name" wire:model="s_lastname">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="email">Email Address:</label>
-                                        <input type="email" name="email" value="" placeholder="Type your email" wire:mode="s_email">
+                                        <input type="email" name="email" value="" placeholder="Type your email" wire:model="s_email">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="phone">Phone number<span>*</span></label>
-                                        <input type="number" name="phone" value="" placeholder="number format" wire:mode="s_mobile">
+                                        <input type="number" name="phone" value="" placeholder="number format" wire:model="s_mobile">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="add">Address (line 1):</label>
-                                        <input type="text" name="add" value="" placeholder="Street at apartment number" wire:mode="s_line1">
+                                        <input type="text" name="add" value="" placeholder="Street at apartment number" wire:model="s_line1">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="add">Address (line 2):</label>
-                                        <input type="text" name="add" value="" placeholder="Street at apartment number" wire:mode="s_line2">
+                                        <input type="text" name="add" value="" placeholder="Street at apartment number" wire:model="s_line2">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="country">Country</label>
-                                        <input disabled type="text" name="country" value="Indonesia" placeholder="Country" wire:mode="s_country">
+                                        <input disabled type="text" name="country" value="Indonesia" placeholder="Country" wire:model="s_country">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="province">Province<span>*</span></label>
-                                        <input disabled id ="s_province" type="text" name="province" value="" placeholder="Province" wire:mode="s_province">
+                                        <input disabled id ="s_province" type="text" name="province" value="" placeholder="Province" wire:model="s_province">
                                         {{-- <select name="province_id" id="province_id" class="form-control">
                                             <option value="">Select Province</option>
                                             @foreach ($provinsi as $row)
@@ -127,11 +127,11 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="kota_id">Town / City<span>*</span></label>
-                                        <input disabled id ="s_city" type="text" name="city" value="" placeholder="City name" wire:mode="s_city">
+                                        <input disabled id ="s_city" type="text" name="city" value="" placeholder="City name" wire:model="s_city">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="zip-code">Postcode / ZIP:</label>
-                                        <input type="number" name="zip-code" value="" placeholder="Your postal code" wire:mode="s_zipcode">
+                                        <input type="number" name="zip-code" value="" placeholder="Your postal code" wire:model="s_zipcode">
                                     </p>
                                 </div>
                                 {{-- </form> --}}
@@ -163,7 +163,7 @@
                                 <span class="payment-desc">card if you don't have a paypal account</span>
                             </label> --}}
                         </div>
-                        <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price"><input class="textlabel" disabled type="text" id="grandtotal" name="grandtotal" value="" placeholder="Grandtotal" wire:mode="grandtotal"></span></p>
+                        <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price"><input class="textlabel" disabled type="text" id="grandtotal" name="grandtotal" value="" placeholder="Grandtotal" wire:model="grandtotal"></span></p>
                         {{-- <button type="submit" class="btn btn-medium" wire:click.prevent="placeOrder()">Place order now</button> --}}
                         <button type="submit" class="btn btn-medium">Place order now</button>
                     </div>
@@ -172,9 +172,9 @@
                         {{-- <p class="summary-info"><span class="title">Flat Rate</span></p>
                         <p class="summary-info"><span class="title">Fixed Rp 50.000,00</span></p> --}}
 
-                        <p class="summary-info"><label for="courier">Courier: </label><span class="title"><input class="uppercase" disabled type="text" id="courier" name="courier" value="" placeholder="Courier" wire:mode="courier"></span></p>
-                        <p class="summary-info"><label for="service">Service: </label><span class="title"><input class ="textlabel" disabled type="text" id="service" name="service" value="" placeholder="Service" wire:mode="service"></span></p>
-                        <p hidden class="summary-info"><label for="shipping_cost">Shipping Cost:</label><span class="title"><input class ="textlabel" disabled type="text" id="shipping_cost" name="shipping_cost" value="" placeholder="Shipping Cost" wire:mode="shipping_cost"></span></p>
+                        <p class="summary-info"><label for="courier">Courier: </label><span class="title"><input class="uppercase" disabled type="text" id="courier" name="courier" value="" placeholder="Courier" wire:model="courier"></span></p>
+                        <p class="summary-info"><label for="service">Service: </label><span class="title"><input class ="textlabel" disabled type="text" id="service" name="service" value="" placeholder="Service" wire:model="service"></span></p>
+                        <p hidden class="summary-info"><label for="shipping_cost">Shipping Cost:</label><span class="title"><input class ="textlabel" disabled type="text" id="shipping_cost" name="shipping_cost" value="" placeholder="Shipping Cost" wire:model="shipping_cost"></span></p>
                     </div>
                 </div>
 

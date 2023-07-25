@@ -2,18 +2,18 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
-
 use Cart;
 use App\Models\Order;
 use App\Models\OrderItem;
+use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Str;
 
 class CheckoutComponent extends Component
 {
     public $ship_to_different;
     public $is_shipping_different;
+    public $total;
     public $grandtotal;
 
     public $firstname;
@@ -62,7 +62,6 @@ class CheckoutComponent extends Component
         $num_subtotal = str_replace(",00", "", $num_subtotal);
         $num_subtotal = str_replace(".", "", $num_subtotal);
         $order->subtotal = $num_subtotal;
-        // dd($order->subtotal);
         $order->total = $this->grandtotal;
         $order->firstname = $this->firstname;
         $order->lastname = $this->lastname;
@@ -76,7 +75,8 @@ class CheckoutComponent extends Component
         $order->zipcode = $this->zipcode;
         $order->status = 'ordered';
         $order->is_shipping_different = $this->is_shipping_different ? 1:0;
-        dd($order->subtotal);
+        // dd("cella:", $this->lastname);
+        // dd($this->grandtotal);
         // $order->save();
 
         foreach(Cart::content() as$item)

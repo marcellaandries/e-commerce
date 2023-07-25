@@ -31,4 +31,3 @@ class Order extends Model
         return $this->hasOne(Transaction::class);
     }
 }
-}

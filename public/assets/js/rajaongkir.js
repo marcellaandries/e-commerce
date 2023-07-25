@@ -96,7 +96,7 @@ $(document).ready(function(){
             type:'GET',
             dataType:'json',
             success:function(data){
-            // $('select[name="layanan"]').empty();
+            $('select[name="layanan"]').empty();
             // $("#layanan option:selected").text()="Choose Service";
             // ini untuk looping data result nya
             $.each(data, function(key, value){
@@ -221,6 +221,30 @@ $(document).ready(function(){
     obj_city= sessionStorage.getItem('ss_city');
     console.log("ini obj city: ", obj_city);
     $("#city").val(obj_city);
+
+    var obj_courier = {};
+    obj_courier= sessionStorage.getItem('ss_courier');
+    $("#courier").val(obj_courier);
+
+    var obj_service = {};
+    obj_service= sessionStorage.getItem('ss_service');
+    $("#service").val(obj_service);
+
+    var obj_subtotal = {};
+    obj_subtotal= sessionStorage.getItem('ss_subtotal');
+    $("#subtotal").val(obj_subtotal);
+
+    var obj_weight = {};
+    obj_weight= sessionStorage.getItem('ss_weight');
+    $("#weight").val(obj_weight);
+
+    var obj_shipping_cost = {};
+    obj_shipping_cost= sessionStorage.getItem('ss_shipping_cost');
+    $("#shipping_cost").val(obj_shipping_cost);
+
+    var obj_grandtotal = {};
+    obj_grandtotal= sessionStorage.getItem('ss_grandtotal');
+    $("#grandtotal").val(obj_grandtotal);
 
 
 

@@ -50,7 +50,7 @@
                     </div>
                     {{-- cella --}}
                     <div class="form-group">
-                        <input type="hidden" class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="ini untuk menangkap nama provinsi " wire:model="province_name">
+                        <input type="hidden" class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="ini untuk menangkap nama provinsi ">
                     </div>
 
 

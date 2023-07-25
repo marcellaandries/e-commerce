@@ -161,7 +161,7 @@
                                 <span class="payment-desc">card if you don't have a paypal account</span>
                             </label> --}}
                         </div>
-                        <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price">Rp 1.000.000</span></p>
+                        <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price"><input class="textlabel" disabled type="text" id="grandtotal" name="grandtotal" value="" placeholder="Grandtotal" wire:mode="grandtotal"></span></p>
                         <button type="submit" class="btn btn-medium">Place order now</button>
                     </div>
                     <div class="summary-item shipping-method">
@@ -171,7 +171,7 @@
 
                         <p class="summary-info"><label for="courier">Courier: </label><span class="title"><input class="uppercase" disabled type="text" id="courier" name="courier" value="" placeholder="Courier" wire:mode="courier"></span></p>
                         <p class="summary-info"><label for="service">Service / ZIP: </label><span class="title"><input class ="textlabel" disabled type="text" id="service" name="service" value="" placeholder="Service" wire:mode="service"></span></p>
-                        <p class="summary-info"><label for="shipping_cost">Shipping Cost:</label><span class="title"><input class ="textlabel" disabled type="text" id="shipping_cost" name="shipping_cost" value="" placeholder="Shipping Cost" wire:mode="shipping_cost"></span></p>
+                        {{-- <p class="summary-info"><label for="shipping_cost">Shipping Cost:</label><span class="title"><input class ="textlabel" disabled type="text" id="shipping_cost" name="shipping_cost" value="" placeholder="Shipping Cost" wire:mode="shipping_cost"></span></p> --}}
                     </div>
                 </div>
 

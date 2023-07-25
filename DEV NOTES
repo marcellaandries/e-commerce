@@ -126,3 +126,6 @@ Transaction
 http://127.0.0.1:8000/province
 
 vendor\hardevine\shoppingcart\src\CartItem.php
+
+https://github.com/AlexChittock/JQuery-Session-Plugin/blob/master/jquery.session.js
+https://cdnjs.com/libraries/jquery

@@ -1560,11 +1560,14 @@
 	<script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
 	<script src="{{ asset('assets/js/functions.js') }}"></script>
-    <script src="{{ asset('assets/js/rupiah.js') }}"></script>
 
     {{-- cella --}}
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/rajaongkir.js') }}"></script>
+    <script src="{{ asset('assets/js/rupiah.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="{{ asset('assets/js/jquery.session.js') }}"></script>
 
 
     {{-- cella --}}

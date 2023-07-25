@@ -58,7 +58,7 @@ $(document).ready(function(){
         // name weight di dapat dari select text name weight
         let weight = $("input[name=weight]").val();
         weight = weight.replace('.','');
-        console.log("ini :", weight);
+        // console.log("ini :", weight);
         // alert(courier);
 
         // if(courier){
@@ -124,7 +124,7 @@ $(document).ready(function(){
         // var totbelanjaf1 = totbelanjaf.text()..split('=').join(',').split(':').join(',').split(',')
         let totalbelanjaf = $('#totalbelanja').text($('[name=totalbelanja]').val());
         let totalbelanjaf1 = totalbelanjaf.text().replace("Rp ", "").replace(",00", "").replace(".","")*1000;
-        console.log("ini totalbelanjaf1", totalbelanjaf1);
+        // console.log("ini totalbelanjaf1", totalbelanjaf1);
 
         // var harga_ongkir = $("#layanan option:selected").attr("harga_ongkir");
         var harga_ongkir = ongkir_selected;
@@ -137,7 +137,7 @@ $(document).ready(function(){
             minimumFractionDigits: 2
           });
 
-        console.log("ini: ", harga_ongkir_format);
+        // console.log("ini: ", harga_ongkir_format);
 
         if (isNaN(ongkir_selected)) {
             harga_ongkir_format="";
@@ -146,8 +146,9 @@ $(document).ready(function(){
         $("#ongkos_kirim").val(harga_ongkir_format);
 
         // $("#ongkoskirim").append(harga_ongkir);
-        console.log("ini ongkir: ", totalbelanjaf1, "+" , harga_ongkir);
+        // console.log("ini ongkir: ", totalbelanjaf1, "+" , harga_ongkir);
         // kita akan menampilkan harga ongkirnya di id ongkos kirim, jadi kalian bisa buat inputan dengan id ongkos kirim
+
 
         let total = parseInt(totalbelanjaf1) + parseInt(harga_ongkir);
         // ini untuk jumlah total nya y,, jd jumlah belanja di tambah jumlah ongkos kirim
@@ -155,6 +156,12 @@ $(document).ready(function(){
         if (isNaN(total)) {
             total="";
         }
+
+        $.session.set('ss_ongkir', harga_ongkir);
+        console.log("ini ses ongkir", $.session.get('ss_ongkir'))
+
+        $.session.set('ss_grandtotal', total);
+        console.log("ini ses grandtotal", $.session.get('ss_grandtotal'))
 
         total = total.toLocaleString('id-ID', {
             currency: 'IDR',
@@ -166,8 +173,10 @@ $(document).ready(function(){
         //kita menampilkan totalnya di id total
 
 
-    });
+        // $.session.set('ss_province', province);
+        // console.log("ini ses ongkir", $.session.get('ses_ongkir'))
 
+    });
 
 });
 

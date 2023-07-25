@@ -155,7 +155,8 @@ class ShippingCostComponent extends Component
             // 'grandtotal' => $grandtotal,
 
         ]);
+
         // dd(session()->get('checkout')['subtotal']);
-        // dd(session()->get('checkout'));
+        dd(session()->get('website'));
     }
 }

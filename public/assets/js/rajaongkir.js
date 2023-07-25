@@ -219,6 +219,7 @@ $(document).ready(function(){
 
     var obj_city = {};
     obj_city= sessionStorage.getItem('ss_city');
+    console.log("ini obj city: ", obj_city);
     $("#city").val(obj_city);
 
 

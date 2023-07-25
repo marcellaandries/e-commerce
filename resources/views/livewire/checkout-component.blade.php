@@ -48,7 +48,7 @@
                                 </p>
                                 <p class="row-in-form">
                                     <label for="province">Province<span>*</span></label>
-                                    <input type="text" id="province" name="province" value="" placeholder="Province" wire:mode="province">
+                                    <input disabled type="text" id="province" name="province" value="" placeholder="Province" wire:mode="province">
                                     {{-- <select name="province_id" id="province_id" class="form-control">
                                         <option value="">Select Province</option>
                                         @foreach ($provinsi as $row)
@@ -58,7 +58,7 @@
                                 </p>
                                 <p class="row-in-form">
                                     <label for="kota_id">Town / City<span>*</span></label>
-                                    <input type="text" name="city" value="" placeholder="City name" wire:mode="city">
+                                    <input disabled id ="city" type="text" name="city" value="" placeholder="City name" wire:mode="city">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="zip-code">Postcode / ZIP:</label>
@@ -115,7 +115,7 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="province">Province<span>*</span></label>
-                                        <input disabled id ="province" type="text" name="province" value="" placeholder="Province" wire:mode="s_province">
+                                        <input disabled id ="s_province" type="text" name="province" value="" placeholder="Province" wire:mode="s_province">
                                         {{-- <select name="province_id" id="province_id" class="form-control">
                                             <option value="">Select Province</option>
                                             @foreach ($provinsi as $row)
@@ -125,7 +125,7 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="kota_id">Town / City<span>*</span></label>
-                                        <input type="text" name="city" value="" placeholder="City name" wire:mode="s_city">
+                                        <input disabled id ="s_city" type="text" name="city" value="" placeholder="City name" wire:mode="s_city">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="zip-code">Postcode / ZIP:</label>

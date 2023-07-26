@@ -2,11 +2,11 @@ $(document).ready(function(){
     //ini ketika provinsi tujuan di klik maka akan eksekusi perintah yg kita mau
     //name select nama nya "provinve_id" kalian bisa sesuaikan dengan form select kalian
     $('select[name="province_id"]').on('change', function(){
+        $.session.clear();
 
-        $("#ongkos_kirim").val(" ");
-        $("#total_keseluruhan").val(" ");
-
-        // $('select[name="kota_id"]').empty();
+        // need to empty ongkir & total
+        // $("#ongkos_kirim").val(" ");
+        // $("#total_keseluruhan").val(" ");
 
         // membuat variable namaprovinsiku untyk mendapatkan atribut nama provinsi
         var namaprovinsiku = $("#province_id option:selected").attr("namaprovinsi");
@@ -65,8 +65,9 @@ $(document).ready(function(){
     // cost
     $('select[name="kurir"]').on('change', function(){
 
-        $("#ongkos_kirim").val(" ");
-        $("#total_keseluruhan").val(" ");
+        // need to empty ongkir & total
+        // $("#ongkos_kirim").val(" ");
+        // $("#total_keseluruhan").val(" ");
 
         // kita buat variable untuk menampung data data dari  inputan
         // name city_origin di dapat dari input text name city_origin
@@ -245,7 +246,7 @@ $(document).ready(function(){
 
     var obj_weight = {};
     obj_weight= sessionStorage.getItem('ss_weight');
-    $("#weight").val(obj_weight);
+    $("#weight_total").val(obj_weight);
 
     var obj_shipping_cost = {};
     obj_shipping_cost= sessionStorage.getItem('ss_shipping_cost');

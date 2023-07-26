@@ -39,6 +39,11 @@ class CheckoutComponent extends Component
     public $s_country;
     public $s_zipcode;
 
+    public function mount()
+    {
+        $this->country = "Indonesia";
+    }
+
     public function placeOrder(Request $request)
     {
         // $this->validate([
@@ -79,6 +84,7 @@ class CheckoutComponent extends Component
 
         // $data = $request->all();
         // dd($request->all());
+        // dd($this->country);
         // dd($this->province);
         // $order->save();
 

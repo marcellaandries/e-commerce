@@ -13,8 +13,9 @@
         <div class=" main-content-area">
             {{-- <form> --}}
             {{-- enctype="multipart/form-data"  --}}
-            <form class="form-horizontal" wire:submit.prevent="placeOrder">
+            <form class="form-horizontal" wire:submit.prevent="placeOrder" enctype="multipart/form-data">
                 {{-- <div class="row"> --}}
+                    @csrf
                     <div class="col-md-12">
                         <div class="wrap-address-billing">
                             <h3 class="box-title">Billing Address</h3>
@@ -46,7 +47,7 @@
                                 </p>
                                 <p class="row-in-form">
                                     <label for="country">Country</label>
-                                    <input disabled type="text" name="country" value="Indonesia" placeholder="Country">
+                                    <input type="text" name="country" value="" placeholder="Country" wire:model="country">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="province">Province<span>*</span></label>
@@ -113,7 +114,7 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="country">Country</label>
-                                        <input disabled type="text" name="s_country" value="Indonesia" placeholder="Country">
+                                        <input disabled type="text" name="s_country" value="" placeholder="Country" wire:model="s_country">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="province">Province<span>*</span></label>

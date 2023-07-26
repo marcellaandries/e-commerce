@@ -42,6 +42,7 @@ class CheckoutComponent extends Component
     public function mount()
     {
         $this->country = "Indonesia";
+        $this->s_country = "Indonesia";
     }
 
     public function placeOrder(Request $request)

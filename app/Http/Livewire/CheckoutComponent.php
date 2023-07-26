@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 // use Illuminate\Support\Str;
 
 class CheckoutComponent extends Component
@@ -38,7 +39,7 @@ class CheckoutComponent extends Component
     public $s_country;
     public $s_zipcode;
 
-    public function placeOrder()
+    public function placeOrder(Request $request)
     {
         // $this->validate([
         //     'firstname' =>  'required',
@@ -75,8 +76,10 @@ class CheckoutComponent extends Component
         $order->zipcode = $this->zipcode;
         $order->status = 'ordered';
         $order->is_shipping_different = $this->is_shipping_different ? 1:0;
-        // dd("cella:", $this->lastname);
-        // dd($this->grandtotal);
+
+        // $data = $request->all();
+        // dd($request->all());
+        // dd($this->province);
         // $order->save();
 
         foreach(Cart::content() as$item)

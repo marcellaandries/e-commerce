@@ -46,11 +46,11 @@
                                 </p>
                                 <p class="row-in-form">
                                     <label for="country">Country</label>
-                                    <input disabled type="text" name="country" value="Indonesia" placeholder="Country" wire:model="country">
+                                    <input disabled type="text" name="country" value="Indonesia" placeholder="Country">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="province">Province<span>*</span></label>
-                                    <input disabled type="text" id="province" name="province" value="" placeholder="Province" wire:model="province">
+                                    <input type="text" id="province" name="province" value="" placeholder="Province" wire:model="province">
                                     {{-- <select name="province_id" id="province_id" class="form-control">
                                         <option value="">Select Province</option>
                                         @foreach ($provinsi as $row)
@@ -113,11 +113,11 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="country">Country</label>
-                                        <input disabled type="text" name="country" value="Indonesia" placeholder="Country" wire:model="s_country">
+                                        <input disabled type="text" name="s_country" value="Indonesia" placeholder="Country">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="province">Province<span>*</span></label>
-                                        <input disabled id ="s_province" type="text" name="province" value="" placeholder="Province" wire:model="s_province">
+                                        <input disabled id ="s_province" type="text" name="s_province" value="" placeholder="Province" wire:model="s_province">
                                         {{-- <select name="province_id" id="province_id" class="form-control">
                                             <option value="">Select Province</option>
                                             @foreach ($provinsi as $row)

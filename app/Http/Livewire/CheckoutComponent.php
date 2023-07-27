@@ -82,7 +82,7 @@ class CheckoutComponent extends Component
 
         // save reqiest by textbox name
         // dd($request->fname);
-        dd($request->all());
+        // dd($request->all());
 
         $order = new Order();
         $order->user_id = Auth::user()->id;
@@ -105,27 +105,33 @@ class CheckoutComponent extends Component
         $order->line1 = $request->line1;
         $order->line2 = $request->line2;
         $order->country = $request->country;
-        $order->province = session()->get('checkout')['province_id'];
-        $order->city = session()->get('checkout')['city_id'];
+        $order->province = session()->get('checkout')['province_name'];
+        $order->city = session()->get('checkout')['city_name'];
         $order->zipcode = $request->zipcode;
         $order->status = 'ordered';
-        $order->is_shipping_different = $request->is_shipping_different ? 1:0;
+        $order->is_shipping_different = $request->ship_to_different ? 1:0;
 
         $order->courier = session()->get('checkout')['courier'];
-        $order->service = session()->get('checkout')['service'];
+        $order->service = session()->get('checkout')['service_name'];
         $order->shipping_cost = session()->get('checkout')['shipping_cost'];
-
+        // dd($order);
+        // $order->save();
 
         // $data = $request->all();
         // dd($request->all());
-        dd($order);
-        // $order->save();
 
-        foreach(Cart::content() as$item)
+        foreach(Cart::content() as $item)
         {
             $orderItem = new OrderItem();
-            $orderItem = $item->id;
+            $orderItem->product_id = $item->id;
+            $orderItem->order_id = $order->id;
+            $orderItem->price = $item->price;
+            $orderItem->quantity = $item->qty;
+            // $orderItem->save();
         }
+        dd(Cart::content());
+
+
     }
 
     public function render()

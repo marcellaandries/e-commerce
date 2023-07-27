@@ -16,7 +16,10 @@
                 <h3 class="box-title" style="font-size: 14px;"><b>SHIPPING METHOD</b></h3>
 
                 {{-- cella --}}
-                <form class="ps-checkout__form" action="" method="post">
+                {{-- <form class="ps-checkout__form" action="" method="post"> --}}
+                <form class="ps-checkout__form" action="{{ route('checkout') }}" method="post"
+                enctype="multipart/form-data">
+                        @csrf
                     @csrf
                     <div class="row">
                     <div class="col-md-8">
@@ -109,8 +112,10 @@
                     <input class="form-control" type="text" disabled id="total_keseluruhan" name="total_keseluruhan">
                     </div>
                     <div class="form-group summary-item payment-method">
-                        {{-- <button class="btn btn-primary" type="submit" wire:click.prevent="check_out()">Checkout</button> --}}
-                        <a class="btn btn-primary" href="{{route('checkout')}}" wire:click.prevent="check_out()">Checkout</a>
+                        <button class="btn btn-primary" type="submit">Checkout</button>
+
+                        {{-- use this --}}
+                        {{-- <a class="btn btn-primary" href="{{route('checkout')}}" wire:click.prevent="check_out()">Checkout</a> --}}
                     </div>
 
                     </div>

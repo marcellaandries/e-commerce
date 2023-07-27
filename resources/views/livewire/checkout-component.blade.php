@@ -12,7 +12,7 @@
         </div>
         <div class=" main-content-area">
             {{-- <form> --}}
-                <form action="{{ route('store') }}" method="post"
+                <form action="{{ route('place.order') }}" method="post"
                 enctype="multipart/form-data">
                     @csrf
                     <div class="col-md-12">
@@ -113,11 +113,11 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="country">Country</label>
-                                        <input disabled type="s_text" name="s_country" value="" placeholder="Country" wire:model="s_country">
+                                        <input readonly type="s_text" name="s_country" value="" placeholder="Country" wire:model="s_country">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="province">Province<span>*</span></label>
-                                        <input disabled id ="s_province" type="text" name="s_province" value="" placeholder="Province" wire:model="s_province">
+                                        <input readonly id ="s_province" type="text" name="s_province" value="" placeholder="Province" wire:model="s_province">
                                         {{-- <select name="province_id" id="province_id" class="form-control">
                                             <option value="">Select Province</option>
                                             @foreach ($provinsi as $row)
@@ -127,7 +127,7 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="kota_id">Town / City<span>*</span></label>
-                                        <input disabled id ="s_city" type="text" name="s_city" value="" placeholder="City name" wire:model="s_city">
+                                        <input readonly id ="s_city" type="text" name="s_city" value="" placeholder="City name" wire:model="s_city">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="zip-code">Postcode / ZIP:</label>
@@ -163,7 +163,7 @@
                                 <span class="payment-desc">card if you don't have a paypal account</span>
                             </label> --}}
                         </div>
-                        <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price"><input class="textlabel" disabled type="text" id="grandtotal" name="grandtotal" value="" placeholder="Grandtotal" wire:model="grandtotal"></span></p>
+                        <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price"><input class="textlabel" readonly type="text" id="grandtotal" name="grandtotal" value="" placeholder="Grandtotal" wire:model="grandtotal"></span></p>
                         {{-- <button type="submit" class="btn btn-medium" wire:click.prevent="placeOrder()">Place order now</button> --}}
                         <button type="submit" class="btn btn-medium">Place order now</button>
                     </div>
@@ -172,9 +172,9 @@
                         {{-- <p class="summary-info"><span class="title">Flat Rate</span></p>
                         <p class="summary-info"><span class="title">Fixed Rp 50.000,00</span></p> --}}
 
-                        <p class="summary-info"><label for="courier">Courier: </label><span class="title"><input class="uppercase" disabled type="text" id="courier" name="courier" value="" placeholder="Courier" wire:model="courier"></span></p>
-                        <p class="summary-info"><label for="service">Service: </label><span class="title"><input class ="textlabel" disabled type="text" id="service" name="service" value="" placeholder="Service" wire:model="service"></span></p>
-                        <p hidden class="summary-info"><label for="shipping_cost">Shipping Cost:</label><span class="title"><input class ="textlabel" disabled type="text" id="shipping_cost" name="shipping_cost" value="" placeholder="Shipping Cost" wire:model="shipping_cost"></span></p>
+                        <p class="summary-info"><label for="courier">Courier: </label><span class="title"><input class="uppercase" readonly type="text" id="courier" name="courier" value="" placeholder="Courier" wire:model="courier"></span></p>
+                        <p class="summary-info"><label for="service">Service: </label><span class="title"><input class ="textlabel" readonly type="text" id="service" name="service" value="" placeholder="Service" wire:model="service"></span></p>
+                        <p hidden class="summary-info"><label for="shipping_cost">Shipping Cost:</label><span class="title"><input class ="textlabel" readonly type="text" id="shipping_cost" name="shipping_cost" value="" placeholder="Shipping Cost" wire:model="shipping_cost"></span></p>
                     </div>
                 </div>
 

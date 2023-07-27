@@ -14,8 +14,12 @@ class CheckoutComponent extends Component
 {
     public $ship_to_different;
     public $is_shipping_different;
+
     public $total;
     public $grandtotal;
+    public $shipping_cost;
+    public $courier;
+    public $service;
 
     public $firstname;
     public $lastname;
@@ -47,7 +51,7 @@ class CheckoutComponent extends Component
 
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         // dd($request->city);
     }
 
@@ -75,24 +79,34 @@ class CheckoutComponent extends Component
         $num_subtotal = str_replace(",00", "", $num_subtotal);
         $num_subtotal = str_replace(".", "", $num_subtotal);
         $order->subtotal = $num_subtotal;
-        $order->total = $this->grandtotal;
+
+        $num_grandtotal = $request->grandtotal;
+        $num_grandtotal = str_replace(",00", "", $num_grandtotal);
+        $num_grandtotal = str_replace(".", "", $num_grandtotal);
+        $order->total = $num_grandtotal;
+
         $order->firstname = $this->firstname;
         $order->lastname = $this->lastname;
         $order->email = $this->email;
         $order->mobile = $this->mobile;
         $order->line1 = $this->line1;
         $order->line2 = $this->line2;
-        $order->city = $this->city;
-        $order->province = $this->province;
-        $order->country = $this->country;
+        $order->city = $request->city;
+        $order->province = $request->province;
+        $order->country = $request->city;
         $order->zipcode = $this->zipcode;
         $order->status = 'ordered';
         $order->is_shipping_different = $this->is_shipping_different ? 1:0;
 
+        $order->province = $request->courier;
+        $order->country = $request->service;
+        $order->province = $request->shipping_cost;
+
+
         // $data = $request->all();
         // dd($request->all());
         // dd($this->country);
-        dd($this->country);
+        dd($order);
         // $order->save();
 
         foreach(Cart::content() as$item)

@@ -56,6 +56,7 @@ Route::get('/cart', CartComponent::class)->name('product.cart');
 
 Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 Route::post('store', [CheckoutComponent::class, 'store'])->name('store');
+Route::post('place-order', [CheckoutComponent::class, 'placeOrder'])->name('place.order');
 
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 

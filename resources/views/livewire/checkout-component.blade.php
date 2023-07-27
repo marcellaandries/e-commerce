@@ -182,9 +182,9 @@
                     <input type="hidden" class="form-control" id="hss_id" nama="hss_id" placeholder="ini untuk menangkap id ">
                 </div>
 
-                <div class="form-group">
-                    <input type="hidden" class="form-control" id="hss_province" nama="hss_province" placeholder="ini untuk menangkap province ">
-                </div>
+                {{-- <div class="form-group">
+                    <input type="text" class="form-control" id="hss_province" nama="hss_province" placeholder="ini untuk menangkap province ">
+                </div> --}}
 
             </form>
 

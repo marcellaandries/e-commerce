@@ -142,7 +142,7 @@ class ShippingCostComponent extends Component
 
     public function check_out(Request $request){
         // dd($request->all());
-        $this->setAmountforCheckout();
+        $this->setAmountforCheckout($request);
         // $data = $request->all();
         // dd(compact('data'));
         // dd($request->all());
@@ -150,17 +150,37 @@ class ShippingCostComponent extends Component
         return redirect()->route('checkout');
     }
 
-    public function setAmountforCheckout()
+    public function setAmountforCheckout($request)
     {
+        // array:11 [▼
+        //     "_token" => "8KNVfSnasbTPq0t75jRqzWBHjrWOkffa7tFn8GCs"
+        //     "province_origin" => "6"
+        //     "city_origin" => "152"
+        //     "province_id" => "4"
+        //     "kota_id" => "183"
+        //     "kurir" => "jne"
+        //     "layanan" => "0"
+        //     "totalbelanja" => "Rp 10.360.000,00"
+        //     "weight" => "12.000"
+        //     "ongkos_kirim" => "Rp 540.000,00"
+        //     "total_keseluruhan" => "Rp 10.900.000,00"
+        // ]
+
+        $res_data = $request->all();
+        // dd($res_data['total_keseluruhan']);
         session()->put('checkout',[
             // 'province ' => $this->province_name,
             // 'discount' => 0,
             'subtotal' => Cart::subtotal(),
             // 'tax' => 0,
-            // 'total' => Cart::total(),
-            // 'shipping_cost' => $shipping_cost,
-            // 'grandtotal' => $grandtotal,
-
+            'province_id' => $res_data['province_id'],
+            'city_id' => $res_data['kota_id'],
+            'courier' => $res_data['kurir'],
+            'service' => $res_data['layanan'],
+            'total' => $res_data['totalbelanja'],
+            'weight' => $res_data['weight'],
+            'shipping_cost' => $res_data['ongkos_kirim'],
+            'total' => $res_data['total_keseluruhan'],
         ]);
         // dd(session()->get('checkout'));
         // dd(session()->get('checkout')['subtotal']);

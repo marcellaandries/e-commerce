@@ -55,7 +55,7 @@ class CheckoutComponent extends Component
         $this->city = session()->get('checkout')['city_name'];
 
         $this->courier = session()->get('checkout')['courier'];
-        $this->service = session()->get('checkout')['service'];
+        $this->service = session()->get('checkout')['service_name'];
         $this->shipping_cost = session()->get('checkout')['shipping_cost'];
     }
 

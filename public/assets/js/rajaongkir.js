@@ -218,6 +218,10 @@ $(document).ready(function(){
         console.log("ini obj city: ", obj_city);
         $("#city_name").val(obj_city);
 
+        var obj_service = {};
+        obj_service= sessionStorage.getItem('ss_service');
+        $("#service_name").val(obj_service);
+
 
 
 

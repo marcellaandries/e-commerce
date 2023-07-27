@@ -22,11 +22,11 @@
                             <div class="billing-address">
                                 <p class="row-in-form">
                                     <label for="fname">first name<span>*</span></label>
-                                    <input type="text" id ="firstname" name="fname" value="" placeholder="Your name" wire:model="firstname">
+                                    <input type="text" id ="firstname" name="firstname" value="" placeholder="Your name" wire:model="firstname">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="lname">last name<span>*</span></label>
-                                    <input type="text" name="lname" value="" placeholder="Your last name" wire:model="lastname">
+                                    <input type="text" name="lastname" value="" placeholder="Your last name" wire:model="lastname">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="email">Email Address:</label>
@@ -34,15 +34,15 @@
                                 </p>
                                 <p class="row-in-form">
                                     <label for="phone">Phone number<span>*</span></label>
-                                    <input type="number" name="phone" value="" placeholder="number format" wire:model="mobile">
+                                    <input type="number" name="mobile" value="" placeholder="number format" wire:model="mobile">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="add">Address (line 1):</label>
-                                    <input type="text" name="add" value="" placeholder="Street at apartment number" wire:model="line1">
+                                    <input type="text" name="line1" value="" placeholder="Street at apartment number" wire:model="line1">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="add">Address (line 2):</label>
-                                    <input type="text" name="add" value="" placeholder="Street at apartment number" wire:model="line2">
+                                    <input type="text" name="line2" value="" placeholder="Street at apartment number" wire:model="line2">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="country">Country</label>
@@ -64,7 +64,7 @@
                                 </p>
                                 <p class="row-in-form">
                                     <label for="zip-code">Postcode / ZIP:</label>
-                                    <input type="number" name="zip-code" value="" placeholder="Your postal code" wire:model="zipcode">
+                                    <input type="number" name="zipcode" value="" placeholder="Your postal code" wire:model="zipcode">
                                 </p>
                                 <p class="row-in-form fill-wife">
                                     {{-- <label class="checkbox-field">
@@ -72,7 +72,7 @@
                                         <span>Create an account?</span>
                                     </label> --}}
                                     <label class="checkbox-field">
-                                        <input name="different-add" id="different-add" value="1" type="checkbox" wire:model="ship_to_different">
+                                        <input name="ship_to_different" id="different-add" value="1" type="checkbox" wire:model="ship_to_different">
                                         <span>Ship to a different address?</span>
                                     </label>
                                 </p>
@@ -89,11 +89,11 @@
                                 <div class="billing-address">
                                     <p class="row-in-form">
                                         <label for="fname">first name<span>*</span></label>
-                                        <input type="text" name="s_fname" value="" placeholder="Your name" wire:model="s_firstname">
+                                        <input type="text" name="s_firstname" value="" placeholder="Your name" wire:model="s_firstname">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="lname">last name<span>*</span></label>
-                                        <input type="text" name="s_lname" value="" placeholder="Your last name" wire:model="s_lastname">
+                                        <input type="text" name="s_lastname" value="" placeholder="Your last name" wire:model="s_lastname">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="email">Email Address:</label>
@@ -101,19 +101,19 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="phone">Phone number<span>*</span></label>
-                                        <input type="number" name="s_phone" value="" placeholder="number format" wire:model="s_mobile">
+                                        <input type="number" name="s_mobile" value="" placeholder="number format" wire:model="s_mobile">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="add">Address (line 1):</label>
-                                        <input type="text" name="s_add" value="" placeholder="Street at apartment number" wire:model="s_line1">
+                                        <input type="text" name="s_line1" value="" placeholder="Street at apartment number" wire:model="s_line1">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="add">Address (line 2):</label>
-                                        <input type="text" name="s_add" value="" placeholder="Street at apartment number" wire:model="s_line2">
+                                        <input type="text" name="s_line2" value="" placeholder="Street at apartment number" wire:model="s_line2">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="country">Country</label>
-                                        <input readonly type="s_text" name="s_country" value="" placeholder="Country" wire:model="s_country">
+                                        <input readonly type="s_country" name="s_country" value="" placeholder="Country" wire:model="s_country">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="province">Province<span>*</span></label>
@@ -131,7 +131,7 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="zip-code">Postcode / ZIP:</label>
-                                        <input type="number" name="s_zip-code" value="" placeholder="Your postal code" wire:model="s_zipcode">
+                                        <input type="number" name="s_zipcode" value="" placeholder="Your postal code" wire:model="s_zipcode">
                                     </p>
                                 </div>
                                 {{-- </form> --}}
@@ -163,7 +163,7 @@
                                 <span class="payment-desc">card if you don't have a paypal account</span>
                             </label> --}}
                         </div>
-                        <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price"><input class="textlabel" readonly type="text" id="grandtotal" name="grandtotal" value="" placeholder="Grandtotal" wire:model="grandtotal"></span></p>
+                        <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price"><input class="textlabel" readonly type="text" id="total" name="total" value="" placeholder="Total" wire:model="total"></span></p>
                         {{-- <button type="submit" class="btn btn-medium" wire:click.prevent="placeOrder()">Place order now</button> --}}
                         <button type="submit" class="btn btn-medium">Place order now</button>
                     </div>

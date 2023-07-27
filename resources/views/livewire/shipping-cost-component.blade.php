@@ -19,7 +19,6 @@
                 {{-- <form class="ps-checkout__form" action="" method="post"> --}}
                 <form class="ps-checkout__form" action="{{ route('check.out') }}" method="post"
                 enctype="multipart/form-data">
-                        @csrf
                     @csrf
                     <div class="row">
                     <div class="col-md-8">
@@ -53,7 +52,7 @@
                     </div>
                     {{-- cella --}}
                     <div class="form-group">
-                        <input type="text" readonly class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="province name ">
+                        <input type="hidden" readonly class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="province name ">
                     </div>
 
 
@@ -65,7 +64,7 @@
                     </select>
                     </div>
                     <div class="form-group">
-                    <input type="text" readonly class="form-control" id="nama_kota" nama="nama_kota" placeholder="city name">
+                    <input type="hidden" readonly class="form-control" id="nama_kota" nama="nama_kota" placeholder="city name">
                     </div>
                     <div class="form-group ">
 

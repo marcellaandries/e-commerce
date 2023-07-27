@@ -7,10 +7,14 @@ use Illuminate\Support\Facades\Auth;
 use Cart;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Http;
+
 class ShippingCostComponent extends Component
 {
     public $weight_total;
-    public $province_name;
+    // public $province_name;
+
+    public $province_data;
 
     public function mount($weight_total)
     {
@@ -34,7 +38,6 @@ class ShippingCostComponent extends Component
 
     public function get_province(){
         $curl = curl_init();
-        // dd($curl);
 
         curl_setopt_array($curl, array(
         // CURLOPT_URL => "https://api.rajaongkir.com/starter/province?id=12",
@@ -69,6 +72,9 @@ class ShippingCostComponent extends Component
             $response=json_decode($response,true);
             //ini untuk mengambil data provinsi yang ada di dalam rajaongkir resul
             $data_pengirim = $response['rajaongkir']['results'];
+            // dd($data_pengirim);
+            $province_data = $data_pengirim;
+
             return $data_pengirim;
         }
         // http://localhost:8000/province
@@ -141,6 +147,7 @@ class ShippingCostComponent extends Component
     }
 
     public function check_out(Request $request){
+        // $province_name = $request->input('nama_provinsi');
         // dd($request->all());
         $this->setAmountforCheckout($request);
         // $data = $request->all();
@@ -166,14 +173,19 @@ class ShippingCostComponent extends Component
         //     "total_keseluruhan" => "Rp 10.900.000,00"
         // ]
 
+
+
         $res_data = $request->all();
         // dd($res_data['total_keseluruhan']);
+
+
         session()->put('checkout',[
             // 'province ' => $this->province_name,
             // 'discount' => 0,
             'subtotal' => Cart::subtotal(),
             // 'tax' => 0,
             'province_id' => $res_data['province_id'],
+            // 'province_name' => $res_data['province_name'],
             'city_id' => $res_data['kota_id'],
             'courier' => $res_data['kurir'],
             'service' => $res_data['layanan'],

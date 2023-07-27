@@ -15,8 +15,8 @@ class CheckoutComponent extends Component
     public $ship_to_different;
     public $is_shipping_different;
 
+    public $subtotal;
     public $total;
-    public $grandtotal;
     public $shipping_cost;
     public $courier;
     public $service;
@@ -45,9 +45,18 @@ class CheckoutComponent extends Component
 
     public function mount()
     {
-        // $this->country = "Indonesia";
+        $this->country = "Indonesia";
         $this->s_country = "Indonesia";
+
+        $this->subtotal = session()->get('checkout')['subtotal'];
+        $this->total = session()->get('checkout')['total'];
+
         $this->province = session()->get('checkout')['province_id'];
+        $this->city = session()->get('checkout')['city_id'];
+
+        $this->courier = session()->get('checkout')['courier'];
+        $this->service = session()->get('checkout')['service'];
+        $this->shipping_cost = session()->get('checkout')['shipping_cost'];
     }
 
     public function store(Request $request)
@@ -71,6 +80,10 @@ class CheckoutComponent extends Component
         //     'zipcode' =>  'required',
         // ]);
 
+        // save reqiest by textbox name
+        // dd($request->fname);
+        dd($request->all());
+
         $order = new Order();
         $order->user_id = Auth::user()->id;
         // $order->discount = session()->get('checkout')['discount'];
@@ -91,9 +104,9 @@ class CheckoutComponent extends Component
         $order->mobile = $request->mobile;
         $order->line1 = $request->line1;
         $order->line2 = $request->line2;
-        $order->city = $request->city;
+        $order->country = $request->country;
         $order->province = session()->get('checkout')['province_id'];
-        $order->country = session()->get('checkout')['city_id'];
+        $order->city = session()->get('checkout')['city_id'];
         $order->zipcode = $request->zipcode;
         $order->status = 'ordered';
         $order->is_shipping_different = $request->is_shipping_different ? 1:0;

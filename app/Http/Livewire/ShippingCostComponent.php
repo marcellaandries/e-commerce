@@ -176,6 +176,7 @@ class ShippingCostComponent extends Component
 
 
         $res_data = $request->all();
+        // dd($res_data);
         // dd($res_data['total_keseluruhan']);
 
 
@@ -185,8 +186,9 @@ class ShippingCostComponent extends Component
             'subtotal' => Cart::subtotal(),
             // 'tax' => 0,
             'province_id' => $res_data['province_id'],
-            // 'province_name' => $res_data['province_name'],
+            'province_name' => $res_data['province_name'],
             'city_id' => $res_data['kota_id'],
+            'city_name' => $res_data['city_name'],
             'courier' => $res_data['kurir'],
             'service' => $res_data['layanan'],
             'total' => $res_data['totalbelanja'],

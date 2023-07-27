@@ -51,8 +51,8 @@ class CheckoutComponent extends Component
         $this->subtotal = session()->get('checkout')['subtotal'];
         $this->total = session()->get('checkout')['total'];
 
-        $this->province = session()->get('checkout')['province_id'];
-        $this->city = session()->get('checkout')['city_id'];
+        $this->province = session()->get('checkout')['province_name'];
+        $this->city = session()->get('checkout')['city_name'];
 
         $this->courier = session()->get('checkout')['courier'];
         $this->service = session()->get('checkout')['service'];

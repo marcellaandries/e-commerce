@@ -110,6 +110,17 @@
                     <label>Grandtotal</label>
                     <input class="form-control" type="text" readonly id="total_keseluruhan" name="total_keseluruhan">
                     </div>
+
+                    <div class="form-group " hidden>
+                        <label>Prov</label>
+                        <input class="form-control" type="text" readonly id="province_name" name="province_name">
+                    </div>
+
+                    <div class="form-group " hidden>
+                        <label>City</label>
+                        <input class="form-control" type="text" readonly id="city_name" name="city_name">
+                    </div>
+
                     <div class="form-group summary-item payment-method">
                         <button class="btn btn-primary" type="submit">Checkout</button>
 

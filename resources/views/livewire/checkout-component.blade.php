@@ -46,11 +46,11 @@
                                 </p>
                                 <p class="row-in-form">
                                     <label for="country">Country</label>
-                                    <input type="text" name="country" value="Indonesia" placeholder="Country">
+                                    <input type="text" readonly name="country" value="Indonesia" placeholder="Country">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="province">Province<span>*</span></label>
-                                    <input type="text" id="province" name="province" value="" placeholder="Province" wire:model="province">
+                                    <input type="text" readonly id="province" name="province" value="" placeholder="Province" wire:model="province">
                                     {{-- <select name="province_id" id="province_id" class="form-control">
                                         <option value="">Select Province</option>
                                         @foreach ($provinsi as $row)
@@ -60,7 +60,7 @@
                                 </p>
                                 <p class="row-in-form">
                                     <label for="kota_id">Town / City<span>*</span></label>
-                                    <input disabled id ="city" type="text" name="city" value="" placeholder="City name" wire:model="city">
+                                    <input type="text" readonly id ="city"  name="city" value="" placeholder="City" wire:model="city">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="zip-code">Postcode / ZIP:</label>

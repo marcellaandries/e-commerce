@@ -57,7 +57,7 @@ class CheckoutComponent extends Component
 
     public function placeOrder(Request $request)
     {
-        // $this->validate([
+        // $request->validate([
         //     'firstname' =>  'required',
         //     'lastname' =>  'required',
         //     'email' =>  'required|email',
@@ -72,7 +72,6 @@ class CheckoutComponent extends Component
 
         $order = new Order();
         $order->user_id = Auth::user()->id;
-        // $order->subtotal = session()->get('checkout')['subtotal'];
         // $order->discount = session()->get('checkout')['discount'];
         // $order->tax = session()->get('checkout')['tax'];
         $num_subtotal = session()->get('checkout')['subtotal'];
@@ -85,18 +84,18 @@ class CheckoutComponent extends Component
         $num_grandtotal = str_replace(".", "", $num_grandtotal);
         $order->total = $num_grandtotal;
 
-        $order->firstname = $this->firstname;
-        $order->lastname = $this->lastname;
-        $order->email = $this->email;
-        $order->mobile = $this->mobile;
-        $order->line1 = $this->line1;
-        $order->line2 = $this->line2;
+        $order->firstname = $request->firstname;
+        $order->lastname = $request->lastname;
+        $order->email = $request->email;
+        $order->mobile = $request->mobile;
+        $order->line1 = $request->line1;
+        $order->line2 = $request->line2;
         $order->city = $request->city;
         $order->province = $request->province;
         $order->country = $request->city;
-        $order->zipcode = $this->zipcode;
+        $order->zipcode = $request->zipcode;
         $order->status = 'ordered';
-        $order->is_shipping_different = $this->is_shipping_different ? 1:0;
+        $order->is_shipping_different = $request->is_shipping_different ? 1:0;
 
         $order->province = $request->courier;
         $order->country = $request->service;
@@ -105,7 +104,6 @@ class CheckoutComponent extends Component
 
         // $data = $request->all();
         // dd($request->all());
-        // dd($this->country);
         dd($order);
         // $order->save();
 

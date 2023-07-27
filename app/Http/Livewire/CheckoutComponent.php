@@ -47,6 +47,7 @@ class CheckoutComponent extends Component
     {
         // $this->country = "Indonesia";
         $this->s_country = "Indonesia";
+        $this->province = session()->get('checkout')['province_id'];
     }
 
     public function store(Request $request)
@@ -79,7 +80,7 @@ class CheckoutComponent extends Component
         $num_subtotal = str_replace(".", "", $num_subtotal);
         $order->subtotal = $num_subtotal;
 
-        $num_grandtotal = $request->grandtotal;
+        $num_grandtotal = session()->get('checkout')['total'];
         $num_grandtotal = str_replace(",00", "", $num_grandtotal);
         $num_grandtotal = str_replace(".", "", $num_grandtotal);
         $order->total = $num_grandtotal;
@@ -91,15 +92,15 @@ class CheckoutComponent extends Component
         $order->line1 = $request->line1;
         $order->line2 = $request->line2;
         $order->city = $request->city;
-        $order->province = $request->province;
-        $order->country = $request->city;
+        $order->province = session()->get('checkout')['province_id'];
+        $order->country = session()->get('checkout')['city_id'];
         $order->zipcode = $request->zipcode;
         $order->status = 'ordered';
         $order->is_shipping_different = $request->is_shipping_different ? 1:0;
 
-        $order->province = $request->courier;
-        $order->country = $request->service;
-        $order->province = $request->shipping_cost;
+        $order->courier = session()->get('checkout')['courier'];
+        $order->service = session()->get('checkout')['service'];
+        $order->shipping_cost = session()->get('checkout')['shipping_cost'];
 
 
         // $data = $request->all();

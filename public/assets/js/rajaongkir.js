@@ -225,38 +225,38 @@ $(document).ready(function(){
     obj_province= sessionStorage.getItem('ss_province');
     console.log("ini obj province: ", obj_province);
     $("#hss_province").val(obj_province);
-    $("#province").val(obj_province);
+    $("#province1").val(obj_province);
 
     var obj_city = {};
     obj_city= sessionStorage.getItem('ss_city');
     console.log("ini obj city: ", obj_city);
-    $("#city").val(obj_city);
+    $("#city1").val(obj_city);
 
     var obj_courier = {};
     obj_courier= sessionStorage.getItem('ss_courier');
-    $("#courier").val(obj_courier);
+    $("#courier1").val(obj_courier);
 
     var obj_service = {};
     obj_service= sessionStorage.getItem('ss_service');
-    $("#service").val(obj_service);
+    $("#service1").val(obj_service);
 
     var obj_subtotal = {};
     obj_subtotal= sessionStorage.getItem('ss_subtotal');
-    $("#subtotal").val(obj_subtotal);
+    $("#subtotal1").val(obj_subtotal);
 
     var obj_weight = {};
     obj_weight= sessionStorage.getItem('ss_weight');
-    $("#weight_total").val(obj_weight);
+    $("#weight_total1").val(obj_weight);
 
     var obj_shipping_cost = {};
     obj_shipping_cost= sessionStorage.getItem('ss_shipping_cost');
-    $("#shipping_cost").val(obj_shipping_cost);
+    $("#shipping_cost1").val(obj_shipping_cost);
 
     var obj_grandtotal = {};
     obj_grandtotal= sessionStorage.getItem('ss_grandtotal');
     // obj_grandtotal = num.toLocaleString("id-ID", {style:"currency", currency:"IDR"});
     obj_grandtotal= Number(obj_grandtotal).toLocaleString("id-ID", {style:"currency", currency:"IDR"});
-    $("#grandtotal").val(obj_grandtotal);
+    $("#grandtotal1").val(obj_grandtotal);
 
 
 

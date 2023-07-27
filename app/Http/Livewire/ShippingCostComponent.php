@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Cart;
+use Illuminate\Http\Request;
 
 class ShippingCostComponent extends Component
 {
@@ -139,8 +140,13 @@ class ShippingCostComponent extends Component
         // http://localhost:8000/origin=40&destination=40&weight=100&courier=jne
     }
 
-    public function check_out(){
+    public function check_out(Request $request){
+        // dd($request->all());
         $this->setAmountforCheckout();
+        // $data = $request->all();
+        // dd(compact('data'));
+        // dd($request->all());
+
         return redirect()->route('checkout');
     }
 

@@ -17,7 +17,7 @@
 
                 {{-- cella --}}
                 {{-- <form class="ps-checkout__form" action="" method="post"> --}}
-                <form class="ps-checkout__form" action="{{ route('checkout') }}" method="post"
+                <form class="ps-checkout__form" action="{{ route('check.out') }}" method="post"
                 enctype="multipart/form-data">
                         @csrf
                     @csrf
@@ -53,7 +53,7 @@
                     </div>
                     {{-- cella --}}
                     <div class="form-group">
-                        <input type="hidden" class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="ini untuk menangkap nama provinsi ">
+                        <input type="text" readonly class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="province name ">
                     </div>
 
 
@@ -65,7 +65,7 @@
                     </select>
                     </div>
                     <div class="form-group">
-                    <input type="hidden" class="form-control" id="nama_kota" nama="nama_kota" placeholder="ini untuk menangkap nama kota">
+                    <input type="text" readonly class="form-control" id="nama_kota" nama="nama_kota" placeholder="city name">
                     </div>
                     <div class="form-group ">
 
@@ -96,20 +96,20 @@
                     <div class="form-group ">
                     <label>Cart Total<span>*</span>
                     </label>
-                    <input type="text" disabled id="totalbelanja" name="totalbelanja" value="Rp {{Cart::subtotal()}}" class="form-control" >
+                    <input type="text" readonly id="totalbelanja" name="totalbelanja" value="Rp {{Cart::subtotal()}}" class="form-control" >
                     </div>
                     <div class="form-group ">
                     <label>Weight Total (gram) </label>
                     {{-- <input class="form-control" type="text" value="" id="weight" name="weight"> --}}
-                    <input disabled class="form-control" type="text" value="{{number_format($weight_total, 0, "", ".")}}" id="weight" name="weight">
+                    <input readonly class="form-control" type="text" value="{{number_format($weight_total, 0, "", ".")}}" id="weight" name="weight">
                     </div>
                     <div class="form-group ">
                     <label>Shipping Cost Total</label>
-                    <input class="form-control" type="text" disabled id="ongkos_kirim" name="ongkos_kirim">
+                    <input class="form-control" type="text" readonly id="ongkos_kirim" name="ongkos_kirim">
                     </div>
                     <div class="form-group ">
                     <label>Grandtotal</label>
-                    <input class="form-control" type="text" disabled id="total_keseluruhan" name="total_keseluruhan">
+                    <input class="form-control" type="text" readonly id="total_keseluruhan" name="total_keseluruhan">
                     </div>
                     <div class="form-group summary-item payment-method">
                         <button class="btn btn-primary" type="submit">Checkout</button>

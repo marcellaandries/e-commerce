@@ -41,8 +41,14 @@ class CheckoutComponent extends Component
 
     public function mount()
     {
-        $this->country = "Indonesia";
+        // $this->country = "Indonesia";
         $this->s_country = "Indonesia";
+    }
+
+    public function store(Request $request)
+    {
+        dd($request->all());
+        // dd($request->city);
     }
 
     public function placeOrder(Request $request)
@@ -86,7 +92,7 @@ class CheckoutComponent extends Component
         // $data = $request->all();
         // dd($request->all());
         // dd($this->country);
-        // dd($this->province);
+        dd($this->country);
         // $order->save();
 
         foreach(Cart::content() as$item)

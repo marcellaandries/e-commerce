@@ -12,9 +12,8 @@
         </div>
         <div class=" main-content-area">
             {{-- <form> --}}
-            {{-- enctype="multipart/form-data"  --}}
-            <form class="form-horizontal" wire:submit.prevent="placeOrder" enctype="multipart/form-data">
-                {{-- <div class="row"> --}}
+                <form action="{{ route('store') }}" method="post"
+                enctype="multipart/form-data">
                     @csrf
                     <div class="col-md-12">
                         <div class="wrap-address-billing">
@@ -47,7 +46,7 @@
                                 </p>
                                 <p class="row-in-form">
                                     <label for="country">Country</label>
-                                    <input type="text" name="country" value="" placeholder="Country" wire:model="country">
+                                    <input type="text" name="country" value="Indonesia" placeholder="Country">
                                 </p>
                                 <p class="row-in-form">
                                     <label for="province">Province<span>*</span></label>
@@ -90,31 +89,31 @@
                                 <div class="billing-address">
                                     <p class="row-in-form">
                                         <label for="fname">first name<span>*</span></label>
-                                        <input type="text" name="fname" value="" placeholder="Your name" wire:model="s_firstname">
+                                        <input type="text" name="s_fname" value="" placeholder="Your name" wire:model="s_firstname">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="lname">last name<span>*</span></label>
-                                        <input type="text" name="lname" value="" placeholder="Your last name" wire:model="s_lastname">
+                                        <input type="text" name="s_lname" value="" placeholder="Your last name" wire:model="s_lastname">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="email">Email Address:</label>
-                                        <input type="email" name="email" value="" placeholder="Type your email" wire:model="s_email">
+                                        <input type="email" name="s_email" value="" placeholder="Type your email" wire:model="s_email">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="phone">Phone number<span>*</span></label>
-                                        <input type="number" name="phone" value="" placeholder="number format" wire:model="s_mobile">
+                                        <input type="number" name="s_phone" value="" placeholder="number format" wire:model="s_mobile">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="add">Address (line 1):</label>
-                                        <input type="text" name="add" value="" placeholder="Street at apartment number" wire:model="s_line1">
+                                        <input type="text" name="s_add" value="" placeholder="Street at apartment number" wire:model="s_line1">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="add">Address (line 2):</label>
-                                        <input type="text" name="add" value="" placeholder="Street at apartment number" wire:model="s_line2">
+                                        <input type="text" name="s_add" value="" placeholder="Street at apartment number" wire:model="s_line2">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="country">Country</label>
-                                        <input disabled type="text" name="s_country" value="" placeholder="Country" wire:model="s_country">
+                                        <input disabled type="s_text" name="s_country" value="" placeholder="Country" wire:model="s_country">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="province">Province<span>*</span></label>
@@ -128,11 +127,11 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="kota_id">Town / City<span>*</span></label>
-                                        <input disabled id ="s_city" type="text" name="city" value="" placeholder="City name" wire:model="s_city">
+                                        <input disabled id ="s_city" type="text" name="s_city" value="" placeholder="City name" wire:model="s_city">
                                     </p>
                                     <p class="row-in-form">
                                         <label for="zip-code">Postcode / ZIP:</label>
-                                        <input type="number" name="zip-code" value="" placeholder="Your postal code" wire:model="s_zipcode">
+                                        <input type="number" name="s_zip-code" value="" placeholder="Your postal code" wire:model="s_zipcode">
                                     </p>
                                 </div>
                                 {{-- </form> --}}

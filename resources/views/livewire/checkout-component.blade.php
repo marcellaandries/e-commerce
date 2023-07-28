@@ -17,7 +17,7 @@
                     @csrf
                     <div class="col-md-12">
                         <div class="wrap-address-billing">
-                            <h3 class="box-title">Billing Address</h3>
+                            <h3 class="box-title">Address</h3>
                             {{-- <form action="#" method="get" name="frm-billing"> --}}
                             <div class="billing-address">
                                 <p class="row-in-form">
@@ -151,14 +151,14 @@
                         <p class="summary-info"><span class="title">Credit Cart (saved)</span></p>
                         <div class="choose-payment-methods">
                             <label class="payment-method">
-                                <input name="payment-method" id="payment-method-bank" value="bank" type="radio">
+                                <input name="paymentmethod" id="payment-method-bank" value="bank" type="radio" wire:model="paymentmode">
                                 <span>Bank Transder</span>
                                 <span class="payment-desc">BCA Account : 5270881188</span>
                             </label>
                             <label class="payment-method">
-                                <input name="payment-method" id="payment-method-visa" value="visa" type="radio">
-                                <span>Midtrans</span>
-                                <span class="payment-desc">Midtrans Credit Card</span>
+                                <input name="paymentmethod" id="payment-method-visa" value="card" type="radio" wire:model="paymentmode">
+                                <span>Credit Card</span>
+                                <span class="payment-desc">Via Midtrans</span>
                             </label>
                             {{-- <label class="payment-method">
                                 <input name="payment-method" id="payment-method-paypal" value="paypal" type="radio">

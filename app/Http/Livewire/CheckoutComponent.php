@@ -6,6 +6,7 @@ use Cart;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Shipping;
+use App\Models\Transaction;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -43,6 +44,8 @@ class CheckoutComponent extends Component
     public $s_country;
     public $s_zipcode;
 
+    public $paymentmode;
+
     public function mount()
     {
         $this->country = "Indonesia";
@@ -59,9 +62,10 @@ class CheckoutComponent extends Component
         $this->shipping_cost = session()->get('checkout')['shipping_cost'];
     }
 
-    public function updated($fields, Request $request)
+    public function updated($fields)
     {
-        $request->validateOnly($fields, [
+        // dd($fields);
+        $this->validateOnly($fields, [
             'firstname' =>  'required',
             'lastname' =>  'required',
             'email' =>  'required|email',
@@ -72,6 +76,7 @@ class CheckoutComponent extends Component
             'province' =>  'required',
             'country' =>  'required',
             'zipcode' =>  'required',
+            'paymentmethod' => 'required',
         ]);
 
         if($request->ship_to_different)
@@ -104,7 +109,9 @@ class CheckoutComponent extends Component
             'province' =>  'required',
             'country' =>  'required',
             'zipcode' =>  'required',
+            'paymentmethod' => 'required',
         ]);
+        // $request->paymentmethod
 
         // save request by textbox name
         // dd($request->fname);
@@ -172,18 +179,18 @@ class CheckoutComponent extends Component
 
         if($request->ship_to_different)
         {
-            // $request->validate([
-            //     's_firstname' =>  'required',
-            //     's_lastname' =>  'required',
-            //     's_email' =>  'required|email',
-            //     's_mobile' =>  'required|numeric',
-            //     's_line1' =>  'required',
+            $request->validate([
+                's_firstname' =>  'required',
+                's_lastname' =>  'required',
+                's_email' =>  'required|email',
+                's_mobile' =>  'required|numeric',
+                's_line1' =>  'required',
 
-            //     's_city' =>  'required',
-            //     's_province' =>  'required',
-            //     's_country' =>  'required',
-            //     's_zipcode' =>  'required',
-            // ]);
+                's_city' =>  'required',
+                's_province' =>  'required',
+                's_country' =>  'required',
+                's_zipcode' =>  'required',
+            ]);
 
             $shipping = new Shipping();
             $shipping->order_id = $order->id;
@@ -200,6 +207,21 @@ class CheckoutComponent extends Component
             $shipping->save();
             // dd($shipping);
         }
+
+
+        if($request->paymentmethod == 'bank')
+        {
+            $transaction = new Transaction();
+            $transaction->user_id = Auth::user()->id;
+            $transaction->order_id = $order->id;
+            $transaction->mode = 'bank';
+            $transaction->status = 'pending';
+            // dd($transaction);
+            $transaction->save();
+        }
+
+        Cart::destroy();
+        session()->forget('checkout');
 
     }
 

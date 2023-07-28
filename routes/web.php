@@ -25,6 +25,7 @@ use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
+use App\Http\Livewire\ThankyouComponent;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Livewire\ContactUsComponent;
@@ -59,6 +60,8 @@ Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 Route::post('check-out', [ShippingCostComponent::class, 'check_out'])->name('check.out');
 
 Route::post('place-order', [CheckoutComponent::class, 'placeOrder'])->name('place.order');
+
+Route::get('/thank-you', ThankyouComponent::class)->name('thankyou');
 
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 

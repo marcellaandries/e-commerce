@@ -180,7 +180,12 @@
                                 <span class="payment-desc">card if you don't have a paypal account</span>
                             </label> --}}
                         </div>
-                        <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price"><input class="textlabel" readonly type="text" id="total" name="total" value="" placeholder="Total" wire:model="total"></span></p>
+                        {{-- <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price"><input class="textlabel" readonly type="text" id="total" name="total" value="" placeholder="Total" wire:model="total"></span></p> --}}
+
+                        @if(Session::has('checkout'))
+                            <p class="summary-info grand-total"><span>Grand Total</span> <span class="grand-total-price">{{Session::get('checkout')['total']}}</span></p>
+                        @endif
+
                         {{-- <button type="submit" class="btn btn-medium" wire:click.prevent="placeOrder()">Place order now</button> --}}
                         <button type="submit" class="btn btn-medium">Place order now</button>
                     </div>

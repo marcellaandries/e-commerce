@@ -64,6 +64,7 @@ class CheckoutComponent extends Component
 
     public function updated($fields)
     {
+        // dd($request->all());
         // dd($fields);
         $this->validateOnly($fields, [
             'firstname' =>  'required',
@@ -76,12 +77,12 @@ class CheckoutComponent extends Component
             'province' =>  'required',
             'country' =>  'required',
             'zipcode' =>  'required',
-            'paymentmethod' => 'required',
+            'paymentmode' => 'required',
         ]);
 
-        if($request->ship_to_different)
+        if($this->ship_to_different)
         {
-            $request->validateOnly([
+            $this->validateOnly([
                 's_firstname' =>  'required',
                 's_lastname' =>  'required',
                 's_email' =>  'required|email',
@@ -98,6 +99,7 @@ class CheckoutComponent extends Component
 
     public function placeOrder(Request $request)
     {
+        // dd($request->paymentmode);
         $request->validate([
             'firstname' =>  'required',
             'lastname' =>  'required',
@@ -109,9 +111,9 @@ class CheckoutComponent extends Component
             'province' =>  'required',
             'country' =>  'required',
             'zipcode' =>  'required',
-            'paymentmethod' => 'required',
+            'paymentmode' => 'required',
         ]);
-        // $request->paymentmethod
+
 
         // save request by textbox name
         // dd($request->fname);

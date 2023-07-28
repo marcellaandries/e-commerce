@@ -172,6 +172,7 @@
                                 <span>Credit Card</span>
                                 <span class="payment-desc">Via Midtrans</span>
                             </label>
+                            @error('paymentmode') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                             {{-- <label class="payment-method">
                                 <input name="payment-method" id="payment-method-paypal" value="paypal" type="radio">
                                 <span>Paypal</span>

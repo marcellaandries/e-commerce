@@ -13,7 +13,6 @@ use Illuminate\Http\Request;
 class CheckoutComponent extends Component
 {
     public $ship_to_different;
-    public $is_shipping_different;
 
     public $subtotal;
     public $total;
@@ -73,14 +72,14 @@ class CheckoutComponent extends Component
         //     'email' =>  'required|email',
         //     'mobile' =>  'required|numeric',
         //     'line1' =>  'required',
-        //     'line2' =>  'required',
+
         //     'city' =>  'required',
         //     'province' =>  'required',
         //     'country' =>  'required',
         //     'zipcode' =>  'required',
         // ]);
 
-        // save reqiest by textbox name
+        // save request by textbox name
         // dd($request->fname);
         // dd($request->all());
 
@@ -88,14 +87,17 @@ class CheckoutComponent extends Component
         $order->user_id = Auth::user()->id;
         // $order->discount = session()->get('checkout')['discount'];
         // $order->tax = session()->get('checkout')['tax'];
+        $order->tax = 0;
         $num_subtotal = session()->get('checkout')['subtotal'];
         $num_subtotal = str_replace(",00", "", $num_subtotal);
         $num_subtotal = str_replace(".", "", $num_subtotal);
+        $num_subtotal = str_replace("Rp", "", $num_subtotal);
         $order->subtotal = $num_subtotal;
 
         $num_grandtotal = session()->get('checkout')['total'];
         $num_grandtotal = str_replace(",00", "", $num_grandtotal);
         $num_grandtotal = str_replace(".", "", $num_grandtotal);
+        $num_grandtotal = str_replace("Rp", "", $num_grandtotal);
         $order->total = $num_grandtotal;
 
         $order->firstname = $request->firstname;
@@ -113,24 +115,37 @@ class CheckoutComponent extends Component
 
         $order->courier = session()->get('checkout')['courier'];
         $order->service = session()->get('checkout')['service_name'];
-        $order->shipping_cost = session()->get('checkout')['shipping_cost'];
-        // dd($order);
-        // $order->save();
+
+        $num_shipping_cost = session()->get('checkout')['shipping_cost'];
+
+        $num_shipping_cost = str_replace(",00", "", $num_shipping_cost);
+        $num_shipping_cost = str_replace(".", "", $num_shipping_cost);
+        $num_shipping_cost = str_replace("Rp", "", $num_shipping_cost);
+        // var_dump($num_shipping_cost);
+        $order->shipping_cost = $num_shipping_cost;
 
         // $data = $request->all();
         // dd($request->all());
+        // $order->save();
 
         foreach(Cart::content() as $item)
         {
             $orderItem = new OrderItem();
             $orderItem->product_id = $item->id;
             $orderItem->order_id = $order->id;
+
+            $item->price = str_replace(".0", "", $item->price);
             $orderItem->price = $item->price;
+
             $orderItem->quantity = $item->qty;
             // $orderItem->save();
         }
-        dd(Cart::content());
+        // dd(Cart::content());
 
+        if($this->ship_to_different)
+        {
+
+        }
 
     }
 

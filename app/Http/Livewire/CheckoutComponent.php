@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Cart;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Shipping;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -58,10 +59,36 @@ class CheckoutComponent extends Component
         $this->shipping_cost = session()->get('checkout')['shipping_cost'];
     }
 
-    public function store(Request $request)
+    public function updated($fields, Request $request)
     {
-        // dd($request->all());
-        // dd($request->city);
+        $request->validateOnly($fields, [
+            'firstname' =>  'required',
+            'lastname' =>  'required',
+            'email' =>  'required|email',
+            'mobile' =>  'required|numeric',
+            'line1' =>  'required',
+
+            'city' =>  'required',
+            'province' =>  'required',
+            'country' =>  'required',
+            'zipcode' =>  'required',
+        ]);
+
+        if($request->ship_to_different)
+        {
+            $request->validateOnly([
+                's_firstname' =>  'required',
+                's_lastname' =>  'required',
+                's_email' =>  'required|email',
+                's_mobile' =>  'required|numeric',
+                's_line1' =>  'required',
+
+                's_city' =>  'required',
+                's_province' =>  'required',
+                's_country' =>  'required',
+                's_zipcode' =>  'required',
+            ]);
+        }
     }
 
     public function placeOrder(Request $request)
@@ -80,7 +107,7 @@ class CheckoutComponent extends Component
         ]);
 
         // save request by textbox name
-        dd($request->fname);
+        // dd($request->fname);
         // dd($request->all());
 
         $order = new Order();
@@ -124,6 +151,7 @@ class CheckoutComponent extends Component
         // var_dump($num_shipping_cost);
         $order->shipping_cost = $num_shipping_cost;
 
+        // dd($order);
         // $data = $request->all();
         // dd($request->all());
         $order->save();
@@ -142,20 +170,35 @@ class CheckoutComponent extends Component
         }
         // dd(Cart::content());
 
-        if($this->ship_to_different)
+        if($request->ship_to_different)
         {
-            $request->validate([
-                's_firstname' =>  'required',
-                's_lastname' =>  'required',
-                's_email' =>  'required|email',
-                's_mobile' =>  'required|numeric',
-                's_line1' =>  'required',
+            // $request->validate([
+            //     's_firstname' =>  'required',
+            //     's_lastname' =>  'required',
+            //     's_email' =>  'required|email',
+            //     's_mobile' =>  'required|numeric',
+            //     's_line1' =>  'required',
 
-                's_city' =>  'required',
-                's_province' =>  'required',
-                's_country' =>  'required',
-                's_zipcode' =>  'required',
-            ]);
+            //     's_city' =>  'required',
+            //     's_province' =>  'required',
+            //     's_country' =>  'required',
+            //     's_zipcode' =>  'required',
+            // ]);
+
+            $shipping = new Shipping();
+            $shipping->order_id = $order->id;
+            $shipping->firstname = $request->s_firstname;
+            $shipping->lastname = $request->s_lastname;
+            $shipping->email = $request->s_email;
+            $shipping->mobile = $request->s_mobile;
+            $shipping->line1 = $request->s_line1;
+            $shipping->line2 = $request->s_line2;
+            $shipping->country = $request->s_country;
+            $shipping->province = session()->get('checkout')['province_name'];
+            $shipping->city = session()->get('checkout')['city_name'];
+            $shipping->zipcode = $request->s_zipcode;
+            $shipping->save();
+            // dd($shipping);
         }
 
     }

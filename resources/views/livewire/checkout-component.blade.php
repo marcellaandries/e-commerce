@@ -66,16 +66,19 @@
                                     <label for="zip-code">Postcode / ZIP:</label>
                                     <input type="number" name="zipcode" value="" placeholder="Your postal code" wire:model="zipcode">
                                 </p>
-                                <p class="row-in-form fill-wife">
-                                    {{-- <label class="checkbox-field">
-                                        <input name="create-account" id="create-account" value="forever" type="checkbox">
-                                        <span>Create an account?</span>
-                                    </label> --}}
-                                    <label class="checkbox-field">
-                                        <input name="ship_to_different" id="different-add" value="1" type="checkbox" wire:model="ship_to_different">
-                                        <span>Ship to a different address?</span>
-                                    </label>
-                                </p>
+                                <div hidden>
+                                    <p class="row-in-form fill-wife">
+                                        {{-- <label class="checkbox-field">
+                                            <input name="create-account" id="create-account" value="forever" type="checkbox">
+                                            <span>Create an account?</span>
+                                        </label> --}}
+                                        <label class="checkbox-field">
+                                            <input name="ship_to_different" id="different-add" value="1" type="checkbox" wire:model="ship_to_different">
+                                            <span>Ship to a different address?</span>
+                                        </label>
+                                    </p>
+                                </div>
+
                             </div>
                             {{-- </form> --}}
                         </div>
@@ -113,8 +116,9 @@
                                     </p>
                                     <p class="row-in-form">
                                         <label for="country">Country</label>
-                                        <input readonly type="s_country" name="s_country" value="" placeholder="Country" wire:model="s_country">
+                                        <input readonly type="text" readonly name="s_country" value="Indonesia" placeholder="Country">
                                     </p>
+
                                     <p class="row-in-form">
                                         <label for="province">Province<span>*</span></label>
                                         <input readonly id ="s_province" type="text" name="s_province" value="" placeholder="Province" wire:model="s_province">

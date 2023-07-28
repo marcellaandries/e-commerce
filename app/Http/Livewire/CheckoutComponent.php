@@ -66,21 +66,21 @@ class CheckoutComponent extends Component
 
     public function placeOrder(Request $request)
     {
-        // $request->validate([
-        //     'firstname' =>  'required',
-        //     'lastname' =>  'required',
-        //     'email' =>  'required|email',
-        //     'mobile' =>  'required|numeric',
-        //     'line1' =>  'required',
+        $request->validate([
+            'firstname' =>  'required',
+            'lastname' =>  'required',
+            'email' =>  'required|email',
+            'mobile' =>  'required|numeric',
+            'line1' =>  'required',
 
-        //     'city' =>  'required',
-        //     'province' =>  'required',
-        //     'country' =>  'required',
-        //     'zipcode' =>  'required',
-        // ]);
+            'city' =>  'required',
+            'province' =>  'required',
+            'country' =>  'required',
+            'zipcode' =>  'required',
+        ]);
 
         // save request by textbox name
-        // dd($request->fname);
+        dd($request->fname);
         // dd($request->all());
 
         $order = new Order();
@@ -126,7 +126,7 @@ class CheckoutComponent extends Component
 
         // $data = $request->all();
         // dd($request->all());
-        // $order->save();
+        $order->save();
 
         foreach(Cart::content() as $item)
         {
@@ -138,13 +138,24 @@ class CheckoutComponent extends Component
             $orderItem->price = $item->price;
 
             $orderItem->quantity = $item->qty;
-            // $orderItem->save();
+            $orderItem->save();
         }
         // dd(Cart::content());
 
         if($this->ship_to_different)
         {
+            $request->validate([
+                's_firstname' =>  'required',
+                's_lastname' =>  'required',
+                's_email' =>  'required|email',
+                's_mobile' =>  'required|numeric',
+                's_line1' =>  'required',
 
+                's_city' =>  'required',
+                's_province' =>  'required',
+                's_country' =>  'required',
+                's_zipcode' =>  'required',
+            ]);
         }
 
     }

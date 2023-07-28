@@ -14,7 +14,11 @@ class ShippingCostComponent extends Component
     public $weight_total;
     // public $province_name;
 
-    public $province_data;
+    public $province_name;
+    public $city_name;
+    public $kurir;
+    public $service_name;
+    public $weight;
 
     public function mount($weight_total)
     {
@@ -147,6 +151,14 @@ class ShippingCostComponent extends Component
     }
 
     public function check_out(Request $request){
+        $request->validate([
+            'province_name' =>  'required',
+            'city_name' =>  'required',
+            'kurir' =>  'required',
+            'service_name' =>  'required',
+            'weight' =>  'required',
+        ]);
+
         // $province_name = $request->input('nama_provinsi');
         // dd($request->all());
         $this->setAmountforCheckout($request);

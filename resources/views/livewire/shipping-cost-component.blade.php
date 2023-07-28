@@ -42,7 +42,7 @@
 
                     {{-- cella --}}
                     <div class="form-group form-group--inline">
-                        <label for="provinsi">Province</label>
+                        <label for="provinsi">Province<span>*</span></label>
                         <select name="province_id" id="province_id" class="form-control">
                         <option value="">Select Province</option>
                         @foreach ($provinsi as $row)

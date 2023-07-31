@@ -232,8 +232,9 @@ class CheckoutComponent extends Component
         }
 
 
-        if($request->paymentmethod == 'bank')
+        if($request->paymentmode == 'bank')
         {
+            // dd($request->all());
             $transaction = new Transaction();
             $transaction->user_id = Auth::user()->id;
             $transaction->order_id = $order->id;
@@ -244,19 +245,23 @@ class CheckoutComponent extends Component
         }
 
         $this->thankyou = 1;
+        // dd($this->thankyou);
+        $this->verifyForCheckout($this->thankyou);
         Cart::destroy();
         session()->forget('checkout');
 
     }
 
-    public function verifyForCheckout()
+    public function verifyForCheckout($thx)
     {
+        // dd($thx);
         if(!Auth::check())
         {
             return redirect()->route('login');
         }
-        else if($this->thankyou)
+        else if($thx)
         {
+            // dd($thx);
             return redirect()->route('thankyou');
         }
         else if(!session()->get('checkout'))
@@ -268,7 +273,7 @@ class CheckoutComponent extends Component
     public function render()
     {
         // dd(session()->get('checkout')['subtotal']);
-        $this->verifyForCheckout();
+        // $this->verifyForCheckout();
         return view('livewire.checkout-component')->layout("layouts.base");
     }
 

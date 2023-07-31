@@ -14,6 +14,8 @@
             {{-- <form> --}}
                 <form action="{{ route('place.order') }}" method="post"
                 enctype="multipart/form-data">
+                {{-- <form wire:submit.prevent="placeOrder" method="post"
+                enctype="multipart/form-data"> --}}
                     @csrf
                     <div class="col-md-12">
                         <div class="wrap-address-billing">

@@ -85,7 +85,7 @@ class CheckoutComponent extends Component
 
         if($this->ship_to_different)
         {
-            $this->validateOnly([
+            $this->validateOnly($fields, [
                 's_firstname' =>  'required',
                 's_lastname' =>  'required',
                 's_email' =>  'required|email',

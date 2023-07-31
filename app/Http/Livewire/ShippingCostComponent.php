@@ -6,6 +6,7 @@ use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Cart;
 use Illuminate\Http\Request;
+// use Illuminate\Support\Str;
 
 use Illuminate\Support\Facades\Http;
 
@@ -187,10 +188,12 @@ class ShippingCostComponent extends Component
 
 
 
-        $res_data = $request->all();
+        $res_data   = $request->all();
         // dd($res_data);
-        // dd($res_data['total_keseluruhan']);
-
+        // $tot = $res_data['total_keseluruhan'];
+        // $space = Str::substr($tot, 2, 1);
+        // $tot = str_replace($space, "", $tot);
+        // dd($tot);
 
         session()->put('checkout',[
             // 'province ' => $this->province_name,
@@ -210,7 +213,9 @@ class ShippingCostComponent extends Component
             'total' => $res_data['total_keseluruhan'],
         ]);
         // dd(session()->get('checkout'));
-        // dd(session()->get('checkout')['subtotal']);
+        // dd(session()->get('checkout')['total']);
+
+        // var_dump(dd(session()->get('checkout')['total']));
 
         // $this->province_name = session()->get('ss_province');
 

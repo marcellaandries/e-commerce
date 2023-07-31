@@ -10,7 +10,9 @@ use App\Models\Transaction;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-// use Illuminate\Support\Str;
+use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Macroable;
+
 
 class CheckoutComponent extends Component
 {
@@ -129,12 +131,24 @@ class CheckoutComponent extends Component
         $num_subtotal = str_replace(",00", "", $num_subtotal);
         $num_subtotal = str_replace(".", "", $num_subtotal);
         $num_subtotal = str_replace("Rp", "", $num_subtotal);
+        // $num_subtotal = str_replace(" ", "", $num_subtotal);
+        // var_dump($num_subtotal);
         $order->subtotal = $num_subtotal;
 
+        // dd(session()->get('checkout')['total']);
         $num_grandtotal = session()->get('checkout')['total'];
+
+        $tot = $num_grandtotal;
+        $space = Str::substr($tot, 2, 1);
+        $tot = str_replace($space, "", $tot);
+        $num_grandtotal = $tot;
+
+        $num_grandtotal = str_replace(" ", "", $num_grandtotal);
         $num_grandtotal = str_replace(",00", "", $num_grandtotal);
         $num_grandtotal = str_replace(".", "", $num_grandtotal);
         $num_grandtotal = str_replace("Rp", "", $num_grandtotal);
+        // $num_grandtotal = trim($num_grandtotal);
+        // dd($num_grandtotal);
         $order->total = $num_grandtotal;
 
         $order->firstname = $request->firstname;
@@ -155,10 +169,16 @@ class CheckoutComponent extends Component
 
         $num_shipping_cost = session()->get('checkout')['shipping_cost'];
 
+        $ship = $num_shipping_cost;
+        $space_s = Str::substr($ship, 2, 1);
+        $ship = str_replace($space_s, "", $ship);
+        $num_shipping_cost = $ship;
+
         $num_shipping_cost = str_replace(",00", "", $num_shipping_cost);
         $num_shipping_cost = str_replace(".", "", $num_shipping_cost);
         $num_shipping_cost = str_replace("Rp", "", $num_shipping_cost);
-        // var_dump($num_shipping_cost);
+        $num_shipping_cost = str_replace(" ", "", $num_shipping_cost);
+        // dd($num_shipping_cost);
         $order->shipping_cost = $num_shipping_cost;
 
         // dd($order);
@@ -248,6 +268,7 @@ class CheckoutComponent extends Component
     public function render()
     {
         // dd(session()->get('checkout')['subtotal']);
+        $this->verifyForCheckout();
         return view('livewire.checkout-component')->layout("layouts.base");
     }
 

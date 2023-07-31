@@ -160,7 +160,7 @@
                     <div class="summary-item payment-method">
                         <h4 class="title-box">Payment Method</h4>
                         {{-- <p class="summary-info"><span class="title">Check / Money order</span></p> --}}
-                        <p class="summary-info"><span class="title">Credit Cart (saved)</span></p>
+                        {{-- <p class="summary-info"><span class="title">Credit Cart (saved)</span></p> --}}
                         <div class="choose-payment-methods">
                             <label class="payment-method">
                                 <input name="paymentmode" id="payment-method-bank" value="bank" type="radio" wire:model="paymentmode">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2023 at 11:41 AM
+-- Generation Time: Jul 31, 2023 at 04:00 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -105,10 +105,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 CREATE TABLE `orders` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
-  `subtotal` decimal(25,0) NOT NULL,
-  `discount` decimal(25,0) NOT NULL DEFAULT 0,
-  `tax` decimal(25,0) NOT NULL,
-  `total` decimal(25,0) NOT NULL,
+  `subtotal` int(25) NOT NULL,
+  `discount` int(25) NOT NULL DEFAULT 0,
+  `tax` int(25) NOT NULL,
+  `total` int(25) NOT NULL,
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `mobile` varchar(255) NOT NULL,
@@ -122,7 +122,7 @@ CREATE TABLE `orders` (
   `status` enum('ordered','delivered','canceled') NOT NULL DEFAULT 'ordered',
   `courier` varchar(255) NOT NULL,
   `service` varchar(255) NOT NULL,
-  `shipping_cost` decimal(25,0) NOT NULL,
+  `shipping_cost` int(25) NOT NULL,
   `is_shipping_different` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -138,7 +138,7 @@ CREATE TABLE `order_items` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `product_id` bigint(20) UNSIGNED NOT NULL,
   `order_id` bigint(20) UNSIGNED NOT NULL,
-  `price` decimal(8,2) NOT NULL,
+  `price` int(25) NOT NULL,
   `quantity` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -186,15 +186,15 @@ CREATE TABLE `products` (
   `slug` varchar(255) NOT NULL,
   `short_description` varchar(255) DEFAULT NULL,
   `description` text NOT NULL,
-  `regular_price` decimal(25,0) NOT NULL,
-  `sale_price` decimal(25,0) DEFAULT NULL,
+  `regular_price` int(25) NOT NULL,
+  `sale_price` int(25) DEFAULT NULL,
   `SKU` varchar(255) NOT NULL,
   `stock_status` enum('instock','outofstock') NOT NULL,
   `featured` tinyint(1) NOT NULL DEFAULT 0,
   `quantity` int(10) UNSIGNED NOT NULL DEFAULT 10,
   `image` varchar(255) DEFAULT NULL,
   `images` text DEFAULT NULL,
-  `weight` decimal(25,0) DEFAULT NULL,
+  `weight` int(25) DEFAULT NULL,
   `category_id` bigint(20) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -252,7 +252,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('Ce2eYwO6VaGJmVeeQXuHhElXB0G0M4c4JYKwHAnO', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiRFRUSXdOZUV0WENtUlBZRHdVaWVGdnEzeVFtMGJCS2lyZ25LOE5XbCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jaGVja291dCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6ODoiY2hlY2tvdXQiO2E6MTE6e3M6ODoic3VidG90YWwiO3M6MTI6IjcuODYwLjAwMCwwMCI7czoxMToicHJvdmluY2VfaWQiO3M6MToiNiI7czoxMzoicHJvdmluY2VfbmFtZSI7czoxMToiREtJIEpha2FydGEiO3M6NzoiY2l0eV9pZCI7czozOiIxNTQiO3M6OToiY2l0eV9uYW1lIjtzOjE4OiJLb3RhIEpha2FydGEgVGltdXIiO3M6NzoiY291cmllciI7czozOiJqbmUiO3M6MTA6InNlcnZpY2VfaWQiO3M6MToiMCI7czoxMjoic2VydmljZV9uYW1lIjtzOjM6IkNUQyI7czo1OiJ0b3RhbCI7czoxNjoiUnDCoDcuOTUwLjAwMCwwMCI7czo2OiJ3ZWlnaHQiO3M6NToiOS4wMDAiO3M6MTM6InNoaXBwaW5nX2Nvc3QiO3M6MTM6IlJwwqA5MC4wMDAsMDAiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo2O3M6NToidXR5cGUiO3M6MzoiVVNSIjtzOjQ6ImNhcnQiO2E6MTp7czo3OiJkZWZhdWx0IjtPOjI5OiJJbGx1bWluYXRlXFN1cHBvcnRcQ29sbGVjdGlvbiI6Mjp7czo4OiIAKgBpdGVtcyI7YToyOntzOjMyOiI1Y2FmMTk4MGQwZjMwNTAzNGFjOTdkMTNhNjhlM2M2NCI7TzozMjoiR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0iOjk6e3M6NToicm93SWQiO3M6MzI6IjVjYWYxOTgwZDBmMzA1MDM0YWM5N2QxM2E2OGUzYzY0IjtzOjI6ImlkIjtpOjE7czozOiJxdHkiO2k6MztzOjQ6Im5hbWUiO3M6Mjc6ImRvbG9yZW1xdWUgbmVtbyB0ZW1wb3JhIHF1byI7czo1OiJwcmljZSI7czo3OiIxNjIwMDAwIjtzOjc6Im9wdGlvbnMiO086Mzk6Ikdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtT3B0aW9ucyI6Mjp7czo4OiIAKgBpdGVtcyI7YToxOntzOjY6IndlaWdodCI7aToyMDAwO31zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fXM6NDk6IgBHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbQBhc3NvY2lhdGVkTW9kZWwiO3M6MTg6IkFwcFxNb2RlbHNcUHJvZHVjdCI7czo0MToiAEdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtAHRheFJhdGUiO2k6MDtzOjQxOiIAR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0AaXNTYXZlZCI7YjowO31zOjMyOiJhMGY1NzljMmZkYWVlMzJlNWQ2MTFjOGVhYWVmZDgwZCI7TzozMjoiR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0iOjk6e3M6NToicm93SWQiO3M6MzI6ImEwZjU3OWMyZmRhZWUzMmU1ZDYxMWM4ZWFhZWZkODBkIjtzOjI6ImlkIjtpOjI7czozOiJxdHkiO2k6MTtzOjQ6Im5hbWUiO3M6Mjk6Im9tbmlzIGFuaW1pIHJlcGVsbGVuZHVzIGVycm9yIjtzOjU6InByaWNlIjtzOjc6IjMwMDAwMDAiO3M6Nzoib3B0aW9ucyI7TzozOToiR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW1PcHRpb25zIjoyOntzOjg6IgAqAGl0ZW1zIjthOjE6e3M6Njoid2VpZ2h0IjtpOjMwMDA7fXM6Mjg6IgAqAGVzY2FwZVdoZW5DYXN0aW5nVG9TdHJpbmciO2I6MDt9czo0OToiAEdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtAGFzc29jaWF0ZWRNb2RlbCI7czoxODoiQXBwXE1vZGVsc1xQcm9kdWN0IjtzOjQxOiIAR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0AdGF4UmF0ZSI7aTowO3M6NDE6IgBHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbQBpc1NhdmVkIjtiOjA7fX1zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fX19', 1690537138);
+('RUoXUdbCuQNGpft1F41RIMo0xaU1PopsSEafV5r6', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoibzUyejM2SHFzam5CZlU2N09aSEQxN1VpUmI2MXUyQ3QxZnR6cUtZQiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9jaGVja291dCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NDoiY2FydCI7YToxOntzOjc6ImRlZmF1bHQiO086Mjk6IklsbHVtaW5hdGVcU3VwcG9ydFxDb2xsZWN0aW9uIjoyOntzOjg6IgAqAGl0ZW1zIjthOjI6e3M6MzI6IjVjYWYxOTgwZDBmMzA1MDM0YWM5N2QxM2E2OGUzYzY0IjtPOjMyOiJHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbSI6OTp7czo1OiJyb3dJZCI7czozMjoiNWNhZjE5ODBkMGYzMDUwMzRhYzk3ZDEzYTY4ZTNjNjQiO3M6MjoiaWQiO2k6MTtzOjM6InF0eSI7aToyO3M6NDoibmFtZSI7czoyNzoiZG9sb3JlbXF1ZSBuZW1vIHRlbXBvcmEgcXVvIjtzOjU6InByaWNlIjtkOjE2MjAwMDA7czo3OiJvcHRpb25zIjtPOjM5OiJHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbU9wdGlvbnMiOjI6e3M6ODoiACoAaXRlbXMiO2E6MTp7czo2OiJ3ZWlnaHQiO2k6MjAwMDt9czoyODoiACoAZXNjYXBlV2hlbkNhc3RpbmdUb1N0cmluZyI7YjowO31zOjQ5OiIAR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0AYXNzb2NpYXRlZE1vZGVsIjtzOjE4OiJBcHBcTW9kZWxzXFByb2R1Y3QiO3M6NDE6IgBHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbQB0YXhSYXRlIjtpOjA7czo0MToiAEdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtAGlzU2F2ZWQiO2I6MDt9czozMjoiNmZjODFiMzZhMTM2MzEzNjg2N2M2ZDRjMDFiNWUxNmEiO086MzI6Ikdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtIjo5OntzOjU6InJvd0lkIjtzOjMyOiI2ZmM4MWIzNmExMzYzMTM2ODY3YzZkNGMwMWI1ZTE2YSI7czoyOiJpZCI7aTozO3M6MzoicXR5IjtpOjE7czo0OiJuYW1lIjtzOjIwOiJhcGVyaWFtIGVvcyBxdWFtIG5vbiI7czo1OiJwcmljZSI7ZDo5NDAwMDA7czo3OiJvcHRpb25zIjtPOjM5OiJHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbU9wdGlvbnMiOjI6e3M6ODoiACoAaXRlbXMiO2E6MTp7czo2OiJ3ZWlnaHQiO2k6NTAwMDt9czoyODoiACoAZXNjYXBlV2hlbkNhc3RpbmdUb1N0cmluZyI7YjowO31zOjQ5OiIAR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0AYXNzb2NpYXRlZE1vZGVsIjtzOjE4OiJBcHBcTW9kZWxzXFByb2R1Y3QiO3M6NDE6IgBHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbQB0YXhSYXRlIjtpOjA7czo0MToiAEdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtAGlzU2F2ZWQiO2I6MDt9fXM6Mjg6IgAqAGVzY2FwZVdoZW5DYXN0aW5nVG9TdHJpbmciO2I6MDt9fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjY7czo1OiJ1dHlwZSI7czozOiJVU1IiO3M6ODoiY2hlY2tvdXQiO2E6MTE6e3M6ODoic3VidG90YWwiO3M6MTI6IjQuMTgwLjAwMCwwMCI7czoxMToicHJvdmluY2VfaWQiO3M6MToiNiI7czoxMzoicHJvdmluY2VfbmFtZSI7czoxMToiREtJIEpha2FydGEiO3M6NzoiY2l0eV9pZCI7czozOiIxNTIiO3M6OToiY2l0eV9uYW1lIjtzOjE4OiJLb3RhIEpha2FydGEgUHVzYXQiO3M6NzoiY291cmllciI7czozOiJqbmUiO3M6MTA6InNlcnZpY2VfaWQiO3M6MToiMCI7czoxMjoic2VydmljZV9uYW1lIjtzOjM6IkNUQyI7czo1OiJ0b3RhbCI7czoxNjoiUnDCoDQuMjcwLjAwMCwwMCI7czo2OiJ3ZWlnaHQiO3M6NToiOS4wMDAiO3M6MTM6InNoaXBwaW5nX2Nvc3QiO3M6MTM6IlJwwqA5MC4wMDAsMDAiO319', 1690768816),
+('u7bfrnlLNc61RUy5HWxDDHJbGqIKhJepwwieaj1y', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiYlBHMEdxWVRoeDZXc2RzcTdyYndTSFVKN0pQaENodG5vS3hrcmR1RiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9jaXR5LzUiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1690765298);
 
 -- --------------------------------------------------------
 

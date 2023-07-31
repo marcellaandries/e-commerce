@@ -41,7 +41,7 @@
                                     @error('mobile') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="add">Address (line 1):</label>
+                                    <label for="add">Address (line 1):<span>*</span></label>
                                     <input type="text" name="line1" value="" placeholder="Street at apartment number" wire:model="line1">
                                     @error('line1') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </p>
@@ -68,7 +68,7 @@
                                     <input type="text" readonly id ="city"  name="city" value="" placeholder="City" wire:model="city">
                                 </p>
                                 <p class="row-in-form">
-                                    <label for="zip-code">Postcode / ZIP:</label>
+                                    <label for="zip-code">Postcode / ZIP:<span>*</span></label>
                                     <input type="number" name="zipcode" value="" placeholder="Your postal code" wire:model="zipcode">
                                     @error('zipcode') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </p>
@@ -158,7 +158,7 @@
 
                 <div class="summary summary-checkout">
                     <div class="summary-item payment-method">
-                        <h4 class="title-box">Payment Method</h4>
+                        <h4 class="title-box">Payment Method<span>*</span></h4>
                         {{-- <p class="summary-info"><span class="title">Check / Money order</span></p> --}}
                         {{-- <p class="summary-info"><span class="title">Credit Cart (saved)</span></p> --}}
                         <div class="choose-payment-methods">

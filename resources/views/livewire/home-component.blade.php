@@ -7,9 +7,9 @@
                 <div class="item-slide">
                     <img src="{{ asset('assets/images/main-slider-1-1.jpg') }}" alt="" class="img-slide">
                     <div class="slide-info slide-1">
-                        <h2 class="f-title">Kid Smart <b>Watches</b></h2>
-                        <span c lass="subtitle">Compra todos tus productos Smart por internet.</span>
-                        <p class="sale-info">Only price: <span class="price">Rp. 590.000</span></p>
+                        <h2 class="f-title">Samsung <b>Galaxy Z</b></h2>
+                        <span class="subtitle">Introducing Samsung Galaxy Z Fold 3 | Flip 3 5G.</span>
+                        <p class="sale-info">Only price: <span class="price">Rp. 24.590.000</span></p>
                         <a href="#" class="btn-link">Shop Now</a>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                         <span class="f-subtitle">On online payments</span>
                         <p class="discount-code">Use Code: #FA6868</p>
                         <h4 class="s-title">Get Free</h4>
-                        <p class="s-subtitle">TRansparent Bra Straps</p>
+                        <p class="s-subtitle">Galaxy Watch Straps</p>
                     </div>
                 </div>
                 <div class="item-slide">

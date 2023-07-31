@@ -246,22 +246,37 @@ class CheckoutComponent extends Component
 
         $this->thankyou = 1;
         // dd($this->thankyou);
-        $this->verifyForCheckout($this->thankyou);
+        // $this->verifyForCheckout($this->thankyou);
         Cart::destroy();
         session()->forget('checkout');
 
+        if(!Auth::check())
+        {
+            return redirect()->route('login');
+        }
+        else if($this->thankyou)
+        {
+            // dd($this->thankyou);
+            return redirect()->route('thankyou');
+        }
+        else if(!session()->get('checkout'))
+        {
+            return redirect()->route('product.cart');
+        }
+
     }
 
-    public function verifyForCheckout($thx)
+    // public function verifyForCheckout($thx)
+    public function verifyForCheckout()
     {
         // dd($thx);
         if(!Auth::check())
         {
             return redirect()->route('login');
         }
-        else if($thx)
+        else if($this->thankyou)
         {
-            // dd($thx);
+            // dd($this->thankyou);
             return redirect()->route('thankyou');
         }
         else if(!session()->get('checkout'))

@@ -166,7 +166,7 @@
                         <div class="choose-payment-methods">
                             <label class="payment-method">
                                 <input name="paymentmode" id="payment-method-bank" value="bank" type="radio" wire:model="paymentmode">
-                                <span>Bank Transder</span>
+                                <span>Bank Transfer</span>
                                 <span class="payment-desc">BCA Account : 5270881188</span>
                             </label>
                             <label class="payment-method">

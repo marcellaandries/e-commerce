@@ -27,11 +27,11 @@
                                     <input type="text" id ="firstname" name="firstname" value="" placeholder="Your name" wire:model="firstname">
                                     @error('firstname') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </p>
-                                <p class="row-in-form">
+                                {{-- <p class="row-in-form">
                                     <label for="lname">last name<span>*</span></label>
                                     <input type="text" name="lastname" value="" placeholder="Your last name" wire:model="lastname">
                                     @error('lastname') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
-                                </p>
+                                </p> --}}
                                 <p class="row-in-form">
                                     <label for="email">Email Address:</label>
                                     <input type="email" name="email" value="" placeholder="Type your email" wire:model="email">
@@ -47,10 +47,10 @@
                                     <input type="text" name="line1" value="" placeholder="Street at apartment number" wire:model="line1">
                                     @error('line1') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </p>
-                                <p class="row-in-form">
+                                {{-- <p class="row-in-form">
                                     <label for="add">Address (line 2):</label>
                                     <input type="text" name="line2" value="" placeholder="Street at apartment number" wire:model="line2">
-                                </p>
+                                </p> --}}
                                 <p class="row-in-form">
                                     <label for="country">Country</label>
                                     <input type="text" readonly name="country" value="Indonesia" placeholder="Country">
@@ -103,11 +103,11 @@
                                         <input type="text" name="s_firstname" value="" placeholder="Your name" wire:model="s_firstname">
                                         @error('s_firstname') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                     </p>
-                                    <p class="row-in-form">
+                                    {{-- <p class="row-in-form">
                                         <label for="lname">last name<span>*</span></label>
                                         <input type="text" name="s_lastname" value="" placeholder="Your last name" wire:model="s_lastname">
                                         @error('s_lastname') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
-                                    </p>
+                                    </p> --}}
                                     <p class="row-in-form">
                                         <label for="email">Email Address:</label>
                                         <input type="email" name="s_email" value="" placeholder="Type your email" wire:model="s_email">
@@ -123,10 +123,10 @@
                                         <input type="text" name="s_line1" value="" placeholder="Street at apartment number" wire:model="s_line1">
                                         @error('s_line1') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                     </p>
-                                    <p class="row-in-form">
+                                    {{-- <p class="row-in-form">
                                         <label for="add">Address (line 2):</label>
                                         <input type="text" name="s_line2" value="" placeholder="Street at apartment number" wire:model="s_line2">
-                                    </p>
+                                    </p> --}}
                                     <p class="row-in-form">
                                         <label for="country">Country</label>
                                         <input readonly type="text" readonly name="s_country" value="Indonesia" placeholder="Country">

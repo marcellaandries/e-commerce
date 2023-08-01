@@ -25,22 +25,22 @@ class CheckoutComponent extends Component
     public $service;
 
     public $firstname;
-    public $lastname;
+    // public $lastname;
     public $email;
     public $mobile;
     public $line1;
-    public $line2;
+    // public $line2;
     public $city;
     public $province;
     public $country;
     public $zipcode;
 
     public $s_firstname;
-    public $s_lastname;
+    // public $s_lastname;
     public $s_email;
     public $s_mobile;
     public $s_line1;
-    public $s_line2;
+    // public $s_line2;
     public $s_city;
     public $s_province;
     public $s_country;
@@ -51,8 +51,11 @@ class CheckoutComponent extends Component
 
     public function mount()
     {
+        $this->firstname = Auth::user()->name;
+        $this->email = Auth::user()->email;
         $this->country = "Indonesia";
         $this->s_country = "Indonesia";
+
 
         $this->subtotal = session()->get('checkout')['subtotal'];
         $this->total = session()->get('checkout')['total'];
@@ -71,7 +74,7 @@ class CheckoutComponent extends Component
         // dd($fields);
         $this->validateOnly($fields, [
             'firstname' =>  'required',
-            'lastname' =>  'required',
+            // 'lastname' =>  'required',
             'email' =>  'required|email',
             'mobile' =>  'required|numeric',
             'line1' =>  'required',
@@ -87,7 +90,7 @@ class CheckoutComponent extends Component
         {
             $this->validateOnly($fields, [
                 's_firstname' =>  'required',
-                's_lastname' =>  'required',
+                // 's_lastname' =>  'required',
                 's_email' =>  'required|email',
                 's_mobile' =>  'required|numeric',
                 's_line1' =>  'required',
@@ -105,7 +108,7 @@ class CheckoutComponent extends Component
         // dd($request->paymentmode);
         $request->validate([
             'firstname' =>  'required',
-            'lastname' =>  'required',
+            // 'lastname' =>  'required',
             'email' =>  'required|email',
             'mobile' =>  'required|numeric',
             'line1' =>  'required',
@@ -152,11 +155,11 @@ class CheckoutComponent extends Component
         $order->total = $num_grandtotal;
 
         $order->firstname = $request->firstname;
-        $order->lastname = $request->lastname;
+        // $order->lastname = $request->lastname;
         $order->email = $request->email;
         $order->mobile = $request->mobile;
         $order->line1 = $request->line1;
-        $order->line2 = $request->line2;
+        // $order->line2 = $request->line2;
         $order->country = $request->country;
         $order->province = session()->get('checkout')['province_name'];
         $order->city = session()->get('checkout')['city_name'];
@@ -204,7 +207,7 @@ class CheckoutComponent extends Component
         {
             $request->validate([
                 's_firstname' =>  'required',
-                's_lastname' =>  'required',
+                // 's_lastname' =>  'required',
                 's_email' =>  'required|email',
                 's_mobile' =>  'required|numeric',
                 's_line1' =>  'required',
@@ -218,11 +221,11 @@ class CheckoutComponent extends Component
             $shipping = new Shipping();
             $shipping->order_id = $order->id;
             $shipping->firstname = $request->s_firstname;
-            $shipping->lastname = $request->s_lastname;
+            // $shipping->lastname = $request->s_lastname;
             $shipping->email = $request->s_email;
             $shipping->mobile = $request->s_mobile;
             $shipping->line1 = $request->s_line1;
-            $shipping->line2 = $request->s_line2;
+            // $shipping->line2 = $request->s_line2;
             $shipping->country = $request->s_country;
             $shipping->province = session()->get('checkout')['province_name'];
             $shipping->city = session()->get('checkout')['city_name'];

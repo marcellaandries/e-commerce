@@ -290,6 +290,7 @@ class CheckoutComponent extends Component
 
     public function render()
     {
+        // dd(session()->get('checkout')['weight']);
         // dd(session()->get('checkout')['subtotal']);
         // $this->verifyForCheckout();
         return view('livewire.checkout-component')->layout("layouts.base");

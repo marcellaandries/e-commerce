@@ -97,10 +97,13 @@
                     </label>
                     <input type="text" readonly id="totalbelanja" name="totalbelanja" value="Rp {{Cart::subtotal()}}" class="form-control" >
                     </div>
-                    <div class="form-group ">
+                    <div class="form-group hidden">
                     <label>Weight Total (gram) </label>
-                    {{-- <input class="form-control" type="text" value="" id="weight" name="weight"> --}}
                     <input readonly class="form-control" type="text" value="{{number_format($weight_total, 0, "", ".")}}" id="weight" name="weight">
+                    </div>
+                    <div class="form-group ">
+                        <label>Weight Total (kg) </label>
+                        <input readonly class="form-control" type="text" value="{{number_format($weight_total/1000, 0, "", ".")}}" id="weight_kg" name="weight_kg">
                     </div>
                     <div class="form-group ">
                     <label>Shipping Cost Total</label>

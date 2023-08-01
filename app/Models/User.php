@@ -64,4 +64,10 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class, 'user_id');
     }
 
+    public function address()
+    {
+        return $this->hasMany(Address::class, 'user_id');
+    }
+
+
 }

@@ -137,3 +137,10 @@ see menu selection
 how to block and replace txt, such as asset img
 alt ctrl
 ctrl D, put cursor by arrow up down
+
+https://stackoverflow.com/questions/16871413/safely-remove-migration-in-laravel
+
+
+Manually delete the migration file under app/database/migrations/my_migration_file_name.php
+Reset the composer autoload files: composer dump-autoload
+Modify your database: Remove the last entry from the migrations table

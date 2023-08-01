@@ -195,6 +195,8 @@ class CheckoutComponent extends Component
             $orderItem->product_id = $item->id;
             $orderItem->order_id = $order->id;
 
+            $orderItem->name = $item->name;
+
             $item->price = str_replace(".0", "", $item->price);
             $orderItem->price = $item->price;
 

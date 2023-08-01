@@ -32,8 +32,10 @@
                                 </div>
                                 <div class="product-name">
                                     <a class="link-to-product" href="{{route('product.details',['slug'=>$item->model->slug])}}">{{$item->model->name}}</a>
-                                    <p class="summary-info"><span class="title"></span class="index">{{$item->model->weight}} Gr</b></p>
-                                        <p class="summary-info"><span class="title"></span class="index">{{number_format($item->model->weight * $item->qty, 0, "", ".")}} Gr</b></p>
+                                        {{-- <p class="summary-info"><span class="title"></span class="index">{{$item->model->weight}} Gr</b></p> --}}
+                                        <p class="summary-info"><span class="title"></span class="index">{{$item->model->weight/1000}} Kg</b></p>
+                                        <p class="summary-info"><span class="title"></span class="index">Weight subtotal: {{number_format($item->model->weight/1000 * $item->qty, 0, "", ".")}} Kg</b></p>
+                                        {{-- <p class="summary-info"><span class="title"></span class="index">{{number_format($item->model->weight * $item->qty, 0, "", ".")}} Gr</b></p> --}}
                                 </div>
                                 <div class="price-field product-price"><p class="price">{{ $this->rupiah($item->model['regular_price']) }}</p></div>
                                 <div class="quantity">
@@ -70,7 +72,8 @@
                             }
                             @endphp
 
-                            <p class="summary-info"><span class="title">Weight Total</span><b class="index">{{number_format($weight_total, 0, "", ".")}} gr</b></p>
+                            {{-- <p class="summary-info"><span class="title">Weight Total</span><b class="index">{{number_format($weight_total, 0, "", ".")}} Gr</b></p> --}}
+                            <p class="summary-info"><span class="title">Weight Total</span><b class="index">{{number_format($weight_total/1000, 0, "", ".")}} Kg</b></p>
                             <p class="summary-info"><span class="title">Subtotal</span><b class="index">Rp {{Cart::subtotal()}}</b></p>
                             {{-- <p class="summary-info"><span class="title">Tax</span><b class="index">Rp{{Cart::tax()}}</b></p> --}}
                             {{-- <p class="summary-info"><span class="title">Shipping</span><b class="index">Free Shipping</b></p> --}}

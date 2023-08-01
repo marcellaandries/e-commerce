@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2023 at 06:43 AM
+-- Generation Time: Aug 01, 2023 at 09:02 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -110,7 +110,7 @@ CREATE TABLE `orders` (
   `tax` int(25) NOT NULL,
   `total` int(25) NOT NULL,
   `firstname` varchar(255) NOT NULL,
-  `lastname` varchar(255) NOT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
   `mobile` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `line1` varchar(255) NOT NULL,
@@ -133,7 +133,11 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `subtotal`, `discount`, `tax`, `total`, `firstname`, `lastname`, `mobile`, `email`, `line1`, `line2`, `city`, `province`, `country`, `zipcode`, `status`, `courier`, `service`, `shipping_cost`, `is_shipping_different`, `created_at`, `updated_at`) VALUES
-(1, 6, 6240000, 0, 0, 6310000, 'MARCELLA', 'ANDRIES', '08128811225588', 'marcella@gmail.com', 'BUKIT GADING VILLA NO. 88', 'PAGAR EMAS', 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 70000, 0, '2023-07-31 04:42:23', '2023-07-31 04:42:23');
+(1, 6, 6240000, 0, 0, 6310000, 'MARCELLA', 'ANDRIES', '08128811225588', 'marcella@gmail.com', 'BUKIT GADING VILLA NO. 88', 'PAGAR EMAS', 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 70000, 0, '2023-07-31 04:42:23', '2023-07-31 04:42:23'),
+(2, 6, 8850000, 0, 0, 8958000, 'MARCELLA', 'ANDRIES', '081298982948', 'cella@gm.com', 'BUKIT GADING INDAH 88', 'PAGAR EMAS', 'Kota Serang', 'Banten', 'Indonesia', '16350', 'ordered', 'jne', 'REG', 108000, 0, '2023-08-01 02:01:58', '2023-08-01 02:01:58'),
+(3, 6, 1620000, 0, 0, 1690000, 'Marcella Andries', NULL, '081209849383', 'marcella@gmail.com', 'BGV 88', NULL, 'Kabupaten Bangka Barat', 'Bangka Belitung', 'Indonesia', '14330', 'ordered', 'jne', 'REG', 70000, 0, '2023-08-01 04:38:31', '2023-08-01 04:38:31'),
+(4, 6, 9880000, 0, 0, 10440000, 'Marcella Andries Chou', NULL, '081289849839', 'marcella11@gmail.com', 'KEBAYORAN 88', NULL, 'Kabupaten Buleleng', 'Bali', 'Indonesia', '11305', 'ordered', 'jne', 'REG', 560000, 0, '2023-08-01 06:11:55', '2023-08-01 06:11:55'),
+(5, 6, 6560000, 0, 0, 6651000, 'Marcella Andries', NULL, '0812865889922', 'marcella@gmail.com', 'VILLA 88', NULL, 'Kabupaten Serang', 'Banten', 'Indonesia', '11383', 'ordered', 'jne', 'OKE', 91000, 0, '2023-08-01 07:00:26', '2023-08-01 07:00:26');
 
 -- --------------------------------------------------------
 
@@ -145,6 +149,7 @@ CREATE TABLE `order_items` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `product_id` bigint(20) UNSIGNED NOT NULL,
   `order_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
   `price` int(25) NOT NULL,
   `quantity` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -155,9 +160,16 @@ CREATE TABLE `order_items` (
 -- Dumping data for table `order_items`
 --
 
-INSERT INTO `order_items` (`id`, `product_id`, `order_id`, `price`, `quantity`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 1620000, 2, '2023-07-31 04:42:23', '2023-07-31 04:42:23'),
-(2, 2, 1, 3000000, 1, '2023-07-31 04:42:23', '2023-07-31 04:42:23');
+INSERT INTO `order_items` (`id`, `product_id`, `order_id`, `name`, `price`, `quantity`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 'doloremque nemo tempora quo', 1620000, 2, '2023-07-31 04:42:23', '2023-07-31 04:42:23'),
+(2, 2, 1, 'omnis animi repellendus error', 3000000, 1, '2023-07-31 04:42:23', '2023-07-31 04:42:23'),
+(3, 2, 2, 'omnis animi repellendus error', 3000000, 1, '2023-08-01 02:01:58', '2023-08-01 02:01:58'),
+(4, 22, 2, 'exercitationem corrupti fuga quisquam', 1950000, 3, '2023-08-01 02:01:58', '2023-08-01 02:01:58'),
+(5, 1, 3, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-01 04:38:31', '2023-08-01 04:38:31'),
+(6, 1, 4, 'doloremque nemo tempora quo', 1620000, 3, '2023-08-01 06:11:55', '2023-08-01 06:11:55'),
+(7, 9, 4, 'eveniet corporis ut facere', 2510000, 2, '2023-08-01 06:11:55', '2023-08-01 06:11:55'),
+(8, 5, 5, 'aut consequatur qui aliquam', 1780000, 2, '2023-08-01 07:00:26', '2023-08-01 07:00:26'),
+(9, 2, 5, 'omnis animi repellendus error', 3000000, 1, '2023-08-01 07:00:26', '2023-08-01 07:00:26');
 
 -- --------------------------------------------------------
 
@@ -267,7 +279,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('RUoXUdbCuQNGpft1F41RIMo0xaU1PopsSEafV5r6', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoibzUyejM2SHFzam5CZlU2N09aSEQxN1VpUmI2MXUyQ3QxZnR6cUtZQiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90aGFuay15b3UiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjQ6ImNhcnQiO2E6MDp7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjY7czo1OiJ1dHlwZSI7czozOiJVU1IiO30=', 1690778543);
+('sy1oxNiRmE9jKuJekJsultQaejO46g7nNsIDuuRw', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiOWVXcnZuZzdBNnlNM0hsVUhucTRVU1UzTXJ5d1JNMUZMeDNNb2dPaCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90aGFuay15b3UiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo2O3M6NToidXR5cGUiO3M6MzoiVVNSIjtzOjQ6ImNhcnQiO2E6MDp7fX0=', 1690873227);
 
 -- --------------------------------------------------------
 
@@ -313,7 +325,11 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`id`, `user_id`, `order_id`, `mode`, `status`, `created_at`, `updated_at`) VALUES
-(1, 6, 1, 'bank', 'pending', '2023-07-31 04:42:23', '2023-07-31 04:42:23');
+(1, 6, 1, 'bank', 'pending', '2023-07-31 04:42:23', '2023-07-31 04:42:23'),
+(2, 6, 2, 'bank', 'pending', '2023-08-01 02:01:58', '2023-08-01 02:01:58'),
+(3, 6, 3, 'bank', 'pending', '2023-08-01 04:38:31', '2023-08-01 04:38:31'),
+(4, 6, 4, 'bank', 'pending', '2023-08-01 06:11:55', '2023-08-01 06:11:55'),
+(5, 6, 5, 'bank', 'pending', '2023-08-01 07:00:26', '2023-08-01 07:00:26');
 
 -- --------------------------------------------------------
 
@@ -466,13 +482,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -496,7 +512,7 @@ ALTER TABLE `shippings`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`

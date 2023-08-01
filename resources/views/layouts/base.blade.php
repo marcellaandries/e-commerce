@@ -1280,7 +1280,7 @@
 							<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
 							<div class="wrap-left-info">
 								<h4 class="fc-name">Safe Payment</h4>
-								<p class="fc-desc">Safe your online payment</p>
+								<p class="fc-desc">Safe Your Online Payment</p>
 							</div>
 
 						</li>
@@ -1288,7 +1288,7 @@
 							<i class="fa fa-life-ring" aria-hidden="true"></i>
 							<div class="wrap-left-info">
 								<h4 class="fc-name">Online Suport</h4>
-								<p class="fc-desc">We Have Support 24/7</p>
+								<p class="fc-desc">We Have Online Support</p>
 							</div>
 
 						</li>

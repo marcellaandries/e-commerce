@@ -59,7 +59,7 @@
                                                         <h5>{{$address->firstname}}</h5>
                                                         <div class="d-flex flex-row">
                                                             <div class="text-primary mb-1 me-2">
-                                                                {{$address->mobile}}
+                                                                {{$address->line1}}
                                                             </div>
                                                             {{-- <span>310</span> --}}
                                                         </div>
@@ -78,7 +78,7 @@
                                                             <span>Casual<br /></span>
                                                         </div> --}}
                                                         <p class="text-truncate mb-4 mb-md-0">
-                                                            {{$address->line1}}
+                                                            {{$address->mobile}}
                                                         </p>
                                                 </div>
                                                 <div class="col-md-6 col-lg-3 col-xl-3 pl-25 border-sm-start-none border-start">
@@ -102,7 +102,7 @@
                                                         </button> --}}
 
                                                         <a href="#"><i class="fa fa-hand-o-up fa-2x text-info" title="choose"></i></a>
-                                                        <a href="#"><i class="ml-8  fa fa-edit fa-2x text-info"title="edit"></i></a>
+                                                        <a href="#"><i class="ml-8  fa fa-edit fa-2x text-info ml-12"title="edit"></i></a>
                                                         <a href="#" onclick="confirm('Are you sure, you want to delete this product?') || event.stopImmediatePropagation()" style="margin-left:10px;" wire:click.prevent="deleteAddress({{$address->id}})"><i class="fa fa-times fa-2x text-danger" title="delete"></i></a>
                                                 </div>
                                                 </div>

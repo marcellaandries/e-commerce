@@ -7225,6 +7225,10 @@ svg {
 
 
 /* cella */
-.ml-8 {
-    margin-left: 1.5rem !important;
+.ml-1 {
+    margin-left: 1.0rem !important;
+}
+
+.pl-25 {
+    padding-left: 2.5rem !important;
 }

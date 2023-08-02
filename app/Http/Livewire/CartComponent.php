@@ -64,6 +64,11 @@ class CartComponent extends Component
     {
         // $this->setWeightforCheckout();
         // dd($weight_total);
+        session()->put('checkout',[
+            'weight' => Crypt::decrypt($weight_total),
+        ]);
+        // dd(session()->get('checkout')['weight']);
+
         if(Auth::check())
         {
             return redirect()->route('shipping',['weight_total'=> $weight_total]);

@@ -3,21 +3,19 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Product;
+use App\Models\Address;
 
 class AddressComponent extends Component
 {
 
-    public function deleteProduct($id)
+    public function deleteAddress($id)
     {
-        $product = Product::find($id);
-        $product->delete();
-        session()->flash('message','Product has been deleted successfully!');
+        session()->flash('message','Addresses has been deleted successfully!');
     }
 
     public function render()
     {
-        $products = Product::all();
-        return view('livewire.address-component',['products'=>$products])->layout('layouts.base');
+        $addresses = Address::all();
+        return view('livewire.address-component',['addresses'=>$addresses])->layout('layouts.base');
     }
 }

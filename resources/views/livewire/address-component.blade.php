@@ -28,10 +28,9 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    {{-- <th>Id</th> --}}
                                     <th>Name</th>
                                     <th>Mobile</th>
-                                    <th>Email</th>
                                     <th>Address</th>
                                     <th>City</th>
                                     <th>Province</th>
@@ -41,22 +40,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($products as $product)
+                                @foreach ($addresses as $address)
                                     <tr>
-                                        <td>{{$product->id}}</td>
-                                        <td>{{$product->category->name}}</td>
-                                        <td>{{$product->stock_status}}</td>
-                                        <td>{{$product->regular_price}}</td>
-                                        <td>{{$product->sale_price}}</td>
-                                        <td>{{$product->category->name}}</td>
-                                        <td>{{$product->created_at}}</td>
-                                        <td>{{$product->sale_price}}</td>
-                                        <td>{{$product->category->name}}</td>
-                                        <td>{{$product->sale_price}}</td>
-                                        <td><a href="{{route('admin.editproduct',['product_slug'=>$product->slug])}}"><i class="fa fa-hand-o-up fa-2x text-info" title="choose"></i></a>
-                                            <a href="{{route('admin.editproduct',['product_slug'=>$product->slug])}}"><i class="fa fa-edit fa-2x text-info"title="edit"></i></a>
-                                            <a href="#" onclick="confirm('Are you sure, you want to delete this product?') || event.stopImmediatePropagation()" style="margin-left:10px;" wire:click.prevent="deleteProduct({{$product->id}})"><i class="fa fa-times fa-2x text-danger" title="delete"></i></a>
+                                        {{-- <td>{{$address->id}}</td> --}}
+                                        <td>{{$address->firstname}}</td>
+                                        <td>{{$address->mobile}}</td>
+                                        <td>{{$address->line1}}</td>
+                                        <td>{{$address->city}}</td>
+                                        <td>{{$address->province}}</td>
+                                        <td>{{$address->zipcode}}</td>
+                                        <td>{{$address->priority}}</td>
+                                        <td>{{$address->label}}</td>
+                                        <td>
+                                            <a href="#"><i class="fa fa-hand-o-up fa-2x text-info" title="choose"></i></a>
+                                            <a href="#"><i class="fa fa-edit fa-2x text-info"title="edit"></i></a>
+                                            <a href="#" onclick="confirm('Are you sure, you want to delete this product?') || event.stopImmediatePropagation()" style="margin-left:10px;" wire:click.prevent="deleteAddress({{$address->id}})"><i class="fa fa-times fa-2x text-danger" title="delete"></i></a>
                                         </td>
+                                        {{-- <td>
+                                            <a href="{{route('admin.editproduct',['product_slug'=>$product->slug])}}"><i class="fa fa-hand-o-up fa-2x text-info" title="choose"></i></a>
+                                            <a href="{{route('admin.editproduct',['product_slug'=>$product->slug])}}"><i class="fa fa-edit fa-2x text-info"title="edit"></i></a>
+                                            <a href="#" onclick="confirm('Are you sure, you want to delete this product?') || event.stopImmediatePropagation()" style="margin-left:10px;" wire:click.prevent="deleteAddress({{$product->id}})"><i class="fa fa-times fa-2x text-danger" title="delete"></i></a>
+                                        </td> --}}
                                     </tr>
                                 @endforeach
                             </tbody>

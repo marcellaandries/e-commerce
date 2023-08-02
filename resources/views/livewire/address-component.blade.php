@@ -101,8 +101,8 @@
                                                         Edit
                                                         </button> --}}
 
-                                                        <a href="#"><i class="fa fa-hand-o-up fa-2x text-info" title="choose"></i></a>
-                                                        <a href="#"><i class="ml-8  fa fa-edit fa-2x text-info ml-12"title="edit"></i></a>
+                                                        <a href="#"><i class="fa fa-check-square-o fa-2x text-info" title="choose"></i></a>
+                                                        <a href="#"><i class="ml-8 fa fa-edit fa-2x text-info ml-12" title="edit"></i></a>
                                                         <a href="#" onclick="confirm('Are you sure, you want to delete this product?') || event.stopImmediatePropagation()" style="margin-left:10px;" wire:click.prevent="deleteAddress({{$address->id}})"><i class="fa fa-times fa-2x text-danger" title="delete"></i></a>
                                                 </div>
                                                 </div>

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 // use Illuminate\Support\Str;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Crypt;
 
 class ShippingCostComponent extends Component
 {
@@ -23,6 +24,8 @@ class ShippingCostComponent extends Component
 
     public function mount($weight_total)
     {
+        $weight_total = Crypt::decrypt($weight_total);
+        // dd($weight_total);
         $this->weight_total = $weight_total;
         // dd($weight_total);
     }

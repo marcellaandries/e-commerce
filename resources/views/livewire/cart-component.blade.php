@@ -85,9 +85,9 @@
                             </label> --}}
                             {{-- <a class="btn btn-checkout" href="/checkout">Check out</a> --}}
 
-                            {{-- <?php
+                            <?php
                                 $weight_total= Crypt::encrypt($weight_total);
-                            ?> --}}
+                            ?>
                             <a class="btn btn-checkout" href="#" wire:click.prevent="shippingCost('{{$weight_total}}')">Shipping</a>
                             {{-- <a class="btn btn-checkout" href="{{route('shipping',['weight_total'=>$weight_total])}}" wire:click.prevent="shippingCost({{$weight_total}})">Shipping</a> --}}
                             <a class="link-to-shop" href="/shop">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>

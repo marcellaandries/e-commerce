@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Cart;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 
 class CartComponent extends Component
 {
@@ -65,8 +66,6 @@ class CartComponent extends Component
         // dd($weight_total);
         if(Auth::check())
         {
-            // $weight_total = Crypt::decrypt($weight_total);
-            // dd($weight_total);
             return redirect()->route('shipping',['weight_total'=> $weight_total]);
         }
         else

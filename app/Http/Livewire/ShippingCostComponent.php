@@ -22,13 +22,19 @@ class ShippingCostComponent extends Component
     public $service_name;
     public $weight;
 
-    public function mount($weight_total)
+    // public function mount($weight_total)
+    // {
+    //     $weight_total = Crypt::decrypt($weight_total);
+    //     // dd($weight_total);
+    //     $this->weight_total = $weight_total;
+    //     // dd($weight_total);
+    // }
+    public function mount()
     {
-        $weight_total = Crypt::decrypt($weight_total);
-        // dd($weight_total);
-        $this->weight_total = $weight_total;
-        // dd($weight_total);
+        $this->weight_total = session()->get('checkout')['weight'];
+        // dd($this->weight_total);
     }
+
 
     public function render()
     {

@@ -63,7 +63,7 @@ class CartComponent extends Component
     public function shippingCost($weight_total)
     {
         // $this->setWeightforCheckout();
-        // dd($weight_total);
+
         session()->put('checkout',[
             'weight' => Crypt::decrypt($weight_total),
         ]);
@@ -71,7 +71,9 @@ class CartComponent extends Component
 
         if(Auth::check())
         {
-            return redirect()->route('shipping',['weight_total'=> $weight_total]);
+            // return redirect()->route('shipping',['weight_total'=> $weight_total]);
+            return redirect()->route('ship');
+
         }
         else
         {

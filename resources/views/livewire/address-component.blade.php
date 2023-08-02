@@ -85,15 +85,17 @@
                                                 <div class="d-flex flex-row align-items-center mb-1">
                                                     <h5 class="mb-1 me-1 text-primary">
                                                         @if($address->priority)
-                                                            Main Address
+                                                            <input type="radio" id="isPriority" name="isPriority" value="1" checked=checked>
+                                                            <span class="label label-primary">Primary</span>
                                                         @else
-
+                                                            <input type="radio" id="isPriority" name="isPriority" value="0">
+                                                            <span class="label label-default">Not Primary</span>
                                                         @endif
                                                         {{-- {{$address->priority}} --}}
                                                     </h5>
                                                     {{-- <span class="text-danger"><s>$20.99</s></span> --}}
                                                 </div>
-                                                <h6 class="text-success">{{$address->label}}</h6>
+                                                <h6 class="text-primary">{{$address->label}}</h6>
                                                 <div class="d-flex flex-column mt-4">
 
                                                         {{-- <button class="btn btn-primary btn-sm" type="button">Select</button>

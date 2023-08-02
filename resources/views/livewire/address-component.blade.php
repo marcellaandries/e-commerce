@@ -1,5 +1,6 @@
 <div>
     <style>
+
         nav svg{
             height: 20px;
         }
@@ -15,6 +16,7 @@
 
     </style>
 
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
       <div class="container" style="padding:30px 0;">
         <div class="row">
             <div class="col-md-12">
@@ -45,7 +47,7 @@
                                                     <input type="radio" id="isPriority" name="isPriority" value="1" checked=checked>
 
                                                 @else
-                                                    <input type="radio" id="isPriority" name="isPriority" value="0">
+                                                    <input class="form-check-input" type="radio" id="isPriority" name="isPriority" value="0">
 
                                                 @endif
                                             </span>
@@ -72,7 +74,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-2 col-lg-2 col-xl-2 border-sm-start-none border-start mt-04 pl-35">
+                                        <div class="col-md-2 col-lg-2 col-xl-2 border-sm-start-none border-start mt-06 pl-35">
                                             <div class="d-flex flex-row align-items-center mb-1">
                                                 <h6 class="mb-1 me-1 text-primary">
                                                     @if($address->priority)
@@ -86,7 +88,7 @@
                                         </div>
 
                                         <div class="col-md-2 col-lg-2 col-xl-2 border-sm-start-none border-start mt-2">
-                                            <div class="d-flex flex-column mt-4 ">
+                                            <div class="d-flex flex-column mt-08">
                                                 <a href="#"><i class="fa fa-edit fa-2x text-info ml-12" title="edit"></i>&nbsp;Edit</a>
                                             </div>
                                         </div>

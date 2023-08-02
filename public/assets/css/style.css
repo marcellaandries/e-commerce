@@ -7245,8 +7245,8 @@ svg {
     margin-top: 2.0rem !important;
 }
 
-.mt-11 {
-    margin-top: 1.1rem !important;
+.mt-12 {
+    margin-top: 1.2rem !important;
 }
 
 .ml-15 {
@@ -7267,5 +7267,21 @@ svg {
 
 .mt-06 {
     margin-top: 0.6rem !important;
+}
+
+.pr-2 {
+    padding-right: 2.0rem !important;
+}
+
+.mr-2 {
+    margin-right: 2.0rem !important;
+}
+
+.mb-2 {
+    margin-bottom: 2.0rem !important;
+}
+
+.mb-1 {
+    margin-bottom: 1.0rem !important;
 }
 

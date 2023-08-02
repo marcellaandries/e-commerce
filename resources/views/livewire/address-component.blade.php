@@ -38,7 +38,7 @@
 
                         @foreach ($addresses as $address)
                             <section style="background-color: #eee;">
-                                <div class="container py-5 mb-8">
+                                <div class="container py-5 mb-1">
 
                                     <div class="row">
                                         <div class="pl-35 col-md-1 col-lg-1 col-xl-1 mb-1 mb-lg-1 mt-2">
@@ -53,19 +53,19 @@
                                             </span>
 
                                         </div>
-                                        <div class="col-md-2 col-lg-2 col-xl-2 pl-25 mt-08">
+                                        <div class="col-md-2 col-lg-2 col-xl-2 pl-25 mt-06">
                                             <h5>{{$address->firstname}}</h5>
                                             <p class="text-primary text-truncate mb-4 mb-md-0">
                                                 {{$address->mobile}}
                                             </p>
                                         </div>
-                                        <div class="col-md-5 col-lg-5 col-xl-5 pl-25 mt-2">
+                                        <div class="col-md-5 col-lg-5 col-xl-5 pl-25 mt-12">
                                             <div class="d-flex flex-row">
                                                 <div class="text-primary mb-1 me-2">
                                                     {{$address->line1}}
                                                 </div>
                                             </div>
-                                            <div class="mt-1 mb-0 text-muted small">
+                                            <div class="mt-12 mb-0 text-muted small">
                                                 <span>{{$address->province}}</span>
                                                 <span class="text-primary"> • </span>
                                                 <span>{{$address->city}}</span>
@@ -88,7 +88,7 @@
                                         </div>
 
                                         <div class="col-md-2 col-lg-2 col-xl-2 border-sm-start-none border-start mt-2">
-                                            <div class="d-flex flex-column mt-08">
+                                            <div class="d-flex flex-column mt-06">
                                                 <a href="#"><i class="fa fa-edit fa-2x text-info ml-12" title="edit"></i>&nbsp;Edit</a>
                                             </div>
                                         </div>
@@ -101,6 +101,14 @@
                         @endforeach
 
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{-- <button type="submit" class="btn btn-primary">Update</button> --}}
+                            <a href="{{route('admin.addproduct')}}" class="btn btn-primary pull-right mr-2 mb-2">Confirm</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

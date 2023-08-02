@@ -55,6 +55,7 @@ Route::get('/', HomeComponent::class);
 Route::get('/shop', ShopComponent::class);
 
 Route::get('/cart', CartComponent::class)->name('product.cart');
+// Route::get('/ship/{weight_total}', [CartComponent::class, 'shippingCost'])->name('product.cart');
 
 // Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 Route::get('/checkout', CheckoutComponent::class)->name('checkout');

@@ -71,7 +71,7 @@ Route::get('/product-category/{category_slug}', CategoryComponent::class)->name(
 
 Route::get('/search', SearchComponent::class)->name('product.search');
 
-Route::get('/address', AddressComponent::class);
+Route::get('/address', AddressComponent::class)->name('address');
 
 Route::get('/about-us', AboutUsComponent::class);
 Route::get('/contact-us', ContactUsComponent::class);

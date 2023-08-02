@@ -105,7 +105,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             {{-- <button type="submit" class="btn btn-primary">Update</button> --}}
-                            <a href="{{route('admin.addproduct')}}" class="btn btn-primary pull-right mr-2 mb-2">Confirm</a>
+                            {{-- <a href="{{route('admin.addproduct')}}" class="btn btn-primary pull-right mr-2 mb-2">Confirm</a> --}}
+                            <a class="btn btn-primary pull-right mr-2 mb-2" href="#" wire:click.prevent="ship()">Confirm</a>
                         </div>
                     </div>
 

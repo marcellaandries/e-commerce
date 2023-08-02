@@ -72,7 +72,8 @@ class CartComponent extends Component
         if(Auth::check())
         {
             // return redirect()->route('shipping',['weight_total'=> $weight_total]);
-            return redirect()->route('ship');
+            // return redirect()->route('ship');
+            return redirect()->route('address');
 
         }
         else

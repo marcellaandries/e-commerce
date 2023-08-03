@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+
+
+
     // cost
     $('select[name="kurir"]').on('change', function(){
 

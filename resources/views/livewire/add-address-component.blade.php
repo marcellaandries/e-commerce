@@ -51,17 +51,21 @@
                                     </p> --}}
                                     <p class="row-in-form">
                                         <label for="country">Country</label>
-                                        <input type="text" name="country" value="Indonesia" placeholder="Country">
+                                        <input type="text" readonly name="country" value="Indonesia" placeholder="Country">
                                     </p>
                                     <p class="row-in-form">
-                                        <label for="province">Province<span>*</span></label>
-                                        <input type="text" id="province" name="province" value="" placeholder="Province" wire:model="province">
-                                        {{-- <select name="province_id" id="province_id" class="form-control">
+                                        {{-- <label for="province">Province<span>*</span></label>
+                                        <input type="text" id="province" name="province" value="" placeholder="Province" wire:model="province"> --}}
+
+                                        <label for="province_id">Province<span>*</span></label>
+                                        <select name="province_id" id="province_id" class="form-control">
                                             <option value="">Select Province</option>
                                             @foreach ($provinsi as $row)
                                             <option value="{{$row['province_id']}}" namaprovinsi="{{$row['province']}}">{{$row['province']}}</option>
                                             @endforeach
-                                        </select> --}}
+                                        </select>
+
+
                                     </p>
                                     <p class="row-in-form">
                                         <label for="kota_id">Town / City<span>*</span></label>

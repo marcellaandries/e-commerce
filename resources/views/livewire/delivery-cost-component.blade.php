@@ -59,8 +59,8 @@
                     </div> --}}
 
                     <div class="form-group">
-                        <label>Province ID<span>*</span></label>
-                            <input readonly class="form-control" type="text" value="" id="pro_id" name="pro_id" wire:model="province_id">
+                        <label class ="hidden">Province ID<span>*</span></label>
+                            <input readonly class="gidden form-control" type="text" value="" id="pro_id" name="pro_id" wire:model="province_id">
                         <label class="mt-08">Province<span>*</span></label>
                             <input readonly class="form-control" type="text" value="" id="pro_name" name="pro_name" wire:model="province">
                     </div>
@@ -78,8 +78,8 @@
                     </div> --}}
 
                     <div class="form-group">
-                        <label>City ID<span>*</span></label>
-                            <input readonly class="form-control" type="text" value="" id="cit_id" name="cit_id" wire:model="city_id">
+                        <label class ="hidden">City ID<span>*</span></label>
+                            <input readonly class="hidden form-control" type="text" value="" id="cit_id" name="cit_id" wire:model="city_id">
                         <label class="mt-08">City<span>*</span></label>
                             <input readonly class="form-control" type="text" value="" id="cit_name" name="cit_name" wire:model="city">
                     </div>

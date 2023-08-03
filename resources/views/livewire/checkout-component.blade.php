@@ -162,7 +162,7 @@
 
                 <div class="summary summary-checkout">
                     <div class="summary-item payment-method">
-                        <h4 class="title-box">Payment Method<span>*</span></h4>
+                        <h4 class="title-box">Payment Method<span style="color:red;font-weight:bold"> *</span></h4>
                         {{-- <p class="summary-info"><span class="title">Check / Money order</span></p> --}}
                         {{-- <p class="summary-info"><span class="title">Credit Cart (saved)</span></p> --}}
                         <div class="choose-payment-methods">

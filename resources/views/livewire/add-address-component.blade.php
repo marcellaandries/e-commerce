@@ -64,7 +64,7 @@
                                             <option value="{{$row['province_id']}}" namaprovinsi="{{$row['province']}}">{{$row['province']}}</option>
                                             @endforeach
                                         </select>
-                                        <input type="text" readonly class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="province name ">
+                                        <input type="hidden" readonly class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="province name ">
                                     </p>
 
                                     <p class="row-in-form">
@@ -74,7 +74,7 @@
                                         <select name="kota_id" id="kota_id" class="form-control">
                                             <option value="">Choose City</option>
                                         </select>
-                                        <input type="text" readonly class="form-control" id="nama_kota" nama="nama_kota" placeholder="city name">
+                                        <input type="hidden" readonly class="form-control" id="nama_kota" nama="nama_kota" placeholder="city name">
                                     </p>
 
                                     <p class="row-in-form">
@@ -83,6 +83,18 @@
                                         @error('zipcode') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                     </p>
                                 </div>
+
+                                {{-- cella --}}
+                                <div class="form-group " hidden>
+                                    <label>Province Name</label>
+                                    <input class="form-control" type="text" readonly id="province_name" name="province_name">
+                                </div>
+
+                                <div class="form-group " hidden>
+                                    <label>City Name</label>
+                                    <input class="form-control" type="text" readonly id="city_name" name="city_name">
+                                </div>
+
                                 {{-- </form> --}}
                             </div>
                         <div class="summary-item payment-method mt-12 mb-5">

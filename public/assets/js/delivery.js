@@ -33,6 +33,17 @@ $(document).ready(function(){
             $("#nama_kota").val(namakotaku);
             $.session.set('ss_city', namakotaku);
             console.log("ini ses city", $.session.get('ss_city'))
+
+            var obj_province = {};
+            obj_province= sessionStorage.getItem('ss_province');
+            console.log("ini obj province: ", obj_province);
+            $("#province_name").val(obj_province);
+
+            var obj_city = {};
+            obj_city= sessionStorage.getItem('ss_city');
+            console.log("ini obj city: ", obj_city);
+            $("#city_name").val(obj_city);
+
         });
 
         let provinceid = $(this).val();

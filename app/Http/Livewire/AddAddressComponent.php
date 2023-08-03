@@ -137,19 +137,35 @@ class AddAddressComponent extends Component
 
     public function addAddress(Request $request)
     {
-        // $request->validate([
-        //     'firstname' =>  'required',
-        //     // 'lastname' =>  'required',
-        //     'email' =>  'required|email',
-        //     'mobile' =>  'required|numeric',
-        //     'line1' =>  'required',
+        $request->validate([
+            'firstname' =>  'required',
+            // 'lastname' =>  'required',
+            'email' =>  'required|email',
+            'mobile' =>  'required|numeric',
+            'line1' =>  'required',
+            'country' =>  'required',
 
-        //     'city' =>  'required',
-        //     'province' =>  'required',
-        //     'country' =>  'required',
-        //     'zipcode' =>  'required',
-        //     'paymentmode' => 'required',
-        // ]);
-        dd($request->all());
+            'province_id' =>  'required',
+            'kota_id' =>  'required',
+            'zipcode' =>  'required',
+            'province_name' => 'required',
+            'city_name' =>  'required',
+        ]);
+        // dd($request->all());
+
+        // array:11 [▼
+        // "_token" => "0Ax7voDpuqCOGFsdVM0tQaWvK9ury2Kq2MZ31vlR"
+        // "firstname" => null
+        // "email" => null
+        // "mobile" => null
+        // "line1" => null
+        // "country" => "Indonesia"
+
+        // "province_id" => "8"
+        // "kota_id" => "293"
+        // "zipcode" => null
+        // "province_name" => "Jambi"
+        // "city_name" => "Kabupaten Muaro Jambi"
+        // ]
     }
 }

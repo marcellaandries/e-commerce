@@ -12,6 +12,7 @@ class AddressComponent extends Component
 
     // public $addressVal;
     // public $addresses;
+    public $message;
 
     // public function mount()
     // {
@@ -21,7 +22,7 @@ class AddressComponent extends Component
     //     $this->$category_slug = $category_slug;
     // }
 
-    public function ship()
+    public function ship($address_id)
     {
         // session()->put('checkout',[
         //     'weight' => Crypt::decrypt($weight_total),
@@ -30,8 +31,10 @@ class AddressComponent extends Component
 
         if(Auth::check())
         {
+            // dd($this->message);
             // dd($this->addressVal);
             // dd($request->firstname);
+            dd($address_id);
             // dd($request->all());
             // dd($this->firstname);
             // return redirect()->route('shipping',['weight_total'=> $weight_total]);

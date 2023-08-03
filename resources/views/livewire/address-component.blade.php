@@ -14,6 +14,71 @@
         /* https://mdbootstrap.com/docs/standard/extended/product-cards/ */
         @media (max-width: 767.98px) { .border-sm-start-none { border-left: none !important; } }
 
+
+        label {
+        display: block;
+        position: relative;
+        padding-left: 50px;
+        margin: 10px 0;
+        cursor: pointer;
+        font-size: 20px;
+        }
+
+        /* Hide the default radio button */
+        label input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        }
+
+        /* Creating own radio button to style */
+        .custom-radio-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 24px;
+        width: 24px;
+        background-color: #8FADC7;
+        border-radius: 50%;
+        }
+
+        /* hover effect on unchecked buttons */
+        label:hover input+.custom-radio-button {
+        background: #fdd;
+        }
+
+        /* button checked */
+        label input:checked+.custom-radio-button {
+        background-color: #004481;
+        }
+
+        /* White dot on checked radio button (hidden) */
+        label .custom-radio-button::after {
+        content: "";
+        display: none;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        }
+
+        /* Show the dot on checked button */
+        label input:checked+.custom-radio-button::after {
+        display: block;
+        }
+
+        input[type="submit"]{
+        border: none;
+        color: white;
+        font-size: 18px;
+        padding: 5px 15px;
+        background: #bd1c10;
+        border-radius: .25rem;
+        }
     </style>
 
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> --}}
@@ -31,10 +96,17 @@
                             </div>
                         </div>
                     </div>
+
+
                     <div class="panel-body">
+                    {{-- <form action="{{ route('ship') }}" method="post"
+                        enctype="multipart/form-data">
+                        @csrf --}}
+
                         @if(Session::has('message'))
                             <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                         @endif
+
 
                         @foreach ($addresses as $address)
                             <section style="background-color: #eee;">
@@ -44,14 +116,20 @@
                                         <div class="pl-35 col-md-1 col-lg-1 col-xl-1 mb-1 mb-lg-1 mt-2">
                                             <span class="mb-1 me-1 text-primary">
                                                 @if($address->priority)
-                                                    <input type="radio" id="isPrioriyYes" name="isPriority" value="{{ $address->id }}" checked=checked wire:model="addressVal.{{ $address->id }}">
-                                                    <label class="main-label">
+                                                    <label>
+                                                    <input type="radio" id="isPrioriyYes" name="isPriority" value="{{ $address->priority }}" checked=checked wire:click="$set('address_id', {{ $address->id }})">
+                                                    <span class="custom-radio-button"></span>
+                                                    {{-- <label for="isPrioriyYes" class="main-label">
                                                         {{ $address->id }}
+                                                    </label> --}}
                                                     </label>
                                                 @else
-                                                <input type="radio" id="isPriorityNo" name="isPriority" value="{{ $address->id }}" wire:model="addressVal.{{ $address->id }}">
-                                                    <label class="main-label">
+                                                    <label>
+                                                    <input type="radio" id="isPriorityNo" name="isPriority" value="{{ $address->priority }}">
+                                                    <span class="custom-radio-button"></span>
+                                                    {{-- <label for="isPriorityNo" class="main-label">
                                                         {{ $address->id }}
+                                                    </label> --}}
                                                     </label>
                                                 @endif
                                             </span>
@@ -104,15 +182,19 @@
                             <hr>
                         @endforeach
 
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{-- <button type="submit" class="btn btn-primary">Update</button> --}}
+                                {{-- <a href="{{route('admin.addproduct')}}" class="btn btn-primary pull-right mr-2 mb-2">Confirm</a> --}}
+                                <a class="btn btn-primary pull-right mr-2 mb-2" href="#" wire:click.prevent="ship('{{$address->id}}')">Confirm</a>
+                            </div>
+                        </div>
+
+                    {{-- </form> --}}
+
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            {{-- <button type="submit" class="btn btn-primary">Update</button> --}}
-                            {{-- <a href="{{route('admin.addproduct')}}" class="btn btn-primary pull-right mr-2 mb-2">Confirm</a> --}}
-                            <a class="btn btn-primary pull-right mr-2 mb-2" href="#" wire:click.prevent="ship()">Confirm</a>
-                        </div>
-                    </div>
+
 
                 </div>
             </div>

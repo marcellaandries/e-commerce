@@ -26,7 +26,7 @@
                             <div class="billing-address">
                                 <p class="row-in-form">
                                     <label for="fname">first name<span>*</span></label>
-                                    <input type="text" id ="firstname" name="firstname" value="" placeholder="Your name" wire:model="firstname">
+                                    <input readonly type="text" id ="firstname" name="firstname" value="" placeholder="Your name" wire:model="firstname">
                                     @error('firstname') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </p>
                                 {{-- <p class="row-in-form">
@@ -41,12 +41,12 @@
                                 </p>
                                 <p class="row-in-form">
                                     <label for="phone">Phone number<span>*</span></label>
-                                    <input type="number" name="mobile" value="" placeholder="number format" wire:model="mobile">
+                                    <input readonly type="number" name="mobile" value="" placeholder="number format" wire:model="mobile">
                                     @error('mobile') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </p>
                                 <p class="row-in-form">
                                     <label for="add">Address (line 1):<span>*</span></label>
-                                    <input type="text" name="line1" value="" placeholder="Street at apartment number" wire:model="line1">
+                                    <input type="text" readonly name="line1" value="" placeholder="Street at apartment number" wire:model="line1">
                                     @error('line1') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </p>
                                 {{-- <p class="row-in-form">

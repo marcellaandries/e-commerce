@@ -51,7 +51,7 @@ class DeliveryCostComponent extends Component
         $this->province = session()->get('checkout')['province'];
         $this->province_id = session()->get('checkout')['province_id'];
         $this->zipcode = session()->get('checkout')['zipcode'];
-        // dd($this->city_id);
+        // dd($this->line1);
     }
 
 
@@ -250,9 +250,10 @@ class DeliveryCostComponent extends Component
             'weight' => $res_data['weight'],
             'shipping_cost' => $res_data['ongkos_kirim'],
             'total' => $res_data['total_keseluruhan'],
+            'line1' => session()->get('checkout')['line1'],
         ]);
         // dd(session()->get('checkout'));
-        // array:11 [▼
+        // array:12 [▼
         //     "subtotal" => "10.360.000,00"
         //     "province_id" => "10"
         //     "province_name" => "Jawa Tengah"
@@ -264,9 +265,10 @@ class DeliveryCostComponent extends Component
         //     "total" => "Rp 10.624.000,00"
         //     "weight" => "12.000"
         //     "shipping_cost" => "Rp 264.000,00"
+        //     "line1" => "Pluit Avenue No. 11, Pluit Utara"
         // ]
 
-        // dd(session()->get('checkout')['total']);
+        // dd(session()->get('checkout')['line1']);
 
         // var_dump(dd(session()->get('checkout')['total']));
 

@@ -51,10 +51,20 @@
                         </select>
                     </div>
                     {{-- cella --}}
+                    {{-- <div class="form-group">
+                        <input type="hidden" readonly class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="province name ">
+                    </div> --}}
+
                     <div class="form-group">
                         <input type="hidden" readonly class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="province name ">
                     </div>
 
+                    <div class="form-group">
+                        <label>Province ID<span>*</span></label>
+                            <input readonly class="form-control" type="text" value="" id="pro_id" name="pro_id" wire:model="province_id">
+                        <label class="mt-08">Province<span>*</span></label>
+                            <input readonly class="form-control" type="text" value="" id="pro_name" name="pro_name" wire:model="province">
+                    </div>
 
                     <div class="form-group ">
                     <label>Town / City<span>*</span>
@@ -66,6 +76,14 @@
                     <div class="form-group">
                     <input type="hidden" readonly class="form-control" id="nama_kota" nama="nama_kota" placeholder="city name">
                     </div>
+
+                    <div class="form-group">
+                        <label>City ID<span>*</span></label>
+                            <input readonly class="form-control" type="text" value="" id="cit_id" name="cit_id" wire:model="city_id">
+                        <label class="mt-08">City<span>*</span></label>
+                            <input readonly class="form-control" type="text" value="" id="cit_name" name="cit_name" wire:model="city">
+                    </div>
+
                     <div class="form-group ">
 
                         <div class="form-group ">
@@ -77,8 +95,8 @@
                             <option value="tiki">TIKI</option>
                             <option value="pos">POS INDONESIA</option>
                             </select>
-                            </div>
-                            <div class="form-group">
+                        </div>
+                        <div class="form-group">
                             <label>Choose Service<span>*</span>
                             </label>
                             <select name="layanan" id="layanan" class="form-control">

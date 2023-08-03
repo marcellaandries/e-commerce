@@ -66,14 +66,18 @@ class AddressComponent extends Component
                 'mobile' => $address_choosen->mobile,
                 'line1' => $address_choosen->line1,
                 'city' => $address_choosen->city,
+                'city_id' => $address_choosen->city_id,
+                'province' => $address_choosen->province,
+                'province_id' => $address_choosen->province_id,
                 'zipcode' => $address_choosen->zipcode,
             ]);
 
             // dd(session()->get('checkout'));
-
+//
             // dd(session()->get('checkout')['firstname']);
 
-            return redirect()->route('ship');
+            // return redirect()->route('ship');
+            return redirect()->route('delivery');
 
         }
         else

@@ -21,6 +21,15 @@ class ShippingCostComponent extends Component
     public $kurir;
     public $service_name;
     public $weight;
+    public $firstname;
+    public $mobile;
+    public $line1;
+    public $city;
+    public $city_id;
+    public $province;
+    public $province_id;
+    public $zipcode;
+    public $destination;
 
     // public function mount($weight_total)
     // {
@@ -29,10 +38,20 @@ class ShippingCostComponent extends Component
     //     $this->weight_total = $weight_total;
     //     // dd($weight_total);
     // }
+
     public function mount()
     {
         $this->weight_total = session()->get('checkout')['weight'];
         // dd($this->weight_total);
+        $this->firstname = session()->get('checkout')['firstname'];
+        $this->mobile = session()->get('checkout')['mobile'];
+        $this->line1 = session()->get('checkout')['line1'];
+        $this->city = session()->get('checkout')['city'];
+        $this->city_id = session()->get('checkout')['city_id'];
+        $this->province = session()->get('checkout')['province'];
+        $this->province_id = session()->get('checkout')['province_id'];
+        $this->zipcode = session()->get('checkout')['zipcode'];
+        // dd($this->city_id);
     }
 
 
@@ -129,6 +148,11 @@ class ShippingCostComponent extends Component
     }
 
     public function get_ongkir($origin, $destination, $weight, $courier){
+
+        // $this->city_id = session()->get('checkout')['city_id'];
+        // $destination = $this->city_id;
+        // dd($destination);
+
         $curl = curl_init();
         curl_setopt_array($curl, array(
         CURLOPT_URL => "http://api.rajaongkir.com/starter/cost",
@@ -147,6 +171,7 @@ class ShippingCostComponent extends Component
         // "key: bb16551ede7aac939a5fdd4b985067e2",
         ),
         ));
+        // dd(CURLOPT_POSTFIELDS);
         $response = curl_exec($curl);
         $err = curl_error($curl);
         curl_close($curl);
@@ -155,6 +180,7 @@ class ShippingCostComponent extends Component
             } else {
             $response=json_decode($response,true);
             $data_ongkir = $response['rajaongkir']['results'];
+            // dd($data_ongkir);
             return json_encode($data_ongkir);
         }
         // http://localhost:8000/origin=40&destination=40&weight=100&courier=jne

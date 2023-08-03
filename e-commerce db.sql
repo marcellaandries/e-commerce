@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2023 at 12:01 PM
+-- Generation Time: Aug 03, 2023 at 06:56 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -33,10 +33,12 @@ CREATE TABLE `addresses` (
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `mobile` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
   `line1` varchar(255) NOT NULL,
   `line2` varchar(255) DEFAULT NULL,
+  `city_id` varchar(255) NOT NULL,
   `city` varchar(255) NOT NULL,
+  `province_id` varchar(255) NOT NULL,
   `province` varchar(255) NOT NULL,
   `country` varchar(255) NOT NULL,
   `zipcode` varchar(255) NOT NULL,
@@ -45,6 +47,14 @@ CREATE TABLE `addresses` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `addresses`
+--
+
+INSERT INTO `addresses` (`id`, `user_id`, `firstname`, `lastname`, `mobile`, `email`, `line1`, `line2`, `city_id`, `city`, `province_id`, `province`, `country`, `zipcode`, `priority`, `label`, `created_at`, `updated_at`) VALUES
+(1, 6, 'Marcella Andries', '', '081288125588', 'marcella@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, '153', 'Kota Jakarta Selatan', '6', 'DKI Jakarta', 'Indonesia', '14250', 1, 'Home', '2023-07-31 04:42:23', '2023-07-31 04:42:23'),
+(2, 6, 'Marcella Chou', '', '081281322538', NULL, 'Pluit Avenue No. 11, Pluit Utara', NULL, '155', 'Kota Jakarta Utara', '6', 'DKI Jakarta', 'Indonesia', '18750', 0, 'Office', '2023-07-31 08:42:23', '2023-07-31 08:42:23');
 
 -- --------------------------------------------------------
 
@@ -328,7 +338,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('sy1oxNiRmE9jKuJekJsultQaejO46g7nNsIDuuRw', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiOWVXcnZuZzdBNnlNM0hsVUhucTRVU1UzTXJ5d1JNMUZMeDNNb2dPaCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zaGlwcGluZy83MDAwIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NjtzOjU6InV0eXBlIjtzOjM6IlVTUiI7czo0OiJjYXJ0IjthOjE6e3M6NzoiZGVmYXVsdCI7TzoyOToiSWxsdW1pbmF0ZVxTdXBwb3J0XENvbGxlY3Rpb24iOjI6e3M6ODoiACoAaXRlbXMiO2E6MTp7czozMjoiZmRlNDg2NmM4MGI0MTQ5NmI5Mjk2YjBjNWRhOWYxODciO086MzI6Ikdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtIjo5OntzOjU6InJvd0lkIjtzOjMyOiJmZGU0ODY2YzgwYjQxNDk2YjkyOTZiMGM1ZGE5ZjE4NyI7czoyOiJpZCI7aTo0O3M6MzoicXR5IjtpOjE7czo0OiJuYW1lIjtzOjMzOiJkb2xvcmVzIHF1b2QgcmVwZWxsZW5kdXMgZXhwZWRpdGEiO3M6NToicHJpY2UiO2Q6MTQwMDAwO3M6Nzoib3B0aW9ucyI7TzozOToiR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW1PcHRpb25zIjoyOntzOjg6IgAqAGl0ZW1zIjthOjE6e3M6Njoid2VpZ2h0IjtpOjcwMDA7fXM6Mjg6IgAqAGVzY2FwZVdoZW5DYXN0aW5nVG9TdHJpbmciO2I6MDt9czo0OToiAEdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtAGFzc29jaWF0ZWRNb2RlbCI7czoxODoiQXBwXE1vZGVsc1xQcm9kdWN0IjtzOjQxOiIAR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0AdGF4UmF0ZSI7aTowO3M6NDE6IgBHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbQBpc1NhdmVkIjtiOjA7fX1zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fX1zOjg6ImNoZWNrb3V0IjthOjI6e3M6ODoic3VidG90YWwiO3M6MTA6IjE0MC4wMDAsMDAiO3M6NToidG90YWwiO3M6MTA6IjE0MC4wMDAsMDAiO319', 1690876350);
+('PVXCJc2V81y20i1lkGwxSDEvUPGyJ4lXlrqewxlL', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiMEF4N3ZvRHB1cUNPR0ZzZFZNMHRRYVd2Szl1cnkyS3EyTVozMXZsUiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZGRyZXNzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NjtzOjU6InV0eXBlIjtzOjM6IlVTUiI7czo0OiJjYXJ0IjthOjE6e3M6NzoiZGVmYXVsdCI7TzoyOToiSWxsdW1pbmF0ZVxTdXBwb3J0XENvbGxlY3Rpb24iOjI6e3M6ODoiACoAaXRlbXMiO2E6Mjp7czozMjoiNWNhZjE5ODBkMGYzMDUwMzRhYzk3ZDEzYTY4ZTNjNjQiO086MzI6Ikdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtIjo5OntzOjU6InJvd0lkIjtzOjMyOiI1Y2FmMTk4MGQwZjMwNTAzNGFjOTdkMTNhNjhlM2M2NCI7czoyOiJpZCI7aToxO3M6MzoicXR5IjtpOjE7czo0OiJuYW1lIjtzOjI3OiJkb2xvcmVtcXVlIG5lbW8gdGVtcG9yYSBxdW8iO3M6NToicHJpY2UiO2Q6MTYyMDAwMDtzOjc6Im9wdGlvbnMiO086Mzk6Ikdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtT3B0aW9ucyI6Mjp7czo4OiIAKgBpdGVtcyI7YToxOntzOjY6IndlaWdodCI7aToyMDAwO31zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fXM6NDk6IgBHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbQBhc3NvY2lhdGVkTW9kZWwiO3M6MTg6IkFwcFxNb2RlbHNcUHJvZHVjdCI7czo0MToiAEdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtAHRheFJhdGUiO2k6MDtzOjQxOiIAR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0AaXNTYXZlZCI7YjowO31zOjMyOiJkODkwZDM1YzUwODZkOWFkMjllNjQ3ZTYzZTczYTY2ZSI7TzozMjoiR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0iOjk6e3M6NToicm93SWQiO3M6MzI6ImQ4OTBkMzVjNTA4NmQ5YWQyOWU2NDdlNjNlNzNhNjZlIjtzOjI6ImlkIjtpOjU7czozOiJxdHkiO2k6MjtzOjQ6Im5hbWUiO3M6Mjc6ImF1dCBjb25zZXF1YXR1ciBxdWkgYWxpcXVhbSI7czo1OiJwcmljZSI7ZDoxNzgwMDAwO3M6Nzoib3B0aW9ucyI7TzozOToiR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW1PcHRpb25zIjoyOntzOjg6IgAqAGl0ZW1zIjthOjE6e3M6Njoid2VpZ2h0IjtpOjIwMDA7fXM6Mjg6IgAqAGVzY2FwZVdoZW5DYXN0aW5nVG9TdHJpbmciO2I6MDt9czo0OToiAEdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtAGFzc29jaWF0ZWRNb2RlbCI7czoxODoiQXBwXE1vZGVsc1xQcm9kdWN0IjtzOjQxOiIAR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0AdGF4UmF0ZSI7aTowO3M6NDE6IgBHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbQBpc1NhdmVkIjtiOjA7fX1zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fX1zOjg6ImNoZWNrb3V0IjthOjE6e3M6Njoid2VpZ2h0IjtpOjYwMDA7fX0=', 1691038476),
+('Srlzv2WBGONHw9JS9umMTTLp6VTLrKGVd9cMxX1m', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidWY1cE00a05UMXhGTDVrSzdZOFJCTnlvS1doZEhiYXRtUG5aUldpbCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9jaXR5LzYiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1691038039);
 
 -- --------------------------------------------------------
 
@@ -527,7 +538,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `categories`

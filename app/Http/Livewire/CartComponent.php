@@ -67,6 +67,7 @@ class CartComponent extends Component
         session()->put('checkout',[
             'weight' => Crypt::decrypt($weight_total),
         ]);
+        // dd(session()->get('checkout'));
         // dd(session()->get('checkout')['weight']);
 
         if(Auth::check())

@@ -108,7 +108,7 @@
                         @endif
 
                         <div>
-                        <form action="{{ route('ship') }}" method="post"
+                        <form action="{{ route('choose.address') }}" method="post"
                         enctype="multipart/form-data">
                         {{-- <form wire:submit.prevent="placeOrder" method="post"
                         enctype="multipart/form-data"> --}}

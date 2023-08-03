@@ -44,11 +44,15 @@
                                         <div class="pl-35 col-md-1 col-lg-1 col-xl-1 mb-1 mb-lg-1 mt-2">
                                             <span class="mb-1 me-1 text-primary">
                                                 @if($address->priority)
-                                                    <input type="radio" id="isPriority" name="isPriority" value="1" checked=checked>
-
+                                                    <input type="radio" id="isPrioriyYes" name="isPriority" value="{{ $address->id }}" checked=checked wire:model="addressVal.{{ $address->id }}">
+                                                    <label class="main-label">
+                                                        {{ $address->id }}
+                                                    </label>
                                                 @else
-                                                    <input class="form-check-input" type="radio" id="isPriority" name="isPriority" value="0">
-
+                                                <input type="radio" id="isPriorityNo" name="isPriority" value="{{ $address->id }}" wire:model="addressVal.{{ $address->id }}">
+                                                    <label class="main-label">
+                                                        {{ $address->id }}
+                                                    </label>
                                                 @endif
                                             </span>
 

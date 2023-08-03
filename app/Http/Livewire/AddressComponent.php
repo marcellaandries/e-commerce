@@ -5,9 +5,21 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Address;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class AddressComponent extends Component
 {
+
+    // public $addressVal;
+    // public $addresses;
+
+    // public function mount()
+    // {
+    //     $addresses = Address::all();
+    //     dd($addresses);
+    //     $this->pagesize = 12;
+    //     $this->$category_slug = $category_slug;
+    // }
 
     public function ship()
     {
@@ -18,6 +30,10 @@ class AddressComponent extends Component
 
         if(Auth::check())
         {
+            // dd($this->addressVal);
+            // dd($request->firstname);
+            // dd($request->all());
+            // dd($this->firstname);
             // return redirect()->route('shipping',['weight_total'=> $weight_total]);
             return redirect()->route('ship');
 
@@ -30,7 +46,9 @@ class AddressComponent extends Component
 
     public function render()
     {
-        $addresses = Address::all();
+        $addresses = Address::where('user_id',Auth::user()->id)->get();
+        // dd($addresses);
+        // $addresses = Address::all();
         return view('livewire.address-component',['addresses'=>$addresses])->layout('layouts.base');
     }
 

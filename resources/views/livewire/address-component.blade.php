@@ -38,7 +38,7 @@
         left: 0;
         height: 24px;
         width: 24px;
-        background-color: #8FADC7;
+        background-color: #c7daec;
         border-radius: 50%;
         }
 
@@ -49,7 +49,7 @@
 
         /* button checked */
         label input:checked+.custom-radio-button {
-        background-color: #004481;
+        background-color: #1064ad;
         }
 
         /* White dot on checked radio button (hidden) */
@@ -107,89 +107,102 @@
                             <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                         @endif
 
+                        <div>
+                        <form action="{{ route('ship') }}" method="post"
+                        enctype="multipart/form-data">
+                        {{-- <form wire:submit.prevent="placeOrder" method="post"
+                        enctype="multipart/form-data"> --}}
+                        @csrf
+                            @foreach ($addresses as $address)
+                                <section style="background-color: #f3f7fa">
+                                    <div class="container py-5 mb-1">
 
-                        @foreach ($addresses as $address)
-                            <section style="background-color: #eee;">
-                                <div class="container py-5 mb-1">
+                                        <div class="row">
+                                            <div class="pl-35 col-md-1 col-lg-1 col-xl-1 mb-1 mb-lg-1 mt-2">
+                                                <span class="mb-1 me-1 text-primary">
+                                                    @if($address->priority)
+                                                        <label>
+                                                        <input type="radio" id="isPrioriyYes" name="address_id" value="{{ $address->id }}" checked=checked>
+                                                        <span class="custom-radio-button"></span>
+                                                            {{-- <label for="isPrioriyYes" class="main-label">
+                                                                {{ $address->id }}
+                                                            </label> --}}
+                                                        </label>
+                                                    @else
+                                                        <label>
+                                                        <input type="radio" id="isPriorityNo" name="address_id" value="{{ $address->id }}">
+                                                        <span class="custom-radio-button"></span>
+                                                        <div class="form-group ">
+                                                            {{-- <label for="isPrioriyNo" class="main-label">
+                                                                <input class="form-control" type="text" readonly id="address_id" name="address_id" value = {{ $address->id }}>
+                                                            </label> --}}
+                                                        </div>
+                                                            {{-- <label for="isPriorityNo" class="main-label">
+                                                                {{ $address->id }}
+                                                            </label> --}}
+                                                        </label>
+                                                    @endif
+                                                </span>
 
-                                    <div class="row">
-                                        <div class="pl-35 col-md-1 col-lg-1 col-xl-1 mb-1 mb-lg-1 mt-2">
-                                            <span class="mb-1 me-1 text-primary">
-                                                @if($address->priority)
-                                                    <label>
-                                                    <input type="radio" id="isPrioriyYes" name="isPriority" value="{{ $address->priority }}" checked=checked wire:click="$set('address_id', {{ $address->id }})">
-                                                    <span class="custom-radio-button"></span>
-                                                    {{-- <label for="isPrioriyYes" class="main-label">
-                                                        {{ $address->id }}
-                                                    </label> --}}
-                                                    </label>
-                                                @else
-                                                    <label>
-                                                    <input type="radio" id="isPriorityNo" name="isPriority" value="{{ $address->priority }}">
-                                                    <span class="custom-radio-button"></span>
-                                                    {{-- <label for="isPriorityNo" class="main-label">
-                                                        {{ $address->id }}
-                                                    </label> --}}
-                                                    </label>
-                                                @endif
-                                            </span>
+                                            </div>
+                                            <div class="col-md-2 col-lg-2 col-xl-2 pl-25 mt-06">
 
-                                        </div>
-                                        <div class="col-md-2 col-lg-2 col-xl-2 pl-25 mt-06">
-                                            <h5>{{$address->firstname}}</h5>
-                                            <p class="text-primary text-truncate mb-4 mb-md-0">
-                                                {{$address->mobile}}
-                                            </p>
-                                        </div>
-                                        <div class="col-md-5 col-lg-5 col-xl-5 pl-25 mt-12">
-                                            <div class="d-flex flex-row">
-                                                <div class="text-primary mb-1 me-2">
-                                                    {{$address->line1}}
+                                                <h5>{{$address->firstname}}</h5>
+                                                <p class="text-primary text-truncate mb-4 mb-md-0">
+                                                    {{$address->mobile}}
+                                                </p>
+                                            </div>
+                                            <div class="col-md-5 col-lg-5 col-xl-5 pl-25 mt-12">
+                                                <div class="d-flex flex-row">
+                                                    <div class="text-primary mb-1 me-2">
+                                                        {{$address->line1}}
+                                                    </div>
+                                                </div>
+                                                <div class="mt-12 mb-0 text-muted small">
+                                                    <span>{{$address->province}}</span>
+                                                    <span class="text-primary"> • </span>
+                                                    <span>{{$address->city}}</span>
+                                                    <span class="text-primary"> • </span>
+                                                    <span>{{$address->zipcode}}<br /></span>
                                                 </div>
                                             </div>
-                                            <div class="mt-12 mb-0 text-muted small">
-                                                <span>{{$address->province}}</span>
-                                                <span class="text-primary"> • </span>
-                                                <span>{{$address->city}}</span>
-                                                <span class="text-primary"> • </span>
-                                                <span>{{$address->zipcode}}<br /></span>
-                                            </div>
-                                        </div>
 
-                                        <div class="col-md-2 col-lg-2 col-xl-2 border-sm-start-none border-start mt-06 pl-35">
-                                            <div class="d-flex flex-row align-items-center mb-1">
-                                                <h6 class="mb-1 me-1 text-primary">
-                                                    @if($address->priority)
-                                                        <span class="label label-primary">Primary</span>
-                                                    @else
-                                                        <span class="label label-default">Not Primary</span>
-                                                    @endif
-                                                </h6>
+                                            <div class="col-md-2 col-lg-2 col-xl-2 border-sm-start-none border-start mt-06 pl-35">
+                                                <div class="d-flex flex-row align-items-center mb-1">
+                                                    <h6 class="mb-1 me-1 text-primary">
+                                                        @if($address->priority)
+                                                            <span class="label label-primary">Primary</span>
+                                                        @else
+                                                            <span class="label label-default">Not Primary</span>
+                                                        @endif
+                                                    </h6>
+                                                </div>
+                                                <h6 class="label label-info mb-1">{{$address->label}}</h6>
                                             </div>
-                                            <h6 class="label label-info mb-1">{{$address->label}}</h6>
-                                        </div>
 
-                                        <div class="col-md-2 col-lg-2 col-xl-2 border-sm-start-none border-start mt-2">
-                                            <div class="d-flex flex-column mt-06">
-                                                <a href="#"><i class="fa fa-edit fa-2x text-info ml-12" title="edit"></i>&nbsp;Edit</a>
+                                            <div class="col-md-2 col-lg-2 col-xl-2 border-sm-start-none border-start mt-2">
+                                                <div class="d-flex flex-column mt-06">
+                                                    <a href="#"><i class="fa fa-edit fa-2x text-info ml-12" title="edit"></i>&nbsp;Edit</a>
+                                                </div>
                                             </div>
+
                                         </div>
 
                                     </div>
+                                </section>
+                                <hr>
+                            @endforeach
 
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {{-- <button type="submit" class="btn btn-primary">Update</button> --}}
+                                    {{-- <a href="{{route('admin.addproduct')}}" class="btn btn-primary pull-right mr-2 mb-2">Confirm</a> --}}
+                                    <input type="submit" class="btn btn-primary pull-right mr-2 mb-2" value="Confirm">
+                                    {{-- <a class="btn btn-primary pull-right mr-2 mb-2" href="#" wire:click.prevent="ship('{{$address->id}}')">Confirm</a> --}}
                                 </div>
-                            </section>
-                            <hr>
-                        @endforeach
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                {{-- <button type="submit" class="btn btn-primary">Update</button> --}}
-                                {{-- <a href="{{route('admin.addproduct')}}" class="btn btn-primary pull-right mr-2 mb-2">Confirm</a> --}}
-                                <a class="btn btn-primary pull-right mr-2 mb-2" href="#" wire:click.prevent="ship('{{$address->id}}')">Confirm</a>
                             </div>
                         </div>
-
+                        <div>
                     {{-- </form> --}}
 
                     </div>

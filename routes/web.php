@@ -81,7 +81,9 @@ Route::get('/about-us', AboutUsComponent::class);
 Route::get('/contact-us', ContactUsComponent::class);
 
 // Route::get('/shipping/{weight_total}',ShippingCostComponent::class)->name('shipping');
-Route::get('/ship',ShippingCostComponent::class)->name('ship');
+// Route::get('/ship',ShippingCostComponent::class)->name('ship');
+// Route::post('/ship',ShippingCostComponent::class)->name('ship');
+Route::post('/ship',[AddressComponent::class, 'ship'])->name('ship');
 
 Route::get('province', [ShippingCostComponent::class, 'get_province'])->name('province');
 Route::get('city/{id}', [ShippingCostComponent::class, 'get_city'])->name('city');

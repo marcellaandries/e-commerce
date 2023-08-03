@@ -22,20 +22,22 @@ class AddressComponent extends Component
     //     $this->$category_slug = $category_slug;
     // }
 
-    public function ship($address_id)
+    // public function ship($address_id, Request $request)
+    public function ship(Request $request)
     {
         // session()->put('checkout',[
         //     'weight' => Crypt::decrypt($weight_total),
         // ]);
         // dd(session()->get('checkout')['weight']);
-
+        // dd($address_id);
         if(Auth::check())
         {
-            // dd($address_id);
+            dd($request->all());
+            dd($request->address_id);
             // $address_choose = Address::where('id',$address_id)->get();
             $address_choose = Address::find($address_id);
-            dd($address_choose->firstname);
-            dd($address_choose);
+            // dd($address_choose->firstname);
+            // dd($address_choose);
 
             // dd($address_choose->firstname);
             // return redirect()->route('shipping',['weight_total'=> $weight_total]);

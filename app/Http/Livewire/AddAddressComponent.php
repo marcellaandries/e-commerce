@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Illuminate\Http\Request;
 
 class AddAddressComponent extends Component
 {
@@ -56,7 +57,7 @@ class AddAddressComponent extends Component
             $province_data = $data_pengirim;
 
             return $data_pengirim;
-            dd($data_pengirim);
+            // dd($data_pengirim);
         }
         // http://localhost:8000/province
     }
@@ -132,5 +133,23 @@ class AddAddressComponent extends Component
             return json_encode($data_ongkir);
         }
         // http://localhost:8000/origin=40&destination=40&weight=100&courier=jne
+    }
+
+    public function addAddress(Request $request)
+    {
+        // $request->validate([
+        //     'firstname' =>  'required',
+        //     // 'lastname' =>  'required',
+        //     'email' =>  'required|email',
+        //     'mobile' =>  'required|numeric',
+        //     'line1' =>  'required',
+
+        //     'city' =>  'required',
+        //     'province' =>  'required',
+        //     'country' =>  'required',
+        //     'zipcode' =>  'required',
+        //     'paymentmode' => 'required',
+        // ]);
+        dd($request->all());
     }
 }

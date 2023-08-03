@@ -67,6 +67,7 @@ Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 Route::post('check-out', [DeliveryCostComponent::class, 'check_out'])->name('check.out');
 
 Route::post('place-order', [CheckoutComponent::class, 'placeOrder'])->name('place.order');
+Route::post('add-address', [AddAddressComponent::class, 'addAddress'])->name('add.address');
 
 Route::get('/thank-you', ThankyouComponent::class)->name('thankyou');
 

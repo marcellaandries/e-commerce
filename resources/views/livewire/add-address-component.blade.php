@@ -12,7 +12,7 @@
             </div>
             <div class=" main-content-area">
                 {{-- <form> --}}
-                    <form action="{{ route('place.order') }}" method="post"
+                    <form action="{{ route('add.address') }}" method="post"
                     enctype="multipart/form-data">
                         @csrf
                         <div class="col-md-12">

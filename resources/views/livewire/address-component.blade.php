@@ -74,9 +74,9 @@
         input[type="submit"]{
         border: none;
         color: white;
-        font-size: 18px;
+        font-size: 14px;
         padding: 5px 15px;
-        background: #bd1c10;
+        background: #00006c;
         border-radius: .25rem;
         }
     </style>

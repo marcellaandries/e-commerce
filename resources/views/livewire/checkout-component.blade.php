@@ -1,4 +1,6 @@
 <div>
+{{-- <script src="{{ asset('assets/js/delivery.js') }}"></script> --}}
+
 <!--main area-->
 <main id="main" class="main-site">
 

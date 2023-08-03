@@ -1,5 +1,7 @@
 <div>
     <!--main area-->
+{{-- <script src="{{ asset('assets/js/delivery.js') }}"></script> --}}
+
 <main id="main" class="main-site">
 
     <div class="container">
@@ -41,7 +43,8 @@
                     </div> --}}
 
                     {{-- cella --}}
-                    <div class="form-group form-group--inline">
+                    {{-- old logic --}}
+                    {{-- <div class="form-group form-group--inline">
                         <label for="provinsi">Province<span>*</span></label>
                         <select name="province_id" id="province_id" class="form-control">
                         <option value="">Select Province</option>
@@ -50,14 +53,10 @@
                         @endforeach
                         </select>
                     </div>
-                    {{-- cella --}}
-                    {{-- <div class="form-group">
-                        <input type="hidden" readonly class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="province name ">
-                    </div> --}}
 
                     <div class="form-group">
                         <input type="hidden" readonly class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="province name ">
-                    </div>
+                    </div> --}}
 
                     <div class="form-group">
                         <label>Province ID<span>*</span></label>
@@ -66,7 +65,8 @@
                             <input readonly class="form-control" type="text" value="" id="pro_name" name="pro_name" wire:model="province">
                     </div>
 
-                    <div class="form-group ">
+                    {{-- old logic --}}
+                    {{-- <div class="form-group ">
                     <label>Town / City<span>*</span>
                     </label>
                     <select name="kota_id" id="kota_id" class="form-control">
@@ -75,7 +75,7 @@
                     </div>
                     <div class="form-group">
                     <input type="hidden" readonly class="form-control" id="nama_kota" nama="nama_kota" placeholder="city name">
-                    </div>
+                    </div> --}}
 
                     <div class="form-group">
                         <label>City ID<span>*</span></label>

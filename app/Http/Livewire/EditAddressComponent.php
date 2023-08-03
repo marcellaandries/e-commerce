@@ -8,6 +8,6 @@ class EditAddressComponent extends Component
 {
     public function render()
     {
-        return view('livewire.edit-address-component');
+        return view('livewire.edit-address-component')->layout('layouts.base');
     }
 }

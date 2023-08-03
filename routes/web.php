@@ -33,6 +33,8 @@ use App\Http\Livewire\AboutUsComponent;
 
 use App\Http\Livewire\ShippingCostComponent;
 use App\Http\Livewire\AddressComponent;
+use App\Http\Livewire\AddAddressComponent;
+use App\Http\Livewire\EditAddressComponent;
 
 
 /*
@@ -72,6 +74,8 @@ Route::get('/product-category/{category_slug}', CategoryComponent::class)->name(
 Route::get('/search', SearchComponent::class)->name('product.search');
 
 Route::get('/address', AddressComponent::class)->name('address');
+Route::get('/address/add',AddAddressComponent::class)->name('addaddress') ;
+// Route::get('/address/edit/{id}',EditAddressComponent::class)->name('editaddress');
 
 Route::get('/about-us', AboutUsComponent::class);
 Route::get('/contact-us', ContactUsComponent::class);

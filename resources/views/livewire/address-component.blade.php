@@ -27,7 +27,7 @@
                                 All Addresses
                             </div>
                             <div class="col-md-6">
-                                <a href="{{route('admin.addproduct')}}" class="btn pull-right"><i class="fa fa-plus-square fa-2x text-info" title="new"></i></a>
+                                <a href="{{route('addaddress')}}" class="btn pull-right"><i class="fa fa-plus-square fa-2x text-info" title="new"></i></a>
                             </div>
                         </div>
                     </div>

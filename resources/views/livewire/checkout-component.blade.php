@@ -73,7 +73,7 @@
                                 </p>
                                 <p class="row-in-form">
                                     <label for="zip-code">Postcode / ZIP:<span>*</span></label>
-                                    <input type="number" name="zipcode" value="" placeholder="Your postal code" wire:model="zipcode">
+                                    <input type="number" readonly name="zipcode" value="" placeholder="Your postal code" wire:model="zipcode">
                                     @error('zipcode') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </p>
                                 <div hidden>

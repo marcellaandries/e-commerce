@@ -250,22 +250,28 @@ class DeliveryCostComponent extends Component
             'weight' => $res_data['weight'],
             'shipping_cost' => $res_data['ongkos_kirim'],
             'total' => $res_data['total_keseluruhan'],
+            'firstname' => session()->get('checkout')['firstname'],
             'line1' => session()->get('checkout')['line1'],
+            'mobile' => session()->get('checkout')['mobile'],
+            'zipcode' => session()->get('checkout')['zipcode'],
         ]);
         // dd(session()->get('checkout'));
-        // array:12 [▼
-        //     "subtotal" => "10.360.000,00"
-        //     "province_id" => "10"
-        //     "province_name" => "Jawa Tengah"
-        //     "city_id" => "37"
-        //     "city_name" => "Banjarnegara"
-        //     "courier" => "jne"
-        //     "service_id" => "0"
-        //     "service_name" => "REG"
-        //     "total" => "Rp 10.624.000,00"
-        //     "weight" => "12.000"
-        //     "shipping_cost" => "Rp 264.000,00"
-        //     "line1" => "Pluit Avenue No. 11, Pluit Utara"
+        // array:15 [▼
+        // "subtotal" => "10.360.000,00"
+        // "province_id" => "10"
+        // "province_name" => "Jawa Tengah"
+        // "city_id" => "37"
+        // "city_name" => "Banjarnegara"
+        // "courier" => "tiki"
+        // "service_id" => "0"
+        // "service_name" => "REG"
+        // "total" => "Rp 10.636.000,00"
+        // "weight" => "12.000"
+        // "shipping_cost" => "Rp 276.000,00"
+        // "firstname" => "Marcella Chou"
+        // "line1" => "Pluit Avenue No. 11, Pluit Utara"
+        // "mobile" => "081281322538"
+        // "zipcode" => "53419"
         // ]
 
         // dd(session()->get('checkout')['line1']);

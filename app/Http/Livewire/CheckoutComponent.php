@@ -67,7 +67,10 @@ class CheckoutComponent extends Component
         $this->service = session()->get('checkout')['service_name'];
         $this->shipping_cost = session()->get('checkout')['shipping_cost'];
 
+        $this->firstname = session()->get('checkout')['firstname'];
         $this->line1 = session()->get('checkout')['line1'];
+        $this->mobile = session()->get('checkout')['mobile'];
+        $this->zipcode = session()->get('checkout')['zipcode'];
     }
 
     public function updated($fields)

@@ -60,7 +60,7 @@
 
                     <div class="form-group">
                         <label class ="hidden">Province ID<span>*</span></label>
-                            <input readonly class="gidden form-control" type="text" value="" id="pro_id" name="pro_id" wire:model="province_id">
+                            <input readonly class="hidden form-control" type="text" value="" id="pro_id" name="pro_id" wire:model="province_id">
                         <label class="mt-08">Province<span>*</span></label>
                             <input readonly class="form-control" type="text" value="" id="pro_name" name="pro_name" wire:model="province">
                     </div>

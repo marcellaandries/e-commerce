@@ -32,12 +32,13 @@ class AddressComponent extends Component
         // dd($address_id);
         if(Auth::check())
         {
-            dd($request->all());
-            dd($request->address_id);
+            // dd($request->all());
+            // dd($request->address_id);
             // $address_choose = Address::where('id',$address_id)->get();
-            $address_choose = Address::find($address_id);
-            // dd($address_choose->firstname);
-            // dd($address_choose);
+            $address_choosen = Address::find($request->address_id);
+
+            dd($address_choosen->firstname);
+            // dd($address_choosen);
 
             // dd($address_choose->firstname);
             // return redirect()->route('shipping',['weight_total'=> $weight_total]);

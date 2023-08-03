@@ -64,13 +64,19 @@
                                             <option value="{{$row['province_id']}}" namaprovinsi="{{$row['province']}}">{{$row['province']}}</option>
                                             @endforeach
                                         </select>
-
-
+                                        <input type="text" readonly class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="province name ">
                                     </p>
+
                                     <p class="row-in-form">
                                         <label for="kota_id">Town / City<span>*</span></label>
-                                        <input type="text" id ="city"  name="city" value="" placeholder="City" wire:model="city">
+                                        {{-- <input type="text" id ="city"  name="city" value="" placeholder="City" wire:model="city"> --}}
+
+                                        <select name="kota_id" id="kota_id" class="form-control">
+                                            <option value="">Choose City</option>
+                                        </select>
+                                        <input type="text" readonly class="form-control" id="nama_kota" nama="nama_kota" placeholder="city name">
                                     </p>
+
                                     <p class="row-in-form">
                                         <label for="zip-code">Postcode / ZIP:<span>*</span></label>
                                         <input type="number" name="zipcode" value="" placeholder="Your postal code" wire:model="zipcode">

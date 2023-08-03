@@ -1,5 +1,66 @@
 $(document).ready(function(){
+    //ini ketika provinsi tujuan di klik maka akan eksekusi perintah yg kita mau
+    //name select nama nya "provinve_id" kalian bisa sesuaikan dengan form select kalian
+    $('select[name="province_id"]').on('change', function(){
+        $.session.clear();
 
+        // need to empty ongkir & total
+        // $("#ongkos_kirim").val(" ");
+        // $("#total_keseluruhan").val(" ");
+
+        // membuat variable namaprovinsiku untyk mendapatkan atribut nama provinsi
+        var namaprovinsiku = $("#province_id option:selected").attr("namaprovinsi");
+        // menampilkan hasil nama provinsi ke input id nama_provinsi
+        $("#nama_provinsi").val(namaprovinsiku);
+        // kita buat variable provincedid untk menampung data id select province
+
+        $.session.set('ss_province', namaprovinsiku);
+        console.log("ini ses province", $.session.get('ss_province'))
+
+        sessionStorage.setItem('id','dfd');
+        // var obj = {};
+        // obj= sessionStorage.getItem('id');
+        // console.log("ini obj: ", obj);
+        // $("#hss_province").val(obj);
+
+        //memberikan action ketika select name kota_id di select
+        //memberikan action ketika select name kota_id di select
+        $('select[name="kota_id"]').on('change', function(){
+            // console.log("ini kota: ", $("#kota_id option:selected"));
+            // membuat variable namakotaku untuk mendapatkan atribut nama kota
+            var namakotaku = $("#kota_id option:selected").attr("namakota");
+            // menampilkan hasil nama provinsi ke input id nama_provinsi
+            $("#nama_kota").val(namakotaku);
+            $.session.set('ss_city', namakotaku);
+            console.log("ini ses city", $.session.get('ss_city'))
+        });
+
+        let provinceid = $(this).val();
+        //kita cek jika id di dpatkan maka apa yg akan kita eksekusi
+        if(provinceid){
+        // jika di temukan id nya kita buat eksekusi ajax GET
+        jQuery.ajax({
+        // url yg di root yang kita buat tadi
+        url:"/city/"+provinceid,
+        // aksion GET, karena kita mau mengambil data
+        type:'GET',
+        // type data json
+        dataType:'json',
+        // jika data berhasil di dapat maka kita mau apain nih
+        success:function(data){
+        // jika tidak ada select dr provinsi maka select kota kososng / empty
+        $('select[name="kota_id"]').empty();
+        // jika ada kita looping dengan each
+        $.each(data, function(key, value){
+        // perhtikan dimana kita akan menampilkan data select nya, di sini saya memberi name select kota adalah kota_id
+        $('select[name="kota_id"]').append('<option value="'+ value.city_id +'" namakota="'+ value.type +' ' +value.city_name+ '">' + value.type + ' ' + value.city_name + '</option>');
+        });
+        }
+        });
+        }else {
+        $('select[name="kota_id"]').empty();
+        }
+    });
 
 
 

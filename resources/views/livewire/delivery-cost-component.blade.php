@@ -132,7 +132,7 @@
                     <input class="form-control" type="text" readonly id="total_keseluruhan" name="total_keseluruhan">
                     </div>
 
-                    <div class="form-group " hidden>
+                    {{-- <div class="form-group " hidden>
                         <label>Province Name</label>
                         <input class="form-control" type="text" readonly id="province_name" name="province_name">
                     </div>
@@ -140,7 +140,7 @@
                     <div class="form-group " hidden>
                         <label>City Name</label>
                         <input class="form-control" type="text" readonly id="city_name" name="city_name">
-                    </div>
+                    </div> --}}
 
                     <div class="form-group " hidden>
                         <label>Service Name</label>

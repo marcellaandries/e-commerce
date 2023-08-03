@@ -188,8 +188,8 @@ class DeliveryCostComponent extends Component
 
     public function check_out(Request $request){
         $request->validate([
-            'province_name' =>  'required',
-            'city_name' =>  'required',
+            // 'province_name' =>  'required',
+            // 'city_name' =>  'required',
             'kurir' =>  'required',
             'service_name' =>  'required',
             'weight' =>  'required',
@@ -207,18 +207,22 @@ class DeliveryCostComponent extends Component
 
     public function setAmountforCheckout($request)
     {
-        // array:11 [▼
-        //     "_token" => "8KNVfSnasbTPq0t75jRqzWBHjrWOkffa7tFn8GCs"
+        // array:15 [▼
+        //     "_token" => "0Ax7voDpuqCOGFsdVM0tQaWvK9ury2Kq2MZ31vlR"
         //     "province_origin" => "6"
         //     "city_origin" => "152"
-        //     "province_id" => "4"
-        //     "kota_id" => "183"
-        //     "kurir" => "jne"
+        //     "pro_id" => "10"
+        //     "pro_name" => "Jawa Tengah"
+        //     "cit_id" => "37"
+        //     "cit_name" => "Banjarnegara"
+        //     "kurir" => "tiki"
         //     "layanan" => "0"
         //     "totalbelanja" => "Rp 10.360.000,00"
         //     "weight" => "12.000"
-        //     "ongkos_kirim" => "Rp 540.000,00"
-        //     "total_keseluruhan" => "Rp 10.900.000,00"
+        //     "weight_kg" => "12"
+        //     "ongkos_kirim" => "Rp 276.000,00"
+        //     "total_keseluruhan" => "Rp 10.636.000,00"
+        //     "service_name" => "REG"
         // ]
 
 
@@ -235,10 +239,10 @@ class DeliveryCostComponent extends Component
             // 'discount' => 0,
             'subtotal' => Cart::subtotal(),
             // 'tax' => 0,
-            'province_id' => $res_data['province_id'],
-            'province_name' => $res_data['province_name'],
-            'city_id' => $res_data['kota_id'],
-            'city_name' => $res_data['city_name'],
+            'province_id' => $res_data['pro_id'],
+            'province_name' => $res_data['pro_name'],
+            'city_id' => $res_data['cit_id'],
+            'city_name' => $res_data['cit_name'],
             'courier' => $res_data['kurir'],
             'service_id' => $res_data['layanan'],
             'service_name' => $res_data['service_name'],
@@ -248,6 +252,20 @@ class DeliveryCostComponent extends Component
             'total' => $res_data['total_keseluruhan'],
         ]);
         // dd(session()->get('checkout'));
+        // array:11 [▼
+        //     "subtotal" => "10.360.000,00"
+        //     "province_id" => "10"
+        //     "province_name" => "Jawa Tengah"
+        //     "city_id" => "37"
+        //     "city_name" => "Banjarnegara"
+        //     "courier" => "jne"
+        //     "service_id" => "0"
+        //     "service_name" => "REG"
+        //     "total" => "Rp 10.624.000,00"
+        //     "weight" => "12.000"
+        //     "shipping_cost" => "Rp 264.000,00"
+        // ]
+
         // dd(session()->get('checkout')['total']);
 
         // var_dump(dd(session()->get('checkout')['total']));

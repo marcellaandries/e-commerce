@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class AddAddressComponent extends Component
 {
+    public $firstname;
+    // public $lastname;
+    public $email;
+    public $mobile;
+    public $line1;
+    // public $line2;
+    public $kota_id;
+    public $province_id;
+    public $country;
+    public $zipcode;
+
     public function render()
     {
         //memanggil function get_province
@@ -151,7 +162,7 @@ class AddAddressComponent extends Component
             'province_name' => 'required',
             'city_name' =>  'required',
         ]);
-        // dd($request->all());
+        dd($request->all());
 
         // array:11 [▼
         // "_token" => "0Ax7voDpuqCOGFsdVM0tQaWvK9ury2Kq2MZ31vlR"

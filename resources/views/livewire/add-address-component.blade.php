@@ -58,7 +58,7 @@
                                         <input type="text" id="province" name="province" value="" placeholder="Province" wire:model="province"> --}}
 
                                         <label for="province_id">Province<span>*</span></label>
-                                        <select name="province_id" id="province_id" class="form-control">
+                                        <select name="province_id" id="province_id" class="form-control" wire:model="province_id">
                                             <option value="">Select Province</option>
                                             @foreach ($provinsi as $row)
                                             <option value="{{$row['province_id']}}" namaprovinsi="{{$row['province']}}">{{$row['province']}}</option>
@@ -71,7 +71,7 @@
                                         <label for="kota_id">Town / City<span>*</span></label>
                                         {{-- <input type="text" id ="city"  name="city" value="" placeholder="City" wire:model="city"> --}}
 
-                                        <select name="kota_id" id="kota_id" class="form-control">
+                                        <select name="kota_id" id="kota_id" class="form-control" wire:model="kota_id">
                                             <option value="">Choose City</option>
                                         </select>
                                         <input type="hidden" readonly class="form-control" id="nama_kota" nama="nama_kota" placeholder="city name">

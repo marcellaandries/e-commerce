@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Product;
 
-class AddressComponent extends Component
+class TemplateComponent extends Component
 {
 
     public function deleteProduct($id)

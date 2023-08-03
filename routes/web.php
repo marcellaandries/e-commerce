@@ -32,8 +32,10 @@ use App\Http\Livewire\ContactUsComponent;
 use App\Http\Livewire\AboutUsComponent;
 
 use App\Http\Livewire\ShippingCostComponent;
+use App\Http\Livewire\DeliveryCostComponent;
 use App\Http\Livewire\AddressComponent;
 use App\Http\Livewire\AddAddressComponent;
+
 use App\Http\Livewire\EditAddressComponent;
 
 
@@ -82,6 +84,7 @@ Route::get('/contact-us', ContactUsComponent::class);
 
 // Route::get('/shipping/{weight_total}',ShippingCostComponent::class)->name('shipping');
 Route::get('/ship',ShippingCostComponent::class)->name('ship');
+Route::get('/delivery',DeliveryCostComponent::class)->name('delivery');
 // Route::post('/ship',ShippingCostComponent::class)->name('ship');
 Route::post('/choose-address',[AddressComponent::class, 'choose_address'])->name('choose.address');
 

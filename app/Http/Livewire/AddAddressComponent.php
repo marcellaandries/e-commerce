@@ -13,7 +13,7 @@ class AddAddressComponent extends Component
     public $mobile;
     public $line1;
     // public $line2;
-    // public $kota_id;
+    public $kota_id;
     public $province_id;
     public $country;
     public $zipcode;
@@ -109,7 +109,7 @@ class AddAddressComponent extends Component
 
     public function addAddress(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         // dd($request->kota_id);
         $request->validate([
             'firstname' =>  'required',
@@ -127,19 +127,18 @@ class AddAddressComponent extends Component
         ]);
         dd($request->all());
 
-        // array:11 [▼
-        // "_token" => "0Ax7voDpuqCOGFsdVM0tQaWvK9ury2Kq2MZ31vlR"
-        // "firstname" => null
-        // "email" => null
-        // "mobile" => null
-        // "line1" => null
-        // "country" => "Indonesia"
-
-        // "province_id" => "8"
-        // "kota_id" => "293"
-        // "zipcode" => null
-        // "province_name" => "Jambi"
-        // "city_name" => "Kabupaten Muaro Jambi"
-        // ]
-    }
+    //     array:11 [▼
+    //     "_token" => "w4vrr7xPx7CwcuGMFSXFxptQZ6yK49FgMoItBW86"
+    //     "firstname" => "Cella Novi"
+    //     "email" => "cla@gm.co.id"
+    //     "mobile" => "021333333"
+    //     "line1" => "Gedung Menara Batavia Lt.6 Kec Richest"
+    //     "country" => "Indonesia"
+    //     "province_id" => "1"
+    //     "kota_id" => "114"
+    //     "zipcode" => "88250"
+    //     "province_name" => "Bali"
+    //     "city_name" => "Kota Denpasar"
+    //     ]
+    // }
 }

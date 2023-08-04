@@ -63,6 +63,7 @@
                                         <option value="{{$row['province_id']}}" namaprovinsi="{{$row['province']}}">{{$row['province']}}</option>
                                         @endforeach
                                         </select>
+                                        @error('province_id') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                     </p>
 
 
@@ -73,6 +74,7 @@
                                         <select name="kota_id" id="kota_id" class="form-control">
                                         <option value="">Choose City</option>
                                         </select>
+                                        @error('kota_id') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                     </p>
 
                                     <p class="row-in-form">
@@ -82,21 +84,21 @@
                                     </p>
 
                                     <p class="row-in-form">
-                                        <input type="text" readonly class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="province name ">
+                                        <input type="hidden" readonly class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="province name ">
                                     </p>
                                     <p class="row-in-form">
-                                        <input type="text" readonly class="form-control" id="nama_kota" nama="nama_kota" placeholder="city name">
+                                        <input type="hidden" readonly class="form-control" id="nama_kota" nama="nama_kota" placeholder="city name">
                                     </p>
 
 
 
                                     {{-- cella --}}
-                                    <p class="row-in-form">
+                                    <p class="row-in-form hidden">
                                         <label>Province Name</label>
                                         <input class="form-control" type="text" readonly id="province_name" name="province_name">
                                     </p>
 
-                                    <p class="row-in-form">
+                                    <p class="row-in-form hidden">
                                         <label>City Name</label>
                                         <input class="form-control" type="text" readonly id="city_name" name="city_name">
                                     </p>

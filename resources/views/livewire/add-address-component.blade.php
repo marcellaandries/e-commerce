@@ -83,6 +83,22 @@
                                         @error('zipcode') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                     </p>
 
+                                    {{-- <p class="row-in-form">
+                                        <label for="label">Label as: (e.g Home, Office)<span>*</span></label>
+                                        <input type="text" name="label" value="" placeholder="Your label of address">
+                                        @error('label') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
+                                    </p>
+
+                                    <p class="row-in-form">
+                                        <label for="priority">Priority<span>*</span>
+                                        </label>
+                                        <select name="priority" id="priority" class="form-control">
+                                        <option value="">No</option>
+                                        <option value="">Yes</option>
+                                        </select>
+                                        @error('priority') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
+                                    </p> --}}
+
                                     <p class="row-in-form">
                                         <input type="hidden" readonly class="form-control" id="nama_provinsi" nama="nama_provinsi" placeholder="province name ">
                                     </p>

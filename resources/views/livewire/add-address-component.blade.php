@@ -6,8 +6,8 @@
 
             <div class="wrap-breadcrumb">
                 <ul>
-                    <li class="item-link"><a href="#" class="link">home</a></li>
-                    <li class="item-link"><span>checkout</span></li>
+                    <li class="item-link"><a href="/" class="link">home</a></li>
+                    <li class="item-link"><span>add address</span></li>
                 </ul>
             </div>
             <div class=" main-content-area">

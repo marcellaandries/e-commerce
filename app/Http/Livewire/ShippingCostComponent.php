@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Crypt;
 class ShippingCostComponent extends Component
 {
     public $weight_total;
-    // public $province_name;
-
     public $province_name;
     public $city_name;
     public $kurir;
@@ -43,14 +41,16 @@ class ShippingCostComponent extends Component
     {
         $this->weight_total = session()->get('checkout')['weight'];
         // dd($this->weight_total);
-        $this->firstname = session()->get('checkout')['firstname'];
-        $this->mobile = session()->get('checkout')['mobile'];
-        $this->line1 = session()->get('checkout')['line1'];
-        $this->city = session()->get('checkout')['city'];
-        $this->city_id = session()->get('checkout')['city_id'];
-        $this->province = session()->get('checkout')['province'];
-        $this->province_id = session()->get('checkout')['province_id'];
-        $this->zipcode = session()->get('checkout')['zipcode'];
+
+        // open this
+        // $this->firstname = session()->get('checkout')['firstname'];
+        // $this->mobile = session()->get('checkout')['mobile'];
+        // $this->line1 = session()->get('checkout')['line1'];
+        // $this->city = session()->get('checkout')['city'];
+        // $this->city_id = session()->get('checkout')['city_id'];
+        // $this->province = session()->get('checkout')['province'];
+        // $this->province_id = session()->get('checkout')['province_id'];
+        // $this->zipcode = session()->get('checkout')['zipcode'];
         // dd($this->city_id);
     }
 
@@ -69,83 +69,7 @@ class ShippingCostComponent extends Component
         // return view('livewire.shipping-cost-component')->layout("layouts.base");
     }
 
-    public function get_province(){
-        $curl = curl_init();
 
-        curl_setopt_array($curl, array(
-        // CURLOPT_URL => "https://api.rajaongkir.com/starter/province?id=12",
-        CURLOPT_URL => "http://api.rajaongkir.com/starter/province",
-        // CURLOPT_URL => "http://pro.rajaongkir.com/api/province",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => "",
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "GET",
-        CURLOPT_HTTPHEADER => array(
-            // "key: ed3f0b1acbd5b27080d18806885f2071"
-            "key: bb16551ede7aac939a5fdd4b985067e2",
-        ),
-        ));
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-
-        curl_close($curl);
-
-        // if ($err) {
-        // echo "cURL Error #:" . $err;
-        // } else {
-        // echo $response;
-        // }
-        if ($err) {
-            echo "cURL Error #:" . $err;
-            } else {
-            //ini kita decode data nya terlebih dahulu
-            $response=json_decode($response,true);
-            //ini untuk mengambil data provinsi yang ada di dalam rajaongkir resul
-            $data_pengirim = $response['rajaongkir']['results'];
-            // dd($data_pengirim);
-            $province_data = $data_pengirim;
-
-            return $data_pengirim;
-        }
-        // http://localhost:8000/province
-    }
-
-    public function get_city($id){
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-        // CURLOPT_URL => "https://api.rajaongkir.com/starter/city?id=39&province=5",
-        CURLOPT_URL => "http://api.rajaongkir.com/starter/city?&province=$id",
-        // CURLOPT_URL => "http://pro.rajaongkir.com/api/city?province=" . $id . "",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => "",
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "GET",
-        CURLOPT_HTTPHEADER => array(
-            "key: ed3f0b1acbd5b27080d18806885f2071"
-            // "key: bb16551ede7aac939a5fdd4b985067e2",
-        ),
-        ));
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-
-        curl_close($curl);
-
-        if ($err) {
-            echo "cURL Error #:" . $err;
-            } else {
-            $response=json_decode($response,true);
-            $data_kota = $response['rajaongkir']['results'];
-            return json_encode($data_kota);
-        }
-        // http://localhost:8000/city/6
-    }
 
     public function get_ongkir($origin, $destination, $weight, $courier){
 

@@ -18,7 +18,7 @@
                 {{-- cella --}}
                 {{-- <form class="ps-checkout__form" action="" method="post"> --}}
                 <form class="ps-checkout__form" action="{{ route('check.out') }}" method="post"
-                enctype="multipart/form-data">
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                     <div class="col-md-8">

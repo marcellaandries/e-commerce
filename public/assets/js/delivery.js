@@ -59,6 +59,9 @@ $(document).ready(function(){
         dataType:'json',
         // jika data berhasil di dapat maka kita mau apain nih
         success:function(data){
+            let dest = $("#kota_id option:selected").attr("kota_id");
+            console.log("ini cla: ", dest)
+
         // jika tidak ada select dr provinsi maka select kota kososng / empty
         $('select[name="kota_id"]').empty();
         // jika ada kita looping dengan each
@@ -71,6 +74,8 @@ $(document).ready(function(){
         }else {
         $('select[name="kota_id"]').empty();
         }
+
+
     });
 
 

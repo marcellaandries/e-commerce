@@ -13,7 +13,7 @@ class AddAddressComponent extends Component
     public $mobile;
     public $line1;
     // public $line2;
-    public $kota_id;
+    // public $kota_id;
     public $province_id;
     public $country;
     public $zipcode;
@@ -68,7 +68,7 @@ class AddAddressComponent extends Component
             $province_data = $data_pengirim;
 
             return $data_pengirim;
-            // dd($data_pengirim);
+            dd($data_pengirim);
         }
         // http://localhost:8000/province
     }
@@ -107,47 +107,10 @@ class AddAddressComponent extends Component
         // http://localhost:8000/city/6
     }
 
-    public function get_ongkir($origin, $destination, $weight, $courier){
-
-        // $this->city_id = session()->get('checkout')['city_id'];
-        // $destination = $this->city_id;
-        // dd($destination);
-
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-        CURLOPT_URL => "http://api.rajaongkir.com/starter/cost",
-        // CURLOPT_URL => "http://pro.rajaongkir.com/api/cost",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => "",
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "POST",
-        // CURLOPT_POSTFIELDS => "origin=501&destination=114&weight=1700&courier=jne",
-        CURLOPT_POSTFIELDS => "origin=$origin&destination=$destination&weight=$weight&courier=$courier",
-        CURLOPT_HTTPHEADER => array(
-        "content-type: application/x-www-form-urlencoded",
-        "key: ed3f0b1acbd5b27080d18806885f2071"
-        // "key: bb16551ede7aac939a5fdd4b985067e2",
-        ),
-        ));
-        // dd(CURLOPT_POSTFIELDS);
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-        curl_close($curl);
-        if ($err) {
-            echo "cURL Error #:" . $err;
-            } else {
-            $response=json_decode($response,true);
-            $data_ongkir = $response['rajaongkir']['results'];
-            // dd($data_ongkir);
-            return json_encode($data_ongkir);
-        }
-        // http://localhost:8000/origin=40&destination=40&weight=100&courier=jne
-    }
-
     public function addAddress(Request $request)
     {
+        dd($request->all());
+        // dd($request->kota_id);
         $request->validate([
             'firstname' =>  'required',
             // 'lastname' =>  'required',

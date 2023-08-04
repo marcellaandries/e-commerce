@@ -84,15 +84,20 @@ Route::get('/address/add',AddAddressComponent::class)->name('addaddress') ;
 Route::get('/about-us', AboutUsComponent::class);
 Route::get('/contact-us', ContactUsComponent::class);
 
-// Route::get('/shipping/{weight_total}',ShippingCostComponent::class)->name('shipping');
+// no-use:
+Route::get('/shipping/{weight_total}',ShippingCostComponent::class)->name('shipping');
+
 Route::get('/ship',ShippingCostComponent::class)->name('ship');
 Route::get('/delivery',DeliveryCostComponent::class)->name('delivery');
 // Route::post('/ship',ShippingCostComponent::class)->name('ship');
 Route::post('/choose-address',[AddressComponent::class, 'choose_address'])->name('choose.address');
 
-Route::get('province', [ShippingCostComponent::class, 'get_province'])->name('province');
-Route::get('city/{id}', [ShippingCostComponent::class, 'get_city'])->name('city');
+// Route::get('province', [ShippingCostComponent::class, 'get_province'])->name('province');
+// Route::get('city/{id}', [ShippingCostComponent::class, 'get_city'])->name('city');
 Route::get('origin={city_origin}&destination={city_destination}&weight={weight}&courier={courier}', [ShippingCostComponent::class, 'get_ongkir'])->name('shipping.cost');
+
+Route::get('province', [AddAddressComponent::class, 'get_province'])->name('province');
+Route::get('city/{id}', [AddAddressComponent::class, 'get_city'])->name('city');
 
 
 // Route::middleware([

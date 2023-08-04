@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 03, 2023 at 06:56 AM
+-- Generation Time: Aug 04, 2023 at 07:18 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -31,7 +31,7 @@ CREATE TABLE `addresses` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `firstname` varchar(255) NOT NULL,
-  `lastname` varchar(255) NOT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
   `mobile` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `line1` varchar(255) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `addresses` (
   `country` varchar(255) NOT NULL,
   `zipcode` varchar(255) NOT NULL,
   `priority` tinyint(1) NOT NULL DEFAULT 0,
-  `label` varchar(255) NOT NULL,
+  `label` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -54,7 +54,8 @@ CREATE TABLE `addresses` (
 
 INSERT INTO `addresses` (`id`, `user_id`, `firstname`, `lastname`, `mobile`, `email`, `line1`, `line2`, `city_id`, `city`, `province_id`, `province`, `country`, `zipcode`, `priority`, `label`, `created_at`, `updated_at`) VALUES
 (1, 6, 'Marcella Andries', '', '081288125588', 'marcella@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, '153', 'Kota Jakarta Selatan', '6', 'DKI Jakarta', 'Indonesia', '14250', 1, 'Home', '2023-07-31 04:42:23', '2023-07-31 04:42:23'),
-(2, 6, 'Marcella Chou', '', '081281322538', NULL, 'Pluit Avenue No. 11, Pluit Utara', NULL, '155', 'Kota Jakarta Utara', '6', 'DKI Jakarta', 'Indonesia', '18750', 0, 'Office', '2023-07-31 08:42:23', '2023-07-31 08:42:23');
+(2, 6, 'Marcella Chou', '', '081281322538', NULL, 'Pluit Avenue No. 11, Pluit Utara', NULL, '37', 'Banjarnegara', '10', 'Jawa Tengah', 'Indonesia', '53419', 0, 'Office', '2023-07-31 08:42:23', '2023-07-31 08:42:23'),
+(3, 6, 'Cella Novi', NULL, '08127989032424', NULL, 'Jl. Richer No.11, Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10250', NULL, '114', 'Kota Denpasar', '1', 'Bali', 'Indonesia', '88250', 0, NULL, '2023-08-04 05:17:28', '2023-08-04 05:17:28');
 
 -- --------------------------------------------------------
 
@@ -175,7 +176,8 @@ INSERT INTO `orders` (`id`, `user_id`, `subtotal`, `discount`, `tax`, `total`, `
 (2, 6, 8850000, 0, 0, 8958000, 'MARCELLA', 'ANDRIES', '081298982948', 'cella@gm.com', 'BUKIT GADING INDAH 88', 'PAGAR EMAS', 'Kota Serang', 'Banten', 'Indonesia', '16350', 'ordered', 'jne', 'REG', 108000, 0, '2023-08-01 02:01:58', '2023-08-01 02:01:58'),
 (3, 6, 1620000, 0, 0, 1690000, 'Marcella Andries', NULL, '081209849383', 'marcella@gmail.com', 'BGV 88', NULL, 'Kabupaten Bangka Barat', 'Bangka Belitung', 'Indonesia', '14330', 'ordered', 'jne', 'REG', 70000, 0, '2023-08-01 04:38:31', '2023-08-01 04:38:31'),
 (4, 6, 9880000, 0, 0, 10440000, 'Marcella Andries Chou', NULL, '081289849839', 'marcella11@gmail.com', 'KEBAYORAN 88', NULL, 'Kabupaten Buleleng', 'Bali', 'Indonesia', '11305', 'ordered', 'jne', 'REG', 560000, 0, '2023-08-01 06:11:55', '2023-08-01 06:11:55'),
-(5, 6, 6560000, 0, 0, 6651000, 'Marcella Andries', NULL, '0812865889922', 'marcella@gmail.com', 'VILLA 88', NULL, 'Kabupaten Serang', 'Banten', 'Indonesia', '11383', 'ordered', 'jne', 'OKE', 91000, 0, '2023-08-01 07:00:26', '2023-08-01 07:00:26');
+(5, 6, 6560000, 0, 0, 6651000, 'Marcella Andries', NULL, '0812865889922', 'marcella@gmail.com', 'VILLA 88', NULL, 'Kabupaten Serang', 'Banten', 'Indonesia', '11383', 'ordered', 'jne', 'OKE', 91000, 0, '2023-08-01 07:00:26', '2023-08-01 07:00:26'),
+(6, 6, 10360000, 0, 0, 10636000, 'Marcella Chou', NULL, '081281322538', 'marcella@gmail.com', 'Pluit Avenue No. 11, Pluit Utara', NULL, 'Banjarnegara', 'Jawa Tengah', 'Indonesia', '53419', 'ordered', 'tiki', 'REG', 276000, 0, '2023-08-03 08:59:38', '2023-08-03 08:59:38');
 
 -- --------------------------------------------------------
 
@@ -207,7 +209,9 @@ INSERT INTO `order_items` (`id`, `product_id`, `order_id`, `name`, `price`, `qua
 (6, 1, 4, 'doloremque nemo tempora quo', 1620000, 3, '2023-08-01 06:11:55', '2023-08-01 06:11:55'),
 (7, 9, 4, 'eveniet corporis ut facere', 2510000, 2, '2023-08-01 06:11:55', '2023-08-01 06:11:55'),
 (8, 5, 5, 'aut consequatur qui aliquam', 1780000, 2, '2023-08-01 07:00:26', '2023-08-01 07:00:26'),
-(9, 2, 5, 'omnis animi repellendus error', 3000000, 1, '2023-08-01 07:00:26', '2023-08-01 07:00:26');
+(9, 2, 5, 'omnis animi repellendus error', 3000000, 1, '2023-08-01 07:00:26', '2023-08-01 07:00:26'),
+(10, 1, 6, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-03 08:59:38', '2023-08-03 08:59:38'),
+(11, 5, 6, 'aut consequatur qui aliquam', 1780000, 4, '2023-08-03 08:59:38', '2023-08-03 08:59:38');
 
 -- --------------------------------------------------------
 
@@ -338,8 +342,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('PVXCJc2V81y20i1lkGwxSDEvUPGyJ4lXlrqewxlL', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiMEF4N3ZvRHB1cUNPR0ZzZFZNMHRRYVd2Szl1cnkyS3EyTVozMXZsUiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZGRyZXNzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NjtzOjU6InV0eXBlIjtzOjM6IlVTUiI7czo0OiJjYXJ0IjthOjE6e3M6NzoiZGVmYXVsdCI7TzoyOToiSWxsdW1pbmF0ZVxTdXBwb3J0XENvbGxlY3Rpb24iOjI6e3M6ODoiACoAaXRlbXMiO2E6Mjp7czozMjoiNWNhZjE5ODBkMGYzMDUwMzRhYzk3ZDEzYTY4ZTNjNjQiO086MzI6Ikdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtIjo5OntzOjU6InJvd0lkIjtzOjMyOiI1Y2FmMTk4MGQwZjMwNTAzNGFjOTdkMTNhNjhlM2M2NCI7czoyOiJpZCI7aToxO3M6MzoicXR5IjtpOjE7czo0OiJuYW1lIjtzOjI3OiJkb2xvcmVtcXVlIG5lbW8gdGVtcG9yYSBxdW8iO3M6NToicHJpY2UiO2Q6MTYyMDAwMDtzOjc6Im9wdGlvbnMiO086Mzk6Ikdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtT3B0aW9ucyI6Mjp7czo4OiIAKgBpdGVtcyI7YToxOntzOjY6IndlaWdodCI7aToyMDAwO31zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fXM6NDk6IgBHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbQBhc3NvY2lhdGVkTW9kZWwiO3M6MTg6IkFwcFxNb2RlbHNcUHJvZHVjdCI7czo0MToiAEdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtAHRheFJhdGUiO2k6MDtzOjQxOiIAR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0AaXNTYXZlZCI7YjowO31zOjMyOiJkODkwZDM1YzUwODZkOWFkMjllNjQ3ZTYzZTczYTY2ZSI7TzozMjoiR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0iOjk6e3M6NToicm93SWQiO3M6MzI6ImQ4OTBkMzVjNTA4NmQ5YWQyOWU2NDdlNjNlNzNhNjZlIjtzOjI6ImlkIjtpOjU7czozOiJxdHkiO2k6MjtzOjQ6Im5hbWUiO3M6Mjc6ImF1dCBjb25zZXF1YXR1ciBxdWkgYWxpcXVhbSI7czo1OiJwcmljZSI7ZDoxNzgwMDAwO3M6Nzoib3B0aW9ucyI7TzozOToiR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW1PcHRpb25zIjoyOntzOjg6IgAqAGl0ZW1zIjthOjE6e3M6Njoid2VpZ2h0IjtpOjIwMDA7fXM6Mjg6IgAqAGVzY2FwZVdoZW5DYXN0aW5nVG9TdHJpbmciO2I6MDt9czo0OToiAEdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtAGFzc29jaWF0ZWRNb2RlbCI7czoxODoiQXBwXE1vZGVsc1xQcm9kdWN0IjtzOjQxOiIAR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0AdGF4UmF0ZSI7aTowO3M6NDE6IgBHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbQBpc1NhdmVkIjtiOjA7fX1zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fX1zOjg6ImNoZWNrb3V0IjthOjE6e3M6Njoid2VpZ2h0IjtpOjYwMDA7fX0=', 1691038476),
-('Srlzv2WBGONHw9JS9umMTTLp6VTLrKGVd9cMxX1m', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidWY1cE00a05UMXhGTDVrSzdZOFJCTnlvS1doZEhiYXRtUG5aUldpbCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9jaXR5LzYiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1691038039);
+('ZhSugIx5kBdj2of7UvcvuUSjsRi42X0mEZihPpza', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoidzR2cnI3eFB4N0N3Y3VHTUZTWEZ4cHRRWjZ5SzQ5RmdNb0l0Qlc4NiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hZGRyZXNzL2FkZCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NDoiY2FydCI7YToxOntzOjc6ImRlZmF1bHQiO086Mjk6IklsbHVtaW5hdGVcU3VwcG9ydFxDb2xsZWN0aW9uIjoyOntzOjg6IgAqAGl0ZW1zIjthOjI6e3M6MzI6ImEwZjU3OWMyZmRhZWUzMmU1ZDYxMWM4ZWFhZWZkODBkIjtPOjMyOiJHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbSI6OTp7czo1OiJyb3dJZCI7czozMjoiYTBmNTc5YzJmZGFlZTMyZTVkNjExYzhlYWFlZmQ4MGQiO3M6MjoiaWQiO2k6MjtzOjM6InF0eSI7aToxO3M6NDoibmFtZSI7czoyOToib21uaXMgYW5pbWkgcmVwZWxsZW5kdXMgZXJyb3IiO3M6NToicHJpY2UiO2Q6MzAwMDAwMDtzOjc6Im9wdGlvbnMiO086Mzk6Ikdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtT3B0aW9ucyI6Mjp7czo4OiIAKgBpdGVtcyI7YToxOntzOjY6IndlaWdodCI7aTozMDAwO31zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fXM6NDk6IgBHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbQBhc3NvY2lhdGVkTW9kZWwiO3M6MTg6IkFwcFxNb2RlbHNcUHJvZHVjdCI7czo0MToiAEdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtAHRheFJhdGUiO2k6MDtzOjQxOiIAR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0AaXNTYXZlZCI7YjowO31zOjMyOiJkODkwZDM1YzUwODZkOWFkMjllNjQ3ZTYzZTczYTY2ZSI7TzozMjoiR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0iOjk6e3M6NToicm93SWQiO3M6MzI6ImQ4OTBkMzVjNTA4NmQ5YWQyOWU2NDdlNjNlNzNhNjZlIjtzOjI6ImlkIjtpOjU7czozOiJxdHkiO2k6MjtzOjQ6Im5hbWUiO3M6Mjc6ImF1dCBjb25zZXF1YXR1ciBxdWkgYWxpcXVhbSI7czo1OiJwcmljZSI7ZDoxNzgwMDAwO3M6Nzoib3B0aW9ucyI7TzozOToiR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW1PcHRpb25zIjoyOntzOjg6IgAqAGl0ZW1zIjthOjE6e3M6Njoid2VpZ2h0IjtpOjIwMDA7fXM6Mjg6IgAqAGVzY2FwZVdoZW5DYXN0aW5nVG9TdHJpbmciO2I6MDt9czo0OToiAEdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtAGFzc29jaWF0ZWRNb2RlbCI7czoxODoiQXBwXE1vZGVsc1xQcm9kdWN0IjtzOjQxOiIAR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0AdGF4UmF0ZSI7aTowO3M6NDE6IgBHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbQBpc1NhdmVkIjtiOjA7fX1zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fX1zOjg6ImNoZWNrb3V0IjthOjE1OntzOjg6InN1YnRvdGFsIjtzOjEyOiI2LjU2MC4wMDAsMDAiO3M6MTE6InByb3ZpbmNlX2lkIjtzOjE6IjYiO3M6MTM6InByb3ZpbmNlX25hbWUiO3M6MTE6IkRLSSBKYWthcnRhIjtzOjc6ImNpdHlfaWQiO3M6MzoiMTUzIjtzOjk6ImNpdHlfbmFtZSI7czoyMDoiS290YSBKYWthcnRhIFNlbGF0YW4iO3M6NzoiY291cmllciI7czo0OiJ0aWtpIjtzOjEwOiJzZXJ2aWNlX2lkIjtzOjE6IjAiO3M6MTI6InNlcnZpY2VfbmFtZSI7czozOiJPTlMiO3M6NToidG90YWwiO3M6MTY6IlJwwqA2LjY4Ni4wMDAsMDAiO3M6Njoid2VpZ2h0IjtzOjU6IjcuMDAwIjtzOjEzOiJzaGlwcGluZ19jb3N0IjtzOjE0OiJScMKgMTI2LjAwMCwwMCI7czo5OiJmaXJzdG5hbWUiO3M6MTY6Ik1hcmNlbGxhIEFuZHJpZXMiO3M6NToibGluZTEiO3M6NDA6IkJ1a2l0IEdhZGluZyBWaWxsYSBOby4gODgsIEtlbGFwYSBHYWRpbmciO3M6NjoibW9iaWxlIjtzOjEyOiIwODEyODgxMjU1ODgiO3M6NzoiemlwY29kZSI7czo1OiIxNDI1MCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjY7czo1OiJ1dHlwZSI7czozOiJVU1IiO30=', 1691126248);
 
 -- --------------------------------------------------------
 
@@ -389,7 +392,8 @@ INSERT INTO `transactions` (`id`, `user_id`, `order_id`, `mode`, `status`, `crea
 (2, 6, 2, 'bank', 'pending', '2023-08-01 02:01:58', '2023-08-01 02:01:58'),
 (3, 6, 3, 'bank', 'pending', '2023-08-01 04:38:31', '2023-08-01 04:38:31'),
 (4, 6, 4, 'bank', 'pending', '2023-08-01 06:11:55', '2023-08-01 06:11:55'),
-(5, 6, 5, 'bank', 'pending', '2023-08-01 07:00:26', '2023-08-01 07:00:26');
+(5, 6, 5, 'bank', 'pending', '2023-08-01 07:00:26', '2023-08-01 07:00:26'),
+(6, 6, 6, 'bank', 'pending', '2023-08-03 08:59:38', '2023-08-03 08:59:38');
 
 -- --------------------------------------------------------
 
@@ -538,7 +542,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -562,13 +566,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -598,7 +602,7 @@ ALTER TABLE `shippings`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`

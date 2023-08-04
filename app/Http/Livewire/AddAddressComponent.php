@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Illuminate\Http\Request;
+use App\Models\Address;
+use Illuminate\Support\Facades\Auth;
 
 class AddAddressComponent extends Component
 {
@@ -125,7 +127,7 @@ class AddAddressComponent extends Component
             'province_name' => 'required',
             'city_name' =>  'required',
         ]);
-        dd($request->all());
+        // dd($request->all());
 
         // array:11 [▼
         // "_token" => "w4vrr7xPx7CwcuGMFSXFxptQZ6yK49FgMoItBW86"
@@ -140,5 +142,30 @@ class AddAddressComponent extends Component
         // "province_name" => "Bali"
         // "city_name" => "Kota Denpasar"
         // ]
+
+        $address = new Address();
+        $address->user_id = Auth::user()->id;
+        $address->firstname = $request->firstname;
+        // $order->lastname = $request->lastname;
+        // $address->email = $request->email;
+        $address->mobile = $request->mobile;
+        $address->line1 = $request->line1;
+        // $order->line2 = $request->line2;
+        $address->country = $request->country;
+
+        $address->province_id = $request->province_id;
+        $address->city_id = $request->kota_id;
+        $address->province = $request->province_name;
+        $address->city = $request->city_name;
+
+        $address->zipcode = $request->zipcode;
+        $address->priority = 0;
+        $address->save();
+
+        return redirect()->route('address');
+
+        //priority
+        //label
+
     }
 }

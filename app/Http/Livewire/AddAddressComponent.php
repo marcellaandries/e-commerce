@@ -127,18 +127,18 @@ class AddAddressComponent extends Component
         ]);
         dd($request->all());
 
-    //     array:11 [▼
-    //     "_token" => "w4vrr7xPx7CwcuGMFSXFxptQZ6yK49FgMoItBW86"
-    //     "firstname" => "Cella Novi"
-    //     "email" => "cla@gm.co.id"
-    //     "mobile" => "021333333"
-    //     "line1" => "Gedung Menara Batavia Lt.6 Kec Richest"
-    //     "country" => "Indonesia"
-    //     "province_id" => "1"
-    //     "kota_id" => "114"
-    //     "zipcode" => "88250"
-    //     "province_name" => "Bali"
-    //     "city_name" => "Kota Denpasar"
-    //     ]
-    // }
+        // array:11 [▼
+        // "_token" => "w4vrr7xPx7CwcuGMFSXFxptQZ6yK49FgMoItBW86"
+        // "firstname" => "Cella Novi"
+        // "email" => "cla@gm.co.id"
+        // "mobile" => "021333333"
+        // "line1" => "Gedung Menara Batavia Lt.6 Kec Richest"
+        // "country" => "Indonesia"
+        // "province_id" => "1"
+        // "kota_id" => "114"
+        // "zipcode" => "88250"
+        // "province_name" => "Bali"
+        // "city_name" => "Kota Denpasar"
+        // ]
+    }
 }

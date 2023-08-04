@@ -86,10 +86,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading" style="background-color: #fff">
                         <div class="row">
                             <div class="col-md-6">
-                                All Addresses
+                                <h4> All Addresses</h4>
                             </div>
                             <div class="col-md-6">
                                 <a href="{{route('addaddress')}}" class="btn pull-right"><i class="fa fa-plus-square fa-2x text-info" title="new"></i></a>
@@ -98,7 +98,7 @@
                     </div>
 
 
-                    <div class="panel-body">
+                    <div class="panel-body" style="background-color: #eee">
                     {{-- <form action="{{ route('ship') }}" method="post"
                         enctype="multipart/form-data">
                         @csrf --}}
@@ -114,11 +114,15 @@
                         enctype="multipart/form-data"> --}}
                         @csrf
                             @foreach ($addresses as $address)
-                                <section style="background-color: #f3f7fa">
+                                <section style="background-color: #fff" class="card shadow-0 rounded-8">
                                     <div class="container py-5 mb-1">
 
-                                        <div class="row">
-                                            <div class="pl-35 col-md-1 col-lg-1 col-xl-1 mb-1 mb-lg-1 mt-2">
+                                        <div class="card-body">
+
+
+                                            <div class="row mt-2 mb-2">
+
+                                            <div class="pl-35 col-md-1 col-lg-1 col-xl-1 mb-1 mb-lg-1 mt-12">
                                                 <span class="mb-1 me-1 text-primary">
                                                     @if($address->priority)
                                                         <label>
@@ -180,24 +184,27 @@
                                                 <h6 class="label label-info mb-1">{{$address->label}}</h6>
                                             </div>
 
-                                            <div class="col-md-2 col-lg-2 col-xl-2 border-sm-start-none border-start mt-2">
+                                            <div class="col-md-2 col-lg-2 col-xl-2 border-sm-start-none border-start mt-08">
                                                 <div class="d-flex flex-column mt-06">
                                                     <a href="#"><i class="fa fa-edit fa-2x text-info ml-12" title="edit"></i>&nbsp;Edit</a>
                                                 </div>
+                                            </div>
+
+
                                             </div>
 
                                         </div>
 
                                     </div>
                                 </section>
-                                <hr>
+                                {{-- <hr> --}}
                             @endforeach
 
                             <div class="row">
                                 <div class="col-md-12">
                                     {{-- <button type="submit" class="btn btn-primary">Update</button> --}}
                                     {{-- <a href="{{route('admin.addproduct')}}" class="btn btn-primary pull-right mr-2 mb-2">Confirm</a> --}}
-                                    <input type="submit" class="btn btn-primary pull-right mr-2 mb-2" value="Confirm">
+                                    <input type="submit" class="btn btn-primary pull-right mr-2 mb-2 mt-12" value="Confirm">
                                     {{-- <a class="btn btn-primary pull-right mr-2 mb-2" href="#" wire:click.prevent="ship('{{$address->id}}')">Confirm</a> --}}
                                 </div>
                             </div>

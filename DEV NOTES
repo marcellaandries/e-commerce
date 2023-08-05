@@ -150,11 +150,15 @@ php artisan make:mail OrderMail
 type ! and tab to create html
 
 .env
+APP_NAME=Erakomp
+
 MAIL_MAILER=smtp
 MAIL_HOST=smtp.googlemail.com
-MAIL_PORT=465
-MAIL_USERNAME=xxx@gmail.com
-MAIL_PASSWORD=xxx
-MAIL_ENCRYPTION=ssl
-MAIL_FROM_ADDRESS=xxx@gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=marcella.andries11@gmail.com
+MAIL_PASSWORD=idwxtelsejrocnri
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=marcella.andries11@gmail.com
 MAIL_FROM_NAME="${APP_NAME}"
+
+php artisan config:clear

@@ -36,4 +36,5 @@ class OrderMail extends Mailable
     {
         return $this->subject('Order Confirmation')->view('mails.order-mail');
     }
+
 }

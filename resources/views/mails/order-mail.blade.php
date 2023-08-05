@@ -12,10 +12,11 @@
 
     <table style="width: 600px; text-align:right">
         <thead>
-            <th>Image</th>
+            {{-- <th>Image</th> --}}
             <th>Name</th>
             <th>Quantity</th>
             <th>Price</th>
+            <th>Price Total</th>
         </thead>
         <tbody>
             @foreach ($order->orderItems as $item)
@@ -23,20 +24,22 @@
                 {{-- <td><img src="{{ asset('assets/images/products') }}/{{$item->$product->image}}" width="100"></td> --}}
                 <td>{{$item->name}}</td>
                 <td>{{$item->quantity}}</td>
-                <td>{{$item->price * $item->quantity}}</td>
+                <td>{{ "Rp " . number_format($item['price'],2,',','.') }}</td>
+                <td>{{ "Rp " . number_format($item['quantity'] * $item['price'],2,',','.') }}</td>
+                {{-- <td>{{$item->price * $item->quantity}}</td> --}}
             </tr>
             @endforeach
             <tr>
                 <td colspan="3"></td>
-                <td style="font-size:15px;font-weight:bold;">Subtotal : ${{$order->subtotal}}</td>
+                <td style="font-size:15px;font-weight:bold;">Subtotal : {{ "Rp " . number_format($order['subtotal'],2,',','.') }}</td>
             </tr>
             <tr>
                 <td colspan="3"></td>
-                <td style="font-size:15px;font-weight:bold;">Shipping : Free Shipping</td>
+                <td style="font-size:15px;font-weight:bold;">Shipping : {{ "Rp " . number_format($order['shipping_cost'],2,',','.') }}</td>
             </tr>
             <tr>
                 <td colspan="3"></td>
-                <td style="font-size:15px;font-weight:bold;">Total : ${{$order->total}}</td>
+                <td style="font-size:15px;font-weight:bold;">Total : {{ "Rp " . number_format($order['total'],2,',','.') }}</td>
             </tr>
         </tbody>
     </table>

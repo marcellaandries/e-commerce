@@ -7,8 +7,7 @@
     <title>Order Confirmation</title>
 </head>
 <body>
-    {{-- <p>Hi, {{$order->firstname}}</p> --}}
-    <p>Hi</p>
+    <p>Hi, {{$order->firstname}}</p>
     <p>Your order has been successfully placed.</p>
 
     <table style="width: 600px; text-align:right">

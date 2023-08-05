@@ -3,12 +3,14 @@
 namespace App\Http\Livewire;
 
 use Cart;
+use App\Mail\OrderMail;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Shipping;
 use App\Models\Transaction;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Macroable;
@@ -161,7 +163,7 @@ class CheckoutComponent extends Component
 
         $order->firstname = $request->firstname;
         // $order->lastname = $request->lastname;
-        $order->email = $request->email;
+        $order->email = Auth::user()->email;
         $order->mobile = $request->mobile;
         $order->line1 = $request->line1;
         // $order->line2 = $request->line2;
@@ -266,7 +268,12 @@ class CheckoutComponent extends Component
         }
         else if($this->thankyou)
         {
-            // dd($this->thankyou);
+
+            // $orderMail = new OrderMail($order);
+            // Mail::to($order->email)->send($orderMail);
+
+            $this->sendOrderConfirmationMail($order);
+
             return redirect()->route('thankyou');
         }
         else if(!session()->get('checkout'))
@@ -274,6 +281,13 @@ class CheckoutComponent extends Component
             return redirect()->route('product.cart');
         }
 
+    }
+
+    public function sendOrderConfirmationMail($order)
+    {
+        // dd($order->email);
+        // dd($order->firstname);
+        Mail::to($order->email)->send(new OrderMail($order));
     }
 
     // public function verifyForCheckout($thx)

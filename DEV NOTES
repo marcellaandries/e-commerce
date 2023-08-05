@@ -144,3 +144,17 @@ https://stackoverflow.com/questions/16871413/safely-remove-migration-in-laravel
 Manually delete the migration file under app/database/migrations/my_migration_file_name.php
 Reset the composer autoload files: composer dump-autoload
 Modify your database: Remove the last entry from the migrations table
+
+php artisan make:mail OrderMail
+
+type ! and tab to create html
+
+.env
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.googlemail.com
+MAIL_PORT=465
+MAIL_USERNAME=xxx@gmail.com
+MAIL_PASSWORD=xxx
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=xxx@gmail.com
+MAIL_FROM_NAME="${APP_NAME}"

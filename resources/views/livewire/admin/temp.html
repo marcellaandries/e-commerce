@@ -1,28 +1,5 @@
 <div>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-        /* body{background-color: #eeeeee;font-family: 'Open Sans',serif} */
-        /* .container{marg  in-top:50px;margin-bottom: 50px} */
-
-        .detail{
-            background: #00006c !important;
-            color: #fff !important;
-        }
-
-        nav svg{
-            height: 20px;
-        }
-        nav .hidden{
-            display: block !important;
-        }
-
-        .card{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;background-color: #fff;background-clip: border-box;border: 1px solid rgba(0, 0, 0, 0.1);border-radius: 0.10rem}
-        .card-header:first-child{border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0}.card-header{padding: 0.75rem 1.25rem;margin-bottom: 0;background-color: #fff;border-bottom: 1px solid rgba(0, 0, 0, 0.1)}.track{position: relative;background-color: #ddd;height: 7px;display: -webkit-box;display: -ms-flexbox;display: flex;margin-bottom: 60px;margin-top: 50px;margin-left: 10px;
-        width: 72vw; max-width:72vw;
-        }
-
-        .track .step{-webkit-box-flex: 1;-ms-flex-positive: 1;flex-grow: 1;width: 25%;margin-top: -18px;text-align: center;position: relative}.track .step.active:before{background: #00006c}.track .step::before{height: 7px;position: absolute;content: "";width: 100%;left: 0;top: 18px}.track .step.active .icon{background: #00006c;color: #fff}.track .icon{display: inline-block;width: 40px;height: 40px;line-height: 40px;position: relative;border-radius: 100%;background: #ddd}.track .step.active .text{font-weight: 400;color: #000}.track .text{display: block;margin-top: 7px}.itemside{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;width: 100%}.itemside .aside{position: relative;-ms-flex-negative: 0;flex-shrink: 0}.img-sm{width: 80px;height: 80px;padding: 7px}ul.row, ul.row-sm{list-style: none;padding: 0}.itemside .info{padding-left: 15px;padding-right: 7px}.itemside .title{display: block;margin-bottom: 5px;color: #212529}p{margin-top: 0;margin-bottom: 1rem}.btn-warning{color: #ffffff;background-color: #00006c;border-color: #00006c;border-radius: 1px}.btn-warning:hover{color: #ffffff;background-color: #00006c;border-color: #00006c;border-radius: 1px}
-
         /*!
  * Advanced Boostrap Sidebar
  * Copyright 2019  nkm_swot(envato)
@@ -202,7 +179,6 @@ ul.in li {
         padding-left: 0;
     }
     #bootstrap-sidebar.big-icon-menu {
-        /* width: 100px; */
         width: 100px;
     }
     #bootstrap-sidebar.icon-menu {
@@ -298,8 +274,7 @@ ul.in li {
 /* Light Theme */
 
 .light-theme {
-    /* background: #E5E8D5; */
-    background: #eee;
+    background: #E5E8D5;
 }
 
 .light-theme ul.sidebar-nav li a {
@@ -1011,7 +986,6 @@ ul.in li {
 
 .icon-big{font-size: 40px;}
     </style>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -1060,31 +1034,93 @@ $("#menu-toggle").click(function(e) {
     }
     $("#wrapper").toggleClass("toggled");
 });
+<link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <!-- bootstrap jquery -->
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/mark.js/8.6.0/jquery.mark.min.js"></script>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <!-- bootstrap sidebar stylesheet -->
+  <link href="css/bootstrap-sidebar.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </script>
     <div class="container">
 
+
+
+        <!-- boostrap wrapper -->
+        <div id="wrapper">
+            <!-- Navigation -->
+            <nav class="navbar navbar-red  navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#menu-toggle" id="menu-toggle"> <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>  <span class="logo">Bootstrap Sidebar Version 1.0</span>
+                </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</a>
+                    </li>
+                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> CMS <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Pages</a>
+                        </li>
+                        <li><a href="#"><span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span> Posts</a>
+                        </li>
+                        <li><a href="#"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Media</a>
+                        </li>
+                    </ul>
+                    </li>
+                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Administrator <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Profile</a>
+                        </li>
+                        <li><a href="#"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Settings </a>
+                        </li>
+                    </ul>
+                    </li>
+                    <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
+                    </li>
+                </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
             <!-- /.container-fluid -->
             </nav>
             <!-- Boostrap Sidebar  - Collapsible Menu Items -->
             <!-- Sidebar -->
             <div id="bootstrap-sidebar" class="light-theme big-icon-menu">
             <ul class="sidebar-nav">
-                <li class="active"> <a href="#"><i class="fa fa-pencil-square" aria-hidden="true"></i><span class="menu-text">Created</span></a>
+                <li class="active"> <a href="#"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> <span class="menu-text">Home</span></a>
                 </li>
-                <li> <a href="#"><i class="fa fa fa-money" aria-hidden="true"></i> <span class="menu-text">Paid</span></a>
+                <li> <a href="#"><span class="glyphicon glyphicon-signal" aria-hidden="true"></span> <span class="menu-text">Charts</span></a>
                 </li>
-                <li> <a href="#"><i class="fa fa-check-square" aria-hidden="true"></i> <span class="menu-text">Approved</span></a>
+                <li> <a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> <span class="menu-text">Reports</span></a>
                 </li>
-                <li> <a href="#"><i class="fa fa-truck" aria-hidden="true"></i></span> <span class="menu-text">Delivered</span></a>
+                <li> <a href="#"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> <span class="menu-text">Catalogue</span></a>
                 </li>
-                <!--<li> <a href="#"><span class="glyphicon glyphicon-inbox btn-md" aria-hidden="true"></span> <span class="menu-text">Inbox</span></a>
+                <li> <a href="#"><span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> <span class="menu-text">Inbox</span></a>
                 </li>
-                <li> <a href="#"><span class="glyphicon glyphicon-heart btn-md" aria-hidden="true"></span> <span class="menu-text">Favourites</span></a>
+                <li> <a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> <span class="menu-text">Favourites</span></a>
                 </li>
                 <li> <a href="#"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> <span class="menu-text">Assets</span></a>
                 </li>
@@ -1101,76 +1137,101 @@ $("#menu-toggle").click(function(e) {
                 <li> <a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <span class="menu-text">Users</span></a>
                 </li>
                 <li> <a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> <span class="menu-text">Settings</span></a>
-                </li>-->
+                </li>
             </ul>
             </div>
-
-            <article class="card">
-            <header class="card-header ml-3"><strong>All Orders</strong></header>
-            <div class="card-body ml-3">
-                @foreach ($orders as $order)
-
-                <article class="card">
-
-                    <div class="card-body row ml-15">
-                        <h5><strong>Order ID: </strong>{{$order->id}}</h5>
-                        {{-- <div class="col"> <strong>Estimated Delivery time:</strong> <br>29 nov 2019 </div> --}}
-                        <div class="col mt-08 mb-08"> <strong>Status:</strong> <span class="label label-primary lb-sm">{{$order->status}}</span></div>
-                        <div class="col mb-08"> <strong>Shipping by:</strong> {{$order->service}}
-                            {{-- , | <i class="fa fa-phone"></i> +1598675986 </div> --}}
-                        {{-- <div class="col"> <strong>Tracking #:</strong> <br> BD045903594059 </div> --}}
-                        <a href="/admin/orders" class="detail btn pull-right mr-3" data-abc="true"> <i class="fa fa-chevron-right"></i> Order Detail</a>
+            <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+            <div id="main-page-content">
+            <div class="container-fluid">
+                <h1>Bootstrap Sidebar Version 1.0</h1>
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                    <div class="panel-heading">Features</div>
+                    <div class="panel-body" id="feature-content">
+                        <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body text-center">
+                            <span class="glyphicon glyphicon-check icon-big" aria-hidden="true"></span>
+                            <h3>Responsive</h3>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body text-center">
+                            <span class="glyphicon glyphicon-fullscreen icon-big" aria-hidden="true"></span>
+                            <h3>Full Screen Display</h3>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body text-center">
+                            <span class="glyphicon glyphicon-phone icon-big" aria-hidden="true"></span>
+                            <h3>Devices Compatible</h3>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body text-center">
+                            <span class="glyphicon glyphicon-tint icon-big" aria-hidden="true"></span>
+                            <h3>Light Weight CSS</h3>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body text-center">
+                            <span class="glyphicon glyphicon-thumbs-up icon-big" aria-hidden="true"></span>
+                            <h3>Free Support</h3>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body text-center">
+                            <span class="glyphicon glyphicon-knight icon-big" aria-hidden="true"></span>
+                            <h3>Vector Icons</h3>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body text-center">
+                            <span class="glyphicon glyphicon-console icon-big" aria-hidden="true"></span>
+                            <h3>Single Piece Code</h3>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body text-center">
+                            <span class="glyphicon glyphicon-object-align-vertical icon-big" aria-hidden="true"></span>
+                            <h3>Submenu</h3>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-body text-center">
+                            <span class="glyphicon glyphicon-text-background icon-big" aria-hidden="true"></span>
+                            <h3>8 Themes</h3>
+                            </div>
+                        </div>
+                        </div>
                     </div>
-
-                    <div class="track">
-                        <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Created</span> {{$order->created_at}}</div>
-                        @if($order->paid_date)
-                            <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Paid</span> {{$order->paid_date}}</div>
-                        @else
-                            <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Paid</span> </div>
-                        @endif
-
-                        <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Approved </span> </div>
-                        <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Delivered</span> </div>
                     </div>
-
-                </article>
-
-                {{-- <hr> --}}
-                {{-- <ul class="row">
-                    <li class="col-md-4">
-                        <figure class="itemside mb-3">
-                            <div class="aside"><img src="https://i.imgur.com/iDwDQ4o.png" class="img-sm border"></div>
-                            <figcaption class="info align-self-center">
-                                <p class="title">Dell Laptop with 500GB HDD <br> 8GB RAM</p> <span class="text-muted">$950 </span>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="col-md-4">
-                        <figure class="itemside mb-3">
-                            <div class="aside"><img src="https://i.imgur.com/tVBy5Q0.png" class="img-sm border"></div>
-                            <figcaption class="info align-self-center">
-                                <p class="title">HP Laptop with 500GB HDD <br> 8GB RAM</p> <span class="text-muted">$850 </span>
-                            </figcaption>
-                        </figure>
-                    </li>
-                    <li class="col-md-4">
-                        <figure class="itemside mb-3">
-                            <div class="aside"><img src="https://i.imgur.com/Bd56jKH.png" class="img-sm border"></div>
-                            <figcaption class="info align-self-center">
-                                <p class="title">ACER Laptop with 500GB HDD <br> 8GB RAM</p> <span class="text-muted">$650 </span>
-                            </figcaption>
-                        </figure>
-                    </li>
-                </ul> --}}
-                <hr>
-
-                @endforeach
+                </div>
+                </div>
+                <div style="clear:both"></div>
             </div>
-            {{$orders->links()}}
-        </article>
-
-
+            </div>
+        </div>
+        <!-- /#wrapper -->
+        <!-- Menu Toggle Script -->
 
 
 

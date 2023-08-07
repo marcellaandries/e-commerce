@@ -8,7 +8,7 @@
 </head>
 <body>
     <p>Hi, {{$order->firstname}}</p>
-    <p>Thank you for your order. Your order has been successfully placed.</p>
+    <p>Thank you for your order. Your order has been successfully placed on {{$order->created_at}}.</p>
 
     <table style="width: 800px; text-align:right">
         <thead>
@@ -41,16 +41,23 @@
                 <td colspan="3"></td>
                 <td style="font-size:15px;font-weight:bold;">Total : {{ "Rp " . number_format($order['total'],2,',','.') }}</td>
             </tr>
-
         </tbody>
     </table>
+
 
     <table style=" padding: 35px; background-color: #00006c;" bgcolor="#1b9ba3" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 800px; max-width:800px;">
         <tr>
             <td align="center" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 25px;">
-                <h2 style="font-size: 24px; font-weight: 800; line-height: 30px; color: #ffffff; margin: 0;">
-                    Please transfer to BCA Account : 5270881188 within 2 days from order date.
-                </h2>
+                <h3 style="font-size: 24px; font-weight: 800; line-height: 30px; color: #ffffff; margin: 0;">
+                    Please transfer to BCA Account : 5270881188 before
+                    <?php
+                        $day=$order->created_at;
+
+                        // add 7 days to the date above
+                        $NewDate = date('d-m-Y H:i:s', strtotime($day . " +2 days"));
+                        echo $NewDate;
+                    ?>
+                </h3>
             </td>
         </tr>
         <tr>

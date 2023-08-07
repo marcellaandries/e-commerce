@@ -58,6 +58,10 @@ use App\Http\Livewire\EditAddressComponent;
 
 Route::get('/', HomeComponent::class);
 
+Route::get('/mail', function () {
+    return view('mails/order-mail');
+});
+
 Route::get('/shop', ShopComponent::class);
 
 Route::get('/cart', CartComponent::class)->name('product.cart');

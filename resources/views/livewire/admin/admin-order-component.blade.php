@@ -30,9 +30,9 @@
                 <article class="card">
 
                     <div class="card-body row ml-15">
-                        <h6>Order ID: {{$order->id}}</h6>
+                        <h5><strong>Order ID: </strong>{{$order->id}}</h5>
                         {{-- <div class="col"> <strong>Estimated Delivery time:</strong> <br>29 nov 2019 </div> --}}
-                        <div class="col mt-08"> <strong>Status:</strong> {{$order->status}} </div>
+                        <div class="col mt-08 mb-08"> <strong>Status:</strong> <span class="label label-primary lb-sm">{{$order->status}}</span></div>
                         <div class="col mb-08"> <strong>Shipping by:</strong> {{$order->service}}
                             {{-- , | <i class="fa fa-phone"></i> +1598675986 </div> --}}
                         {{-- <div class="col"> <strong>Tracking #:</strong> <br> BD045903594059 </div> --}}
@@ -41,7 +41,12 @@
 
                     <div class="track">
                         <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Created</span> {{$order->created_at}}</div>
-                        <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Paid</span> </div>
+                        @if($order->paid_date)
+                            <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Paid</span> {{$order->paid_date}}</div>
+                        @else
+                            <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Paid</span> </div>
+                        @endif
+
                         <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Approved </span> </div>
                         <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Delivered</span> </div>
                     </div>

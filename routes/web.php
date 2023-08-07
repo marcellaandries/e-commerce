@@ -140,7 +140,7 @@ Route::middleware([
     Route::get('/admin/product/add',AdminAddProductComponent::class)->name('admin.addproduct');
     Route::get('/admin/product/edit/{product_slug}',AdminEditProductComponent::class)->name('admin.editproduct');
 
-     Route::get('/admin/orders',AdminOrderComponent::class)->name('admin.orders');
+    Route::get('/admin/orders',AdminOrderComponent::class)->name('admin.orders');
 
     // Route::get('/admin/slider',AdminHomeSliderComponent::class)->name('admin.homeslider');
     // Route::get('/admin/slider/add',AdminAddHomeSliderComponent::class)->name('admin.addhomeslider');

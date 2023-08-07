@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 04, 2023 at 07:18 AM
+-- Generation Time: Aug 07, 2023 at 05:48 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -55,7 +55,8 @@ CREATE TABLE `addresses` (
 INSERT INTO `addresses` (`id`, `user_id`, `firstname`, `lastname`, `mobile`, `email`, `line1`, `line2`, `city_id`, `city`, `province_id`, `province`, `country`, `zipcode`, `priority`, `label`, `created_at`, `updated_at`) VALUES
 (1, 6, 'Marcella Andries', '', '081288125588', 'marcella@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, '153', 'Kota Jakarta Selatan', '6', 'DKI Jakarta', 'Indonesia', '14250', 1, 'Home', '2023-07-31 04:42:23', '2023-07-31 04:42:23'),
 (2, 6, 'Marcella Chou', '', '081281322538', NULL, 'Pluit Avenue No. 11, Pluit Utara', NULL, '37', 'Banjarnegara', '10', 'Jawa Tengah', 'Indonesia', '53419', 0, 'Office', '2023-07-31 08:42:23', '2023-07-31 08:42:23'),
-(3, 6, 'Cella Novi', NULL, '08127989032424', NULL, 'Jl. Richer No.11, Karet Tengsin, Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10250', NULL, '114', 'Kota Denpasar', '1', 'Bali', 'Indonesia', '88250', 0, NULL, '2023-08-04 05:17:28', '2023-08-04 05:17:28');
+(3, 6, 'Cella Novi', NULL, '08127989032424', NULL, 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, '114', 'Kota Denpasar', '1', 'Bali', 'Indonesia', '88250', 0, NULL, '2023-08-04 05:17:28', '2023-08-04 05:17:28'),
+(5, 6, 'cella2', NULL, '12345678', NULL, 'jl. kaya 98', NULL, '191', 'Kabupaten Kepulauan Sula', '20', 'Maluku Utara', 'Indonesia', '19000', 0, NULL, '2023-08-04 08:33:37', '2023-08-04 08:33:37');
 
 -- --------------------------------------------------------
 
@@ -164,20 +165,64 @@ CREATE TABLE `orders` (
   `shipping_cost` int(25) NOT NULL,
   `is_shipping_different` tinyint(1) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `paid_date` timestamp NULL DEFAULT NULL,
+  `approved_date` timestamp NULL DEFAULT NULL,
+  `delivered_date` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `user_id`, `subtotal`, `discount`, `tax`, `total`, `firstname`, `lastname`, `mobile`, `email`, `line1`, `line2`, `city`, `province`, `country`, `zipcode`, `status`, `courier`, `service`, `shipping_cost`, `is_shipping_different`, `created_at`, `updated_at`) VALUES
-(1, 6, 6240000, 0, 0, 6310000, 'MARCELLA', 'ANDRIES', '08128811225588', 'marcella@gmail.com', 'BUKIT GADING VILLA NO. 88', 'PAGAR EMAS', 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 70000, 0, '2023-07-31 04:42:23', '2023-07-31 04:42:23'),
-(2, 6, 8850000, 0, 0, 8958000, 'MARCELLA', 'ANDRIES', '081298982948', 'cella@gm.com', 'BUKIT GADING INDAH 88', 'PAGAR EMAS', 'Kota Serang', 'Banten', 'Indonesia', '16350', 'ordered', 'jne', 'REG', 108000, 0, '2023-08-01 02:01:58', '2023-08-01 02:01:58'),
-(3, 6, 1620000, 0, 0, 1690000, 'Marcella Andries', NULL, '081209849383', 'marcella@gmail.com', 'BGV 88', NULL, 'Kabupaten Bangka Barat', 'Bangka Belitung', 'Indonesia', '14330', 'ordered', 'jne', 'REG', 70000, 0, '2023-08-01 04:38:31', '2023-08-01 04:38:31'),
-(4, 6, 9880000, 0, 0, 10440000, 'Marcella Andries Chou', NULL, '081289849839', 'marcella11@gmail.com', 'KEBAYORAN 88', NULL, 'Kabupaten Buleleng', 'Bali', 'Indonesia', '11305', 'ordered', 'jne', 'REG', 560000, 0, '2023-08-01 06:11:55', '2023-08-01 06:11:55'),
-(5, 6, 6560000, 0, 0, 6651000, 'Marcella Andries', NULL, '0812865889922', 'marcella@gmail.com', 'VILLA 88', NULL, 'Kabupaten Serang', 'Banten', 'Indonesia', '11383', 'ordered', 'jne', 'OKE', 91000, 0, '2023-08-01 07:00:26', '2023-08-01 07:00:26'),
-(6, 6, 10360000, 0, 0, 10636000, 'Marcella Chou', NULL, '081281322538', 'marcella@gmail.com', 'Pluit Avenue No. 11, Pluit Utara', NULL, 'Banjarnegara', 'Jawa Tengah', 'Indonesia', '53419', 'ordered', 'tiki', 'REG', 276000, 0, '2023-08-03 08:59:38', '2023-08-03 08:59:38');
+INSERT INTO `orders` (`id`, `user_id`, `subtotal`, `discount`, `tax`, `total`, `firstname`, `lastname`, `mobile`, `email`, `line1`, `line2`, `city`, `province`, `country`, `zipcode`, `status`, `courier`, `service`, `shipping_cost`, `is_shipping_different`, `created_at`, `updated_at`, `paid_date`, `approved_date`, `delivered_date`) VALUES
+(1, 6, 6240000, 0, 0, 6310000, 'MARCELLA', 'ANDRIES', '08128811225588', 'marcella@gmail.com', 'BUKIT GADING VILLA NO. 88', 'PAGAR EMAS', 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 70000, 0, '2023-07-31 04:42:23', '2023-07-31 04:42:23', NULL, NULL, NULL),
+(2, 6, 8850000, 0, 0, 8958000, 'MARCELLA', 'ANDRIES', '081298982948', 'cella@gm.com', 'BUKIT GADING INDAH 88', 'PAGAR EMAS', 'Kota Serang', 'Banten', 'Indonesia', '16350', 'ordered', 'jne', 'REG', 108000, 0, '2023-08-01 02:01:58', '2023-08-01 02:01:58', NULL, NULL, NULL),
+(3, 6, 1620000, 0, 0, 1690000, 'Marcella Andries', NULL, '081209849383', 'marcella@gmail.com', 'BGV 88', NULL, 'Kabupaten Bangka Barat', 'Bangka Belitung', 'Indonesia', '14330', 'ordered', 'jne', 'REG', 70000, 0, '2023-08-01 04:38:31', '2023-08-01 04:38:31', NULL, NULL, NULL),
+(4, 6, 9880000, 0, 0, 10440000, 'Marcella Andries Chou', NULL, '081289849839', 'marcella11@gmail.com', 'KEBAYORAN 88', NULL, 'Kabupaten Buleleng', 'Bali', 'Indonesia', '11305', 'ordered', 'jne', 'REG', 560000, 0, '2023-08-01 06:11:55', '2023-08-01 06:11:55', NULL, NULL, NULL),
+(5, 6, 6560000, 0, 0, 6651000, 'Marcella Andries', NULL, '0812865889922', 'marcella@gmail.com', 'VILLA 88', NULL, 'Kabupaten Serang', 'Banten', 'Indonesia', '11383', 'ordered', 'jne', 'OKE', 91000, 0, '2023-08-01 07:00:26', '2023-08-01 07:00:26', NULL, NULL, NULL),
+(6, 6, 10360000, 0, 0, 10636000, 'Marcella Chou', NULL, '081281322538', 'marcella@gmail.com', 'Pluit Avenue No. 11, Pluit Utara', NULL, 'Banjarnegara', 'Jawa Tengah', 'Indonesia', '53419', 'ordered', 'tiki', 'REG', 276000, 0, '2023-08-03 08:59:38', '2023-08-03 08:59:38', NULL, NULL, NULL),
+(7, 6, 9280000, 0, 0, 9700000, 'Cella Novi', NULL, '08127989032424', 'marcella@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'ordered', 'jne', 'REG', 420000, 0, '2023-08-04 05:35:41', '2023-08-04 05:35:41', NULL, NULL, NULL),
+(8, 6, 7390000, 0, 0, 8632000, 'cella2', NULL, '12345678', 'marcella@gmail.com', 'jl. kaya 98', NULL, 'Kabupaten Kepulauan Sula', 'Maluku Utara', 'Indonesia', '19000', 'ordered', 'jne', 'REG', 1242000, 0, '2023-08-04 08:41:05', '2023-08-04 08:41:05', NULL, NULL, NULL),
+(9, 6, 140000, 0, 0, 140126000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'tiki', 'ONS', 126000, 0, '2023-08-04 10:43:11', '2023-08-04 10:43:11', NULL, NULL, NULL),
+(10, 6, 5180000, 0, 0, 5240000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 60000, 0, '2023-08-04 10:46:57', '2023-08-04 10:46:57', NULL, NULL, NULL),
+(11, 6, 3380000, 0, 0, 3490000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 110000, 0, '2023-08-04 10:49:17', '2023-08-04 10:49:17', NULL, NULL, NULL),
+(12, 6, 7150000, 0, 0, 7294000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 144000, 0, '2023-08-04 11:06:54', '2023-08-04 11:06:54', NULL, NULL, NULL),
+(13, 6, 7620000, 0, 0, 7764000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 144000, 0, '2023-08-05 03:29:33', '2023-08-05 03:29:33', NULL, NULL, NULL),
+(14, 6, 6240000, 0, 0, 6310000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 70000, 0, '2023-08-05 03:33:05', '2023-08-05 03:33:05', NULL, NULL, NULL),
+(15, 6, 6240000, 0, 0, 6310000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 70000, 0, '2023-08-05 03:33:14', '2023-08-05 03:33:14', NULL, NULL, NULL),
+(16, 6, 6240000, 0, 0, 6310000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 70000, 0, '2023-08-05 03:33:24', '2023-08-05 03:33:24', NULL, NULL, NULL),
+(17, 6, 6240000, 0, 0, 6310000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 70000, 0, '2023-08-05 03:33:37', '2023-08-05 03:33:37', NULL, NULL, NULL),
+(18, 6, 2560000, 0, 0, 2686000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 126000, 0, '2023-08-05 03:35:06', '2023-08-05 03:35:06', NULL, NULL, NULL),
+(19, 6, 7620000, 0, 0, 7700000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 80000, 0, '2023-08-05 03:38:46', '2023-08-05 03:38:46', NULL, NULL, NULL),
+(20, 6, 7620000, 0, 0, 7700000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 80000, 0, '2023-08-05 03:39:26', '2023-08-05 03:39:26', NULL, NULL, NULL),
+(21, 6, 1620000, 0, 0, 1656000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 36000, 0, '2023-08-05 03:41:52', '2023-08-05 03:41:52', NULL, NULL, NULL),
+(22, 6, 3240000, 0, 0, 3312000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 72000, 0, '2023-08-05 03:44:07', '2023-08-05 03:44:07', NULL, NULL, NULL),
+(23, 6, 3240000, 0, 0, 3312000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 72000, 0, '2023-08-05 03:44:28', '2023-08-05 03:44:28', NULL, NULL, NULL),
+(24, 6, 3000000, 0, 0, 3054000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 54000, 0, '2023-08-05 03:46:58', '2023-08-05 03:46:58', NULL, NULL, NULL),
+(25, 6, 3000000, 0, 0, 3054000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 54000, 0, '2023-08-05 03:47:10', '2023-08-05 03:47:10', NULL, NULL, NULL),
+(26, 6, 7620000, 0, 0, 7764000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 144000, 0, '2023-08-05 03:52:41', '2023-08-05 03:52:41', NULL, NULL, NULL),
+(27, 6, 3000000, 0, 0, 3054000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 54000, 0, '2023-08-05 04:12:37', '2023-08-05 04:12:37', NULL, NULL, NULL),
+(28, 6, 1620000, 0, 0, 1656000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 36000, 0, '2023-08-05 04:14:58', '2023-08-05 04:14:58', NULL, NULL, NULL),
+(29, 6, 1620000, 0, 0, 1656000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 36000, 0, '2023-08-05 04:16:45', '2023-08-05 04:16:45', NULL, NULL, NULL),
+(30, 6, 6940000, 0, 0, 7050000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 110000, 0, '2023-08-05 04:28:42', '2023-08-05 04:28:42', NULL, NULL, NULL),
+(31, 6, 1780000, 0, 0, 1798000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'tiki', 'REG', 18000, 0, '2023-08-05 04:33:14', '2023-08-05 04:33:14', NULL, NULL, NULL),
+(32, 6, 4180000, 0, 0, 4270000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 90000, 0, '2023-08-05 05:03:12', '2023-08-05 05:03:12', NULL, NULL, NULL),
+(33, 6, 3280000, 0, 0, 3586000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 306000, 0, '2023-08-05 05:05:44', '2023-08-05 05:05:44', NULL, NULL, NULL),
+(34, 6, 10090000, 0, 0, 10170000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 80000, 0, '2023-08-05 05:10:37', '2023-08-05 05:10:37', NULL, NULL, NULL),
+(35, 6, 6560000, 0, 0, 6640000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 80000, 0, '2023-08-05 05:14:00', '2023-08-05 05:14:00', NULL, NULL, NULL),
+(36, 6, 5020000, 0, 0, 5080000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 60000, 0, '2023-08-05 09:44:30', '2023-08-05 09:44:30', NULL, NULL, NULL),
+(37, 6, 7620000, 0, 0, 7764000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 144000, 0, '2023-08-05 09:46:53', '2023-08-05 09:46:53', NULL, NULL, NULL),
+(38, 6, 4180000, 0, 0, 4342000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 162000, 0, '2023-08-05 09:54:17', '2023-08-05 09:54:17', NULL, NULL, NULL),
+(39, 6, 4180000, 0, 0, 4342000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 162000, 0, '2023-08-05 09:58:29', '2023-08-05 09:58:29', NULL, NULL, NULL),
+(40, 6, 7150000, 0, 0, 7230000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 80000, 0, '2023-08-07 01:30:07', '2023-08-07 01:30:07', NULL, NULL, NULL),
+(41, 6, 5180000, 0, 0, 5240000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 60000, 0, '2023-08-07 01:36:30', '2023-08-07 01:36:30', NULL, NULL, NULL),
+(42, 6, 7620000, 0, 0, 7764000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 144000, 0, '2023-08-07 01:40:29', '2023-08-07 01:40:29', NULL, NULL, NULL),
+(43, 6, 7620000, 0, 0, 7764000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 144000, 0, '2023-08-07 01:47:47', '2023-08-07 01:47:47', NULL, NULL, NULL),
+(44, 6, 3500000, 0, 0, 3716000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 216000, 0, '2023-08-07 01:49:18', '2023-08-07 01:49:18', NULL, NULL, NULL),
+(45, 6, 5410000, 0, 0, 5464000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'tiki', 'REG', 54000, 0, '2023-08-07 01:52:55', '2023-08-07 01:52:55', NULL, NULL, NULL),
+(46, 6, 5750000, 0, 0, 5822000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'tiki', 'REG', 72000, 0, '2023-08-07 01:55:29', '2023-08-07 01:55:29', NULL, NULL, NULL),
+(47, 6, 6640000, 0, 0, 6740000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 100000, 0, '2023-08-07 02:06:25', '2023-08-07 02:06:25', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -211,7 +256,80 @@ INSERT INTO `order_items` (`id`, `product_id`, `order_id`, `name`, `price`, `qua
 (8, 5, 5, 'aut consequatur qui aliquam', 1780000, 2, '2023-08-01 07:00:26', '2023-08-01 07:00:26'),
 (9, 2, 5, 'omnis animi repellendus error', 3000000, 1, '2023-08-01 07:00:26', '2023-08-01 07:00:26'),
 (10, 1, 6, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-03 08:59:38', '2023-08-03 08:59:38'),
-(11, 5, 6, 'aut consequatur qui aliquam', 1780000, 4, '2023-08-03 08:59:38', '2023-08-03 08:59:38');
+(11, 5, 6, 'aut consequatur qui aliquam', 1780000, 4, '2023-08-03 08:59:38', '2023-08-03 08:59:38'),
+(12, 2, 7, 'omnis animi repellendus error', 3000000, 1, '2023-08-04 05:35:41', '2023-08-04 05:35:41'),
+(13, 5, 7, 'aut consequatur qui aliquam', 1780000, 3, '2023-08-04 05:35:41', '2023-08-04 05:35:41'),
+(14, 3, 7, 'aperiam eos quam non', 940000, 1, '2023-08-04 05:35:41', '2023-08-04 05:35:41'),
+(15, 1, 8, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-04 08:41:05', '2023-08-04 08:41:05'),
+(16, 6, 8, 'ut porro soluta voluptas', 4150000, 1, '2023-08-04 08:41:05', '2023-08-04 08:41:05'),
+(17, 4, 9, 'dolores quod repellendus expedita', 140000, 1, '2023-08-04 10:43:11', '2023-08-04 10:43:11'),
+(18, 1, 10, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-04 10:46:57', '2023-08-04 10:46:57'),
+(19, 5, 10, 'aut consequatur qui aliquam', 1780000, 2, '2023-08-04 10:46:57', '2023-08-04 10:46:57'),
+(20, 1, 11, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-04 10:49:17', '2023-08-04 10:49:17'),
+(21, 4, 11, 'dolores quod repellendus expedita', 140000, 1, '2023-08-04 10:49:17', '2023-08-04 10:49:17'),
+(22, 2, 12, 'omnis animi repellendus error', 3000000, 1, '2023-08-04 11:06:54', '2023-08-04 11:06:54'),
+(23, 6, 12, 'ut porro soluta voluptas', 4150000, 1, '2023-08-04 11:06:54', '2023-08-04 11:06:54'),
+(24, 1, 13, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-05 03:29:33', '2023-08-05 03:29:33'),
+(25, 2, 13, 'omnis animi repellendus error', 3000000, 2, '2023-08-05 03:29:33', '2023-08-05 03:29:33'),
+(26, 1, 14, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-05 03:33:05', '2023-08-05 03:33:05'),
+(27, 2, 14, 'omnis animi repellendus error', 3000000, 1, '2023-08-05 03:33:05', '2023-08-05 03:33:05'),
+(28, 1, 15, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-05 03:33:14', '2023-08-05 03:33:14'),
+(29, 2, 15, 'omnis animi repellendus error', 3000000, 1, '2023-08-05 03:33:14', '2023-08-05 03:33:14'),
+(30, 1, 16, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-05 03:33:24', '2023-08-05 03:33:24'),
+(31, 2, 16, 'omnis animi repellendus error', 3000000, 1, '2023-08-05 03:33:24', '2023-08-05 03:33:24'),
+(32, 1, 17, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-05 03:33:37', '2023-08-05 03:33:37'),
+(33, 2, 17, 'omnis animi repellendus error', 3000000, 1, '2023-08-05 03:33:37', '2023-08-05 03:33:37'),
+(34, 1, 18, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-05 03:35:06', '2023-08-05 03:35:06'),
+(35, 3, 18, 'aperiam eos quam non', 940000, 1, '2023-08-05 03:35:06', '2023-08-05 03:35:06'),
+(36, 1, 19, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-05 03:38:46', '2023-08-05 03:38:46'),
+(37, 2, 19, 'omnis animi repellendus error', 3000000, 2, '2023-08-05 03:38:46', '2023-08-05 03:38:46'),
+(38, 1, 20, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-05 03:39:26', '2023-08-05 03:39:26'),
+(39, 2, 20, 'omnis animi repellendus error', 3000000, 2, '2023-08-05 03:39:26', '2023-08-05 03:39:26'),
+(40, 1, 21, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-05 03:41:52', '2023-08-05 03:41:52'),
+(41, 1, 22, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-05 03:44:07', '2023-08-05 03:44:07'),
+(42, 1, 23, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-05 03:44:28', '2023-08-05 03:44:28'),
+(43, 2, 24, 'omnis animi repellendus error', 3000000, 1, '2023-08-05 03:46:58', '2023-08-05 03:46:58'),
+(44, 2, 25, 'omnis animi repellendus error', 3000000, 1, '2023-08-05 03:47:10', '2023-08-05 03:47:10'),
+(45, 1, 26, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-05 03:52:41', '2023-08-05 03:52:41'),
+(46, 2, 26, 'omnis animi repellendus error', 3000000, 2, '2023-08-05 03:52:41', '2023-08-05 03:52:41'),
+(47, 2, 27, 'omnis animi repellendus error', 3000000, 1, '2023-08-05 04:12:37', '2023-08-05 04:12:37'),
+(48, 1, 28, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-05 04:14:58', '2023-08-05 04:14:58'),
+(49, 1, 29, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-05 04:16:45', '2023-08-05 04:16:45'),
+(50, 2, 30, 'omnis animi repellendus error', 3000000, 2, '2023-08-05 04:28:42', '2023-08-05 04:28:42'),
+(51, 3, 30, 'aperiam eos quam non', 940000, 1, '2023-08-05 04:28:42', '2023-08-05 04:28:42'),
+(52, 5, 31, 'aut consequatur qui aliquam', 1780000, 1, '2023-08-05 04:33:14', '2023-08-05 04:33:14'),
+(53, 1, 32, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-05 05:03:12', '2023-08-05 05:03:12'),
+(54, 3, 32, 'aperiam eos quam non', 940000, 1, '2023-08-05 05:03:12', '2023-08-05 05:03:12'),
+(55, 2, 33, 'omnis animi repellendus error', 3000000, 1, '2023-08-05 05:05:44', '2023-08-05 05:05:44'),
+(56, 4, 33, 'dolores quod repellendus expedita', 140000, 2, '2023-08-05 05:05:44', '2023-08-05 05:05:44'),
+(57, 2, 34, 'omnis animi repellendus error', 3000000, 2, '2023-08-05 05:10:37', '2023-08-05 05:10:37'),
+(58, 11, 34, 'et omnis totam natus', 4090000, 1, '2023-08-05 05:10:37', '2023-08-05 05:10:37'),
+(59, 2, 35, 'omnis animi repellendus error', 3000000, 2, '2023-08-05 05:14:00', '2023-08-05 05:14:00'),
+(60, 7, 35, 'quo ut et id', 560000, 1, '2023-08-05 05:14:00', '2023-08-05 05:14:00'),
+(61, 1, 36, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-05 09:44:30', '2023-08-05 09:44:30'),
+(62, 5, 36, 'aut consequatur qui aliquam', 1780000, 1, '2023-08-05 09:44:30', '2023-08-05 09:44:30'),
+(63, 2, 37, 'omnis animi repellendus error', 3000000, 2, '2023-08-05 09:46:53', '2023-08-05 09:46:53'),
+(64, 1, 37, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-05 09:46:53', '2023-08-05 09:46:53'),
+(65, 1, 38, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-05 09:54:17', '2023-08-05 09:54:17'),
+(66, 3, 38, 'aperiam eos quam non', 940000, 1, '2023-08-05 09:54:17', '2023-08-05 09:54:17'),
+(67, 1, 39, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-05 09:58:29', '2023-08-05 09:58:29'),
+(68, 3, 39, 'aperiam eos quam non', 940000, 1, '2023-08-05 09:58:29', '2023-08-05 09:58:29'),
+(69, 2, 40, 'omnis animi repellendus error', 3000000, 1, '2023-08-07 01:30:07', '2023-08-07 01:30:07'),
+(70, 6, 40, 'ut porro soluta voluptas', 4150000, 1, '2023-08-07 01:30:07', '2023-08-07 01:30:07'),
+(71, 1, 41, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-07 01:36:30', '2023-08-07 01:36:30'),
+(72, 5, 41, 'aut consequatur qui aliquam', 1780000, 2, '2023-08-07 01:36:30', '2023-08-07 01:36:30'),
+(73, 1, 42, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-07 01:40:29', '2023-08-07 01:40:29'),
+(74, 2, 42, 'omnis animi repellendus error', 3000000, 2, '2023-08-07 01:40:29', '2023-08-07 01:40:29'),
+(75, 1, 43, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-07 01:47:47', '2023-08-07 01:47:47'),
+(76, 2, 43, 'omnis animi repellendus error', 3000000, 2, '2023-08-07 01:47:47', '2023-08-07 01:47:47'),
+(77, 1, 44, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-07 01:49:18', '2023-08-07 01:49:18'),
+(78, 3, 44, 'aperiam eos quam non', 940000, 2, '2023-08-07 01:49:18', '2023-08-07 01:49:18'),
+(79, 1, 45, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-07 01:52:55', '2023-08-07 01:52:55'),
+(80, 12, 45, 'tempore ea officia sit', 2170000, 1, '2023-08-07 01:52:55', '2023-08-07 01:52:55'),
+(81, 1, 46, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-07 01:55:29', '2023-08-07 01:55:29'),
+(82, 9, 46, 'eveniet corporis ut facere', 2510000, 1, '2023-08-07 01:55:29', '2023-08-07 01:55:29'),
+(83, 1, 47, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-07 02:06:25', '2023-08-07 02:06:25'),
+(84, 9, 47, 'eveniet corporis ut facere', 2510000, 2, '2023-08-07 02:06:25', '2023-08-07 02:06:25');
 
 -- --------------------------------------------------------
 
@@ -342,7 +460,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('ZhSugIx5kBdj2of7UvcvuUSjsRi42X0mEZihPpza', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoidzR2cnI3eFB4N0N3Y3VHTUZTWEZ4cHRRWjZ5SzQ5RmdNb0l0Qlc4NiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hZGRyZXNzL2FkZCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6NDoiY2FydCI7YToxOntzOjc6ImRlZmF1bHQiO086Mjk6IklsbHVtaW5hdGVcU3VwcG9ydFxDb2xsZWN0aW9uIjoyOntzOjg6IgAqAGl0ZW1zIjthOjI6e3M6MzI6ImEwZjU3OWMyZmRhZWUzMmU1ZDYxMWM4ZWFhZWZkODBkIjtPOjMyOiJHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbSI6OTp7czo1OiJyb3dJZCI7czozMjoiYTBmNTc5YzJmZGFlZTMyZTVkNjExYzhlYWFlZmQ4MGQiO3M6MjoiaWQiO2k6MjtzOjM6InF0eSI7aToxO3M6NDoibmFtZSI7czoyOToib21uaXMgYW5pbWkgcmVwZWxsZW5kdXMgZXJyb3IiO3M6NToicHJpY2UiO2Q6MzAwMDAwMDtzOjc6Im9wdGlvbnMiO086Mzk6Ikdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtT3B0aW9ucyI6Mjp7czo4OiIAKgBpdGVtcyI7YToxOntzOjY6IndlaWdodCI7aTozMDAwO31zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fXM6NDk6IgBHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbQBhc3NvY2lhdGVkTW9kZWwiO3M6MTg6IkFwcFxNb2RlbHNcUHJvZHVjdCI7czo0MToiAEdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtAHRheFJhdGUiO2k6MDtzOjQxOiIAR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0AaXNTYXZlZCI7YjowO31zOjMyOiJkODkwZDM1YzUwODZkOWFkMjllNjQ3ZTYzZTczYTY2ZSI7TzozMjoiR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0iOjk6e3M6NToicm93SWQiO3M6MzI6ImQ4OTBkMzVjNTA4NmQ5YWQyOWU2NDdlNjNlNzNhNjZlIjtzOjI6ImlkIjtpOjU7czozOiJxdHkiO2k6MjtzOjQ6Im5hbWUiO3M6Mjc6ImF1dCBjb25zZXF1YXR1ciBxdWkgYWxpcXVhbSI7czo1OiJwcmljZSI7ZDoxNzgwMDAwO3M6Nzoib3B0aW9ucyI7TzozOToiR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW1PcHRpb25zIjoyOntzOjg6IgAqAGl0ZW1zIjthOjE6e3M6Njoid2VpZ2h0IjtpOjIwMDA7fXM6Mjg6IgAqAGVzY2FwZVdoZW5DYXN0aW5nVG9TdHJpbmciO2I6MDt9czo0OToiAEdsb3VkZW1hbnNcU2hvcHBpbmdjYXJ0XENhcnRJdGVtAGFzc29jaWF0ZWRNb2RlbCI7czoxODoiQXBwXE1vZGVsc1xQcm9kdWN0IjtzOjQxOiIAR2xvdWRlbWFuc1xTaG9wcGluZ2NhcnRcQ2FydEl0ZW0AdGF4UmF0ZSI7aTowO3M6NDE6IgBHbG91ZGVtYW5zXFNob3BwaW5nY2FydFxDYXJ0SXRlbQBpc1NhdmVkIjtiOjA7fX1zOjI4OiIAKgBlc2NhcGVXaGVuQ2FzdGluZ1RvU3RyaW5nIjtiOjA7fX1zOjg6ImNoZWNrb3V0IjthOjE1OntzOjg6InN1YnRvdGFsIjtzOjEyOiI2LjU2MC4wMDAsMDAiO3M6MTE6InByb3ZpbmNlX2lkIjtzOjE6IjYiO3M6MTM6InByb3ZpbmNlX25hbWUiO3M6MTE6IkRLSSBKYWthcnRhIjtzOjc6ImNpdHlfaWQiO3M6MzoiMTUzIjtzOjk6ImNpdHlfbmFtZSI7czoyMDoiS290YSBKYWthcnRhIFNlbGF0YW4iO3M6NzoiY291cmllciI7czo0OiJ0aWtpIjtzOjEwOiJzZXJ2aWNlX2lkIjtzOjE6IjAiO3M6MTI6InNlcnZpY2VfbmFtZSI7czozOiJPTlMiO3M6NToidG90YWwiO3M6MTY6IlJwwqA2LjY4Ni4wMDAsMDAiO3M6Njoid2VpZ2h0IjtzOjU6IjcuMDAwIjtzOjEzOiJzaGlwcGluZ19jb3N0IjtzOjE0OiJScMKgMTI2LjAwMCwwMCI7czo5OiJmaXJzdG5hbWUiO3M6MTY6Ik1hcmNlbGxhIEFuZHJpZXMiO3M6NToibGluZTEiO3M6NDA6IkJ1a2l0IEdhZGluZyBWaWxsYSBOby4gODgsIEtlbGFwYSBHYWRpbmciO3M6NjoibW9iaWxlIjtzOjEyOiIwODEyODgxMjU1ODgiO3M6NzoiemlwY29kZSI7czo1OiIxNDI1MCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjY7czo1OiJ1dHlwZSI7czozOiJVU1IiO30=', 1691126248);
+('WkipaFT1sokKls5UT514pe9kplZKAoBC2UjhfGbh', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiYk4ya1FnYjhUTmdJZTdYdEFkZmVZZWUwSVh3NnlUQ0htUEk4RDJ5VCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hZG1pbi9vcmRlcnMiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6NToidXR5cGUiO3M6MzoiQURNIjt9', 1691379748);
 
 -- --------------------------------------------------------
 
@@ -393,7 +511,48 @@ INSERT INTO `transactions` (`id`, `user_id`, `order_id`, `mode`, `status`, `crea
 (3, 6, 3, 'bank', 'pending', '2023-08-01 04:38:31', '2023-08-01 04:38:31'),
 (4, 6, 4, 'bank', 'pending', '2023-08-01 06:11:55', '2023-08-01 06:11:55'),
 (5, 6, 5, 'bank', 'pending', '2023-08-01 07:00:26', '2023-08-01 07:00:26'),
-(6, 6, 6, 'bank', 'pending', '2023-08-03 08:59:38', '2023-08-03 08:59:38');
+(6, 6, 6, 'bank', 'pending', '2023-08-03 08:59:38', '2023-08-03 08:59:38'),
+(7, 6, 7, 'bank', 'pending', '2023-08-04 05:35:41', '2023-08-04 05:35:41'),
+(8, 6, 8, 'bank', 'pending', '2023-08-04 08:41:05', '2023-08-04 08:41:05'),
+(9, 6, 9, 'bank', 'pending', '2023-08-04 10:43:11', '2023-08-04 10:43:11'),
+(10, 6, 10, 'bank', 'pending', '2023-08-04 10:46:57', '2023-08-04 10:46:57'),
+(11, 6, 11, 'bank', 'pending', '2023-08-04 10:49:17', '2023-08-04 10:49:17'),
+(12, 6, 12, 'bank', 'pending', '2023-08-04 11:06:54', '2023-08-04 11:06:54'),
+(13, 6, 13, 'bank', 'pending', '2023-08-05 03:29:33', '2023-08-05 03:29:33'),
+(14, 6, 14, 'bank', 'pending', '2023-08-05 03:33:05', '2023-08-05 03:33:05'),
+(15, 6, 15, 'bank', 'pending', '2023-08-05 03:33:14', '2023-08-05 03:33:14'),
+(16, 6, 16, 'bank', 'pending', '2023-08-05 03:33:24', '2023-08-05 03:33:24'),
+(17, 6, 17, 'bank', 'pending', '2023-08-05 03:33:37', '2023-08-05 03:33:37'),
+(18, 6, 18, 'bank', 'pending', '2023-08-05 03:35:06', '2023-08-05 03:35:06'),
+(19, 6, 19, 'bank', 'pending', '2023-08-05 03:38:46', '2023-08-05 03:38:46'),
+(20, 6, 20, 'bank', 'pending', '2023-08-05 03:39:26', '2023-08-05 03:39:26'),
+(21, 6, 21, 'bank', 'pending', '2023-08-05 03:41:52', '2023-08-05 03:41:52'),
+(22, 6, 22, 'bank', 'pending', '2023-08-05 03:44:07', '2023-08-05 03:44:07'),
+(23, 6, 23, 'bank', 'pending', '2023-08-05 03:44:28', '2023-08-05 03:44:28'),
+(24, 6, 24, 'bank', 'pending', '2023-08-05 03:46:58', '2023-08-05 03:46:58'),
+(25, 6, 25, 'bank', 'pending', '2023-08-05 03:47:10', '2023-08-05 03:47:10'),
+(26, 6, 26, 'bank', 'pending', '2023-08-05 03:52:41', '2023-08-05 03:52:41'),
+(27, 6, 27, 'bank', 'pending', '2023-08-05 04:12:37', '2023-08-05 04:12:37'),
+(28, 6, 28, 'bank', 'pending', '2023-08-05 04:14:58', '2023-08-05 04:14:58'),
+(29, 6, 29, 'bank', 'pending', '2023-08-05 04:16:45', '2023-08-05 04:16:45'),
+(30, 6, 30, 'bank', 'pending', '2023-08-05 04:28:42', '2023-08-05 04:28:42'),
+(31, 6, 31, 'bank', 'pending', '2023-08-05 04:33:14', '2023-08-05 04:33:14'),
+(32, 6, 32, 'bank', 'pending', '2023-08-05 05:03:12', '2023-08-05 05:03:12'),
+(33, 6, 33, 'bank', 'pending', '2023-08-05 05:05:44', '2023-08-05 05:05:44'),
+(34, 6, 34, 'bank', 'pending', '2023-08-05 05:10:37', '2023-08-05 05:10:37'),
+(35, 6, 35, 'bank', 'pending', '2023-08-05 05:14:00', '2023-08-05 05:14:00'),
+(36, 6, 36, 'bank', 'pending', '2023-08-05 09:44:30', '2023-08-05 09:44:30'),
+(37, 6, 37, 'bank', 'pending', '2023-08-05 09:46:53', '2023-08-05 09:46:53'),
+(38, 6, 38, 'bank', 'pending', '2023-08-05 09:54:17', '2023-08-05 09:54:17'),
+(39, 6, 39, 'bank', 'pending', '2023-08-05 09:58:29', '2023-08-05 09:58:29'),
+(40, 6, 40, 'bank', 'pending', '2023-08-07 01:30:07', '2023-08-07 01:30:07'),
+(41, 6, 41, 'bank', 'pending', '2023-08-07 01:36:30', '2023-08-07 01:36:30'),
+(42, 6, 42, 'bank', 'pending', '2023-08-07 01:40:29', '2023-08-07 01:40:29'),
+(43, 6, 43, 'bank', 'pending', '2023-08-07 01:47:47', '2023-08-07 01:47:47'),
+(44, 6, 44, 'bank', 'pending', '2023-08-07 01:49:18', '2023-08-07 01:49:18'),
+(45, 6, 45, 'bank', 'pending', '2023-08-07 01:52:55', '2023-08-07 01:52:55'),
+(46, 6, 46, 'bank', 'pending', '2023-08-07 01:55:29', '2023-08-07 01:55:29'),
+(47, 6, 47, 'bank', 'pending', '2023-08-07 02:06:25', '2023-08-07 02:06:25');
 
 -- --------------------------------------------------------
 
@@ -426,7 +585,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `tw
 (1, 'Cella Admin', 'admin@gmail.com', NULL, '$2y$10$oM7IHV51q.omfTyHUDDKx.bwSjAE0S98uh3FJZnK0auecr3yCaAG.', NULL, NULL, NULL, NULL, NULL, NULL, 'ADM', '2023-07-14 00:40:34', '2023-07-14 00:40:34'),
 (2, 'Marcella Andries', 'user@gmail.com', NULL, '$2y$10$oh8JA5ibVrumKGJ97JMN1.yrXI.x8pImQ5eX.rGLHOxxT8gquVJGK', NULL, NULL, NULL, NULL, NULL, NULL, 'USR', '2023-07-14 00:41:48', '2023-07-14 00:41:48'),
 (5, 'fani', 'fani@gmail.com', NULL, '$2y$10$Rj2aEy3TKcP5W.6XWwvTsu5p47hzqNkC.Je3k99gNt.2Yc/kPCGLO', NULL, NULL, NULL, NULL, NULL, NULL, 'ADM', '2023-07-21 08:07:47', '2023-07-21 08:07:47'),
-(6, 'Marcella Andries', 'marcella@gmail.com', NULL, '$2y$10$Bq4K1V2QwDp4yiWs5QqFoOc9akrlK4z.xpl9SFz/EcCqPEHmTayRm', NULL, NULL, NULL, NULL, NULL, NULL, 'USR', '2023-07-23 11:20:01', '2023-07-23 11:20:01');
+(6, 'Marcella Andries', 'sarangheyo8118@gmail.com', NULL, '$2y$10$Bq4K1V2QwDp4yiWs5QqFoOc9akrlK4z.xpl9SFz/EcCqPEHmTayRm', NULL, NULL, NULL, NULL, NULL, NULL, 'USR', '2023-07-23 11:20:01', '2023-07-23 11:20:01');
 
 --
 -- Indexes for dumped tables
@@ -542,7 +701,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -566,13 +725,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -602,7 +761,7 @@ ALTER TABLE `shippings`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `users`

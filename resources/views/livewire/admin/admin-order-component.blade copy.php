@@ -1018,7 +1018,55 @@ ul.in li {
     <script src="https://use.fontawesome.com/releases/v5.7.2/css/all.css"></script>
     <script src="js/sidebar.js?ver=2"></script>
 
+<script>
+        $(document).ready(function () {
 
+if($(window).width() >= 768){
+
+ if($('#bootstrap-sidebar').hasClass('icon-menu')) {
+    localStorage.setItem("default-padding", "60px");
+  $('#wrapper').css('padding-left','60px');
+  console.log('icon');
+}
+
+   else if($('#bootstrap-sidebar').hasClass('text-menu')) {
+       localStorage.setItem("default-padding", "150px");
+  $('#wrapper').css('padding-left','150px');
+  console.log('text');
+}
+else if($('#bootstrap-sidebar').hasClass('big-icon-menu')) {
+    localStorage.setItem("default-padding", "100px");
+  $('#wrapper').css('padding-left','100px');
+  console.log('big');
+}
+else{
+    $('#wrapper').css('padding-left','80px');
+    localStorage.setItem("default-padding", "80px");
+    console.log('ntg');
+}
+
+}
+
+});
+
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    let default_padding=localStorage.getItem('default-padding');
+    var origin_padding = $("#wrapper").css("padding-left");
+    if(origin_padding=='0px'){
+    $('#wrapper').css('padding-left', default_padding);
+    }
+    else{
+    $('#wrapper').css('padding-left','0px');
+    }
+    $("#wrapper").toggleClass("toggled");
+});
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</script>
     <div class="container">
             </nav>
             <div id="bootstrap-sidebar" class="light-theme big-icon-menu">
@@ -1029,8 +1077,6 @@ ul.in li {
                 </li>
                 <li> <a href="#" wire:click.prevent="orderFilter('paid')"><i class="fa fa fa-money" aria-hidden="true" title="Paid" type="text"></i> <span class="menu-text">Paid</span></a>
                 </li>
-                {{-- <li> <a href="{{route('admin.orders',['status'=>"paid"])}}}}"><i class="fa fa fa-money" aria-hidden="true" title="Paid" type="text"></i> <span class="menu-text">Paid</span></a>
-                </li> --}}
                 <li> <a href="#"><i class="fa fa-check-square" aria-hidden="true" title="Confirmed"></i> <span class="menu-text">Approved</span></a>
                 </li>
                 <li> <a href="#"><i class="fa fa-truck" aria-hidden="true" title="Delivered"></i></span> <span class="menu-text">Delivered</span></a>

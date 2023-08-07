@@ -77,9 +77,9 @@
                 </ul> --}}
                 <hr>
 
-
                 @endforeach
             </div>
+            {{$orders->links()}}
         </article>
     </div>
 

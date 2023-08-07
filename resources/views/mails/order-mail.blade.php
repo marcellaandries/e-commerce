@@ -49,7 +49,7 @@
         <tr>
             <td align="center" style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding-top: 25px;">
                 <h2 style="font-size: 24px; font-weight: 800; line-height: 30px; color: #ffffff; margin: 0;">
-                    Please transfer to BCA Account : 5270881188
+                    Please transfer to BCA Account : 5270881188 within 2 days from order date.
                 </h2>
             </td>
         </tr>

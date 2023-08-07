@@ -19,13 +19,13 @@
                             <thead>
                                 <tr>
                                     <th>OrderId</th>
-                                    <th>Subtotal</th>
-                                    <th>Shipping</th>
+                                    {{-- <th>Subtotal</th> --}}
+                                    {{-- <th>Shipping</th> --}}
                                     <th>Total</th>
                                     <th>First Name</th>
                                     <th>Mobile</th>
                                     <th>Email</th>
-                                    <th>Zipcode</th>
+                                    {{-- <th>Zipcode</th> --}}
                                     <th>Status</th>
                                     <th>Order Date</th>
                                 </tr>
@@ -34,13 +34,13 @@
                                 @foreach ($orders as $order)
                                 <tr>
                                     <td>{{$order->id}}</td>
-                                    <td>{{ "Rp " . number_format($order['subtotal'],2,',','.') }}</td>
-                                    <td>{{ "Rp " . number_format($order['shipping_cost'],2,',','.') }}</td>
+                                    {{-- <td>{{ "Rp " . number_format($order['subtotal'],2,',','.') }}</td> --}}
+                                    {{-- <td>{{ "Rp " . number_format($order['shipping_cost'],2,',','.') }}</td> --}}
                                     <td>{{ "Rp " . number_format($order['total'],2,',','.') }}</td>
                                     <td>{{$order->firstname}}</td>
                                     <td>{{$order->mobile}}</td>
                                     <td>{{$order->email}}</td>
-                                    <td>{{$order->zipcode}}</td>
+                                    {{-- <td>{{$order->zipcode}}</td> --}}
                                     <td>{{$order->status}}</td>
                                     <td>{{$order->created_at}}</td>
                                 </tr>

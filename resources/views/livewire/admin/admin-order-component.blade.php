@@ -1027,34 +1027,23 @@ ul.in li {
 
 
     <div class="container">
-            <div id="bootstrap-sidebar" class="light-theme big-icon-menu">
-                <ul class="sidebar-nav">
-                    <li class="active"> <a href="#" wire:click.prevent="orderFilter('all')"><i class="fa fa-list-alt" aria-hidden="true" title="All"></i><span class="menu-text">All</span></a>
-                    </li>
-                    <li> <a href="#" wire:click.prevent="orderFilter('ordered')"><i class="fa fa-pencil-square" aria-hidden="true" title="Ordered"></i><span class="menu-text">Ordered</span></a>
-                    </li>
-                    <li> <a href="#" wire:click.prevent="orderFilter('paid')"><i class="fa fa fa-money" aria-hidden="true" title="Paid" type="text"></i> <span class="menu-text">Paid</span></a>
-                    </li>
-                    <li> <a href="#"><i class="fa fa-check-square" aria-hidden="true" title="Confirmed"></i> <span class="menu-text">Approved</span></a>
-                    </li>
-                    <li> <a href="#"><i class="fa fa-truck" aria-hidden="true" title="Delivered"></i></span> <span class="menu-text">Delivered</span></a>
-                    </li>
-                </ul>
-            </div>
-            {{-- <div id="bootstrap-sidebar" class="light-theme big-icon-menu">
-                <ul class="sidebar-nav">
-                    <li class="active"> <a href="#" wire:click.prevent="orderFilter('all')"><i class="fa fa-list-alt" aria-hidden="true" title="All"></i><span class="menu-text">All</span></a>
-                    </li>
-                    <li> <a href="#" wire:click.prevent="orderFilter('ordered')"><i class="fa fa-pencil-square" aria-hidden="true" title="Ordered"></i><span class="menu-text">Ordered</span></a>
-                    </li>
-                    <li> <a href="#" wire:click.prevent="orderFilter('paid')"><i class="fa fa fa-money" aria-hidden="true" title="Paid" type="text"></i> <span class="menu-text">Paid</span></a>
-                    </li>
-                    <li> <a href="#"><i class="fa fa-check-square" aria-hidden="true" title="Confirmed"></i> <span class="menu-text">Approved</span></a>
-                    </li>
-                    <li> <a href="#"><i class="fa fa-truck" aria-hidden="true" title="Delivered"></i></span> <span class="menu-text">Delivered</span></a>
-                    </li>
-                </ul>
-            </div> --}}
+
+        <div id="bootstrap-sidebar" class="light-theme big-icon-menu">
+            <ul class="sidebar-nav">
+                <li> <a href="#" wire:click.prevent="orderFilter('all')"><i class="fa fa-list-alt" aria-hidden="true" title="All"></i><span class="menu-text">All</span></a>
+                </li>
+                <li> <a href="#" wire:click.prevent="orderFilter('ordered')"><i class="fa fa-pencil-square" aria-hidden="true" title="Ordered"></i><span class="menu-text">Ordered</span></a>
+                </li>
+                {{-- <li> <a href="#" wire:click.prevent="orderFilter('paid')"><i class="fa fa fa-money" aria-hidden="true" title="Paid" type="text"></i> <span class="menu-text">Paid</span></a>
+                </li> --}}
+                <li class="{{ ($status==='paid') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('paid')"><i class="fa fa fa-money" aria-hidden="true" title="Paid" type="text"></i> <span class="menu-text">Paid</span></a>
+                </li>
+                <li> <a href="#"><i class="fa fa-check-square" aria-hidden="true" title="Confirmed"></i> <span class="menu-text">Approved</span></a>
+                </li>
+                <li> <a href="#"><i class="fa fa-truck" aria-hidden="true" title="Delivered"></i></span> <span class="menu-text">Delivered</span></a>
+                </li>
+            </ul>
+        </div>
 
             <article class="card">
                 <header class="card-header ml-3"><strong>All Orders - Status: {{$status}}</strong></header>

@@ -16,6 +16,11 @@
             display: block !important;
         }
 
+        .txt-bl {
+            color: #000;
+            font-size: 26px !important;
+        }
+
         .card{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;background-color: #fff;background-clip: border-box;border: 1px solid rgba(0, 0, 0, 0.1);border-radius: 0.10rem}
         .card-header:first-child{border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0}.card-header{padding: 0.75rem 1.25rem;margin-bottom: 0;background-color: #fff;border-bottom: 1px solid rgba(0, 0, 0, 0.1)}.track{position: relative;background-color: #ddd;height: 7px;display: -webkit-box;display: -ms-flexbox;display: flex;margin-bottom: 60px;margin-top: 50px;margin-left: 10px;
         width: 72vw; max-width:72vw;
@@ -103,13 +108,15 @@
     position: fixed;
     left: 50px;
     width: 0;
-    height: 100%;
+    /* height: 100%; */
+    height: 47vh;
     margin-left: -50px;
     overflow-y: auto;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    opacity: 0.5;
 }
 
 #wrapper.toggled #bootstrap-sidebar {

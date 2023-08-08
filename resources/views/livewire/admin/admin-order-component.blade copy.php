@@ -16,6 +16,11 @@
             display: block !important;
         }
 
+        .txt-bl {
+            color: #000;
+            font-size: 26px !important;
+        }
+
         .card{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;background-color: #fff;background-clip: border-box;border: 1px solid rgba(0, 0, 0, 0.1);border-radius: 0.10rem}
         .card-header:first-child{border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0}.card-header{padding: 0.75rem 1.25rem;margin-bottom: 0;background-color: #fff;border-bottom: 1px solid rgba(0, 0, 0, 0.1)}.track{position: relative;background-color: #ddd;height: 7px;display: -webkit-box;display: -ms-flexbox;display: flex;margin-bottom: 60px;margin-top: 50px;margin-left: 10px;
         width: 72vw; max-width:72vw;
@@ -103,13 +108,15 @@
     position: fixed;
     left: 50px;
     width: 0;
-    height: 100%;
+    /* height: 100%; */
+    height: 55vh;
     margin-left: -50px;
     overflow-y: auto;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    opacity: 0.5;
 }
 
 #wrapper.toggled #bootstrap-sidebar {
@@ -1018,74 +1025,26 @@ ul.in li {
     <script src="https://use.fontawesome.com/releases/v5.7.2/css/all.css"></script>
     <script src="js/sidebar.js?ver=2"></script>
 
-<script>
-        $(document).ready(function () {
 
-if($(window).width() >= 768){
-
- if($('#bootstrap-sidebar').hasClass('icon-menu')) {
-    localStorage.setItem("default-padding", "60px");
-  $('#wrapper').css('padding-left','60px');
-  console.log('icon');
-}
-
-   else if($('#bootstrap-sidebar').hasClass('text-menu')) {
-       localStorage.setItem("default-padding", "150px");
-  $('#wrapper').css('padding-left','150px');
-  console.log('text');
-}
-else if($('#bootstrap-sidebar').hasClass('big-icon-menu')) {
-    localStorage.setItem("default-padding", "100px");
-  $('#wrapper').css('padding-left','100px');
-  console.log('big');
-}
-else{
-    $('#wrapper').css('padding-left','80px');
-    localStorage.setItem("default-padding", "80px");
-    console.log('ntg');
-}
-
-}
-
-});
-
-$("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    let default_padding=localStorage.getItem('default-padding');
-    var origin_padding = $("#wrapper").css("padding-left");
-    if(origin_padding=='0px'){
-    $('#wrapper').css('padding-left', default_padding);
-    }
-    else{
-    $('#wrapper').css('padding-left','0px');
-    }
-    $("#wrapper").toggleClass("toggled");
-});
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-</script>
     <div class="container">
-            </nav>
-            <div id="bootstrap-sidebar" class="light-theme big-icon-menu">
+
+        <div id="bootstrap-sidebar" class="light-theme big-icon-menu">
             <ul class="sidebar-nav">
-                <li class="active"> <a href="#"><i class="fa fa-list-alt" aria-hidden="true" title="All"></i><span class="menu-text">All</span></a>
+                <li class="{{ ($status==='all') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('all')"><i class="fa fa-list-alt" aria-hidden="true" title="All"></i><span class="menu-text">All</span></a>
                 </li>
-                <li> <a href="#"><i class="fa fa-pencil-square" aria-hidden="true" title="Ordered"></i><span class="menu-text">Ordered</span></a>
+                <li class="{{ ($status==='ordered') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('ordered')"><i class="fa fa-pencil-square" aria-hidden="true" title="Ordered"></i><span class="menu-text">Ordered</span></a>
                 </li>
-                <li> <a href="#" wire:click.prevent="orderFilter('paid')"><i class="fa fa fa-money" aria-hidden="true" title="Paid" type="text"></i> <span class="menu-text">Paid</span></a>
+                <li class="{{ ($status==='paid') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('paid')"><i class="fa fa fa-money" aria-hidden="true" title="Paid" type="text"></i> <span class="menu-text">Paid</span></a>
                 </li>
-                <li> <a href="#"><i class="fa fa-check-square" aria-hidden="true" title="Confirmed"></i> <span class="menu-text">Approved</span></a>
+                <li class="{{ ($status==='approved') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('approved')"><i class="fa fa-check-square" aria-hidden="true" title="Confirmed"></i> <span class="menu-text">Approved</span></a>
                 </li>
-                <li> <a href="#"><i class="fa fa-truck" aria-hidden="true" title="Delivered"></i></span> <span class="menu-text">Delivered</span></a>
+                <li class="{{ ($status==='delivered') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('delivered')"><i class="fa fa-truck" aria-hidden="true" title="Delivered"></i></span> <span class="menu-text">Delivered</span></a>
                 </li>
             </ul>
-            </div>
+        </div>
 
             <article class="card">
-                <header class="card-header ml-3"><strong>All Orders</strong></header>
+                <header class="card-header ml-3"><strong>All Orders - Status: {{$status}}</strong></header>
                 <div class="card-body ml-3">
                     @foreach ($orders as $order)
 
@@ -1106,8 +1065,21 @@ $("#menu-toggle").click(function(e) {
                                 <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Paid</span> </div>
                             @endif
 
-                            <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Approved </span> </div>
-                            <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Delivered</span> </div>
+                            @if($order->approved_date)
+                                <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Approved</span> {{$order->approved_date}}</div>
+                            @else
+                                <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Approved</span> </div>
+                            @endif
+
+                            @if($order->delivered_date)
+                                <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Delivered</span> {{$order->delivered_date}}</div>
+                            @else
+                                <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Delivered</span> </div>
+                            </span> </div>
+                            @endif
+
+                            {{-- <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Approved </span> </div>
+                            <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Delivered</span> </div> --}}
                         </div>
 
                     </article>

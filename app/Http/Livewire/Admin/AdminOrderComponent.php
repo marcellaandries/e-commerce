@@ -46,6 +46,17 @@ class AdminOrderComponent extends Component
             $orders = Order::where('status', 'paid')->orderBy('created_at','DESC')->paginate(12);
             return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'paid'])->layout('layouts.base');
         }
+
+        else if($this->status === "approved")
+        {
+            $orders = Order::where('status', 'approved')->orderBy('created_at','DESC')->paginate(12);
+            return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'approved'])->layout('layouts.base');
+        }
+        else if($this->status === "delivered")
+        {
+            $orders = Order::where('status', 'delivered')->orderBy('created_at','DESC')->paginate(12);
+            return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'delivered'])->layout('layouts.base');
+        }
     }
 
     public function orderFilter($status)
@@ -58,7 +69,6 @@ class AdminOrderComponent extends Component
             ]);
             // return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'all'])->layout('layouts.base');
             return view('livewire.admin.admin-order-component')->layout('layouts.base');
-
         }
         else if($status === "ordered")
         {
@@ -76,6 +86,21 @@ class AdminOrderComponent extends Component
                 'status' => "paid",
             ]);
             // return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'paid'])->layout('layouts.base');
+            return view('livewire.admin.admin-order-component')->layout('layouts.base');
+        }
+
+        else if($status === "approved")
+        {
+            session()->put('orders',[
+                'status' => "approved",
+            ]);
+            return view('livewire.admin.admin-order-component')->layout('layouts.base');
+        }
+        else if($status === "delivered")
+        {
+            session()->put('orders',[
+                'status' => "delivered",
+            ]);
             return view('livewire.admin.admin-order-component')->layout('layouts.base');
         }
     }

@@ -18,7 +18,7 @@
 
         .txt-bl {
             color: #000;
-            font-size: 26px !important;
+            font-size: 32px !important;
         }
 
         .card{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;background-color: #fff;background-clip: border-box;border: 1px solid rgba(0, 0, 0, 0.1);border-radius: 0.10rem}
@@ -140,7 +140,8 @@
 .sidebar-nav {
     position: absolute;
     top: 10px;
-    min-width: 200px;
+    /* min-width: 200px; */
+    min-width: 100px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -237,7 +238,7 @@ ul.in li {
 /* Menu Icon Sizes */
 
 .big-icon-menu {
-    font-size: 45px;
+    font-size: 40px;
 }
 
 .big-icon-menu ul.sidebar-nav li a span.menu-text,

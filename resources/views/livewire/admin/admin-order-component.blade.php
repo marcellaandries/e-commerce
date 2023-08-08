@@ -1050,7 +1050,7 @@ ul.in li {
             </div>
 
             <article class="card">
-                <header class="card-header ml-3"><strong>All Orders</strong></header>
+                <header class="card-header ml-3"><strong>All Orders - Status: {{$status}}</strong></header>
                 <div class="card-body ml-3">
                     @foreach ($orders as $order)
 

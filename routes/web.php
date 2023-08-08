@@ -142,7 +142,9 @@ Route::middleware([
     Route::get('/admin/product/edit/{product_slug}',AdminEditProductComponent::class)->name('admin.editproduct');
 
     Route::get('/admin/orders',AdminOrderComponent::class)->name('admin.orders');
-    Route::get('admin/orders/{status}', [AdminOrderComponent::class, 'orderFilter'])->name('order.status');
+    Route::get('admin/orders_status/{status}', [AdminOrderComponent::class, 'orderFilter'])->name('order.status');
+    // Route::get('/admin/orders/{order_id}',AdminOrderDetailsComponent::class)->name('admin.orderdetails');
+    // Route::get('/admin/orders_detail',AdminOrderDetailsComponent::class)->name('admin.orderdetails');
     Route::get('/admin/orders/{order_id}',AdminOrderDetailsComponent::class)->name('admin.orderdetails');
 
     // Route::get('/admin/slider',AdminHomeSliderComponent::class)->name('admin.homeslider');

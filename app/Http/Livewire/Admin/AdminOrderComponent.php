@@ -23,6 +23,7 @@ class AdminOrderComponent extends Component
     // public function render(Request $request)
     public function render()
     {
+        // dd("ini status: ", $this->status);
         if (session()->get('orders')['status'] !== null){
             $this->status = session()->get('orders')['status'];
         }
@@ -36,16 +37,16 @@ class AdminOrderComponent extends Component
             $orders = Order::where('status', 'ordered')->orderBy('created_at','DESC')->paginate(12);
             return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'ordered'])->layout('layouts.base');
         }
+        else if($this->status === "waiting_for_payment")
+        {
+            $orders = Order::where('status', 'waiting_for_payment')->orderBy('created_at','DESC')->paginate(12);
+            return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'waiting_for_payment'])->layout('layouts.base');
+        }
+
         else if($this->status === "paid")
         {
             $orders = Order::where('status', 'paid')->orderBy('created_at','DESC')->paginate(12);
             return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'paid'])->layout('layouts.base');
-        }
-
-        else if($this->status === "approved")
-        {
-            $orders = Order::where('status', 'approved')->orderBy('created_at','DESC')->paginate(12);
-            return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'approved'])->layout('layouts.base');
         }
         else if($this->status === "delivered")
         {
@@ -74,20 +75,18 @@ class AdminOrderComponent extends Component
             // return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'paid'])->layout('layouts.base');
             return view('livewire.admin.admin-order-component')->layout('layouts.base');
         }
-        else if($status === "paid")
+        else if($status === "waiting_for_payment")
         {
-            // $orders = Order::where('status', 'paid')->orderBy('created_at','DESC')->paginate(12);
             session()->put('orders',[
-                'status' => "paid",
+                'status' => "waiting_for_payment",
             ]);
-            // return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'paid'])->layout('layouts.base');
             return view('livewire.admin.admin-order-component')->layout('layouts.base');
         }
 
-        else if($status === "approved")
+        else if($status === "paid")
         {
             session()->put('orders',[
-                'status' => "approved",
+                'status' => "paid",
             ]);
             return view('livewire.admin.admin-order-component')->layout('layouts.base');
         }

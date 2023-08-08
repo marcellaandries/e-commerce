@@ -1035,9 +1035,9 @@ ul.in li {
                 </li>
                 <li class="{{ ($status==='ordered') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('ordered')"><i class="fa fa-pencil-square" aria-hidden="true" title="Ordered"></i><span class="menu-text">Ordered</span></a>
                 </li>
-                <li class="{{ ($status==='paid') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('paid')"><i class="fa fa fa-money" aria-hidden="true" title="Paid" type="text"></i> <span class="menu-text">Paid</span></a>
+                <li class="{{ ($status==='waiting_for_payment') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('waiting_for_payment')"><i class="fa fa fa-money" aria-hidden="true" title="Waiting for Payment" type="text"></i> <span class="menu-text">Waiting for Payment</span></a>
                 </li>
-                <li class="{{ ($status==='approved') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('approved')"><i class="fa fa-check-square" aria-hidden="true" title="Confirmed"></i> <span class="menu-text">Approved</span></a>
+                <li class="{{ ($status==='paid') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('paid')"><i class="fa fa-check-square" aria-hidden="true" title="Paid"></i> <span class="menu-text">Paid</span></a>
                 </li>
                 <li class="{{ ($status==='delivered') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('delivered')"><i class="fa fa-truck" aria-hidden="true" title="Delivered"></i></span> <span class="menu-text">Delivered</span></a>
                 </li>
@@ -1060,27 +1060,23 @@ ul.in li {
 
                         <div class="track">
                             <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Created</span> {{$order->created_at}}</div>
+                            @if($order->waiting_for_payment_date)
+                                <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Waiting for Payment</span> {{$order->waiting_for_payment_date}}</div>
+                            @else
+                                <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Waiting for Payment</span> </div>
+                            @endif
+
                             @if($order->paid_date)
                                 <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Paid</span> {{$order->paid_date}}</div>
                             @else
                                 <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Paid</span> </div>
                             @endif
 
-                            @if($order->approved_date)
-                                <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Approved</span> {{$order->approved_date}}</div>
-                            @else
-                                <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Approved</span> </div>
-                            @endif
-
                             @if($order->delivered_date)
                                 <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Delivered</span> {{$order->delivered_date}}</div>
                             @else
                                 <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Delivered</span> </div>
-                            </span> </div>
                             @endif
-
-                            {{-- <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">Approved </span> </div>
-                            <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Delivered</span> </div> --}}
                         </div>
 
                     </article>

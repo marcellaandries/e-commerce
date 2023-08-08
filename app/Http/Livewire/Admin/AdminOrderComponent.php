@@ -27,9 +27,14 @@ class AdminOrderComponent extends Component
             $orders = Order::orderBy('created_at','DESC')->paginate(12);
             return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'all'])->layout('layouts.base');
         }
+        else if($this->status === "ordered")
+        {
+            $orders = Order::where('status', 'ordered')->orderBy('created_at','DESC')->paginate(12);
+            return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'ordered'])->layout('layouts.base');
+        }
         else if($this->status === "paid")
         {
-            $orders = Order::where('status','like','%paid%')->orderBy('created_at','DESC')->paginate(12);
+            $orders = Order::where('status', 'paid')->orderBy('created_at','DESC')->paginate(12);
             return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'paid'])->layout('layouts.base');
         }
     }
@@ -38,7 +43,7 @@ class AdminOrderComponent extends Component
     {
         if($status === "all")
         {
-            $orders = Order::orderBy('created_at','DESC')->paginate(12);
+            // $orders = Order::orderBy('created_at','DESC')->paginate(12);
             session()->put('orders',[
                 'status' => "all",
             ]);
@@ -46,9 +51,18 @@ class AdminOrderComponent extends Component
             return view('livewire.admin.admin-order-component')->layout('layouts.base');
 
         }
+        else if($status === "ordered")
+        {
+            // $orders = Order::where('status', 'ordered')->orderBy('created_at','DESC')->paginate(12);
+            session()->put('orders',[
+                'status' => "ordered",
+            ]);
+            // return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'paid'])->layout('layouts.base');
+            return view('livewire.admin.admin-order-component')->layout('layouts.base');
+        }
         else if($status === "paid")
         {
-            $orders = Order::where('status', 'paid')->orderBy('created_at','DESC')->paginate(12);
+            // $orders = Order::where('status', 'paid')->orderBy('created_at','DESC')->paginate(12);
             session()->put('orders',[
                 'status' => "paid",
             ]);

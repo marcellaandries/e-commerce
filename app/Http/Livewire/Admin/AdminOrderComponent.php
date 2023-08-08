@@ -14,6 +14,9 @@ class AdminOrderComponent extends Component
     {
         if (empty($this->status)) {
             $this->status="all";
+            session()->put('orders',[
+                'status' => "all",
+            ]);
         }
     }
 

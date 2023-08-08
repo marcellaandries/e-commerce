@@ -7309,3 +7309,13 @@ svg {
   font-size: 20px;
 }
 
+.icon_plus{
+    background: #00006c !important;
+    /* color:red; */
+}
+
+.icon_minus-06{
+    background: #00006c !important;
+    opacity : 0%
+    /* color:green; */
+}

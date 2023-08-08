@@ -1570,6 +1570,7 @@
     {{-- <script src="{{ asset('assets/js/rajaongkir.js') }}"></script> --}}
     <script src="{{ asset('assets/js/delivery.js') }}"></script>
     <script src="{{ asset('assets/js/rupiah.js') }}"></script>
+    <script src="{{ asset('assets/js/active_link.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="{{ asset('assets/js/jquery.session.js') }}"></script>

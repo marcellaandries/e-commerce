@@ -1055,7 +1055,7 @@ ul.in li {
                             <h5><strong>Order ID: </strong>{{$order->id}}</h5>
                             <div class="col mt-08 mb-08"> <strong>Status:</strong> <span class="label label-primary lb-sm">{{$order->status}}</span></div>
                             <div class="col mb-08"> <strong>Shipping by:</strong> {{$order->service}}
-                            <a href="/admin/orders" class="detail btn pull-right mr-3" data-abc="true"> <i class="fa fa-chevron-right"></i> Order Detail</a>
+                            <a href="{{route('admin.orderdetails',['order_id'=>$order->id])}}" class="detail btn pull-right mr-3" data-abc="true"> <i class="fa fa-chevron-right"></i> Order Detail</a>
                         </div>
 
                         <div class="track">
@@ -1089,7 +1089,8 @@ ul.in li {
 
                     @endforeach
                 </div>
-                {{$orders->links()}}
+                <span class="ml-3">{{$orders->links()}}
+                </span>
             </article>
 
 

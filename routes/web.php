@@ -10,6 +10,7 @@ use App\Http\Livewire\Admin\AdminAddProductComponent;
 use App\Http\Livewire\Admin\AdminEditProductComponent;
 
 use App\Http\Livewire\Admin\AdminOrderComponent;
+use App\Http\Livewire\Admin\AdminOrderDetailsComponent;
 
 // use App\Http\Livewire\Admin\AdminHomeSliderComponent;
 // use App\Http\Livewire\Admin\AdminAddHomeSliderComponent;
@@ -142,6 +143,7 @@ Route::middleware([
 
     Route::get('/admin/orders',AdminOrderComponent::class)->name('admin.orders');
     Route::get('admin/orders/{status}', [AdminOrderComponent::class, 'orderFilter'])->name('order.status');
+    Route::get('/admin/orders/{order_id}',AdminOrderDetailsComponent::class)->name('admin.orderdetails');
 
     // Route::get('/admin/slider',AdminHomeSliderComponent::class)->name('admin.homeslider');
     // Route::get('/admin/slider/add',AdminAddHomeSliderComponent::class)->name('admin.addhomeslider');

@@ -23,14 +23,6 @@ class AdminOrderComponent extends Component
     // public function render(Request $request)
     public function render()
     {
-        // $current_uri = request()->segments();
-        // dd($current_uri);
-        // array:2 [▼
-        // 0 => "admin"
-        // 1 => "orders"
-        // ]
-        // $segment = $request->segment(1);
-        // dd($segment);
         if (session()->get('orders')['status'] !== null){
             $this->status = session()->get('orders')['status'];
         }

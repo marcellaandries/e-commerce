@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2023 at 08:44 AM
+-- Generation Time: Aug 08, 2023 at 09:05 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -227,9 +227,9 @@ INSERT INTO `orders` (`id`, `user_id`, `subtotal`, `discount`, `tax`, `total`, `
 (49, 6, 4180000, 0, 0, 4450000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'ordered', 'jne', 'REG', 270000, 0, '2023-08-07 04:51:04', '2023-08-07 04:51:04', NULL, NULL, NULL),
 (50, 6, 6240000, 0, 0, 6394000, 'Marcella Chou', NULL, '081281322538', 'sarangheyo8118@gmail.com', 'Pluit Avenue No. 11, Pluit Utara', NULL, 'Banjarnegara', 'Jawa Tengah', 'Indonesia', '53419', 'ordered', 'jne', 'REG', 154000, 0, '2023-08-07 05:22:42', '2023-08-07 05:22:42', NULL, NULL, NULL),
 (51, 6, 7620000, 0, 0, 7804000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'ordered', 'tiki', 'ECO', 184000, 0, '2023-08-07 05:58:11', '2023-08-07 05:58:11', NULL, NULL, NULL),
-(52, 6, 6240000, 0, 0, 6450000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'ordered', 'jne', 'REG', 210000, 0, '2023-08-07 06:10:24', '2023-08-07 06:10:24', NULL, NULL, NULL),
-(53, 6, 6000000, 0, 0, 6132000, 'Marcella Chou', NULL, '081281322538', 'sarangheyo8118@gmail.com', 'Pluit Avenue No. 11, Pluit Utara', NULL, 'Banjarnegara', 'Jawa Tengah', 'Indonesia', '53419', 'ordered', 'jne', 'REG', 132000, 0, '2023-08-07 06:11:39', '2023-08-07 06:11:39', NULL, NULL, NULL),
-(54, 6, 6240000, 0, 0, 6310000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 70000, 0, '2023-08-07 06:17:43', '2023-08-07 06:17:43', NULL, NULL, NULL);
+(52, 6, 6240000, 0, 0, 6450000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'approved', 'jne', 'REG', 210000, 0, '2023-08-07 06:10:24', '2023-08-07 06:10:24', '2023-08-08 02:12:24', '2023-08-08 04:10:24', NULL),
+(53, 6, 6000000, 0, 0, 6132000, 'Marcella Chou', NULL, '081281322538', 'sarangheyo8118@gmail.com', 'Pluit Avenue No. 11, Pluit Utara', NULL, 'Banjarnegara', 'Jawa Tengah', 'Indonesia', '53419', 'delivered', 'jne', 'REG', 132000, 0, '2023-08-07 06:11:39', '2023-08-07 06:11:39', '2023-08-07 09:15:39', '2023-08-07 12:10:39', '2023-08-08 06:02:39'),
+(54, 6, 6240000, 0, 0, 6310000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'paid', 'jne', 'CTC', 70000, 0, '2023-08-07 06:17:43', '2023-08-07 06:17:43', '2023-08-07 09:20:43', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -480,7 +480,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('2ALInavOACMX3QkWpRw2kNX7KhsWVNlClx1ml6nE', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiaGoyajI4Q3lXa0tuRzIyQUNzVlYzVkU3cGY2NGlnSGVVRlVYekEyNCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9zaG9wIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjU6InV0eXBlIjtzOjM6IkFETSI7fQ==', 1691390601);
+('zZbf1ogZO5uPgg3zRR18fHT02EytucOrKZDDhUXU', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiRmp0VERZdFdDdHpqZnh2NTNiYXdJU1RSRWVKMkJWMFRmSEZzNGhybyI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozNDoiaHR0cDovL2xvY2FsaG9zdDo4MDAwL2FkbWluL29yZGVycyI7fXM6OToiX3ByZXZpb3VzIjthOjE6e3M6MzoidXJsIjtzOjM0OiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYWRtaW4vb3JkZXJzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjU6InV0eXBlIjtzOjM6IkFETSI7czo2OiJvcmRlcnMiO2E6MTp7czo2OiJzdGF0dXMiO3M6Nzoib3JkZXJlZCI7fX0=', 1691478198);
 
 -- --------------------------------------------------------
 

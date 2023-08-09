@@ -4,7 +4,21 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Ordered Details
+                        <div class="row">
+                            <div class="col-md-6">
+                                Ordered Items
+                            </div>
+                            <div class="col-md-6">
+                                <a href="{{route('admin.orders')}}" class="btn btn-primary pull-right">All Orders</a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                        $o_date = date('d-m-Y H:i:s', strtotime($order->created_at));
+                        // echo $order->paid_date;
+                    ?>
+                    <div class="mr-3 pull-right">
+                        <h5>Order Date :{{$o_date}}</h5>
                     </div>
                     <div class="panel-body">
                         <div class="wrap-iten-in-cart">
@@ -96,7 +110,24 @@
                         Transaction
                     </div>
                     <div class="panel-body">
-
+                        <table class="table">
+                            <tr>
+                                <th>Transaction Mode</th>
+                                <td>{{$order->transaction->mode}}</td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td>{{$order->transaction->status}}</td>
+                            </tr>
+                            <?php
+                                $p_date = date('d-m-Y H:i:s', strtotime($order->paid_date));
+                                // echo $order->paid_date;
+                            ?>
+                            <tr>
+                                <th>Payment Approval Date</th>
+                                <td>{{$p_date}}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>

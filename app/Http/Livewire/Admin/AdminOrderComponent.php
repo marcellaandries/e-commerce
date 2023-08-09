@@ -38,37 +38,9 @@ class AdminOrderComponent extends Component
 
     public function orderFilter($status)
     {
-        if($status === "all")
-        {
-            session()->put('orders',[
-                'status' => "all",
-            ]);
-        }
-        else if($status === "ordered")
-        {
-            session()->put('orders',[
-                'status' => "ordered",
-            ]);
-        }
-        else if($status === "waiting_for_payment")
-        {
-            session()->put('orders',[
-                'status' => "waiting_for_payment",
-            ]);
-        }
-
-        else if($status === "paid")
-        {
-            session()->put('orders',[
-                'status' => "paid",
-            ]);
-        }
-        else if($status === "delivered")
-        {
-            session()->put('orders',[
-                'status' => "delivered",
-            ]);
-        }
+        session()->put('orders',[
+            'status' => $status,
+        ]);
         return view('livewire.admin.admin-order-component')->layout('layouts.base');
     }
 }

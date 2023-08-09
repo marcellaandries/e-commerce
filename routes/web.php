@@ -41,6 +41,9 @@ use App\Http\Livewire\AddAddressComponent;
 
 use App\Http\Livewire\EditAddressComponent;
 
+use App\Http\Livewire\User\UserOrderComponent;
+use App\Http\Livewire\User\UserOrderDetailsComponent;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -106,6 +109,10 @@ Route::get('origin={city_origin}&destination={city_destination}&weight={weight}&
 Route::get('province', [AddAddressComponent::class, 'get_province'])->name('province');
 Route::get('city/{id}', [AddAddressComponent::class, 'get_city'])->name('city');
 
+Route::get('/user/orders',UserOrderComponent::class)->name('user.orders');
+// Route::get('admin/orders_status/{status}', [AdminOrderComponent::class, 'orderFilter'])->name('order.status');
+// Route::get('/user/orders/{order_id}',UserOrderDetailsComponent::class)->name('user.orderdetails');
+Route::get('/user/orders_det',UserOrderDetailsComponent::class)->name('user.orderdetails');
 
 // Route::middleware([
 //     'auth:sanctum',

@@ -12,7 +12,7 @@
 
     <table style="width: 800px; text-align:right">
         <thead>
-            {{-- <th>Image</th> --}}
+            <th>Image</th>
             <th>Name</th>
             <th>Quantity</th>
             <th>Price</th>
@@ -21,7 +21,7 @@
         <tbody>
             @foreach ($order->orderItems as $item)
             <tr>
-                {{-- <td><img src="{{ asset('assets/images/products') }}/{{$item->$product->image}}" width="100"></td> --}}
+                <td><img src="{{ asset('assets/images/products') }}/{{$item->product->image}}" width="100"></td>
                 <td>{{$item->name}}</td>
                 <td>{{$item->quantity}}</td>
                 <td>{{ "Rp " . number_format($item['price'],2,',','.') }}</td>

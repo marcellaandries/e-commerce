@@ -20,4 +20,9 @@ class AdminOrderDetailsComponent extends Component
         // dd($order);
         return view('livewire.admin.admin-order-details-component',['order'=>$order])->layout('layouts.base');
     }
+
+    public function rupiah($var_number){
+        $rupiah_result = "Rp " . number_format($var_number,2,',','.');
+        return $rupiah_result;
+    }
 }

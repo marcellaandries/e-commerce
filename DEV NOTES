@@ -162,3 +162,27 @@ MAIL_FROM_ADDRESS=marcella.andries11@gmail.com
 MAIL_FROM_NAME="${APP_NAME}"
 
 php artisan config:clear
+
+===============
+upload bukti bayar table
+CREATE TABLE `payment_receipt` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `transaction_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `order_id` bigint(20) UNSIGNED NOT NULL,
+  `transfer_date` varchar(255) DEFAULT NULL,
+  `sender-name` varchar(255) DEFAULT NULL,
+  `paid_amount` int(25) DEFAULT NULL,
+  `payment_receipt` varchar(255) DEFAULT NULL,
+  `status` enum('pending','approved','declined','refunded') NOT NULL DEFAULT 'pending',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE `payment_receipt`
+  ADD CONSTRAINT `payment_receipt_transaction_id_foreign` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `tpayment_receipt_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `payment_receipt_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+COMMIT;
+
+=============================

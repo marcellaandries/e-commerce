@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 08, 2023 at 12:08 PM
+-- Generation Time: Aug 09, 2023 at 01:01 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -159,7 +159,7 @@ CREATE TABLE `orders` (
   `province` varchar(255) NOT NULL,
   `country` varchar(255) NOT NULL,
   `zipcode` varchar(255) NOT NULL,
-  `status` enum('ordered','delivered','canceled','waiting_for_payment','paid') NOT NULL DEFAULT 'ordered',
+  `status` enum('ordered','delivered','canceled','waiting_for_payment','processed') NOT NULL DEFAULT 'ordered',
   `courier` varchar(255) NOT NULL,
   `service` varchar(255) NOT NULL,
   `shipping_cost` int(25) NOT NULL,
@@ -167,7 +167,7 @@ CREATE TABLE `orders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `waiting_for_payment_date` timestamp NULL DEFAULT NULL,
-  `paid_date` timestamp NULL DEFAULT NULL,
+  `processed_date` timestamp NULL DEFAULT NULL,
   `delivered_date` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -175,7 +175,7 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`id`, `user_id`, `subtotal`, `discount`, `tax`, `total`, `firstname`, `lastname`, `mobile`, `email`, `line1`, `line2`, `city`, `province`, `country`, `zipcode`, `status`, `courier`, `service`, `shipping_cost`, `is_shipping_different`, `created_at`, `updated_at`, `waiting_for_payment_date`, `paid_date`, `delivered_date`) VALUES
+INSERT INTO `orders` (`id`, `user_id`, `subtotal`, `discount`, `tax`, `total`, `firstname`, `lastname`, `mobile`, `email`, `line1`, `line2`, `city`, `province`, `country`, `zipcode`, `status`, `courier`, `service`, `shipping_cost`, `is_shipping_different`, `created_at`, `updated_at`, `waiting_for_payment_date`, `processed_date`, `delivered_date`) VALUES
 (1, 6, 6240000, 0, 0, 6310000, 'MARCELLA', 'ANDRIES', '08128811225588', 'marcella@gmail.com', 'BUKIT GADING VILLA NO. 88', 'PAGAR EMAS', 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 70000, 0, '2023-07-31 04:42:23', '2023-07-31 04:42:23', NULL, NULL, NULL),
 (2, 6, 8850000, 0, 0, 8958000, 'MARCELLA', 'ANDRIES', '081298982948', 'cella@gm.com', 'BUKIT GADING INDAH 88', 'PAGAR EMAS', 'Kota Serang', 'Banten', 'Indonesia', '16350', 'ordered', 'jne', 'REG', 108000, 0, '2023-08-01 02:01:58', '2023-08-01 02:01:58', NULL, NULL, NULL),
 (3, 6, 1620000, 0, 0, 1690000, 'Marcella Andries', NULL, '081209849383', 'marcella@gmail.com', 'BGV 88', NULL, 'Kabupaten Bangka Barat', 'Bangka Belitung', 'Indonesia', '14330', 'ordered', 'jne', 'REG', 70000, 0, '2023-08-01 04:38:31', '2023-08-01 04:38:31', NULL, NULL, NULL),
@@ -227,9 +227,12 @@ INSERT INTO `orders` (`id`, `user_id`, `subtotal`, `discount`, `tax`, `total`, `
 (49, 6, 4180000, 0, 0, 4450000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'ordered', 'jne', 'REG', 270000, 0, '2023-08-07 04:51:04', '2023-08-07 04:51:04', NULL, NULL, NULL),
 (50, 6, 6240000, 0, 0, 6394000, 'Marcella Chou', NULL, '081281322538', 'sarangheyo8118@gmail.com', 'Pluit Avenue No. 11, Pluit Utara', NULL, 'Banjarnegara', 'Jawa Tengah', 'Indonesia', '53419', 'ordered', 'jne', 'REG', 154000, 0, '2023-08-07 05:22:42', '2023-08-07 05:22:42', NULL, NULL, NULL),
 (51, 6, 7620000, 0, 0, 7804000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'ordered', 'tiki', 'ECO', 184000, 0, '2023-08-07 05:58:11', '2023-08-07 05:58:11', NULL, NULL, NULL),
-(52, 6, 6240000, 0, 0, 6450000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'paid', 'jne', 'REG', 210000, 0, '2023-08-07 06:10:24', '2023-08-07 06:10:24', '2023-08-08 02:12:24', '2023-08-08 04:10:24', NULL),
+(52, 6, 6240000, 0, 0, 6450000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'processed', 'jne', 'REG', 210000, 0, '2023-08-07 06:10:24', '2023-08-07 06:10:24', '2023-08-08 02:12:24', '2023-08-09 04:10:24', NULL),
 (53, 6, 6000000, 0, 0, 6132000, 'Marcella Chou', NULL, '081281322538', 'sarangheyo8118@gmail.com', 'Pluit Avenue No. 11, Pluit Utara', NULL, 'Banjarnegara', 'Jawa Tengah', 'Indonesia', '53419', 'delivered', 'jne', 'REG', 132000, 0, '2023-08-07 06:11:39', '2023-08-07 06:11:39', '2023-08-07 09:15:39', '2023-08-07 12:10:39', '2023-08-08 06:02:39'),
-(54, 6, 6240000, 0, 0, 6310000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'waiting_for_payment', 'jne', 'CTC', 70000, 0, '2023-08-07 06:17:43', '2023-08-07 06:17:43', '2023-08-07 09:20:43', NULL, NULL);
+(54, 6, 6240000, 0, 0, 6310000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'waiting_for_payment', 'jne', 'CTC', 70000, 0, '2023-08-07 06:17:43', '2023-08-07 06:17:43', '2023-08-07 09:20:43', NULL, NULL),
+(55, 6, 7620000, 0, 0, 7764000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 144000, 0, '2023-08-09 01:21:23', '2023-08-09 01:21:23', NULL, NULL, NULL),
+(56, 6, 6240000, 0, 0, 6310000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 70000, 0, '2023-08-09 01:24:57', '2023-08-09 01:24:57', NULL, NULL, NULL),
+(57, 6, 4880000, 0, 0, 5010000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 130000, 0, '2023-08-09 01:43:33', '2023-08-09 01:43:33', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -349,7 +352,13 @@ INSERT INTO `order_items` (`id`, `product_id`, `order_id`, `name`, `price`, `qua
 (94, 2, 52, 'omnis animi repellendus error', 3000000, 1, '2023-08-07 06:10:24', '2023-08-07 06:10:24'),
 (95, 2, 53, 'omnis animi repellendus error', 3000000, 2, '2023-08-07 06:11:39', '2023-08-07 06:11:39'),
 (96, 1, 54, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-07 06:17:43', '2023-08-07 06:17:43'),
-(97, 2, 54, 'omnis animi repellendus error', 3000000, 1, '2023-08-07 06:17:43', '2023-08-07 06:17:43');
+(97, 2, 54, 'omnis animi repellendus error', 3000000, 1, '2023-08-07 06:17:43', '2023-08-07 06:17:43'),
+(98, 1, 55, 'doloremque nemo tempora quo', 1620000, 1, '2023-08-09 01:21:23', '2023-08-09 01:21:23'),
+(99, 2, 55, 'omnis animi repellendus error', 3000000, 2, '2023-08-09 01:21:23', '2023-08-09 01:21:23'),
+(100, 1, 56, 'doloremque nemo tempora quo', 1620000, 2, '2023-08-09 01:24:57', '2023-08-09 01:24:57'),
+(101, 2, 56, 'omnis animi repellendus error', 3000000, 1, '2023-08-09 01:24:57', '2023-08-09 01:24:57'),
+(102, 2, 57, 'omnis animi repellendus error', 3000000, 1, '2023-08-09 01:43:33', '2023-08-09 01:43:33'),
+(103, 3, 57, 'aperiam eos quam non', 940000, 2, '2023-08-09 01:43:33', '2023-08-09 01:43:33');
 
 -- --------------------------------------------------------
 
@@ -480,7 +489,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('GFYavIpJbFXY6hQRFaHYwznTpTunXd2ieLcdqWGp', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiRmJ4NkdiOUppUUZ0eXFSYm5yTzZNbDVSbXIxTVpsZDNiM1d1SURLUiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzQ6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hZG1pbi9vcmRlcnMiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6NToidXR5cGUiO3M6MzoiQURNIjtzOjY6Im9yZGVycyI7YToxOntzOjY6InN0YXR1cyI7czo5OiJkZWxpdmVyZWQiO31zOjE5OiJ3YWl0aW5nX2Zvcl9wYXltZW50IjthOjE6e3M6Njoic3RhdHVzIjtzOjE5OiJ3YWl0aW5nX2Zvcl9wYXltZW50Ijt9fQ==', 1691489221);
+('2wkpoPx4vSyXV6YUOpi5fyV7H53qSrikYspL3quN', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoiVmNoQnRjdnhBNGwwZVp1TkpwQWM2OUM0bk5tR0FZWlFwQVFsdDdvOCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC91c2VyL29yZGVycy81NiI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjY7czo1OiJ1dHlwZSI7czozOiJVU1IiO3M6Njoib3JkZXJzIjthOjE6e3M6Njoic3RhdHVzIjtzOjM6ImFsbCI7fX0=', 1691575438);
 
 -- --------------------------------------------------------
 
@@ -517,6 +526,10 @@ CREATE TABLE `transactions` (
   `order_id` bigint(20) UNSIGNED NOT NULL,
   `mode` enum('bank','card') NOT NULL,
   `status` enum('pending','approved','declined','refunded') NOT NULL DEFAULT 'pending',
+  `name` varchar(255) DEFAULT NULL,
+  `paid_amount` int(25) DEFAULT NULL,
+  `payment_receipt` varchar(255) DEFAULT NULL,
+  `transfer_date` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -525,61 +538,64 @@ CREATE TABLE `transactions` (
 -- Dumping data for table `transactions`
 --
 
-INSERT INTO `transactions` (`id`, `user_id`, `order_id`, `mode`, `status`, `created_at`, `updated_at`) VALUES
-(1, 6, 1, 'bank', 'pending', '2023-07-31 04:42:23', '2023-07-31 04:42:23'),
-(2, 6, 2, 'bank', 'pending', '2023-08-01 02:01:58', '2023-08-01 02:01:58'),
-(3, 6, 3, 'bank', 'pending', '2023-08-01 04:38:31', '2023-08-01 04:38:31'),
-(4, 6, 4, 'bank', 'pending', '2023-08-01 06:11:55', '2023-08-01 06:11:55'),
-(5, 6, 5, 'bank', 'pending', '2023-08-01 07:00:26', '2023-08-01 07:00:26'),
-(6, 6, 6, 'bank', 'pending', '2023-08-03 08:59:38', '2023-08-03 08:59:38'),
-(7, 6, 7, 'bank', 'pending', '2023-08-04 05:35:41', '2023-08-04 05:35:41'),
-(8, 6, 8, 'bank', 'pending', '2023-08-04 08:41:05', '2023-08-04 08:41:05'),
-(9, 6, 9, 'bank', 'pending', '2023-08-04 10:43:11', '2023-08-04 10:43:11'),
-(10, 6, 10, 'bank', 'pending', '2023-08-04 10:46:57', '2023-08-04 10:46:57'),
-(11, 6, 11, 'bank', 'pending', '2023-08-04 10:49:17', '2023-08-04 10:49:17'),
-(12, 6, 12, 'bank', 'pending', '2023-08-04 11:06:54', '2023-08-04 11:06:54'),
-(13, 6, 13, 'bank', 'pending', '2023-08-05 03:29:33', '2023-08-05 03:29:33'),
-(14, 6, 14, 'bank', 'pending', '2023-08-05 03:33:05', '2023-08-05 03:33:05'),
-(15, 6, 15, 'bank', 'pending', '2023-08-05 03:33:14', '2023-08-05 03:33:14'),
-(16, 6, 16, 'bank', 'pending', '2023-08-05 03:33:24', '2023-08-05 03:33:24'),
-(17, 6, 17, 'bank', 'pending', '2023-08-05 03:33:37', '2023-08-05 03:33:37'),
-(18, 6, 18, 'bank', 'pending', '2023-08-05 03:35:06', '2023-08-05 03:35:06'),
-(19, 6, 19, 'bank', 'pending', '2023-08-05 03:38:46', '2023-08-05 03:38:46'),
-(20, 6, 20, 'bank', 'pending', '2023-08-05 03:39:26', '2023-08-05 03:39:26'),
-(21, 6, 21, 'bank', 'pending', '2023-08-05 03:41:52', '2023-08-05 03:41:52'),
-(22, 6, 22, 'bank', 'pending', '2023-08-05 03:44:07', '2023-08-05 03:44:07'),
-(23, 6, 23, 'bank', 'pending', '2023-08-05 03:44:28', '2023-08-05 03:44:28'),
-(24, 6, 24, 'bank', 'pending', '2023-08-05 03:46:58', '2023-08-05 03:46:58'),
-(25, 6, 25, 'bank', 'pending', '2023-08-05 03:47:10', '2023-08-05 03:47:10'),
-(26, 6, 26, 'bank', 'pending', '2023-08-05 03:52:41', '2023-08-05 03:52:41'),
-(27, 6, 27, 'bank', 'pending', '2023-08-05 04:12:37', '2023-08-05 04:12:37'),
-(28, 6, 28, 'bank', 'pending', '2023-08-05 04:14:58', '2023-08-05 04:14:58'),
-(29, 6, 29, 'bank', 'pending', '2023-08-05 04:16:45', '2023-08-05 04:16:45'),
-(30, 6, 30, 'bank', 'pending', '2023-08-05 04:28:42', '2023-08-05 04:28:42'),
-(31, 6, 31, 'bank', 'pending', '2023-08-05 04:33:14', '2023-08-05 04:33:14'),
-(32, 6, 32, 'bank', 'pending', '2023-08-05 05:03:12', '2023-08-05 05:03:12'),
-(33, 6, 33, 'bank', 'pending', '2023-08-05 05:05:44', '2023-08-05 05:05:44'),
-(34, 6, 34, 'bank', 'pending', '2023-08-05 05:10:37', '2023-08-05 05:10:37'),
-(35, 6, 35, 'bank', 'pending', '2023-08-05 05:14:00', '2023-08-05 05:14:00'),
-(36, 6, 36, 'bank', 'pending', '2023-08-05 09:44:30', '2023-08-05 09:44:30'),
-(37, 6, 37, 'bank', 'pending', '2023-08-05 09:46:53', '2023-08-05 09:46:53'),
-(38, 6, 38, 'bank', 'pending', '2023-08-05 09:54:17', '2023-08-05 09:54:17'),
-(39, 6, 39, 'bank', 'pending', '2023-08-05 09:58:29', '2023-08-05 09:58:29'),
-(40, 6, 40, 'bank', 'pending', '2023-08-07 01:30:07', '2023-08-07 01:30:07'),
-(41, 6, 41, 'bank', 'pending', '2023-08-07 01:36:30', '2023-08-07 01:36:30'),
-(42, 6, 42, 'bank', 'pending', '2023-08-07 01:40:29', '2023-08-07 01:40:29'),
-(43, 6, 43, 'bank', 'pending', '2023-08-07 01:47:47', '2023-08-07 01:47:47'),
-(44, 6, 44, 'bank', 'pending', '2023-08-07 01:49:18', '2023-08-07 01:49:18'),
-(45, 6, 45, 'bank', 'pending', '2023-08-07 01:52:55', '2023-08-07 01:52:55'),
-(46, 6, 46, 'bank', 'pending', '2023-08-07 01:55:29', '2023-08-07 01:55:29'),
-(47, 6, 47, 'bank', 'pending', '2023-08-07 02:06:25', '2023-08-07 02:06:25'),
-(48, 6, 48, 'bank', 'pending', '2023-08-07 04:47:36', '2023-08-07 04:47:36'),
-(49, 6, 49, 'bank', 'pending', '2023-08-07 04:51:04', '2023-08-07 04:51:04'),
-(50, 6, 50, 'bank', 'pending', '2023-08-07 05:22:42', '2023-08-07 05:22:42'),
-(51, 6, 51, 'bank', 'pending', '2023-08-07 05:58:11', '2023-08-07 05:58:11'),
-(52, 6, 52, 'bank', 'pending', '2023-08-07 06:10:24', '2023-08-07 06:10:24'),
-(53, 6, 53, 'bank', 'pending', '2023-08-07 06:11:39', '2023-08-07 06:11:39'),
-(54, 6, 54, 'bank', 'pending', '2023-08-07 06:17:43', '2023-08-07 06:17:43');
+INSERT INTO `transactions` (`id`, `user_id`, `order_id`, `mode`, `status`, `name`, `paid_amount`, `payment_receipt`, `transfer_date`, `created_at`, `updated_at`) VALUES
+(1, 6, 1, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-07-31 04:42:23', '2023-07-31 04:42:23'),
+(2, 6, 2, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-01 02:01:58', '2023-08-01 02:01:58'),
+(3, 6, 3, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-01 04:38:31', '2023-08-01 04:38:31'),
+(4, 6, 4, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-01 06:11:55', '2023-08-01 06:11:55'),
+(5, 6, 5, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-01 07:00:26', '2023-08-01 07:00:26'),
+(6, 6, 6, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-03 08:59:38', '2023-08-03 08:59:38'),
+(7, 6, 7, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-04 05:35:41', '2023-08-04 05:35:41'),
+(8, 6, 8, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-04 08:41:05', '2023-08-04 08:41:05'),
+(9, 6, 9, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-04 10:43:11', '2023-08-04 10:43:11'),
+(10, 6, 10, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-04 10:46:57', '2023-08-04 10:46:57'),
+(11, 6, 11, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-04 10:49:17', '2023-08-04 10:49:17'),
+(12, 6, 12, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-04 11:06:54', '2023-08-04 11:06:54'),
+(13, 6, 13, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:29:33', '2023-08-05 03:29:33'),
+(14, 6, 14, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:33:05', '2023-08-05 03:33:05'),
+(15, 6, 15, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:33:14', '2023-08-05 03:33:14'),
+(16, 6, 16, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:33:24', '2023-08-05 03:33:24'),
+(17, 6, 17, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:33:37', '2023-08-05 03:33:37'),
+(18, 6, 18, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:35:06', '2023-08-05 03:35:06'),
+(19, 6, 19, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:38:46', '2023-08-05 03:38:46'),
+(20, 6, 20, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:39:26', '2023-08-05 03:39:26'),
+(21, 6, 21, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:41:52', '2023-08-05 03:41:52'),
+(22, 6, 22, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:44:07', '2023-08-05 03:44:07'),
+(23, 6, 23, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:44:28', '2023-08-05 03:44:28'),
+(24, 6, 24, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:46:58', '2023-08-05 03:46:58'),
+(25, 6, 25, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:47:10', '2023-08-05 03:47:10'),
+(26, 6, 26, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 03:52:41', '2023-08-05 03:52:41'),
+(27, 6, 27, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 04:12:37', '2023-08-05 04:12:37'),
+(28, 6, 28, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 04:14:58', '2023-08-05 04:14:58'),
+(29, 6, 29, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 04:16:45', '2023-08-05 04:16:45'),
+(30, 6, 30, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 04:28:42', '2023-08-05 04:28:42'),
+(31, 6, 31, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 04:33:14', '2023-08-05 04:33:14'),
+(32, 6, 32, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 05:03:12', '2023-08-05 05:03:12'),
+(33, 6, 33, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 05:05:44', '2023-08-05 05:05:44'),
+(34, 6, 34, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 05:10:37', '2023-08-05 05:10:37'),
+(35, 6, 35, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 05:14:00', '2023-08-05 05:14:00'),
+(36, 6, 36, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 09:44:30', '2023-08-05 09:44:30'),
+(37, 6, 37, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 09:46:53', '2023-08-05 09:46:53'),
+(38, 6, 38, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 09:54:17', '2023-08-05 09:54:17'),
+(39, 6, 39, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-05 09:58:29', '2023-08-05 09:58:29'),
+(40, 6, 40, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 01:30:07', '2023-08-07 01:30:07'),
+(41, 6, 41, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 01:36:30', '2023-08-07 01:36:30'),
+(42, 6, 42, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 01:40:29', '2023-08-07 01:40:29'),
+(43, 6, 43, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 01:47:47', '2023-08-07 01:47:47'),
+(44, 6, 44, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 01:49:18', '2023-08-07 01:49:18'),
+(45, 6, 45, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 01:52:55', '2023-08-07 01:52:55'),
+(46, 6, 46, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 01:55:29', '2023-08-07 01:55:29'),
+(47, 6, 47, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 02:06:25', '2023-08-07 02:06:25'),
+(48, 6, 48, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 04:47:36', '2023-08-07 04:47:36'),
+(49, 6, 49, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 04:51:04', '2023-08-07 04:51:04'),
+(50, 6, 50, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 05:22:42', '2023-08-07 05:22:42'),
+(51, 6, 51, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 05:58:11', '2023-08-07 05:58:11'),
+(52, 6, 52, 'bank', 'approved', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 06:10:24', '2023-08-07 06:10:24'),
+(53, 6, 53, 'bank', 'approved', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 06:11:39', '2023-08-07 06:11:39'),
+(54, 6, 54, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-07 06:17:43', '2023-08-07 06:17:43'),
+(55, 6, 55, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-09 01:21:23', '2023-08-09 01:21:23'),
+(56, 6, 56, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-09 01:24:57', '2023-08-09 01:24:57'),
+(57, 6, 57, 'bank', 'pending', NULL, NULL, NULL, '2023-08-09 10:59:49', '2023-08-09 01:43:33', '2023-08-09 01:43:33');
 
 -- --------------------------------------------------------
 
@@ -610,7 +626,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `two_factor_confirmed_at`, `remember_token`, `current_team_id`, `profile_photo_path`, `utype`, `created_at`, `updated_at`) VALUES
 (1, 'Cella Admin', 'admin@gmail.com', NULL, '$2y$10$oM7IHV51q.omfTyHUDDKx.bwSjAE0S98uh3FJZnK0auecr3yCaAG.', NULL, NULL, NULL, NULL, NULL, NULL, 'ADM', '2023-07-14 00:40:34', '2023-07-14 00:40:34'),
-(2, 'Marcella Andries', 'user@gmail.com', NULL, '$2y$10$oh8JA5ibVrumKGJ97JMN1.yrXI.x8pImQ5eX.rGLHOxxT8gquVJGK', NULL, NULL, NULL, NULL, NULL, NULL, 'USR', '2023-07-14 00:41:48', '2023-07-14 00:41:48'),
+(2, 'Cellz User', 'user@gmail.com', NULL, '$2y$10$oh8JA5ibVrumKGJ97JMN1.yrXI.x8pImQ5eX.rGLHOxxT8gquVJGK', NULL, NULL, NULL, NULL, NULL, NULL, 'USR', '2023-07-14 00:41:48', '2023-07-14 00:41:48'),
 (5, 'fani', 'fani@gmail.com', NULL, '$2y$10$Rj2aEy3TKcP5W.6XWwvTsu5p47hzqNkC.Je3k99gNt.2Yc/kPCGLO', NULL, NULL, NULL, NULL, NULL, NULL, 'ADM', '2023-07-21 08:07:47', '2023-07-21 08:07:47'),
 (6, 'Marcella Andries', 'sarangheyo8118@gmail.com', NULL, '$2y$10$Bq4K1V2QwDp4yiWs5QqFoOc9akrlK4z.xpl9SFz/EcCqPEHmTayRm', NULL, NULL, NULL, NULL, NULL, NULL, 'USR', '2023-07-23 11:20:01', '2023-07-23 11:20:01');
 
@@ -752,13 +768,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -788,7 +804,7 @@ ALTER TABLE `shippings`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `users`

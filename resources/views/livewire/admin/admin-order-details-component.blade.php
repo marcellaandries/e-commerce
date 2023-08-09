@@ -6,7 +6,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                Ordered Items
+                                <h5>Order ID: {{$order->id}}</h5>
                             </div>
                             <div class="col-md-6">
                                 <a href="{{route('admin.orders')}}" class="btn btn-primary pull-right">All Orders</a>

@@ -7,6 +7,18 @@
             display: block !important;
         }
     </style>
+    {{-- @include('livewire.admin.admin-product-modal-component')
+    <script>
+        $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').focus()
+        })
+    </script> --}}
+    <!-- Button trigger modal -->
+    {{-- https://stackoverflow.com/questions/23818216/how-to-always-display-bootstrap-3-modal --}}
+    {{-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Launch demo modal
+    </button> --}}
+
     <div class="container" style="padding:30px 0;">
         <div class="row">
             <div class="col-md-12">

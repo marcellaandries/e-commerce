@@ -30,7 +30,16 @@
                                 @endforeach
                             </ul>
                         </div>
-                        
+
+                        <div class="summary">
+                            <div class="order-summary">
+                                <h4 class="title-box">Order Summary</h4>
+                                <p class="summary-info"><span class="title">Subtotal</span><b class="index">{{ $this->rupiah($order->subtotal) }}</b></p>
+                                <p class="summary-info"><span class="title">Shipping Cost</span><b class="index">{{ $this->rupiah($order->shipping_cost) }}</b></p>
+                                <p class="summary-info"><span class="title">Subtotal</span><b class="index">{{ $this->rupiah($order->total) }}</b></p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

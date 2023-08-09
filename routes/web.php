@@ -109,11 +109,6 @@ Route::get('origin={city_origin}&destination={city_destination}&weight={weight}&
 Route::get('province', [AddAddressComponent::class, 'get_province'])->name('province');
 Route::get('city/{id}', [AddAddressComponent::class, 'get_city'])->name('city');
 
-Route::get('/user/orders',UserOrderComponent::class)->name('user.orders');
-// Route::get('admin/orders_status/{status}', [AdminOrderComponent::class, 'orderFilter'])->name('order.status');
-// Route::get('/user/orders/{order_id}',UserOrderDetailsComponent::class)->name('user.orderdetails');
-Route::get('/user/orders_det',UserOrderDetailsComponent::class)->name('user.orderdetails');
-
 // Route::middleware([
 //     'auth:sanctum',
 //     config('jetstream.auth_session'),
@@ -131,6 +126,9 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/user/dashboard', UserDashboardComponent::class)->name('user.dashboard');
+    Route::get('/user/orders',UserOrderComponent::class)->name('user.orders');
+    Route::get('user/orders_status/{status}', [AdminOrderComponent::class, 'orderFilter'])->name('user.order.status');
+    Route::get('/user/orders_det/{order_id}',UserOrderDetailsComponent::class)->name('user.orderdetails');
 });
 
 // For admin

@@ -20,7 +20,6 @@ class AdminOrderComponent extends Component
         }
     }
 
-    // public function render(Request $request)
     public function render()
     {
         if (session()->get('orders')['status'] !== null){

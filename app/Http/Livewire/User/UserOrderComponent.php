@@ -26,11 +26,12 @@ class UserOrderComponent extends Component
         }
         if($this->status === "all")
         {
+            // dd($this->status);
             $orders = Order::where('user_id', Auth::user()->id)->orderBy('created_at','DESC')->paginate(12);
         }
         else
         {
-            $orders = Order::where('user_id', Auth::user()->id)->orderBy('created_at','DESC')->paginate(12);
+            $orders = Order::where('user_id', Auth::user()->id)->where('status', $this->status)->orderBy('created_at','DESC')->paginate(12);
         }
         return view('livewire.user.user-order-component',['orders'=> $orders, 'status'=> $this->status])->layout('layouts.base');
     }

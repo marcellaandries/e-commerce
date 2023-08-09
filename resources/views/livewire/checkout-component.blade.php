@@ -25,7 +25,7 @@
                             {{-- <form action="#" method="get" name="frm-billing"> --}}
                             <div class="billing-address">
                                 <p class="row-in-form">
-                                    <label for="fname">first name<span>*</span></label>
+                                    <label for="fname">Name<span>*</span></label>
                                     <input readonly type="text" id ="firstname" name="firstname" value="" placeholder="Your name" wire:model="firstname">
                                     @error('firstname') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </p>

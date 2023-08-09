@@ -35,28 +35,6 @@ class AdminOrderComponent extends Component
             $orders = Order::where('status', $this->status)->orderBy('created_at','DESC')->paginate(12);
         }
         return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> $this->status])->layout('layouts.base');
-
-        // else if($this->status === "ordered")
-        // {
-        //     $orders = Order::where('status', 'ordered')->orderBy('created_at','DESC')->paginate(12);
-        //     return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'ordered'])->layout('layouts.base');
-        // }
-        // else if($this->status === "waiting_for_payment")
-        // {
-        //     $orders = Order::where('status', 'waiting_for_payment')->orderBy('created_at','DESC')->paginate(12);
-        //     return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'waiting_for_payment'])->layout('layouts.base');
-        // }
-
-        // else if($this->status === "paid")
-        // {
-        //     $orders = Order::where('status', 'paid')->orderBy('created_at','DESC')->paginate(12);
-        //     return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'paid'])->layout('layouts.base');
-        // }
-        // else if($this->status === "delivered")
-        // {
-        //     $orders = Order::where('status', 'delivered')->orderBy('created_at','DESC')->paginate(12);
-        //     return view('livewire.admin.admin-order-component',['orders'=> $orders, 'status'=> 'delivered'])->layout('layouts.base');
-        // }
     }
 
     public function orderFilter($status)

@@ -2,6 +2,19 @@
     <div class="container" style="padding: 30px 0">
         <div class="row">
             <div class="col-md-12">
+
+                @include('livewire.user.user-order-details-payment-modal-component')
+                {{-- <script>
+                    $('#myModal').on('shown.bs.modal', function () {
+                    $('#myInput').focus()
+                    })
+                </script> --}}
+                <!-- Button trigger modal -->
+                {{-- https://stackoverflow.com/questions/23818216/how-to-always-display-bootstrap-3-modal --}}
+                <button type="button" class="btn btn-primary btn-lg mb-2" data-toggle="modal" data-target="#myModal">
+                    Upload Transfer Proof
+                </button>
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
@@ -114,19 +127,24 @@
                         <table class="table">
                             <tr>
                                 <th>Transaction Mode</th>
-                                <td>{{$order->transaction->mode}}</td>
+                                <td>{{$order->transaction->mode}}
+                                    <p class ="mt-12">Transfer to BCA Account : 5270881188. Bank Account Holder Name : PT Erakomp Infonusa</p>
+                                </td>
                             </tr>
+
                             <tr>
                                 <th>Status</th>
                                 <td>{{$order->transaction->status}}</td>
                             </tr>
                             <?php
-                                $p_date = date('d-m-Y H:i:s', strtotime($order->paid_date));
-                                // echo $order->paid_date;
+                                $p_date = date('d-m-Y H:i:s', strtotime($order->processed_date));
+                                // echo $order->processed_date;
                             ?>
                             <tr>
                                 <th>Payment Approval Date</th>
-                                <td>{{$p_date}}</td>
+                                @if($order->processed_date)
+                                    {{$p_date}}
+                                @endif
                             </tr>
                         </table>
                     </div>

@@ -1037,7 +1037,7 @@ ul.in li {
                 </li>
                 <li class="{{ ($status==='waiting_for_payment') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('waiting_for_payment')"><i class="fa fa fa-money" aria-hidden="true" title="Waiting for Payment" type="text"></i> <span class="menu-text">Waiting for Payment</span></a>
                 </li>
-                <li class="{{ ($status==='paid') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('paid')"><i class="fa fa-check-square" aria-hidden="true" title="Paid"></i> <span class="menu-text">Paid</span></a>
+                <li class="{{ ($status==='processed') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('processed')"><i class="fa fa-check-square" aria-hidden="true" title="Processed"></i> <span class="menu-text">Processed</span></a>
                 </li>
                 <li class="{{ ($status==='delivered') ? 'active' : '' }}"> <a href="#" wire:click.prevent="orderFilter('delivered')"><i class="fa fa-truck" aria-hidden="true" title="Delivered"></i></span> <span class="menu-text">Delivered</span></a>
                 </li>
@@ -1059,17 +1059,17 @@ ul.in li {
                         </div>
 
                         <div class="track">
-                            <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Created</span> {{$order->created_at}}</div>
+                            <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Ordered</span> {{$order->created_at}}</div>
                             @if($order->waiting_for_payment_date)
                                 <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Waiting for Payment</span> {{$order->waiting_for_payment_date}}</div>
                             @else
                                 <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Waiting for Payment</span> </div>
                             @endif
 
-                            @if($order->paid_date)
-                                <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Paid</span> {{$order->paid_date}}</div>
+                            @if($order->processed_date)
+                                <div class="step active" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Processed</span> {{$order->processed_date}}</div>
                             @else
-                                <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Paid</span> </div>
+                                <div class="step" style="width: 25vw; max-width:25vw;"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">Processed</span> </div>
                             @endif
 
                             @if($order->delivered_date)

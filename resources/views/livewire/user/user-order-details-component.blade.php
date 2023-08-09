@@ -142,9 +142,11 @@
                             ?>
                             <tr>
                                 <th>Payment Approval Date</th>
-                                @if($order->processed_date)
-                                    {{$p_date}}
-                                @endif
+                                <td>
+                                    @if($order->processed_date)
+                                        {{$p_date}}
+                                    @endif
+                                </td>
                             </tr>
                         </table>
                     </div>

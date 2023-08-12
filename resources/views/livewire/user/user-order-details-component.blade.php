@@ -3,7 +3,8 @@
         <div class="row">
             <div class="col-md-12">
 
-                @include('livewire.user.user-order-details-payment-modal-component')
+                {{-- 1/ --}}
+                {{-- @include('livewire.user.user-order-details-payment-modal-component') --}}
                 {{-- <script>
                     $('#myModal').on('shown.bs.modal', function () {
                     $('#myInput').focus()
@@ -11,9 +12,10 @@
                 </script> --}}
                 <!-- Button trigger modal -->
                 {{-- https://stackoverflow.com/questions/23818216/how-to-always-display-bootstrap-3-modal --}}
-                <button type="button" class="btn btn-primary btn-lg mb-2" data-toggle="modal" data-target="#myModal">
+               {{-- 2 --}}
+                {{-- <button type="button" class="btn btn-primary btn-lg mb-2" data-toggle="modal" data-target="#myModal">
                     Upload Transfer Proof
-                </button>
+                </button> --}}
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -23,6 +25,14 @@
                             </div>
                             <div class="col-md-6">
                                 <a href="{{route('user.orders')}}" class="btn btn-primary pull-right">All Orders</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            {{-- <div class="col-md-6">
+                                <h5>Order ID: {{$order->id}}</h5>
+                            </div> --}}
+                            <div class="col-md-12">
+                                <a href="{{route('user.addpayment')}}" class="btn btn-primary">Upload Payment Receipt</a>
                             </div>
                         </div>
                     </div>

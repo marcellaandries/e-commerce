@@ -186,3 +186,5 @@ ALTER TABLE `payment_receipt`
 COMMIT;
 
 =============================
+
+user/UserAddPaymentReceiptComponent

@@ -8,6 +8,6 @@ class UserAddPaymentReceiptComponent extends Component
 {
     public function render()
     {
-        return view('livewire.user.user-add-payment-receipt-component');
+        return view('livewire.user.user-add-payment-receipt-component')->layout('layouts.base');
     }
 }

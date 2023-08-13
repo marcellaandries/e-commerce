@@ -21,101 +21,35 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Bank Account Holder Name</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Bank Account Holder Name" class="form-control input-md" wire:model="name" wire:keyup="generateslug" />
-                                    @error('name') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
-                                </div>
-                            </div>
-
-                            <div hidden class="form-group">
-                                <label class="col-md-4 control-label">Product Slug</label>
-                                <div class="col-md-4">
-                                    <input type="text" placeholder="Product Slug" class="form-control input-md" wire:model="slug" />
-                                    @error('slug') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
+                                    <input type="text" placeholder="Bank Account Holder Name" class="form-control input-md" wire:model="sender_name" wire:keyup="generateslug" />
+                                    @error('sender_name') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Short Description</label>
+                                <label class="col-md-4 control-label">Transfer Date</label>
                                 <div class="col-md-4">
-                                    <textarea class="form-control" placeholder="Short Description" wire:model="short_description" ></textarea>
+                                    <input type="text" placeholder="Transfer Date" class="form-control input-md" wire:model="transfer_date" />
+                                    @error('transfer_date') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Description</label>
+                                <label class="col-md-4 control-label">Transfer Amount</label>
                                 <div class="col-md-4">
-                                    <textarea class="form-control" placeholder="Description" wire:model="description" ></textarea>
-                                    @error('description') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
+                                    <input type="text" placeholder="Transfer Amount" class="form-control input-md" wire:model="paid_amount" />
+                                    @error('paid_amount') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Regular Price</label>
+                                <label class="col-md-4 control-label">Transfer Receipt</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Regular Price" class="form-control input-md" wire:model="regular_price" type-currency="IDR" />
-                                    @error('regular_price') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Sale Price</label>
-                                <div class="col-md-4">
-                                    <input type="text" placeholder="Sale Price" class="form-control input-md" wire:model="sale_price" type-currency="IDR" />
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">SKU</label>
-                                <div class="col-md-4">
-                                    <input type="text" placeholder="SKU" class="form-control input-md" wire:model="SKU" />
-                                    @error('SKU') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Stock</label>
-                                <div class="col-md-4">
-                                    <select class="form-control" wire:model="stock_status">
-                                        <option value="instock">InStock</option>
-                                        <option value="outofstock">Out of Stock</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Featured</label>
-                                <div class="col-md-4">
-                                    <select class="form-control" wire:model="featured">
-                                        <option value="0">No</option>
-                                        <option value="1">Yes</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Quantity</label>
-                                <div class="col-md-4">
-                                    <input type="text" placeholder="Quantity" class="form-control input-md" wire:model="quantity" />
-                                    @error('quantity') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Product Image</label>
-                                <div class="col-md-4">
-                                    <input type="file" class="input-file" wire:model="image" />
-                                    @error('image') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
+                                    <input type="file" class="input-file" wire:model="payment_receipt" />
+                                    @error('payment_receipt') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                     {{-- @if($image)
                                         <img src="{{$image->temporaryUrl()}}" width="120" />
                                     @endif --}}
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Weight (in Gr)</label>
-                                <div class="col-md-4">
-                                    <input type="text" placeholder="Weight" class="form-control input-md" wire:model="weight" />
-                                    @error('weight') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
 

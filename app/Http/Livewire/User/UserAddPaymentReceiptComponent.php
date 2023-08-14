@@ -42,6 +42,8 @@ class UserAddPaymentReceiptComponent extends Component
         $this->payment_receipt->storeAs('payment_receipt',$imageName);
         $paymentReceipt->payment_receipt = $imageName;
 
+        $paymentReceipt->status = 'pending';
+
         // dd($paymentReceipt);
 
         $paymentReceipt->save();

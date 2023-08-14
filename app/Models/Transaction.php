@@ -15,4 +15,9 @@ class Transaction extends Model
     {
         return $this->belongsTo(Order::class);
     }
+
+    public function paymentReceipts()
+    {
+        return $this->hasMany(PaymentReceipt::class);
+    }
 }

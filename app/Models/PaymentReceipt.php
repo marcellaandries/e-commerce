@@ -9,6 +9,8 @@ class PaymentReceipt extends Model
 {
     use HasFactory;
 
+    protected $table = "payment_receipts";
+
     public function transaction()
     {
         return $this->belongsTo(Transaction::class);
@@ -19,5 +21,3 @@ class PaymentReceipt extends Model
         return $this->belongsTo(Order::class);
     }
 }
-
-

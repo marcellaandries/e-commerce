@@ -29,7 +29,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Transfer Date</label>
                                 <div class="col-md-4">
-                                    <input type="date" placeholder="Transfer Date" class="form-control input-md" wire:model="transfer_date" />
+                                    <input type="datetime-local" placeholder="Transfer Date" class="form-control input-md" wire:model="transfer_date" />
                                     @error('transfer_date') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>

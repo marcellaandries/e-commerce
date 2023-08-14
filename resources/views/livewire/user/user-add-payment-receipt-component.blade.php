@@ -17,11 +17,11 @@
                         @if(Session::has('message'))
                             <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                         @endif
-                        <form class="form-horizontal" enctype="multipart/form-data" wire:submit.prevent="">
+                        <form class="form-horizontal" enctype="multipart/form-data" wire:submit.prevent="addPaymentReceipt">
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Bank Account Holder Name</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Bank Account Holder Name" class="form-control input-md" wire:model="sender_name" wire:keyup="generateslug" />
+                                    <input type="text" placeholder="Bank Account Holder Name" class="form-control input-md" wire:model="sender_name" />
                                     @error('sender_name') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -37,7 +37,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Transfer Amount</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Transfer Amount" class="form-control input-md" wire:model="paid_amount" />
+                                    <input type="text" placeholder="Transfer Amount" class="form-control input-md" wire:model="paid_amount" type-currency="IDR" />
                                     @error('paid_amount') <span class="alert-danger" role="alert">{{ $message }}</span> @enderror
                                 </div>
                             </div>

@@ -20,8 +20,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="col-md-6">
-                                <h5>Order ID: {{$order->id}}</h5>
+                            <div class="col-md-6 mb-06">
+                                <h5><b>Order ID: {{$order->id}}</b></h5>
                             </div>
                             <div class="col-md-6">
                                 <a href="{{route('user.orders')}}" class="btn btn-primary pull-right">All Orders</a>
@@ -33,7 +33,7 @@
                             </div> --}}
                             <div class="col-md-12">
                                 {{-- <a href="{{route('user.addpayment')}}" class="btn btn-primary">Upload Payment Receipt</a> --}}
-                                <a href="{{route('user.addreceipt',['order_id'=>$order->id])}}" class="btn btn-primary">Upload Payment Receipt</a>
+                                <a href="{{route('user.addreceipt',['order_id'=>$order->id])}}" style = "background:#00006c" class="btn btn-primary">Upload Payment Receipt</a>
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                     ?>
                     <div class="mr-3 pull-right">
                         {{-- <h5>Order ID :{{$order->id}}</h5> --}}
-                        <h5>Order Date :{{$o_date}}</h5>
+                        <h5>Order Date :{{$o_date}} <span class="ml-12 label label-primary lb-sm">{{$order->status}}</span></h5>
                     </div>
                     <div class="panel-body">
                         <div class="wrap-iten-in-cart">

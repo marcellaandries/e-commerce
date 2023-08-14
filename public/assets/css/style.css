@@ -7285,6 +7285,10 @@ svg {
     margin-bottom: 2.0rem !important;
 }
 
+.mb-12 {
+    margin-bottom: 1.2rem !important;
+}
+
 .mb-1 {
     margin-bottom: 1.0rem !important;
 }
@@ -7326,4 +7330,10 @@ svg {
     background: #00006c !important;
     opacity : 0%
     /* color:green; */
+}
+
+
+.blue-txt-white{
+    background: #00006c !important;
+    color: #fff !important;
 }

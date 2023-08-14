@@ -20,11 +20,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="col-md-6 mb-06">
+                            <div class="col-md-6">
                                 <h5><b>Order ID: {{$order->id}}</b></h5>
                             </div>
                             <div class="col-md-6">
-                                <a href="{{route('user.orders')}}" class="btn btn-primary pull-right">All Orders</a>
+                                <a href="{{route('user.orders')}}" class="btn btn-primary pull-right mr-2 mt-12">All Orders</a>
                             </div>
                         </div>
                         <div class="row">

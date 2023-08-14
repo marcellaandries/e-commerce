@@ -21,6 +21,13 @@ class UserAddPaymentReceiptComponent extends Component
     public $paid_amount;
     public $payment_receipt;
 
+    public $order_id;
+
+    public function mount($order_id)
+    {
+        $this->order_id = $order_id;
+    }
+
     protected $rules = [
         'sender_name' => 'required',
         'transfer_date' => 'required',
@@ -35,10 +42,10 @@ class UserAddPaymentReceiptComponent extends Component
         $paymentReceipt = new PaymentReceipt();
 
         $paymentReceipt->user_id = Auth::user()->id;
-        // $paymentReceipt->transaction_id = $this->transaction_id;
-        // $paymentReceipt->order_id = $this->order_id;
-        $paymentReceipt->transaction_id = 54;
-        $paymentReceipt->order_id = 54;
+        $paymentReceipt->transaction_id = $this->transaction_id;
+        $paymentReceipt->order_id = $this->order_id;
+        // $paymentReceipt->transaction_id = 53;
+        // $paymentReceipt->order_id = 53;
 
         $paymentReceipt->sender_name = $this->sender_name;
         $paymentReceipt->transfer_date = $this->transfer_date;
@@ -52,7 +59,7 @@ class UserAddPaymentReceiptComponent extends Component
 
         $paymentReceipt->status = 'pending';
 
-        dd($paymentReceipt);
+        // dd($paymentReceipt);
 
         $paymentReceipt->save();
         session()->flash('message','Payment receipt has been uploaded successfully!');
@@ -62,7 +69,11 @@ class UserAddPaymentReceiptComponent extends Component
 
     public function render()
     {
+        $order = Order::where('user_id', Auth::user()->id)->where('id', $this->order_id)->first();
+        $transaction = Transaction::where('user_id', Auth::user()->id)->where('order_id', $this->order_id)->first();
+        // dd($transaction);
         return view('livewire.user.user-add-payment-receipt-component')->layout('layouts.base');
+        // return view('livewire.user.user-add-payment-receipt-component', ['order'=>$order])->layout('layouts.base');
     }
 
 }

@@ -131,7 +131,8 @@ Route::middleware([
     Route::get('/user/orders',UserOrderComponent::class)->name('user.orders');
     Route::get('user/orders_status/{status}', [AdminOrderComponent::class, 'orderFilter'])->name('user.order.status');
     Route::get('/user/orders/{order_id}',UserOrderDetailsComponent::class)->name('user.orderdetails');
-    Route::get('/user/payment/add',UserAddPaymentReceiptComponent::class)->name('user.addpayment');
+    // Route::get('/user/payment/add',UserAddPaymentReceiptComponent::class)->name('user.addpayment');
+    Route::get('/user/payment/add/{order_id}',UserAddPaymentReceiptComponent::class)->name('user.addreceipt');
 });
 
 // For admin

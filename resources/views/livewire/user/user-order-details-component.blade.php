@@ -32,7 +32,8 @@
                                 <h5>Order ID: {{$order->id}}</h5>
                             </div> --}}
                             <div class="col-md-12">
-                                <a href="{{route('user.addpayment')}}" class="btn btn-primary">Upload Payment Receipt</a>
+                                {{-- <a href="{{route('user.addpayment')}}" class="btn btn-primary">Upload Payment Receipt</a> --}}
+                                <a href="{{route('user.addreceipt',['order_id'=>$order->id])}}" class="btn btn-primary">Upload Payment Receipt</a>
                             </div>
                         </div>
                     </div>

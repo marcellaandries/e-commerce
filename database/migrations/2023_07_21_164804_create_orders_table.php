@@ -16,10 +16,10 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
-            $table->decimal('subtotal');
-            $table->decimal('discount')->default(0);
-            $table->decimal('tax');
-            $table->decimal('total');
+            $table->integer('subtotal');
+            $table->integer('discount')->default(0);
+            $table->integer('tax');
+            $table->integer('total');
             $table->string('firstname');
             $table->string('lastname');
             $table->string('mobile');

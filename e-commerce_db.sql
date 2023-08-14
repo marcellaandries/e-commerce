@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2023 at 04:47 AM
+-- Generation Time: Aug 14, 2023 at 06:37 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -224,13 +224,13 @@ INSERT INTO `orders` (`id`, `user_id`, `subtotal`, `discount`, `tax`, `total`, `
 (45, 6, 5410000, 0, 0, 5464000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'tiki', 'REG', 54000, 0, '2023-08-07 01:52:55', '2023-08-07 01:52:55', NULL, NULL, NULL),
 (46, 6, 5750000, 0, 0, 5822000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'tiki', 'REG', 72000, 0, '2023-08-07 01:55:29', '2023-08-07 01:55:29', NULL, NULL, NULL),
 (47, 6, 6640000, 0, 0, 6740000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 100000, 0, '2023-08-07 02:06:25', '2023-08-07 02:06:25', NULL, NULL, NULL),
-(48, 6, 3280000, 0, 0, 3790000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'ordered', 'jne', 'REG', 510000, 0, '2023-08-07 04:47:36', '2023-08-07 04:47:36', NULL, NULL, NULL),
+(48, 6, 3280000, 0, 0, 3790000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'waiting_for_payment', 'jne', 'REG', 510000, 0, '2023-08-07 04:47:36', '2023-08-14 04:35:06', '2023-08-14 04:35:06', NULL, NULL),
 (49, 6, 4180000, 0, 0, 4450000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'ordered', 'jne', 'REG', 270000, 0, '2023-08-07 04:51:04', '2023-08-07 04:51:04', NULL, NULL, NULL),
-(50, 6, 6240000, 0, 0, 6394000, 'Marcella Chou', NULL, '081281322538', 'sarangheyo8118@gmail.com', 'Pluit Avenue No. 11, Pluit Utara', NULL, 'Banjarnegara', 'Jawa Tengah', 'Indonesia', '53419', 'ordered', 'jne', 'REG', 154000, 0, '2023-08-07 05:22:42', '2023-08-07 05:22:42', NULL, NULL, NULL),
-(51, 6, 7620000, 0, 0, 7804000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'ordered', 'tiki', 'ECO', 184000, 0, '2023-08-07 05:58:11', '2023-08-07 05:58:11', NULL, NULL, NULL),
+(50, 6, 6240000, 0, 0, 6394000, 'Marcella Chou', NULL, '081281322538', 'sarangheyo8118@gmail.com', 'Pluit Avenue No. 11, Pluit Utara', NULL, 'Banjarnegara', 'Jawa Tengah', 'Indonesia', '53419', 'waiting_for_payment', 'jne', 'REG', 154000, 0, '2023-08-07 05:22:42', '2023-08-14 04:33:32', '2023-08-14 04:33:32', NULL, NULL),
+(51, 6, 7620000, 0, 0, 7804000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'waiting_for_payment', 'tiki', 'ECO', 184000, 0, '2023-08-07 05:58:11', '2023-08-14 04:24:47', '2023-08-13 17:00:00', NULL, NULL),
 (52, 6, 6240000, 0, 0, 6450000, 'Cella Novi', NULL, '08127989032424', 'sarangheyo8118@gmail.com', 'Jl. Richer No.11, Sukamaju, Kecamatan Buleleng, Kota Bali Utara, Bali', NULL, 'Kota Denpasar', 'Bali', 'Indonesia', '88250', 'processed', 'jne', 'REG', 210000, 0, '2023-08-07 06:10:24', '2023-08-07 06:10:24', '2023-08-08 02:12:24', '2023-08-09 04:10:24', NULL),
 (53, 6, 6000000, 0, 0, 6132000, 'Marcella Chou', NULL, '081281322538', 'sarangheyo8118@gmail.com', 'Pluit Avenue No. 11, Pluit Utara', NULL, 'Banjarnegara', 'Jawa Tengah', 'Indonesia', '53419', 'delivered', 'jne', 'REG', 132000, 0, '2023-08-07 06:11:39', '2023-08-07 06:11:39', '2023-08-07 09:15:39', '2023-08-07 12:10:39', '2023-08-08 06:02:39'),
-(54, 6, 6240000, 0, 0, 6310000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'waiting_for_payment', 'jne', 'CTC', 70000, 0, '2023-08-07 06:17:43', '2023-08-07 06:17:43', '2023-08-07 09:20:43', NULL, NULL),
+(54, 6, 6240000, 0, 0, 6310000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'waiting_for_payment', 'jne', 'CTC', 70000, 0, '2023-08-07 06:17:43', '2023-08-07 06:17:43', '2023-08-13 02:10:00', NULL, NULL),
 (55, 6, 7620000, 0, 0, 7764000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTCYES', 144000, 0, '2023-08-09 01:21:23', '2023-08-09 01:21:23', NULL, NULL, NULL),
 (56, 6, 6240000, 0, 0, 6310000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 70000, 0, '2023-08-09 01:24:57', '2023-08-09 01:24:57', NULL, NULL, NULL),
 (57, 6, 4880000, 0, 0, 5010000, 'Marcella Andries', NULL, '081288125588', 'sarangheyo8118@gmail.com', 'Bukit Gading Villa No. 88, Kelapa Gading', NULL, 'Kota Jakarta Selatan', 'DKI Jakarta', 'Indonesia', '14250', 'ordered', 'jne', 'CTC', 130000, 0, '2023-08-09 01:43:33', '2023-08-09 01:43:33', NULL, NULL, NULL),
@@ -396,6 +396,17 @@ CREATE TABLE `payment_receipts` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `payment_receipts`
+--
+
+INSERT INTO `payment_receipts` (`id`, `user_id`, `transaction_id`, `order_id`, `sender_name`, `transfer_date`, `paid_amount`, `payment_receipt`, `status`, `created_at`, `updated_at`) VALUES
+(1, 6, 54, 54, 'cella', '2023-08-13 09:10:00', '1500000', '1691981405.png', 'pending', '2023-08-14 02:50:05', '2023-08-14 02:50:05'),
+(2, 6, 51, 51, 'cella andries', '2023-08-13 11:21:00', '7804000', '1691986922.png', 'pending', '2023-08-14 04:22:02', '2023-08-14 04:22:02'),
+(3, 6, 51, 51, 'cella andries', '2023-08-13 11:24:00', '7804000', '1691987087.png', 'pending', '2023-08-14 04:24:47', '2023-08-14 04:24:47'),
+(4, 6, 50, 50, 'Cella Chou', '2023-08-13 13:35:00', '6394000', '1691987612.png', 'pending', '2023-08-14 04:33:32', '2023-08-14 04:33:32'),
+(5, 6, 48, 48, 'cella andries', '2023-08-13 15:36:00', '3790000', '1691987706.png', 'pending', '2023-08-14 04:35:06', '2023-08-14 04:35:06');
+
 -- --------------------------------------------------------
 
 --
@@ -513,7 +524,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('OVbEHK7LmJrxNEA9TDylxhGbHFlCG2kQSRdDdLEh', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiOVVyNnViUURXOVVxRFdFWnBWRXpON0g1YXlyd3hwdFlSd294N09VaiI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozODoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3VzZXIvcGF5bWVudC9hZGQiO31zOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozODoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3VzZXIvcGF5bWVudC9hZGQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo2O3M6NToidXR5cGUiO3M6MzoiVVNSIjtzOjY6Im9yZGVycyI7YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO319', 1691981147);
+('OVbEHK7LmJrxNEA9TDylxhGbHFlCG2kQSRdDdLEh', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiOVVyNnViUURXOVVxRFdFWnBWRXpON0g1YXlyd3hwdFlSd294N09VaiI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozODoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3VzZXIvcGF5bWVudC9hZGQiO31zOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozMzoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3VzZXIvb3JkZXJzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6NjtzOjU6InV0eXBlIjtzOjM6IlVTUiI7czo2OiJvcmRlcnMiO2E6MTp7czo2OiJzdGF0dXMiO3M6MzoiYWxsIjt9fQ==', 1691987713);
 
 -- --------------------------------------------------------
 
@@ -810,7 +821,7 @@ ALTER TABLE `order_items`
 -- AUTO_INCREMENT for table `payment_receipts`
 --
 ALTER TABLE `payment_receipts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

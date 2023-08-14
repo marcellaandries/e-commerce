@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2023 at 01:33 PM
+-- Generation Time: Aug 14, 2023 at 04:47 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -134,7 +134,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (20, '2023_07_21_165004_create_transactions_table', 6),
 (21, '2023_08_01_162038_create_profiles_table', 7),
 (22, '2023_08_01_163619_create_addresses_table', 8),
-(23, '2023_08_01_165925_create_addresses_table', 9);
+(23, '2023_08_01_165925_create_addresses_table', 9),
+(24, '2023_08_14_091021_create_payment_receipts_table', 10);
 
 -- --------------------------------------------------------
 
@@ -378,19 +379,19 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `payment_receipt`
+-- Table structure for table `payment_receipts`
 --
 
-CREATE TABLE `payment_receipt` (
+CREATE TABLE `payment_receipts` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `transaction_id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
+  `transaction_id` bigint(20) UNSIGNED NOT NULL,
   `order_id` bigint(20) UNSIGNED NOT NULL,
-  `transfer_date` varchar(255) DEFAULT NULL,
-  `sender-name` varchar(255) DEFAULT NULL,
-  `paid_amount` int(25) DEFAULT NULL,
-  `payment_receipt` varchar(255) DEFAULT NULL,
-  `status` enum('pending','approved','declined','refunded') NOT NULL DEFAULT 'pending',
+  `sender_name` varchar(255) NOT NULL,
+  `transfer_date` datetime NOT NULL,
+  `paid_amount` varchar(255) NOT NULL,
+  `payment_receipt` varchar(255) NOT NULL,
+  `status` enum('pending','valid','invalid') NOT NULL DEFAULT 'pending',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -512,7 +513,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('2wkpoPx4vSyXV6YUOpi5fyV7H53qSrikYspL3quN', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiVmNoQnRjdnhBNGwwZVp1TkpwQWM2OUM0bk5tR0FZWlFwQVFsdDdvOCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC91c2VyL29yZGVycy81OCI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjY7czo1OiJ1dHlwZSI7czozOiJVU1IiO3M6Njoib3JkZXJzIjthOjE6e3M6Njoic3RhdHVzIjtzOjM6ImFsbCI7fXM6NDoiY2FydCI7YTowOnt9fQ==', 1691580437);
+('OVbEHK7LmJrxNEA9TDylxhGbHFlCG2kQSRdDdLEh', 6, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiOVVyNnViUURXOVVxRFdFWnBWRXpON0g1YXlyd3hwdFlSd294N09VaiI7czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czozODoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3VzZXIvcGF5bWVudC9hZGQiO31zOjk6Il9wcmV2aW91cyI7YToxOntzOjM6InVybCI7czozODoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL3VzZXIvcGF5bWVudC9hZGQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo2O3M6NToidXR5cGUiO3M6MzoiVVNSIjtzOjY6Im9yZGVycyI7YToxOntzOjY6InN0YXR1cyI7czozOiJhbGwiO319', 1691981147);
 
 -- --------------------------------------------------------
 
@@ -704,12 +705,13 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `payment_receipt`
+-- Indexes for table `payment_receipts`
 --
-ALTER TABLE `payment_receipt`
-  ADD KEY `payment_receipt_transaction_id_foreign` (`transaction_id`),
-  ADD KEY `tpayment_receipt_order_id_foreign` (`order_id`),
-  ADD KEY `payment_receipt_user_id_foreign` (`user_id`);
+ALTER TABLE `payment_receipts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `payment_receipts_user_id_foreign` (`user_id`),
+  ADD KEY `payment_receipts_transaction_id_foreign` (`transaction_id`),
+  ADD KEY `payment_receipts_order_id_foreign` (`order_id`);
 
 --
 -- Indexes for table `personal_access_tokens`
@@ -790,7 +792,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -803,6 +805,12 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `order_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+
+--
+-- AUTO_INCREMENT for table `payment_receipts`
+--
+ALTER TABLE `payment_receipts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -864,12 +872,12 @@ ALTER TABLE `order_items`
   ADD CONSTRAINT `order_items_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `payment_receipt`
+-- Constraints for table `payment_receipts`
 --
-ALTER TABLE `payment_receipt`
-  ADD CONSTRAINT `payment_receipt_transaction_id_foreign` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `payment_receipt_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `tpayment_receipt_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE;
+ALTER TABLE `payment_receipts`
+  ADD CONSTRAINT `payment_receipts_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `payment_receipts_transaction_id_foreign` FOREIGN KEY (`transaction_id`) REFERENCES `transactions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `payment_receipts_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `products`

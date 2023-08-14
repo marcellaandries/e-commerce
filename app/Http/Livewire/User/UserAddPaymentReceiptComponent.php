@@ -11,6 +11,7 @@ use App\Models\Order;
 use Illuminate\Support\Str;
 use Livewire\WithFileUploads;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class UserAddPaymentReceiptComponent extends Component
 {
@@ -32,6 +33,13 @@ class UserAddPaymentReceiptComponent extends Component
         $this->validate();
 
         $paymentReceipt = new PaymentReceipt();
+
+        $paymentReceipt->user_id = Auth::user()->id;
+        // $paymentReceipt->transaction_id = $this->transaction_id;
+        // $paymentReceipt->order_id = $this->order_id;
+        $paymentReceipt->transaction_id = 54;
+        $paymentReceipt->order_id = 54;
+
         $paymentReceipt->sender_name = $this->sender_name;
         $paymentReceipt->transfer_date = $this->transfer_date;
 
@@ -44,7 +52,7 @@ class UserAddPaymentReceiptComponent extends Component
 
         $paymentReceipt->status = 'pending';
 
-        // dd($paymentReceipt);
+        dd($paymentReceipt);
 
         $paymentReceipt->save();
         session()->flash('message','Payment receipt has been uploaded successfully!');

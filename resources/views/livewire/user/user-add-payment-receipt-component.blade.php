@@ -6,7 +6,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-6">
-                                Add Payment Receipt
+                                <h5>Add Payment Receipt</h5>
                             </div>
                             <div class="col-md-6">
                                 <a href="{{route('user.orders')}}" class="btn btn-primary pull-right">All Orders</a>
@@ -17,6 +17,12 @@
                         @if(Session::has('message'))
                             <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
                         @endif
+                        <div class="row">
+                            <div class="col-md-12 mb-2 text-center">
+                                <h5>Order ID: {{$order->id}}
+                                <p class="mt-12">Transfer <b>{{ $this->rupiah($order->total) }}</b> to PT Erakomp Infonusa BCA Account: <b>5270881188</b></p></h5>
+                            </div>
+                        </div>
                         <form class="form-horizontal" enctype="multipart/form-data" wire:submit.prevent="addPaymentReceipt">
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Bank Account Holder Name</label>

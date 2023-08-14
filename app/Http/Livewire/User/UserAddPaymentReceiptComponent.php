@@ -72,8 +72,15 @@ class UserAddPaymentReceiptComponent extends Component
         $order = Order::where('user_id', Auth::user()->id)->where('id', $this->order_id)->first();
         $transaction = Transaction::where('user_id', Auth::user()->id)->where('order_id', $this->order_id)->first();
         // dd($transaction);
-        return view('livewire.user.user-add-payment-receipt-component')->layout('layouts.base');
-        // return view('livewire.user.user-add-payment-receipt-component', ['order'=>$order])->layout('layouts.base');
+        // return view('livewire.user.user-add-payment-receipt-component')->layout('layouts.base');
+        return view('livewire.user.user-add-payment-receipt-component', ['order'=>$order, 'transaction'=>$transaction])->layout('layouts.base');
+    }
+
+    public function rupiah($var_number){
+
+        $rupiah_result = "Rp " . number_format($var_number,2,',','.');
+        return $rupiah_result;
+
     }
 
 }

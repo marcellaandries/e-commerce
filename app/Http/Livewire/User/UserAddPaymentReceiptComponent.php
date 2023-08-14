@@ -9,6 +9,7 @@ use App\Models\Transaction;
 use App\Models\Order;
 
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 use Livewire\WithFileUploads;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -22,6 +23,7 @@ class UserAddPaymentReceiptComponent extends Component
     public $payment_receipt;
 
     public $order_id;
+    public $transaction_id;
 
     public function mount($order_id)
     {
@@ -44,6 +46,7 @@ class UserAddPaymentReceiptComponent extends Component
         $paymentReceipt->user_id = Auth::user()->id;
         $paymentReceipt->transaction_id = $this->transaction_id;
         $paymentReceipt->order_id = $this->order_id;
+        // dd($paymentReceipt);
         // $paymentReceipt->transaction_id = 53;
         // $paymentReceipt->order_id = 53;
 
@@ -59,9 +62,20 @@ class UserAddPaymentReceiptComponent extends Component
 
         $paymentReceipt->status = 'pending';
 
+        $order = Order::where('user_id', Auth::user()->id)->where('id', $this->order_id)->first();
+        $order->status = 'waiting_for_payment';
+        $order->waiting_for_payment_date = Carbon::now();
+        // $order->waiting_for_payment_date = DB::raw('CURRENT_DATE');
+
         // dd($paymentReceipt);
+        // dd($order);
 
         $paymentReceipt->save();
+        $order->save();
+
+        // $transaction = Transaction::where('user_id', Auth::user()->id)->where('order_id', $this->order_id)->first();
+        // $transaction->save();
+
         session()->flash('message','Payment receipt has been uploaded successfully!');
         // return redirect()->route('user.orders');
         return redirect()->back();
@@ -71,6 +85,7 @@ class UserAddPaymentReceiptComponent extends Component
     {
         $order = Order::where('user_id', Auth::user()->id)->where('id', $this->order_id)->first();
         $transaction = Transaction::where('user_id', Auth::user()->id)->where('order_id', $this->order_id)->first();
+        $this->transaction_id = $transaction->id;
         // dd($transaction);
         // return view('livewire.user.user-add-payment-receipt-component')->layout('layouts.base');
         return view('livewire.user.user-add-payment-receipt-component', ['order'=>$order, 'transaction'=>$transaction])->layout('layouts.base');
